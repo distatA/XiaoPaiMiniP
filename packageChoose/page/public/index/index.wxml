@@ -1,0 +1,94 @@
+<!-- 本科优选详情（与专科优选一致） -->
+<loginDialog url="../../../../pages/setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<view>
+    <view class='school-photo' bindtap='jumpvr'>
+        <image src="{{vr}}" class="slide-image" width="100%" height="200"/>
+        <block wx:if="{{vr_url}}"><view class='vr-text-tip'>点击查看全景</view></block>
+    </view>
+    <view class="schl">
+        <view class="schl_img">
+            <image src="{{schoolInfo.logo}}" style="width:120rpx;height:120rpx;margin-left:30rpx"></image>
+        </view>
+        <view class="schl_name">{{schoolInfo.name}}</view>
+    </view>
+    <view class="schl_bq_boxx">
+        <view class="schl_bq">
+            <view class="schl_time" wx:for="{{schoolInfo.tags}}" wx:key="index">{{item}}</view>
+        </view>
+    </view>
+    <view class="jianjie">
+        <view class="jianjie_l">
+            <view class="jianjie_l_t">建校时间：{{schoolInfo.school_year}}</view>
+            <view class="jianjie_l_b">院校类型：{{schoolInfo.college_type}}</view>
+        </view>
+        <view class="jianjie_r">
+            <view class="jianjie_l_t">院校类别：{{schoolInfo.school_type}}</view>
+            <view class="jianjie_l_b">学校地址：{{schoolInfo.address}}</view>
+        </view>
+    </view>
+    <view class="gradis">
+        <view class="gradis_l_box">
+            <block wx:for="{{cates}}" wx:key="index">
+                <view class="gradis_l">
+                    <view bindtap='goDetail' data-cate_url="{{item.cate_url}}" data-mark="{{item.mark}}" data-vrurl="{{item.vr_url}}">
+                        <view class="gradis_l_t">
+                            <view class="gradis_l_t_t">
+                                <image src="{{item.cate_img}}" style="width:96rpx;height:96rpx"></image>
+                            </view>
+                            <view class="gradis_l_t_b">{{item.name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="news">
+        <block wx:for="{{newsList}}" wx:key="index">
+            <!-- 单图 -->
+            <block wx:if="{{item.picnum == 1}}">
+                <view class="single-item" bindtap="goNewsDetail" data-id="{{item.id}}">
+                    <view class="single-info">
+                        <view class="single-title">{{item.title}}</view>
+                        <view class="single-time">{{item.create_time}}</view>
+                    </view>
+                    <image class="single-img" src="{{item.thumb[0]}}" mode="scaleToFill"></image>
+                </view>
+            </block>
+            <!-- 两图 -->
+            <block wx:if="{{item.picnum == 2}}">
+                <view class="double-item" bindtap="goNewsDetail" data-id="{{item.id}}">
+                    <view class="double-title">{{item.title}}</view>
+                    <view class="double-content">
+                        <block wx:for="{{item.thumb}}" wx:key="index" wx:for-item="img">
+                            <image class="double-img" src="{{img}}"></image>
+                        </block>
+                    </view>
+                    <view class="double-time">{{item.create_time}}</view>
+                </view>
+            </block>
+            <!-- 三图 -->
+            <block wx:if="{{item.picnum == 3}}">
+                <view class="triple-item" bindtap="goNewsDetail" data-id="{{item.id}}">
+                    <view class="triple-title">{{item.title}}</view>
+                    <view class="triple-content">
+                        <block wx:for="{{item.thumb}}" wx:key="index" wx:for-item="img">
+                            <image class="triple-img" src="{{img}}"></image>
+                        </block>
+                    </view>
+                    <view class="triple-time">{{item.create_time}}</view>
+                </view>
+            </block>
+            <!-- 无图 -->
+            <block wx:if="{{item.picnum == 0}}">
+                <view class="nopic-item" bindtap="goNewsDetail" data-id="{{item.id}}">
+                    <view class="nopic-title">{{item.title}}</view>
+                    <view class="nopic-time">{{item.create_time}}</view>
+                </view>
+            </block>
+        </block>
+    </view>
+    <!-- 聊天 -->
+    <!-- <block wx:if="{{chatShow}}">
+        <view class="service" bindtap="chat"></view>
+    </block> -->
+</view>

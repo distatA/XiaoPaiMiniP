@@ -1,0 +1,141 @@
+.container{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+.zb_bg{
+    width: 750rpx;
+    height: 2181rpx;
+}
+.box{
+    position: absolute;
+    z-index: 2;
+    width: 670rpx;
+    padding-top: 440rpx;
+}
+.top_item{
+    width: 100%;
+    height: 401rpx;
+    margin: 0 auto 32rpx auto;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0px 18px 40px 0px rgba(33, 36, 75, 0.25);
+    border-radius: 20rpx;
+    background: #fff;
+}
+.top_title{
+    width: 234rpx;
+    height: 144rpx;
+    position: absolute;
+    top: -35rpx;
+    left: 50%;
+    margin-left: -93rpx;
+}
+.top_titletxt{
+    width: 291rpx;
+    height: 67rpx;
+    margin-top: 60rpx;
+}
+.top_txt{
+    font-size: 26rpx;
+    color: #4c4c4c;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.top_txt_red{
+    font-size: 24rpx;
+    color: #f76961;
+    margin-top: 15rpx;
+}
+.school{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    height: 216rpx;
+    padding: 20rpx;
+    margin-bottom: 32rpx;
+    box-shadow: 0px 18px 40px 0px rgba(33, 36, 75, 0.25);
+    border-radius: 20rpx;
+    background: #fff;
+}
+.school_logo{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+.txt_tit{
+    color: #4c4c4c;
+    font-size: 30rpx;
+    letter-spacing: 2rpx;
+    font-weight: 600;
+}
+.txt_time{
+    margin-top: 20rpx;
+    font-size: 26rpx;
+    color: #f86f60;
+}
+.school_zb{
+    width: 135rpx;
+    height: 57rpx;
+}
+
+.line{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 560rpx;
+    height: 70rpx;
+    bottom: -50rpx;
+    left: 50%;
+    margin-left: -280rpx;
+    z-index: 4;
+}
+.line image{
+    width: 18rpx;
+    height: 70rpx;text-align: center;
+}
+
+.item_bot{
+    text-align: center;
+    width: 100%;
+    height: 183rpx;
+    background: #fff;
+    box-shadow: 0px 18px 40px 0px rgba(33, 36, 75, 0.25);
+    border-radius: 20rpx;
+}
+.item_bot image{
+    width: 570rpx;
+    height: 59rpx;
+    margin-top: 60rpx;
+}
+
+.contact{
+    margin-top: 50rpx;
+    color: #fff;
+}
+.con_title{
+    font-size: 40rpx;
+}
+.con_tel{
+    font-size: 28rpx;
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.con_wx{
+    font-size: 28rpx;
+    margin-top: 15rpx;
+}

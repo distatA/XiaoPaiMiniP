@@ -1,0 +1,79 @@
+/* packageChoose/page//credits/address/address.wxss */
+/* pages/credits/address/address.wxss */
+page{
+    background-color: #f2f2f2;
+}
+.title{
+	font-size: 33rpx;
+	font-weight: bold;
+	color: #18dbb4;
+    margin-top: 37rpx;
+    margin-left: 22rpx;
+}
+.basic{
+    display: flex;
+    justify-content: space-between;
+    margin: 22rpx;
+}
+.bg {
+	width: 345rpx;
+	height: 118rpx;
+	background-color: #ffffff;
+	box-shadow: 0rpx 2rpx 4rpx 0rpx 
+		rgba(0, 0, 0, 0.1);
+    text-align:center;
+    box-sizing: border-box;
+    padding-top: 40rpx;
+    color:#878787;
+    font-size: 32rpx;
+}
+
+.province{
+	width: 710rpx;
+	height: 118rpx;
+	background-color: #ffffff;
+	box-shadow: 0px 2px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding-top: 40rpx;    
+    padding-left: 40rpx;
+    font-size: 30rpx;
+    margin:22rpx auto; 
+    color: #878787;
+}
+.address{
+    box-sizing: border-box;
+	width: 710rpx;
+	height: 260rpx;
+	background-color: #ffffff;
+	box-shadow: 0rpx 2rpx 4rpx 0rpx 
+		rgba(0, 0, 0, 0.1);
+    margin: auto;
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    color:#878787;
+}
+.confirm {
+	width: 710rpx;
+	height: 118rpx;
+	background-image: linear-gradient(45deg, 
+		#18dbb4 0%, 
+		#44e1fe 100%);
+	box-shadow: 0rpx 4rpx 8rpx 0rpx 
+		rgba(0, 0, 0, 0.2);
+    margin:22rpx auto; 
+    font-weight: bold;
+	font-size: 30rpx;
+    text-align: center;
+    line-height: 118rpx;
+	color: #ffffff;
+}
+.text{
+	font-size: 24rpx;
+	color: #878787;
+  margin-left: 22rpx;
+  margin-right: 22rpx;
+
+}
+
+

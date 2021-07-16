@@ -1,0 +1,198 @@
+/* packageChoose/page//recruitment/school/school.wxss */
+
+page {
+    background: #f2f2f2;
+}
+
+swiper {
+    height: 400rpx;
+    width: 100%;
+}
+
+swiper image {
+    width: 100%;
+    height: 400rpx;
+}
+
+/*导航菜单模块*/
+
+.nav {
+    position: relative;
+    font-family: PingFang-SC-Regular;
+    font-size: 27rpx;
+    color: #f2f2f2;
+    background: #22d9d9;
+    height: 10vw;
+    padding-top: 10px;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    text-align: center;
+    width: 90vw;
+    margin: 0 5vw;
+    top: 25rpx;
+    font-size: 32rpx;
+}
+
+.nav-active {
+    color: #fff;
+    font-weight: 600;
+    border-bottom:1px #fff solid;
+    padding-bottom:10rpx;
+}
+
+/*学校概况*/
+
+.school-info {
+    background: #fff;
+}
+
+.school-title {
+    font-size: 34rpx;
+    color: #383838;
+    font-weight: 600;
+    padding: 30rpx;
+}
+
+.school-tags {
+    display: flex;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    border-bottom: 1px #22d9d9 solid;
+    padding-bottom: 20rpx;
+    padding-left: 30rpx;
+}
+
+.tags {
+    background: #22d9d9;
+    color: #fff;
+    padding: 5rpx 20rpx;
+    border-radius: 24rpx;
+    margin-left: 20rpx;
+}
+
+.tags:nth-child(1) {
+    margin-left: 0;
+}
+
+.function {
+    display: flex;
+    padding: 20rpx 0;
+}
+
+.function-item {
+    margin-left: 30rpx;
+    font-size: 24rpx;
+    color: #bcbcbc;
+}
+
+.function-item text:nth-child(2) {
+    padding-left: 10rpx;
+}
+
+.info {
+    background: #fff;
+    margin-top: 30rpx;
+    position: relative;
+}
+
+.info-detail {
+    padding: 20rpx;
+    color: #888;
+    font-size: 28rpx;
+}
+
+.line {
+    position: absolute;
+    width: 7rpx;
+    height: 40rpx;
+    background: #22d9d9;
+    top: 55rpx;
+    left: 30rpx;
+}
+
+.title {
+    font-weight: 600;
+    color: #383838;
+    font-size: 34rpx;
+    margin-left: 50rpx;
+    padding: 50rpx 0;
+}
+
+.solid {
+    border-bottom: 1rpx #22d9d9 solid;
+}
+
+/* 招生简章 */
+
+.apply {
+    line-height: 80rpx;
+    display: flex;
+    background: #fff;
+    border-bottom: 1px #f2f2f2 solid;
+    position: relative;
+}
+
+.circle {
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 20rpx;
+    margin-left: 20rpx;
+    margin-top: 30rpx;
+    background: #22d9d9;
+}
+
+.apply-title {
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    font-weight: 32rpx;
+    color: #383838;
+}
+
+.apply-detail {
+    font-size: 28rpx;
+    color: #989898;
+    line-height: 45rpx;
+    padding: 20rpx;
+}
+
+.icon {
+    font-size: 60rpx;
+    position: absolute;
+    top: 0;
+    right: 20rpx;
+}
+
+.ico {
+    width: 7rpx;
+    height: 30rpx;
+    background: #22d9d9;
+    margin-top: 6rpx;
+}
+
+.detail-title {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #383838;
+    padding-left: 20rpx;
+}
+
+.enrollment-name {
+    font-size: 32rpx;
+    color: #383838;
+    font-weight: 600;
+    padding: 20rpx;
+}
+
+.enrollment-content {
+    font-size: 28rpx;
+    color: #888;
+    padding: 20rpx;
+}
+
+.major {
+    background: #fff;
+}

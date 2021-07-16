@@ -1,0 +1,179 @@
+<!-- 院校 -->
+<view class='nav'>
+    <view class='school-title' data-current="0" bindtap="clickTab">
+        院校
+    </view>
+    <view class='school-title' data-current="1" bindtap="clickTab">
+        专业
+    </view>
+    <view class='school-title' data-current="2" bindtap="clickTab">
+        职业
+    </view>
+    <view class='school-title' data-current="3" bindtap="clickTab">
+        资讯
+    </view>
+    <view class='school-title' data-current="4" bindtap="clickTab">
+        名师课堂
+    </view>
+    <view class='school-title' data-current="5" bindtap="clickTab">
+        留学
+    </view>
+</view>
+<swiper current="{{currentTab}}" duration="{{wheight}}" style="height:{{wheight}}rpx;" bindchange="swiperTab">
+    <swiper-item>
+        <scroll-view class='scroll-content' scroll-y="true">
+            <view class='school'>
+                <view class='card-box' wx:for="{{slist}}" wx:key="index" bindtap="goSchool" data-id="{{item.typeid}}" data-optimal="{{item.optimal}}">
+                    <!-- <navigator url='../tabBar/school/details/details?id={{item.typeid}}'> -->
+                        <view class='school-card'>
+                            <view class='left-logo'>
+                                <image src='{{item.logo}}'></image>
+                            </view>
+                            <view class='card-center'>
+                                <view class='school-name'>{{item.name}}</view>
+                                <view class='comprehensive'>
+                                    <text>{{item.institution_type}}</text>
+                                    <text>{{item.disciplinary_level}}</text>
+                                </view>
+                                <!-- <view class='enrolment'>
+                                    <block wx:if="{{item.year_wen.length>0}}">
+                                        <view class='plan-foot'>
+                                            <view>{{item.year_wen}}年 文科：最低分
+                                                <text>{{item.min_socre_wen}}</text>
+                                            </view>
+                                            <view>录取最低位次：
+                                                <text>{{item.min_weici_wen}}</text>
+                                            </view>
+                                        </view>
+                                    </block>
+                                    <block wx:if="{{item.year_li.length>0}}">
+                                        <view class='plan-foot'>
+                                            <view>{{item.year_li}}年 理科：最低分
+                                                <text>{{item.min_socre_li}}</text>
+                                            </view>
+                                            <view>录取最低位次：
+                                                <text>{{item.min_weici_li}}</text>
+                                            </view>
+                                        </view>
+                                    </block>
+                                </view> -->
+                            </view>
+                        </view>
+                        <view class='delet'>
+                            <view class='delet-logo'>
+                                <view class='font_family icon-erweima delet-logo1'></view>
+                                <view class='font_family icon-xiazai delet-logo2'></view>
+                            </view>
+                        </view>
+                    <!-- </navigator> -->
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view class='scroll-content' scroll-y="true">
+            <view class='school'>
+                <!---专业--->
+                <block wx:if="{{mlist.length>0}}">
+                    <view class='card-box' wx:for="{{mlist}}" wx:key="index">
+                        <view class='mlist'>
+                            <view class='school-name' data-zyid='{{item.id}}' bindtap="bindzyTap"> ● {{item.name}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view class='scroll-content' scroll-y="true">
+            <view class='school'>
+                <!---职业--->
+                <block wx:if="{{zlist.length>0}}">
+                    <view class='card-box' wx:for="{{zlist}}" wx:key="index">
+                        <navigator url='../career/zhiye/details?id={{item.id}}'>
+                            <view class='mlist'>
+                                <view class='school-name'> * {{item.name}}</view>
+                            </view>
+                        </navigator>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view class='scroll-content' scroll-y="true">
+            <!-- 资讯 -->
+            <view class='news'>
+                <view class='newsbox' wx:for="{{alist}}" wx:key="index" bindtap="goDetails" data-type="{{item.type}}" data-id="{{item.id}}">
+                    <view class='img'>
+                        <image src="{{item.thumb}}"></image>
+                    </view>
+                    <view class='info'>
+                        <view class='tit'>{{item.title}}</view>
+                        <view class='status'>
+                            <view class='click'>
+                                <view class='font_family icon-guankanshu newsicon'></view>
+                                {{item.hits}}
+                            </view>
+                            <view class='comment'>
+                                <view class='font_family icon-pinglun pinglun'></view>
+                                {{item.comment}}
+                            </view>
+                            <view class='xing'>
+                                <view class='font_family icon-shoucang xingxing'></view>
+                                {{item.cell}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <!-- 课堂 -->
+        <scroll-view class='scroll-content' scroll-y="true">
+            <view class='class'>
+                <view class='class-card' wx:for="{{vlist}}" wx:key="index" bindtap="goCourse" data-id="{{item.id}}">
+                    <view class='card-left-logo'>
+                        <image src="{{item.cover}}"></image>
+                    </view>
+                    <view class='class-card-center'>
+                        <view class='card-center-title'>{{item.title}}</view>
+                        <view class='card-center-foot'>
+                            <view>教师：
+                                <text>{{item.lecturer}}</text>
+                            </view>
+                            <view>观看：
+                                <text>{{item.hits}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+       <swiper-item>
+        <!-- 留学 -->
+        <scroll-view class='scroll-content' scroll-y="true">
+            <view class='class'>
+                <view class='class-card' wx:for="{{abroadlist}}" wx:key="index" bindtap="goAbroad" data-id="{{item.id}}">
+                    <view class='card-left-logo'>
+                        <image src="{{item.logo}}"></image>
+                    </view>
+                    <view class='class-card-center'>
+                        <view class='card-center-title'>{{item.name}}</view>
+                        <view class='abroad-center-foot'> 
+                            <view>国家：
+                                <text>{{item.country}}</text>
+                            </view>
+                            <view class='aixin'>
+                                <view class='font_family icon-aixin1 aixin1'></view>
+                                {{item.cell}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>

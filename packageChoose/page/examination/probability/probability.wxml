@@ -1,0 +1,53 @@
+<view class="probablity">
+    <view class="wrap">
+        <!-- 圆形进度条 -->
+        <view class="canvas">
+            <view class='bigCircle'></view>
+            <view class='littleCircle'></view>
+            <canvas canvas-id="runCanvas" id="runCanvas" class="circle"></canvas>
+            <view class="txt">
+                <view class="percent">{{info.zonghe_matchRate}}%</view>
+                <view class="word">综合匹配率</view>
+            </view>
+        </view>
+        <view class="icon-wrap">
+            <view class="select-icon1 select-icon"></view>
+            <view class="select-icon2 select-icon"></view>
+            <view class="select-icon3 select-icon"></view>
+        </view>
+        <!-- 选择科目下拉列表 -->
+        <view class="select">
+            <view class="select-item" wx:for="{{subjectList}}" wx:key="index">
+                <view class="select-value" bindtap="selectSubject" data-id="{{item.id}}" data-index="{{index}}">
+                    <view class="select-name">{{item.name}}</view>
+                    <view class="select-arrow" style="{{showList&&currentId==item.id?'animation:tomove .3s forwards;':'animation:backmove .3s forwards;'}}"></view>
+                </view>
+                <view class="select-list" wx:if="{{showList&&currentId==item.id}}">
+                    <block wx:for="{{selectList}}" wx:key="index">
+                        <view class="list-item" bindtap="selectItem" data-id="{{item.id}}">{{item.name}}</view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="node">综合匹配率越高，代表更多的意向专业和院校可报取</view>
+</view>
+<!-- 匹配选项 -->
+<view class="subject" bindtap="goSubject">
+    <view class="icon"></view>
+    <view class="content">
+        <view class="title">专业匹配</view>
+        <view class="value">{{info.majors_matchCount}}个匹配</view>
+    </view>
+    <view class="num">{{info.major_matchRate}}%</view>
+</view>
+<view class="subject" bindtap="goCollege">
+    <view class="icon icon1"></view>
+    <view class="content">
+        <view class="title">院校匹配</view>
+        <view class="value">{{info.colleges_length}}个院校，{{info.collegs_matched}}个匹配</view>
+    </view>
+    <view class="num">{{info.colleges_matchRate}}%</view>
+</view>
+<!-- <view class="save">保存方案</view> -->

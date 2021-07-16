@@ -1,0 +1,34 @@
+<request id="request" roomID="{{roomID}}" roomTitle="{{roomTitle}}" questionList="{{questionList}}" roomLiveType="{{liveType}}" schoolLogo="{{!schoolLogo?'/static/logo.png':schoolLogo}}" roomPeoples="{{roomPeoples}}" myIntegral="{{myIntegral}}" bind:close="requestHide" />
+<view class='container-box' hidden="{{requestShow}}">
+    <live-pusher
+        id="pusher" 
+        url="{{pushURL}}" 
+        mode="{{pushMode}}"
+        bindstatechange="statechange"
+        beauty="{{magic ? '6' : 1}}"
+        whiteness="{{magic ? '6' : 1}}"
+    >
+        <cover-view slot="caster" class="topbar" style="padding-top: {{height}};">
+            <cover-view class="school">
+                <cover-image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></cover-image>
+                <cover-view class="school-name">
+                    <cover-view class="school-name1">{{roomTitle}}</cover-view>
+                    <cover-view class="school-name2">{{roomPeoples}}人 观看</cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view slot="caster" class="comment-container">
+            <cover-view class="comment-list-li {{item.type==1? 'comment-list-li-notice':''}}" wx:for="{{comment}}" wx:for-item="item">
+                <cover-view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</cover-view>
+                <cover-view class="comment-list-li-msg">{{item.content}}</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view slot="caster" class="game-over" bindtap="gameOver">结束直播</cover-view>
+        <cover-view slot="caster" class="change-wenda">
+            <cover-image class="answer-btn" src='/static/answer.png' bindtap="openRequest" data-type="1"></cover-image>
+        </cover-view>
+        <cover-view slot="caster" class="change-camera">
+            <cover-image src='/static/camera{{frontCamera?"":"-gray"}}.png' bindtap="changeCamera"></cover-image>
+        </cover-view>
+    </live-pusher>
+</view>

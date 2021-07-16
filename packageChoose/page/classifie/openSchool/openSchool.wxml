@@ -1,0 +1,23 @@
+<!--packageChoose/page//classifie/openSchool/openSchool.wxml-->
+ <view class="school-list" wx:if="{{schoolLists.length>0}}">
+        <block wx:for="{{schoolLists}}" wx:key="index">
+            <view class="school-item" bindtap="goDetail" data-item="{{item}}">
+                <image class="school-logo" src="{{item.logo}}"></image>
+                <view class="school-info">
+                    <view class="school-name">{{item.name}}</view>
+                    <view class="flex">
+                        <view class="info-item">{{item.arr.one}}</view>
+                        <view class="info-item">{{item.arr.two}}</view>
+                    </view>
+                    <view class="flex">
+                         <view class="info-item">{{item.arr.threee}}</view>
+                        <view class="info-item">{{item.arr.four}}</view>
+                    </view>
+                </view>
+                <view class="school-hot">人气:{{item.mood}}</view>
+            </view>
+        </block>
+    </view>
+    <view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>

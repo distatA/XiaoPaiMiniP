@@ -1,0 +1,25 @@
+.content{
+width: 100vw;
+height: 260vh;
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+
+/* .wxParse p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.wxParse-p {
+  padding: 0px;
+  margin: 0px;  
+}
+
+.wxParse-p image {
+  width: 100% !important;
+  height: auto;
+  padding: 0px;
+  margin: 0px;    
+} */

@@ -1,0 +1,9 @@
+<block wx:if="{{videoList.length>0}}">
+    <view wx:for="{{videoList}}" wx:key="index" class="wrap">
+        <video class="value" src="{{item.video_url}}" id="myVideo{{index}}" bindtap="videoPlay" data-index='{{index}}'></video>
+        <view class="title">{{item.desc}}</view>
+    </view>
+</block>
+<block wx:if="{{url}}">
+    <web-view src="{{url}}"></web-view>
+</block>

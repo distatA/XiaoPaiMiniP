@@ -1,0 +1,182 @@
+<!--packageChoose/page//credits/mission/mission.wxml-->
+<!-- 获取积分任务 -->
+<view class="total">
+    <view class="header">
+        <view class="credits-show">我的积分
+            <view class="credits-num">{{userInfo.integral}}
+                <text class="plus" wx:if="{{animation}}">+{{actInte}}</text>
+            </view>
+        </view>
+        <view class="wrap">
+            <view class="rule" bindtap="goRule">积分规则</view>
+            <navigator url="../mall/mall" hover-class="none">
+                <view class="mall">积分商城</view>
+            </navigator>
+        </view>
+    </view>
+    <!-- 签到日期 -->
+    <view class="contain">
+        <view class="signIn">
+            <view class="signday">已连续签到
+                <text class="sign-num">{{signDay}}</text>天</view>
+            <view class="{{signShow||signToday==1?'over':'signbtn'}}" catchtap="{{signToday==1?'':'signBtn'}}">{{signShow||signToday==1?sign:unsign}}</view>
+        </view>
+        <view class="date-wrap">
+            <view class="date" wx:for="{{signList}}" wx:key="index">
+                <view class="{{item.sign==1?'finish':'date-pic'}}">
+                    <text wx:if="{{item.sign==-1}}">+3</text>
+                    <text wx:if="{{item.sign==0}}">+{{item.num}}</text>
+                </view>
+                <view class="{{item.sign==1?'date-active':'date-num'}}">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 任务 -->
+
+    <view class="content">
+        <view class="content-wrap" wx:if="{{taskList[0].show==1}}">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/shop/mission2.jpg"></image>
+            <view class="text">
+                <view class="text-title">完善个人资料（{{taskList[0].wait}}/{{taskList[0].cishu}}）</view>
+                <view class="text-info">完善个人资料，可以获得{{taskList[0].num}}积分；</view>
+            </view>
+            <view class="{{taskList[0].sign==2?'btn':'unbtn'}}" bindtap="draw" data-key="1" data-type="{{taskList[0].type}}" data-ids="{{taskList[0].ids}}">
+                <text wx:if="{{taskList[0].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[0].sign==1}}">{{taskList[0].inte}}积分</text>
+                <text wx:if="{{taskList[0].sign==2}}">已领取</text>
+            </view>
+        </view>
+        <view class="content-wrap" wx:if="{{taskList[1].show==1}}">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/class/share2.png"></image>
+            <view class="text">
+                <view class="text-title">首次邀请好友注册（{{taskList[1].wait}}/{{taskList[1].cishu}}）</view>
+                <view class="text-info">首次邀请好友注册，获得{{taskList[1].num}}积分；</view>
+            </view>
+            <view class="{{taskList[1].sign==2?'btn':'unbtn'}}" bindtap="draw" data-key="2" data-type="{{taskList[1].type}}" data-ids="{{taskList[1].ids}}">
+                <text wx:if="{{taskList[1].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[1].sign==1}}">{{taskList[1].inte}}积分</text>
+                <text wx:if="{{taskList[1].sign==2}}">已领取</text>
+            </view>
+        </view>
+        <view class="content-wrap" wx:if="{{taskList[2].show==1}}">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/shop/mission3.jpg"></image>
+            <view class="text">
+                <view class="text-title">关注微信公众号（{{taskList[2].wait}}/{{taskList[2].cishu}}）</view>
+                <view class="text-info">关注微信公众号【校派pai】，获得{{taskList[2].num}}积分；</view>
+            </view>
+            <view class="{{taskList[2].sign==2?'btn':'unbtn'}}" bindtap="draw" data-key="3" data-type="{{taskList[2].type}}" data-ids="{{taskList[2].ids}}">
+                <text wx:if="{{taskList[2].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[2].sign==1}}">{{taskList[2].inte}}积分</text>
+                <text wx:if="{{taskList[2].sign==2}}">已领取</text>
+            </view>
+        </view>
+        <view class="content-wrap">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/class/share2.png"></image>
+            <view class="text">
+                <view class="text-title">每日邀请好友注册（{{taskList[3].wait}}/{{taskList[3].cishu}}）</view>
+                <view class="text-info">每日邀请好友注册，获得{{taskList[3].num}}积分；每日上限{{taskList[3].total}}分</view>
+            </view>
+            <view class="{{taskList[3].ssign==2?'btn':'unbtn'}}" bindtap="{{taskList[3].sign==2?'':'draw'}}" data-key="2" data-type="{{taskList[3].type}}" data-ids="{{taskList[3].ids}}">
+                <text wx:if="{{taskList[3].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[3].sign==1}}">{{taskList[3].inte}}积分</text>
+                <text wx:if="{{taskList[3].sign==2}}">已领取</text>
+            </view>
+        </view>
+        <view class="content-wrap">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/shop/mission6.jpg"></image>
+            <view class="text">
+                <view class="text-title">分享（{{taskList[4].wait}}/{{taskList[4].cishu}}）</view>
+                <view class="text-info">分享平台内容，即可获得{{taskList[4].num}}积分；每日上限{{taskList[4].total}}分</view>
+            </view>
+            <view class="{{taskList[4].sign==2?'btn':'unbtn'}}" bindtap="{{taskList[4].sign==2?'':'draw'}}" data-type="{{taskList[4].type}}" data-ids="{{taskList[4].ids}}">
+                <text wx:if="{{taskList[4].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[4].sign==1}}">{{taskList[4].inte}}积分</text>
+                <text wx:if="{{taskList[4].sign==2}}">已领取</text>
+            </view>
+        </view>
+        <view class="content-wrap">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/shop/mission4.jpg"></image>
+            <view class="text">
+                <view class="text-title">发表评论（{{taskList[5].wait}}/{{taskList[5].cishu}}）</view>
+                <view class="text-info">对任意作品进行评论，即可获得{{taskList[5].num}}积分；每日上限{{taskList[5].total}}分</view>
+            </view>
+            <view class="{{taskList[5].sign==2?'btn':'unbtn'}}" bindtap="{{taskList[5].sign==2?'':'draw'}}" data-type="{{taskList[5].type}}" data-ids="{{taskList[5].ids}}">
+                <text wx:if="{{taskList[5].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[5].sign==1}}">{{taskList[5].inte}}积分</text>
+                <text wx:if="{{taskList[5].sign==2}}">已领取</text>
+            </view>
+        </view>
+        <view class="content-wrap">
+            <image class="icon" src="https://new.schoolpi.net/attach/small_program/shop/mission5.jpg"></image>
+            <view class="text">
+                <view class="text-title">收藏作品（{{taskList[6].wait}}/{{taskList[6].cishu}}）</view>
+                <view class="text-info">收藏资讯、院校、专业、职业等可获得{{taskList[6].num}}积分；每日上限{{taskList[6].total}}分</view>
+            </view>
+            <view class="{{taskList[6].sign==2?'btn':'unbtn'}}" bindtap="{{taskList[6].sign==2?'':'draw'}}" data-type="{{taskList[6].type}}" data-ids="{{taskList[6].ids}}">
+                <text wx:if="{{taskList[6].sign==0}}">去完成</text>
+                <text wx:if="{{taskList[6].sign==1}}">{{taskList[6].inte}}积分</text>
+                <text wx:if="{{taskList[6].sign==2}}">已领取</text>
+            </view>
+        </view>
+
+
+    </view>
+</view>
+<!-- 积分规则 -->
+<view class="rule-info" wx:if="{{showRule}}">
+    <view class="rule-info-contain">
+        <view class="rule-info-title">积分说明</view>
+        <view class="table">
+            <view class="tr">
+                <view class=" td column">行为名称</view>
+                <view class=" td column">行为积分</view>
+            </view>
+            <view class="tr">
+                <text class="td">首次登陆</text>
+                <text class="td">{{inte_1}}</text>
+            </view>
+            <view class="tr">
+                <text class="td">完善个人资料</text>
+                <text class="td">{{inte_2}}</text>
+            </view>
+            <view class="tr">
+                <text class="td">首次邀请好友注册</text>
+                <text class="td">{{inte_3}}</text>
+            </view>
+            <view class="tr">
+                <text class="td">关注微信公众号</text>
+                <text class="td">{{inte_4}}</text>
+            </view>
+            <view class="tr">
+                <text class="td">每日签到</text>
+                <text class="td">签到一天+{{inte_5[0]}}\n连续签到两天+{{inte_5[1]}}\n连续签到3天及以上+{{inte_5[2]}}</text>
+            </view>
+            <view class="tr">
+                <text class="td">每日邀请好友注册</text>
+                <text class="td">{{inte_6[0]}}（每日上限{{inte_6[1]}}分）</text>
+            </view>
+            <view class="tr">
+                <text class="td">分享</text>
+                <text class="td">{{inte_7[0]}}（每日上限{{inte_7[1]}}分）</text>
+            </view>
+            <view class="tr">
+                <text class="td">评论</text>
+                <text class="td">{{inte_8[0]}}（每日上限{{inte_8[1]}}分）</text>
+            </view>
+            <view class="tr">
+                <text class="td">收藏</text>
+                <text class="td">{{inte_9[0]}}（每日上限{{inte_9[1]}}分）</text>
+            </view>
+            <view class="close" bindtap="returnMission"></view>
+        </view>
+    </view>
+
+</view>
+<!-- 签到成功 -->
+<view class="signSuccess" wx:if="{{showSign}}">
+    <view class="sign-contain">
+        <view class="sign-pic"></view>
+        <view class="sign-value">签到成功 积分+{{signInte}}！</view>
+        <view class="sign-back" bindtap="backMission">好的</view>
+    </view>
+</view>

@@ -1,0 +1,31 @@
+page{
+  background:#fff;
+}
+.top{
+  width:100%;
+}
+.cont{
+  width:90%;
+  height:60rpx;
+  margin:0 auto;
+  font-size:32rpx;
+  font-weight: bold;
+  color:#000;
+  line-height:60rpx;
+}
+.text{
+  width:90%;
+  margin:0 auto;
+  font-size:24rpx;
+  color:#000;
+}
+.cont1{
+  width:90%;
+  height:60rpx;
+  margin:0 auto;
+  font-size:32rpx;
+  font-weight: bold;
+  color:#000;
+  line-height:60rpx;
+  margin-top:20rpx
+}

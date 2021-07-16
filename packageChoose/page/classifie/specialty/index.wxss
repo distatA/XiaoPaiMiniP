@@ -1,0 +1,101 @@
+page{
+    background: #f2f2f2;
+}
+.major-item{
+    padding: 0 30rpx;
+    background: #fff;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+.major-name{
+    padding: 30rpx 0 20rpx 0;
+    border-bottom: solid 1rpx #cccccc;
+    font-size: 34rpx;
+    font-weight: bold;
+    position: relative;
+}
+.school{
+    position: absolute;
+    top: 28rpx;
+    right: 60rpx;
+    font-size: 30rpx;
+    font-weight: 300;
+}
+.major-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 0;
+}
+.info-item{
+    display: flex;
+}
+.arrow {
+    position: absolute;
+    right: 12rpx;
+    top: 10rpx;
+    bottom: 0;
+    margin: auto 0;
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 5rpx solid rgb(192, 188, 188);
+    border-right: 5rpx solid rgb(192, 188, 188);
+    transform: rotate(45deg);
+}
+.icon{
+    width: 50rpx;
+    height: 50rpx;
+    margin: auto 20rpx auto 0;
+    border-radius: 50%;
+}
+
+.info-value{
+    font-size: 32rpx;
+    font-weight: 500;
+}
+.info-title{
+    font-size: 20rpx;
+    color: #a9a9a9;
+}
+/* ****** */
+.pay-hint-content{
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  text-overflow: ellipsis;
+  overflow:hidden; 
+  /* padding-bottom: 20rpx; */
+ position: relative;
+    
+}
+.ellipsis{
+  -webkit-line-clamp:3; 
+}
+.unellipsis{
+  -webkit-line-clamp:0; 
+}
+.position{
+    width: 100prx;
+    position: absolute;
+    bottom: 0;
+    right: 10rpx;
+    background: #fff;
+    text-align: center;
+    font-size: 28rpx;
+    /* color:  */
+    /* box-shadow: 100rpx 10rpx 50rpx 0 #fff; */
+}
+/* ****** */
+._noPost{
+    text-align: center;
+   position: relative;
+}
+.no-data{
+    width: 200rpx;
+    height: 200rpx;
+    position: absolute;
+    top: 350rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+

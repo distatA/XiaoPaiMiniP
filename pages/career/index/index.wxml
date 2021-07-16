@@ -1,0 +1,344 @@
+<!--pages/career/index.wxml-->
+<view class='work-header'>
+    <!-- 轮播 -->
+    <view class='boast-bg'>
+        <swiper class='boast' indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+            <block wx:for="{{banlist}}" wx:key="{{index}}">
+                <swiper-item>
+                    <image src="{{item.ad_code}}" data-id="{{item.id}}" alt="{{item.ad_name}}" class="slide-image" data-link="{{item.ad_link}}" data-type="{{item.media_nw}}" bindtap="openAdlink" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>
+<!-- 功能列表 -->
+<view class='model-list'>
+
+    <!-- <view class='model-list-box'>
+    <navigator url='{{gxurl}}'>
+      <view class='model-logo'>
+        <view class="font_family icon-gaoxiaoyouxiantianbao daxuezhanbo"></view>
+      </view>
+      <view class='model-list-text'>高校优先填报</view>
+    </navigator>
+  </view>
+
+  <view class='model-list-box'>
+    <navigator url='{{zyurl}}'>
+    <view class='model-logo'>
+      <view class="font_family icon-zhuanyeyouxiantianbao zyystb"></view>
+    </view>
+    <view class='model-list-text'>专业优先填报</view>
+    </navigator>
+  </view>
+
+  <view class='model-list-box'>
+    <navigator url='../gginfo/index'>
+      <view class='model-logo'>
+        <view class="font_family icon-luqugaishuai1 lqgl"></view>
+      </view>
+      <view class='model-list-text'>录取概率</view>
+    </navigator>
+  </view>
+
+  <view class='model-list-box'>
+    <navigator url='../major/major'>
+      <view class='model-logo'>
+       <view class="font_family icon-zhuanyeku zhuanyk"></view>
+      </view>
+      <view class='model-list-text'>专业库</view>
+    </navigator>
+  </view>
+
+  <view class='model-list-box'>
+    <navigator url='../zhiye/index'>
+      <view class='model-logo'>
+        <view class="font_family icon-zhiyeku zhiyk"></view>
+      </view>
+      <view class='model-list-text'>职业库</view>
+    </navigator>
+  </view> -->
+</view>
+<block wx:if="{{istestres==0}}">
+    <!-- 轮播 -->
+    <view class='work-boast-second'>
+        <swiper class='boast-second' indicator-dots="true" autoplay="{{autoplay}}" interval="5000" duration="1000" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+            <swiper-item>
+                <view class='model-title'>兴趣测试</view>
+                <view class='boast-bg-second'>
+                    <view class='screeBox'>
+                        <navigator url='../answer/int'>
+                            <view class='icoxx'>
+                                <image src='/images/ico3.png'></image>
+                            </view>
+                            <button class='jieguo'>测试结果</button>
+                        </navigator>
+
+                        <image src="/images/xinli.png" class="slide-image" />
+                        <view class='text'>
+                            <text class='frist'>霍兰德兴趣测评，</text>
+                            <text>采用世界上最权威最通用的测试内容，</text>
+                            <text>让学生了解自己的兴趣爱好和适宜专业，帮助学生达到兴趣和专业相互匹配相互促进的效果。</text>
+                        </view>
+                        <!-- <navigator url='{{ intjump}}'> -->
+                        <view bindtap='goTest' data-type="1">
+                            <button class='btner btn1'>开始测试</button>
+                        </view>
+                        <!-- </navigator> -->
+                        <text class='bttxt'>不知道如何选专业，我们帮你</text>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class='model-title'>性格测试</view>
+                <view class='boast-bg-second'>
+                    <view class='screeBox'>
+                        <navigator url='../answer/index'>
+                            <view class='icoxx'>
+                                <image src='/images/ico3.png'></image>
+                            </view>
+                            <button class='jieguo'>测试结果</button>
+                        </navigator>
+
+                        <image src="/images/ad/int.png" class="slide-image" />
+                        <view class='text'>
+                            <text>作为一名高中生，你真的了解自己吗？</text>
+                            <text>MBTI性格测试全方位解读你的性格、专业、职业之间的联系，</text>
+                            <text>为个人定位和专业选择提供科学的参考和依据。</text>
+                        </view>
+                       <view bindtap='goTest' data-type="2">
+                            <button class='btner btn2'>开始测试</button>
+                        </view>
+                        <text class='bttxt'>不知道如何选专业，我们帮你</text>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class='model-title'>职业倾向测试</view>
+                <view class='boast-bg-second'>
+                    <view class='screeBox'>
+                        <navigator url='../answer/job'>
+                            <view class='icoxx'>
+                                <image src='/images/ico3.png'></image>
+                            </view>
+                            <button class='jieguo'>测试结果</button>
+                        </navigator>
+                        <image src="/images/ad/job.png" class="slide-image" />
+                        <view class='text'>
+                            <text>协助学生尽早地进行理想的职业生涯发展规划，</text>
+                            <text>科学合理地指导高中生选专业、规划自己的职业方向。</text>
+                        </view>
+                        <view bindtap='goTest' data-type="3">
+                            <button class='btner btn3'>开始测试</button>
+                        </view>
+                        <text class='bttxt'>不知道如何选专业，我们帮你</text>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class='model-title'>学科强弱测试</view>
+                <view class='boast-bg-second'>
+                    <view class='screeBox'>
+                        <navigator url='../answer/sub'>
+                            <view class='icoxx'>
+                                <image src='/images/ico3.png'></image>
+                            </view>
+                            <button class='jieguo'>测试结果</button>
+                        </navigator>
+
+                        <image src="/images/ad/xkqr.png" class="slide-image" />
+                        <view class='text'>
+                            <text>客观评价学生的学科优劣情况，学习擅长的学科无疑会取得更好的成绩。</text>
+                        </view>
+                        <view bindtap='goTest' data-type="4">
+                            <button class='btner btn4'>开始测试</button>
+                        </view>
+                        <text class='bttxt'>不知道如何选专业，我们帮你</text>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="foot {{istestres2==1?'show':'hide'}}" bindtap='cxpc'>综合结果</view>
+        <view class='h50'></view>
+    </view>
+</block>
+<block wx:else>
+    <view class='cxpc' bindtap='cxpc'>
+        <image src='/images/ico3.png'></image>重新评测</view>
+    <!-----xinli---->
+    <view class='header'>
+        <view class='header-tit'>性格评测</view>
+        <view class='header-foot'>
+            <view class='boxarea'>
+                <view class='fl'>外向（E）{{xinlizongti.E}}%</view>
+                <view class='fr'>内向（I）{{xinlizongti.I}}%</view>
+            </view>
+            <progress class="progress" percent="{{xinlizongti.E}}" stroke-width="6" activeColor="{{actcolor1}}" backgroundColor="{{bgcolor1}}" active="true" active-mode="forwards">
+            </progress>
+            <view class='boxarea'>
+                <view class='fl'>感觉（S）{{xinlizongti.S}}%</view>
+                <view class='fr'>直觉（N）{{xinlizongti.N}}%</view>
+            </view>
+            <progress class="progress" percent="{{xinlizongti.S}}" stroke-width="6" activeColor="{{actcolor2}}" backgroundColor="{{bgcolor2}}" active="true" active-mode="forwards">
+            </progress>
+
+            <view class='boxarea'>
+                <view class='fl'>思考（T）{{xinlizongti.T}}%</view>
+                <view class='fr'>情感（F）{{xinlizongti.F}}%</view>
+            </view>
+            <progress class="progress" percent="{{xinlizongti.T}}" stroke-width="6" activeColor="{{actcolor3}}" backgroundColor="{{bgcolor3}}" active="true" active-mode="forwards">
+            </progress>
+
+            <view class='boxarea'>
+                <view class='fl'>判断（J）{{xinlizongti.J}}%</view>
+                <view class='fr'>知觉（P）{{xinlizongti.P}}%</view>
+            </view>
+            <progress class="progress" percent="{{xinlizongti.J}}" activeColor="{{actcolor4}}" backgroundColor="{{bgcolor4}}" stroke-width="6" active-mode="forwards" active="true" />
+            <view class='type' style='padding:30rpx 0;overflow:hidden;'>
+                <text>您的评测结果为：</text>
+                <text class='type-color'>{{xinlidata.model}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='job-type'>
+        <view class='job-card'>
+            <view class='job-card-left'>
+                <view class='font_family icon-yuan left-icon'></view>
+                <view class='card-left-text'>{{xinlidata.model}}</view>
+            </view>
+        </view>
+        <view class='job-card-hide'>
+            <view>{{xinlidata.content}}</view>
+        </view>
+    </view>
+    <!---INT----->
+    <view class='header'>
+        <view class='header-tit'>兴趣评测</view>
+        <view class='header-cell'>
+            <canvas canvas-id="radarCanvas2" disable-scroll="true" class="canvas2"></canvas>
+        </view>
+        <view class='header-foot'>
+            <view class='type'>
+                <text>您的评测结果为：{{intdata[0].model}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='job-type' wx:for="{{intdata}}" wx:key="{{index}}">
+        <block wx:if="{{index==0}}">
+            <view class='job-card'>
+                <view class='job-card-left'>
+                    <view class='font_family icon-yuan left-icon'></view>
+                    <view class='card-left-text'>{{item.model}}</view>
+                </view>
+            </view>
+            <view class='job-card-hide'>
+                <view>{{item.content}}</view>
+            </view>
+        </block>
+    </view>
+    <!--------->
+
+    <view class='header'>
+        <view class='header-tit'>职业倾向测试</view>
+        <view class='jobheader-cell'>
+            <image src='/images/sjx.png'></image>
+            <view wx:for="{{jobmodel}}" wx:key="{{index}}" class='sub{{index}}'>{{item}}</view>
+        </view>
+        <view class='tc'>职业倾向</view>
+    </view>
+    <view class='job-type' wx:for="{{jobdata}}" wx:key="{{index}}">
+        <block wx:if="{{index==0}}">
+            <view class='job-card'>
+                <view class='job-card-left'>
+                    <view class='font_family icon-yuan left-icon'></view>
+                    <view class='card-left-text'>{{item.model}}</view>
+                </view>
+            </view>
+            <view class='job-card-hide' style='border-bottom:#ccc 1px solid;'>
+                <view>{{item.content}}</view>
+            </view>
+        </block>
+    </view>
+    <!--sub--->
+    <view class='header'>
+        <view class='header-tit'>学科强弱测试</view>
+        <view class='header-cell'>
+            <canvas canvas-id="columnCanvas" id='columnCanvas' disable-scroll="true" class="canvas"></canvas>
+        </view>
+    </view>
+    <view class='job-type' wx:for="{{subdata}}" wx:key="{{index}}">
+        <block wx:if="{{index==0}}">
+            <view class='job-card'>
+                <view class='job-card-left'>
+                    <view class='iconfont icon-bangzhu1 left-icon'></view>
+                    <view class='card-left-text'>{{item.zhuanye}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class='job-card-hide'>
+        <view style='text-indent:2em;'>{{neirong}}</view>
+    </view>
+
+    <view class='tab'>
+        <view class="benke {{currentTab==0?'nav-bottom':''}}" data-current="0" bindtap="clickTab">
+            本科专业
+
+        </view>
+        <view class="zhuanke {{currentTab==1?'nav-bottom':''}}" data-current="1" bindtap="clickTab">专科专业</view>
+    </view>
+    <swiper current="{{currentTab}}" duration="300" style="height:300rpx;" bindchange="swiperTab">
+        <swiper-item>
+            <view class='tab-content'>
+                <block wx:for="{{subdata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+                <block wx:for="{{intdata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+                <block wx:for="{{jobdata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+                <block wx:for="{{xinlidata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class='tab-content'>
+
+                <block wx:for="{{subdata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+                <block wx:for="{{intdata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+                <block wx:for="{{jobdata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+                <block wx:for="{{xinlidata}}" wx:key="{{index}}">
+                    <block wx:if="{{index==0}}">
+                        <navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="{{index}}" wx:for-item="vo">{{vo.name}}</navigator>
+                    </block>
+                </block>
+
+            </view>
+        </swiper-item>
+    </swiper>
+</block>

@@ -1,0 +1,26 @@
+<view class="gradis">
+    <swiper class="banner" circular="true" indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" autoplay="{{autoplay}}">
+        <block wx:for="{{adList}}" wx:key="index">
+            <swiper-item style="width:95vw;margin:0 auto;">
+                <image src="{{item.ad_code}}"  bindtap="goAd" data-id="{{item.id}}" data-media="{{item.media_nw}}" data-link="{{item.ad_link}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view class="list" wx:for="{{schoolList}}" wx:key="index">
+    <view class="area-name">
+        <view class="plane">
+            <image src="https://new.schoolpi.net/attach/small_program/index/plane.png"></image>
+        </view>
+        <view class="name"> 出国留学·{{item.name}}篇</view>
+    </view>
+    <view class="school-list">
+        <view class="school-item" wx:for="{{item.child}}" wx:key="index" data-id="{{item.id}}" bindtap='goDetail'>
+            <image src="{{item.background}}"></image>
+            <view class="detail">查看详情</view>
+            <view class='fav'>
+                <text class='font_family icon-aixin1 celled'></text> {{item.focus}}</view>
+        </view>
+    </view>
+</view>

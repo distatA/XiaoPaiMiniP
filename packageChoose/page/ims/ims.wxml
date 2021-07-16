@@ -1,0 +1,63 @@
+<view class="chat">
+    <scroll-view scroll-y scroll-into-view='{{toView}}' bindscrolltoupper="loadHistory" style='height:{{scrollHeight}};'>
+        <view class="loadTip">{{isLoadHistoy?'加载历史消息中...':''}}</view>
+        <view class="msg-notice" hidden="{{systemMsg.length == 0}}">
+            <view class="msg-notice-content">
+                <text class="nickname">{{systemMsg.nickName}}</text>
+                <text class="tip">{{systemMsg.message}}</text>
+            </view>
+        </view>
+        <block wx:key='idnex' wx:for='{{msgList}}' wx:for-index="index">
+            <view wx:if='{{item.userId!=myUserId}}' id='msg-{{index}}' class="msg-box">
+                <view class="msg-left">
+                    <view class="headface">
+                        <image src='{{item.headImg}}'></image>
+                    </view>
+                    <view class="mainbox">
+                        <view class="nickname">{{item.nickName}}</view>
+                        <view class="content-box">
+                            <view class="arrow">
+                                <image src='https://new.schoolpi.net/attach/small_program/group/ims-l.png' mode='widthFix'></image>
+                            </view>
+                            <view class='msg-content' wx:if="{{item.msgType == 0}}">{{item.message}}</view>
+                            <view class="msg-content__img" wx:else><image mode='widthFix' src="{{item.message}}"></image></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:else id='msg-{{index}}' class="msg-box">
+                <view class="msg-right">
+                    <view class="mainbox">
+                        <view class="nickname">{{item.nickName}}</view>
+                        <view class="content-box">
+                            <view class='msg-content' wx:if="{{item.msgType == 0}}">{{item.message}}</view>
+                            <view class="msg-content__img" wx:else><image mode='widthFix' src="{{item.message}}"></image></view>
+                            <view class="arrow">
+                                <image src='https://new.schoolpi.net/attach/small_program/group/ims-r.png' mode='widthFix'></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="headface">
+                        <image src='{{item.headImg}}'></image>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view style="width: 100%; {{showApps? 'height: 312rpx;':'height: 110rpx;'}}"></view>
+    </scroll-view>
+    <view class="footer {{showApps?'footer-open':''}}">
+        <view class="inputer">
+            <input value='{{inputVal}}' bindinput="bindKeyInput"></input>
+            <image class="jia" src="/images/jia.png" bindtap="openApps" wx:if="{{!showSendBtn}}"></image>
+            <button class="send" bindtap="sendSocketMessage" wx:else="{{showSendBtn}}">发送</button>
+        </view>
+        <view class="footer-apps" hidden="{{!showApps}}">
+            <view class="footer-apps-li">
+                <view class="image" bindtap="sendImage">
+                    <image src="/images/im-upimg.png"></image>
+                </view>
+                <view class="text">相册</view>
+            </view>
+        </view>
+    </view>
+</view>

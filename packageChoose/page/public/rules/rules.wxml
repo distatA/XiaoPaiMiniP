@@ -1,0 +1,17 @@
+<!--pages/news/details.wxml-->
+<import src="../../../../wxParse/wxParse.wxml" />
+
+<view class='wrap' id='content'>
+    <view class='title'>{{info.title}}</view>
+    
+    <view class='content'>
+        <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+    </view>
+</view>
+
+
+<block wx:if='{{isretrue == 1}}'>
+    <view class='returnHome' bindtap='returnHome'>
+        <image src='/images/rindex.png'></image>
+    </view>
+</block>

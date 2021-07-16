@@ -1,0 +1,167 @@
+/* packageChoose/page//credits/mall/mall.wxss */
+
+/* 积分商城 */
+
+/* banner */
+
+.banner {
+    width: 750rpx;
+    height: 240rpx;
+}
+
+/* 积分 */
+
+.credits {
+    box-sizing: border-box;
+    width: 688rpx;
+    height: 90rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background-color: #18dbb4;
+    border-radius: 6rpx;
+    margin-left: 31rpx;
+    transform: translateY(-50%);
+    margin-bottom: -45rpx;
+    padding: 25rpx 35rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.credits-num {
+    margin-left: 40rpx;
+}
+
+.gain {
+    display: flex;
+}
+
+.gain::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 14rpx solid transparent;
+    border-bottom: 14rpx solid transparent;
+    border-left: 21rpx solid #fff;
+    display: block;
+    margin: auto 0 auto 20rpx;
+}
+
+/* 订单 地址 */
+
+.contain {
+    box-sizing: border-box;
+    width: 750rpx;
+    height: 223rpx;
+    padding: 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap {
+    width: 330rpx;
+    height: 162rpx;
+    border-radius: 6rpx;
+    border: solid 3rpx #f7f7f7;
+    display: flex;
+}
+
+/* 订单图标 */
+
+.order-icon {
+    width: 49rpx;
+    height: 56rpx;
+    background: url("https://new.schoolpi.net/attach/small_program/shop/order_icon.jpg");
+    background-size: 100%;
+    margin: auto 0 auto 42rpx;
+}
+
+/* 地址图标 */
+
+.address-icon {
+    width: 59rpx;
+    height: 44rpx;
+    background: url(https://new.schoolpi.net/attach/small_program/shop/address.jpg);
+    background-size: 100%;
+    margin: auto 0 auto 42rpx;
+}
+
+.value {
+    margin: 40rpx 0 30rpx 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.title {
+    font-size: 33rpx;
+    font-weight: bold;
+    line-height: 40rpx;
+    color: #545b66;
+}
+
+.info {
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: #adb2bb;
+}
+
+/* 订单数 */
+
+.order-num {
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #18dbb4;
+}
+
+/* 商品兑换 */
+
+.exchange {
+    width: 750rpx;
+    padding: 17rpx 27rpx;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.commodity {
+    box-sizing: border-box;
+    width: 336rpx;
+    /* height: 460rpx; */
+    background-color: #fff;
+    margin-bottom: 25rpx;
+}
+
+/* 商品图 */
+
+.com-pic {
+    width: 316rpx;
+    height: 300rpx;
+    margin: 10rpx;
+}
+
+.com-title {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #606771;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+}
+
+.com-info {
+    width: 290rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 23rpx;
+    color: #bdc1c8;
+    margin: 22rpx auto;
+}
+
+.change-num {
+    color: #18dbb4;
+}
+
+.remain-num {
+    color: #18dbb4;
+}

@@ -1,0 +1,17 @@
+<!-- 支付弹框 -->
+<block wx:if="{{showPay}}">
+	<view class="pay">
+		<view class="pay-wrap">
+			<view class="pay-bg"></view>
+			<view class="pay-title">解锁全景</view>
+			<view class="pay-info">请支付{{amount}}元解锁{{name}}全景</view>
+			<view class="pay-content">
+				<view class="sure" bindtap="affirm">去支付</view>
+				<view class="cancle" bindtap="reject">取消</view>
+			</view>
+		</view>
+	</view>
+</block>
+<block wx:else>
+	<web-view src="{{url}}" style='width:100%;height:100%;'></web-view>
+</block>

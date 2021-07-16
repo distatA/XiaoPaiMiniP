@@ -1,0 +1,68 @@
+<view class="main_container">
+    <image class="circle" src="https://new.schoolpi.net/attach/small_program/classify/index_circle.png" mode="widthFix">
+    </image>
+    <image wx:if="{{province==14234}}" class="result_img" src="https://new.schoolpi.net/attach/small_program/classify/result.png" mode="widthFix">
+    </image>
+    <image wx:if="{{province==10808}}" src="{{back_image}}" class="result_img_js"></image>
+    <view class="result_content" wx:if="{{province==14234}}">
+        <view class="dash_board">
+            <view class="attr">
+                <view>{{successNum}}</view>
+                <view>得分</view>
+            </view>
+            <view class="attr">
+                <view>{{timeCost}}</view>
+                <view>用时</view>
+            </view>
+            <view class="attr">
+                <view>{{errorNum}}</view>
+                <view>错题</view>
+            </view>
+        </view>
+        <view class="question_list">
+            <block wx:for="{{list}}" wx:key="index">
+                <view class="question_item {{item.error == item.answer?'':'err'}}" bindtap="selectItem" data-index="{{index}}">
+                    {{index+1}}
+                </view>
+            </block>
+        </view>
+    </view>
+    <view wx:if="{{province==10808}}" class="result_content_js">
+        <image src="https://new.schoolpi.net/attach/small_program/classify/result-img.png" class="result_content_img"></image>
+        <view class="download_answer" bindtap="downLoad">点击下载答案解析</view>
+    </view>
+</view>
+<view class="mask" wx:if="{{showQuestionList}}">
+    <view class="mask_container">
+        <block wx:for="{{list}}" wx:key="index" wx:if="{{current==index+1}}">
+            <view class="answer_container">
+                <image class="question" src="{{item.image}}" mode="widthFix"></image>
+            </view>
+            <view class="answer_btn">
+                <view class="btn-item">
+                    <image class="icon" src="{{item.error=='A'?(item.error == item.answer?sure:err):(item.answer == 'A'?sure:none)}}"></image>A
+                </view>
+                <view class="btn-item">
+                    <image class="icon" src="{{item.error=='B'?(item.error == item.answer?sure:err):(item.answer == 'B'?sure:none)}}"></image>B
+                </view>
+                <view class="btn-item">
+                    <image class="icon" src="{{item.error=='C'?(item.error == item.answer?sure:err):(item.answer == 'C'?sure:none)}}"></image>C
+                </view>
+                <view class="btn-item">
+                    <image class="icon" src="{{item.error=='D'?(item.error == item.answer?sure:err):(item.answer == 'D'?sure:none)}}"></image>D
+                </view>
+            </view>
+            <view class="select_question">
+                <block wx:if="{{current!=1}}">
+                    <view class="previous" bindtap="previous">上一题</view>
+                </block>
+                <block wx:if="{{current!=list.length}}">
+                    <view class="next" bindtap="next">下一题</view>
+                </block>
+            </view>
+            <view class="close" bindtap="close">
+                关闭
+            </view>
+        </block>
+    </view>
+</view>

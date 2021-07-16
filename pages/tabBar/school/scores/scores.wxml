@@ -1,0 +1,117 @@
+<!--pages/tabBar/school/scores/scores.wxml-->
+<view class="header">
+	<view class="{{currentData == 0 ? 'active' : ''}}" data-current="0" bindtap="tabClick">院校分数线</view>
+	<view class="{{currentData == 1 ? 'active' : ''}}" data-current="1" bindtap="tabClick">专业分数线</view>
+	<view class="{{currentData == 2 ? 'active' : ''}}" data-current="2" bindtap="tabClick">招生计划</view>
+</view>
+<!-- 搜索 -->
+<block wx:if="{{!noData}}">
+<view class="select">
+	<!-- 下拉框 -->
+	<view class='select-wrap' bindtap='bindcourse'>
+		<text>{{course.name}}</text>
+		<!-- 下拉需要显示的列表 -->
+		<view class="course" wx:if="{{select}}">
+			<block wx:for="{{course_type}}" wx:key="index">
+				<view class="course-item" bindtap="selectCourse" data-courseid="{{item.id}}" data-coursename="{{item.name}}">{{item.name}}</view>
+			</block>
+		</view>
+
+		<view class="triangle" wx:if="{{course_type.length>0}}"></view>
+	</view>
+	<view class="year select-wrap" bindtap='bindyear' wx:if="{{currentData!=0}}">
+		<text>{{year.name}}</text>
+		<view class="course" wx:if="{{select1}}">
+			<block wx:for="{{year_type}}" wx:key="index">
+				<view class="course-item" bindtap="selectYear" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+			</block>
+		</view>
+
+		<view class="triangle" wx:if="{{year_type.length>0}}"></view>
+		<!--三角形-->
+	</view>
+	<view class="grade select-wrap" bindtap='bindbatch' wx:if="{{currentData!=0}}">
+		<text>{{batch.name}}</text>
+		<view class="course" wx:if="{{select2}}">
+			<block wx:for="{{batch_type}}" wx:key="index">
+				<view class="course-item" bindtap="selectBatch" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+			</block>
+		</view>
+
+		<view class="triangle" wx:if="{{batch_type.length>0}}"></view>
+	</view>
+</view>
+</block>
+<!-- 信息列表展示 -->
+<!-- 院校 -->
+<view class="table" hidden="{{currentData!=0}}">
+	<block wx:if="{{noData}}">
+		<image class="noData" src="https://new.schoolpi.net/attach/small_program/index/no-data.png" mode="aspectFit"></image>
+	</block>
+	<block wx:else>
+		<view class="condition">
+			<view style="width:21%;">招生批次</view>
+			<view>最高分/平均分</view>
+			<view>最低分/最低位次</view>
+			<view style="width:13%;">录取数</view>
+		</view>
+		<view class="s-tr {{index%2==0?'bg':''}}" wx:for="{{school_score}}" wx:key="index">
+			<view>
+				<view class="th">{{item.year}}</view>
+				<view class="th">{{item.course_type}} {{item.batch}}</view>
+			</view>
+			<view class="td">
+				<view class="th">{{item.max_score}}</view>
+				<view class="th">{{item.avg_score}}</view>
+			</view>
+			<view class="td">
+				<view class="th">{{item.min_score}}</view>
+				<view class="th">{{item.low_sort}}</view>
+			</view>
+			<view class="td" style="width:10%;">{{item.enter_num}}</view>
+
+		</view>
+	</block>
+</view>
+<!-- 专业 -->
+<view class="table" hidden="{{currentData!=1}}">
+	<block wx:if="{{noData}}">
+		<image class="noData" src="https://new.schoolpi.net/attach/small_program/index/no-data.png" mode="aspectFit"></image>
+	</block>
+	<block wx:else>
+		<view class="condition">
+			<view style="width:45%;">专业名称</view>
+			<view>最低分/最低位次</view>
+			<view>录取数</view>
+		</view>
+		<view class="s-tr {{index%2==0?'bg':''}}" wx:for="{{career_score}}" wx:key="index">
+			<view class="td" style="width:40%;">{{item.major_name}}</view>
+			<view class="td">
+				<view class="th">{{item.min_score}}</view>
+				<view class="th">{{item.low_sort}}</view>
+			</view>
+			<view class="td" style="width:10%;">{{item.enter_num}}</view>
+		</view>
+	</block>
+</view>
+
+<!-- 招生计划 -->
+<view class="table" hidden="{{currentData!=2}}">
+	<block wx:if="{{noData}}">
+		<image class="noData" src="https://new.schoolpi.net/attach/small_program/index/no-data.png" mode="aspectFit"></image>
+	</block>
+	<block wx:else>
+		<view class="condition">
+			<view style="width:45%;">专业名称</view>
+			<view>计划数</view>
+			<view>学制/学费</view>
+		</view>
+		<view class="s-tr {{index%2==0?'bg':''}}" wx:for="{{career_score}}" wx:key="index">
+			<view class="td" style="width:40%;">{{item.major_name}}</view>
+			<view class="td">{{item.plan_num}}</view>
+			<view class="td" style="width:14%;">
+				<text>{{item.learn_year}}/{{item.cost}}</text>
+			</view>
+		</view>
+	</block>
+</view>

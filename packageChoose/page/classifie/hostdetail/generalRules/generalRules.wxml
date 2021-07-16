@@ -1,0 +1,9 @@
+
+<view class="main">
+<block wx:for="{{detailData.enroll}}" wx:key="index">
+    <view class="rules-con" bindtap="goruleDetail" data-id="{{item.id}}">
+        <view class="name">{{item.title}}</view>
+        <view class="arrow"></view>
+    </view>
+</block>
+</view>

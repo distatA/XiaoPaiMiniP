@@ -1,0 +1,99 @@
+.dots {
+    position: absolute;
+    left: 50rpx;
+    top:420rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    margin: 0 8rpx;
+    width: 10rpx;
+    height: 10rpx;
+    background: #ccc;
+    border-radius: 50%;
+    /* transition: all .6s; */
+}
+
+.dot.active {
+    width: 25rpx;
+    border-radius: 30%;
+    background: #25bafd;
+}
+.gradis{
+    height:400rpx;
+    position:relative;
+    background:#22d9d9;
+    border-bottom-left-radius:50%;
+    border-bottom-right-radius:50%;
+}
+.banner{
+    width:95vw;
+    margin:0 auto;
+    height:400rpx;
+    border-radius: 20rpx;
+    box-shadow:0 0 30rpx #ccc; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+}
+.banner image{
+    border-radius: 20rpx;
+}
+.area-name{
+    display: flex;
+    font-size: 38rpx;
+    color: #22d9d9;
+    padding: 50rpx 50rpx 10rpx;
+}
+.plane{
+    width: 80rpx;
+    height:56rpx;
+}
+
+.school-item {
+    margin-right: 8px;
+    width: 90vw;
+    height: 400rpx;
+    border-radius:50rpx;
+    margin:40rpx auto 50rpx;
+    position: relative;
+}
+.logo{
+    width: 60rpx;
+    height:60rpx;
+    border-radius: 50rpx;
+}
+.logo image,.school-item image{
+    border-radius: 10rpx;
+}
+image{
+    width: 100%;
+    height: 100%;
+}
+
+.detail{
+    position:absolute;
+    bottom:20rpx;
+    left: 20rpx;
+    color: #fff;
+    background: #22d9d9;
+    border-radius: 30rpx;
+    padding: 10rpx 20rpx;
+    font-size: 28rpx;
+}
+.fav{
+    position:absolute;
+    bottom:20rpx;
+    right: 20rpx;
+    color: #1d1d1d;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 30rpx;
+    padding:  10rpx;
+    font-size: 22rpx;
+}
+.fav text{
+    color: red;
+}

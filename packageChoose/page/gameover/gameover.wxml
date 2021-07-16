@@ -1,0 +1,84 @@
+<dialog id="dialog" roomID="{{roomID}}" roomTitle="{{roomTitle}}" roomLiveType="{{liveType}}" areaId="{{areaId}}" schoolLogo="{{schoolLogo==''? '/static/logo.png':schoolLogo}}" roomPeoples="{{roomPeoples}}" bind:close="dialogHide">
+</dialog>
+<redBag id="redBag" />
+<view class='container-box' style="height: {{liveHeight}}px" hidden="{{dialogShow||requestShow}}">
+    <view class="gameover">
+        <view class="topbar" style="padding-top: {{height}};">
+            <view class="school">
+                <image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+                <view class="school-name">
+                    <view class="school-name1">{{roomTitle}}</view>
+                    <view class="school-name2">{{roomPeoples}}人 观看</view>
+                </view>
+            </view>
+        </view>
+        <view class="school-tip">
+            <view class="school-tip-txt">
+                欢迎进入
+                <view>{{roomTitle}}</view>
+                直播间
+            </view>
+            <image class="school-logo-center" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-tip-txt2">结束时间：{{liveEndTime}}</view>
+            <view class="school-tip-btn" bindtap="bindPlayback">观看回放</view>
+        </view>
+
+        <view class="right-sider {{showSider? '':'right-sider-hide'}}" hidden="{{liveType==2}}">
+            <view class="sider-btn" bindtap="openSider">
+                <image src="{{showSider? '/static/youjiantou.png':'/static/zuojiantou.png'}}"></image>
+            </view>
+            <view class="right-sider-list">
+                <view class="right-sider-item" bindtap="openAbout">
+                    <image class="icon" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+                    <view class="txt">学校介绍</view>
+                </view>
+                <view class="right-sider-item" bindtap="openFenshu">
+                    <image class="icon" src='/static/ljfs_icon.png'></image>
+                    <view class="txt">历届分数</view>
+                </view>
+                <!-- <view class="right-sider-item" hidden="{{liveType==1}}" bindtap="openLuqu">
+                    <image class="icon" src='/static/lqgl_icon.png'></image>
+                    <view class="txt">录取概率</view>
+                </view> -->
+                <view class="right-sider-item" bindtap="openZhuanye">
+                    <image class="icon" src='https://new.schoolpi.net/attach/small_program/live/yxzy_icon.png'></image>
+                    <view class="txt">院系专业</view>
+                </view>
+                <view class="right-sider-item" bindtap="openVr">
+                    <image class="icon" src='https://new.schoolpi.net/attach/small_program/live/vr_icon.png'></image>
+                    <view class="txt">校园全景</view>
+                </view>
+            </view>
+        </view>
+        <view slot="audience" style='position:absolute;bottom:0;height:110rpx;width:50%;right:0;'>
+            <view class="operate">
+                <view class="img-box" bindtap="openSider">
+                    <image class='img-view' src='/static/more_menu.png'></image>
+                </view>
+                <view class='img-box' bindtap="onBack">
+                    <image class='img-view' src='/static/close_menu.png'></image>
+                </view>
+            </view>
+        </view>
+        <view class="editor-container" hidden="{{showBarrageInput}}">
+            <view class="editor">
+                <view class='editor-input' bindtap='tapInput'>
+                    <view class='editor-input-text' style="color:#fff">说点什么...</view>
+                </view>
+            </view>
+        </view>
+        <view class="comment-container">
+            <view class="comment-list-li" wx:for="{{comment}}" wx:key="index" wx:for-item="item" wx:for-index="index" wx:if="{{index < 10}}">
+                <view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</view>
+                <view class="comment-list-li-msg">{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 弹幕输入框 -->
+<view class="barrage-container" wx:if="{{showBarrageInput}}">
+    <view class="barrage-input">
+        <input class='input' value='{{inputInfo}}' focus='{{inputFocus}}' bindinput='bindinput' bindblur='bindblur'></input>
+    </view>
+    <view class="barrage-submit" bindtap="sendBarrage">发送</view>
+</view>

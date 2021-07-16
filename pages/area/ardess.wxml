@@ -1,0 +1,20 @@
+
+<!-- 头部 -->
+<view class='ardess-header'>
+  <text>当前：</text>
+  <text>{{province}}</text>
+</view>
+
+<!-- 内容部分 -->
+<view class='content'>
+  <!-- 定位、最近访问 -->
+  <view class='vis-history'>
+   
+    <view class='copy-box' wx:for="{{alist}}" wx:key="index" wx:for-index="key">
+      <view class='vis-history-title'>{{key}}</view>
+      <view class='vis-history-city'>
+        <view class='city-box' wx:for="{{item.list}}" wx:key="index" wx:for-item="city" bindtap="locatpro" data-pid="{{city.id}}">{{city.name}}          </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,130 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.11.2",
+  "appid": "wxd7cf36728ee9afb6",
+  "projectname": "xiaopai3.0%EF%BC%88%E6%96%B0%E7%89%88%EF%BC%89",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "专业匹配",
+          "pathName": "packageChoose/page/examination/subjectSelect/subjectSelect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新高考省份年份",
+          "pathName": "packageChoose/page/examination/formulate/formulate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新高考大学选择",
+          "pathName": "packageChoose/page/examination/searchCollege/searchCollege",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新高考专业选科",
+          "pathName": "packageChoose/page/examination/searchSubject/searchSubject",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新高考院校详情",
+          "pathName": "packageChoose/page/examination/college/college",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新高考首页",
+          "pathName": "packageChoose/page/examination/formulate/formulate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "强基计划首页",
+          "pathName": "pages/enrollmentReform/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "packageChoose/page/detail/detail",
+          "pathName": "packageChoose/page/detail/detail",
+          "query": "id=240",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<!--pages/examination/major/major.wxml-->
+<view class="nav">
+    <view class="{{currentData == 0 ? 'active' : ''}}" data-current="0" bindtap="tabClick">专业详情</view>
+    <view class="{{currentData == 1 ? 'active' : ''}}" data-current="1" bindtap="tabClick">开设院校</view>
+</view>
+<block wx:if="{{currentData == 0}}">
+    <view class="subject" wx:for="{{career_list}}" wx:key="index" bindtap="goCareer" data-id="{{item.id}}">
+        <view class="name">{{item.name}}</view>
+        <view class="r-wrap">
+            <view class="year">{{item.study_years}}</view>
+            <view class="icon"></view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{currentData == 1}}">
+    <view class="search">
+        <view class="input">
+            <view class="search-icon"></view>
+            <input bindconfirm="schoolSearch" auto-focus placeholder="搜索院校" placeholder-style="font-size:28rpx;" value="{{college}}"></input>
+            <view class="close" bindtap="clear" wx:if="{{college.length>0}}"></view>
+        </view>
+        <view class="select">
+            <view class="select-item" bindtap="select">
+                <view class="select-name">{{selectName}}</view>
+                <view class="select-arrow" style="{{showList?'transform: rotate(180deg);':''}}"></view>
+            </view>
+            <view class="select-list" wx:if="{{showList}}">
+                <view class="list-item" wx:for="{{selectList}}" wx:key="index" data-name="{{item.name}}" data-match="{{item.id}}" bindtap="selectMatch">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="probability">
+        <view>专业匹配率<span>{{probability}}%</span></view>
+        <view>共{{school}}所院校</view>
+    </view>
+    <view class="college" wx:for="{{school_list}}" wx:key="index" bindtap="schoolDetail" data-name="{{item.name}}" data-id="{{item.id}}">
+        <view class="l-wrap">
+            <view class="value">{{item.name}}</view>
+            <view class="info">
+                <block wx:for="{{item.institution_type}}" wx:key="index">{{item}}/</block>{{item.school_nature}}/{{item.subjection}}</view>
+            <view class="info">{{item.first_select}}</view>
+        </view>
+        <view class="tag">
+            <block wx:for="{{item.feature_label}}" wx:key="index">
+                <view class="tag-item">{{item}}</view>
+            </block>
+        </view>
+    </view>
+</block>

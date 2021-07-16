@@ -1,0 +1,7 @@
+<view class="bg">
+    <view class="prompt"></view>
+    <view class="btn">
+        <button open-type="share"></button>
+    </view>
+    <view class="integral" bindtap="goMall"></view>
+</view>

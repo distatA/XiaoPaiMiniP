@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "院校详情",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "loginDialog": "/components/loginDialog/index"
+    }
+}

@@ -1,0 +1,206 @@
+<!--pages/career/university-priority/university-priority.wxml-->
+<!-- 头部 -->
+
+<view class='header'>
+    <!-- table切换 -->
+    <view class='nav'>
+        <view class="nav-item">
+            <view class="nav-items {{currentTab=='2'?'nav-active':''}}" data-current="2" catchtap="menuTap">
+                冲刺院校
+                <text>（{{chongci}}）</text>
+            </view>
+            <view class="nav-items {{currentTab=='3'?'nav-active':''}}" data-current="3" catchtap="menuTap">
+                稳妥院校
+                <text>（{{wentuo}}）</text>
+            </view>
+            <view class="nav-items {{currentTab=='4'?'nav-active':''}}" data-current="4" catchtap="menuTap">
+                保底院校
+                <text>（{{baodi}}）</text>
+            </view>
+            <view class="nav-items {{currentTab=='1'?'nav-active':''}}" data-current="1" catchtap="menuTap">全部</view>
+        </view>
+    </view>
+
+    <!-- 搜索工具 -->
+    <view class='search-box'>
+        <view class='search'>
+            <form bindsubmit="formSubmit">
+                <view class='boxsosuo'>
+                    <input class='s_text' name="name" placeholder='请输入院校名称' placeholder-class='inputValue'></input>
+                    <button class='font_family icon-sousuo s_btn' formType="submit"></button>
+                </view>
+            </form>
+        </view>
+        <!-- 筛选 -->
+        <view bindtap='onChangeShowState' class="r_btn">
+            <image src="https://new.schoolpi.net/attach/small_program/index/fenlei.png"></image>
+        </view>
+    </view>
+    <!-- 搜索工具end -->
+    <!-- 筛选内容 -->
+    <view class="choose {{showView?'show':''}}">
+        <view bindtap='closeChoose' style="width:50rpx;height:50rpx;float:right;margin-right:20rpx;">
+            <image src="https://new.schoolpi.net/attach/small_program/index/close2.png" style="width:100%;height:100%;"></image>
+        </view>
+        <form bindsubmit="formtype" bindreset="formReset">
+            <view class='choose-title'>高校</view>
+            <view class='choose-type'>
+                <view class='choose-type-check {{institution_type==item.id?"selected":""}}' data-gxid='{{item.id}}' wx:for="{{institution}}" wx:key="index" bindtap='screengx'>{{item.name}}</view>
+            </view>
+            <view class='choose-title'>类型</view>
+            <view class='choose-type'>
+                <view class='choose-type-check {{labe_id==item.id?"selected":""}}' data-lxid='{{item.id}}' wx:for="{{feature_label}}" wx:key="index" bindtap='screenlx'>{{item.name}}</view>
+            </view>
+            <view class='choose-title'>地区</view>
+            <view class='choose-type'>
+                <view class='choose-type-check {{classArea[item.id]?"selected":""}}' data-dqid='{{item.id}}' wx:for="{{region}}" wx:key="index" bindtap='screendq'>{{item.name}}</view>
+            </view>
+            <input type='text' name="gxid" class='hide' value='{{institution_type}}'></input>
+            <input type='text' name="lxid" class='hide' value='{{labe_id}}'></input>
+            <view class='btn'>
+                <button class='left-bt' form-type="reset">重置</button>
+                <button class='right-bt' form-type="submit">确定</button>
+            </view>
+        </form>
+    </view>
+</view>
+<!-- 头部end -->
+<!-- 内容部分 -->
+<view class='contente'>
+    <block wx:if="{{schoolList.length>0}}">
+        <view class='card' wx:for="{{schoolList}}" wx:key="index" id="{{item.id}}">
+            <view class='content-card'>
+                <!-- logo -->
+                <view class='logoRight'>
+                    <view class='content-card-logo'>
+                        <image src='{{item.logo}}'></image>
+                    </view>
+                    <view class='logoBottom'>
+                        <view>{{item.ranking_str}}</view>
+                        <view>{{item.city}}</view>
+                    </view>
+                    <view class='tLabel'>
+                        <view wx:for="{{item.label}}" wx:key="index" wx:for-item="label">{{label.name}}</view>
+                    </view>
+                    <view class="card_box {{chide==item.id?'hover_card_box':'hover_card'}}">
+                        <image src="{{url}}"></image>
+                    </view>
+                </view>
+                <!-- logo end -->
+                <!-- 中间文字 -->
+                <view class='content-card-center' bindtap="clickShow" id="{{item.id}}" data-index="index" data-name="{{item.name}}" data-gailv="2">
+                    <view class='content-card-center-title'>{{item.name}}</view>
+                    <view class='content-card-center-foot'>
+                        <view>
+                            <view>
+                                <text class='pr' wx:for="{{item.institution_type}}" wx:key="index" wx:for-item="institution_type">{{institution_type}}</text>
+                            </view>
+                            <text>{{item.plan_points_str}}</text>
+                            <text class='pl'>{{item.min_weici_str}}</text>
+                        </view>
+                        <view>
+                            <text>{{item.min_socre_str}}</text>
+                            <text class='pl'>{{item.points_str}}</text>
+                        </view>
+                    </view>
+                </view>
+                <!-- 概率 -->
+                <view class='yuce'>
+                    <view class='pro-number' style='color:#{{item.color}}'>{{item.probability}}%</view>
+                    <view class='dengji'>
+                        <view class='ycDesc' style='color:#{{item.color}}'>{{item.wenzi}}</view>
+                        <view class='ycLine'>
+                            <view class='ycLineLi' style='background:#{{item.color}}'></view>
+                            <view class='ycLineLi' style='background:#{{item.color}}'></view>
+                            <view class='ycLineLi' style='background:#{{item.color}}'></view>
+                            <view class='ycLineLi' style='background:#{{item.color}}'></view>
+                        </view>
+                    </view>
+                </view>
+                <!-- 小箭头 -->
+                <view class='right-logo'>
+                    <view class="{{(classDuibi[item.id])? 'addedBi':'addBi'}}" bindtap='goContrast' data-sid="{{item.id}}" data-pro="{{item.probability}}" data-url="{{item.logo}}">对比 + </view>
+                    <view class='majorNum' bindtap="clickShow" id="{{item.id}}" data-index="index" data-name="{{item.name}}" data-gailv="2">
+                        <text>专业({{item.major_count}})</text>
+                        <text class='font_family icon-xiahua jiantou {{uhide==item.id?"":"dis-none"}}' id="{{item.id}}" data-index="index" data-name="{{item.name}}"></text>
+                        <text class='font_family icon-youhua jiantou {{uhide==item.id?"dis-none":""}}' id="{{item.id}}" data-index="index" data-name="{{item.name}}"></text>
+                    </view>
+                </view>
+            </view>
+            <!-- 隐藏部分 -->
+            <view class='hiden {{uhide==item.id?"":"dis-none"}}'>
+                <view class='hiden-box' wx:for="{{major_list}}" wx:key="index">
+                    <view class='hiden-left'>
+                        <view class='hiden-box-title'>{{item.name}}</view>
+                        <view class='content-card-center-foot2'>
+                            <view>
+                                <text>{{item.plan_number_str}}</text>
+                                <text class='pl'>{{item.ranking_str}}</text>
+                            </view>
+                            <view>
+                                <text>{{item.minscore_str}}</text>
+                                <text class='pl'>{{item.need_number_str}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='pro-number2' style="color:#{{item.color}}">{{item.probability}}%</view>
+                    <button class="{{(classMajor[item.major_code])? 'sured':'sure'}}" data-id='{{item.major_code}}' bindtap='editinfo' data-major="{{item.major_code}}" data-schid="{{item.id}}" data-sname="{{item.name}}" data-sbili="{{item.probability}}" data-mbili="{{item.probability}}"
+                        data-mname="{{item.name}}">
+                        填报</button>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{schoolList.length<=0}}">
+        <view class="no-data">
+            <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="noPost"></image>
+        </view>
+    </block>
+</view>
+<!-- 志愿单 -->
+<view class='popup {{popup?"":"hide"}}'>
+    <view class='mask' bindtap='xiaoshi'></view>
+    <view class='zhiyuanBox'>
+        <view class='zyHeader'>
+            <!-- 一条志愿 -->
+            <view class='zyItem' wx:for="{{volunteer}}" wx:key="index" data-id="{{item.schoolId}}">
+                <!-- 学校 -->
+                <view class='zyTop'>
+                    <view class='zyType'>{{item.title}}</view>
+                    <view class="zySchool zyedSch" bindtap='tianbao' data-id="{{item.sid}}" data-index="{{item.title}}" data-item="{{item}}">{{item.content}}</view>
+                    <view class="deleteBtn {{item.isDelete?'deleteiS':'deleteS'}}" bindtap='deleteIt' data-id="{{item.sid}}">
+                        <image src='/images/close3.png'></image>
+                    </view>
+                </view>
+                <!-- 专业 -->
+                <view class='zyMajor'>
+                    <view wx:for="{{volunteer[index].major}}" wx:key="index">{{item.major_name}}</view>
+                </view>
+                <view class="exchange" wx:if="{{index>0}}" bindtap="exChange" data-index="{{index}}" hidden="{{exchange}}">
+                    <image src='/images/jiaohuan1.png'></image>
+                </view>
+            </view>
+            <!-- 一条志愿 -->
+        </view>
+        <view class='zyFooter'>
+            <view class='attention'>
+                <view>注意：</view>
+                <view class='attentions'>
+                    <view>请选好ABCDEF六个志愿生成志愿表</view>
+                    <view>每个志愿至少选取一个专业</view>
+                    <view>请将此录取概率视为模拟填报</view>
+                </view>
+            </view>
+            <view class='line'></view>
+            <button class='created' bindtap="goGreated">生成志愿表</button>
+        </view>
+    </view>
+</view>
+
+<!-- fixed -->
+<view class='fixedR'>
+    <view class='RBtn' bindtap='goDuibi'>院校对比</view>
+    <view class='hengL'></view>
+    <view class='RBtn' bindtap="showZy">志愿表</view>
+    <view class='couBox' wx:if="{{school_list.length>0}}">{{school_list.length}}</view>
+</view>

@@ -1,0 +1,51 @@
+/* pages/career/quest/index.wxss */
+
+
+page{
+  height: 100%;
+}
+
+.header{
+  height: 45%;
+  background: #22d9d9;
+}
+
+.header-center-text{
+  width: 80%;
+  font-size: 35rpx;
+  color: #fff;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-align: center;
+  padding-top: 30%;
+}
+.btn-box{
+ margin: 80rpx 0;
+}
+
+.btner{
+ width: 80%;
+ font-size: 32rpx;
+ padding: 20rpx;
+ background: #fff;
+ box-shadow: 2rpx 2rpx 2rpx #999; 
+ margin: 20rpx auto;
+ text-align: left;
+ line-height: 2.2;
+}
+
+.btnhover {
+  background: #cfcfcf;
+  color:#FFF;
+}
+
+.foot-page{
+  font-size: 28rpx;
+  color: #ccc;
+  text-align: center;
+}
+
+.boast{
+  width: 100%;
+  height: 100%;
+}

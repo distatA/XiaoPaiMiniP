@@ -1,0 +1,27 @@
+
+.rules-con {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 1px solid rgb(247, 239, 239);
+    box-sizing: border-box;
+    padding: 50rpx 30rpx;
+    background: #fff;
+    font-size: 30rpx;
+}
+.school-name {
+    font-weight: bold;
+    font-size: 42rpx;
+}
+.arrow {
+    position: absolute;
+    right: 20rpx;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 5rpx solid gainsboro;
+    border-right: 5rpx solid gainsboro;
+    transform: rotate(45deg);
+}

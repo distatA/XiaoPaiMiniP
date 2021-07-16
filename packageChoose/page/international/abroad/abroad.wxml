@@ -1,0 +1,42 @@
+<!--pages/abroad/abroad.wxml-->
+<!-- 背景图 -->
+<view class="bg">
+	<!-- 介绍内容 -->
+	<view class="upon">
+		<view class="note">校派 | 泰国皇家师范大学</view>
+		<view class="title1"></view>
+		<view class="title2"></view>
+		<view class="abroad"></view>
+		<view class="content">
+			<view>泰国皇家师范大学探秘</view>
+			<view>解锁快乐留学密码</view>
+			<view class="blank">5天4夜体验营，高三学生0元限</view>
+			<view>时抢购</view>
+			<view class="blank">课程学习+文化探索</view>
+			<view>边游边学边玩，一次妙趣横生的游学之旅</view>
+			<view class="blank">泰国皇家师范大学学习，与当地学生0距离互动</view>
+			<view>中英泰多语言授课，体验侵入式课堂</view>
+			<view>深度参观学习，解锁地道泰式文化</view>
+			<view>游玩泰国著名城市，探享曼谷风情</view>
+		</view>
+		<view class="remark">备注：本次游学之旅<text>仅限高三学生参加</text>，本次活动最终解释权归校派所有</view>
+	</view>
+	<!-- 表单信息 -->
+	<view class="under">
+		<view class="frame">
+			<view class="dialogue">立即报名参与泰国0元游学旅</view>
+			<view class="inf">
+				<input type="text" class="inf-item" placeholder="姓名" placeholder-style="color:#aaa;" bindinput="name"/>
+				<picker mode="selector" bindchange="bindSex" value="{{sex}}" range="{{arrSex}}">
+          <view class="inf-item" wx:if="{{sex}}">{{sex}}</view>
+          <view class="pick inf-item" wx:else>性别</view>
+        </picker>
+				<input type="number" class="inf-item" placeholder="联系方式" placeholder-style="color:#aaa;" bindinput="phone"/>
+				<input type="text" class="inf-item" placeholder="就读学校" placeholder-style="color:#aaa;" bindinput="school"/>
+				<input type="text" class="inf-item" placeholder="就读年级" placeholder-style="color:#aaa;" bindinput="grade"/>
+				<input type="text" class="inf-item" placeholder="居住地区" placeholder-style="color:#aaa;" bindinput="region"/>
+			</view>
+			<view class="btn" bindtap="signUp">立即报名</view>
+		</view>
+	</view>
+</view>

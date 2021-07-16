@@ -1,0 +1,28 @@
+<!--pages/examination/college/college.wxml-->
+<view class="header" bindtap="goSchool" data-id="{{schoolInfo.id}}">
+    <image class="logo" wx:if="{{schoolInfo.logo}}" src="{{schoolInfo.logo}}"></image>
+    <view class="college">
+        <view class="value">{{schoolInfo.name}}</view>
+        <view class="info">
+            <block wx:for="{{schoolInfo.institution_type}}" wx:key="index">{{item}}/</block><text wx:if="{{schoolInfo.school_nature}}">{{schoolInfo.school_nature}}/</text>{{schoolInfo.subjection}}
+        </view>
+    </view>
+    <view class="tag">
+        <block wx:for="{{schoolInfo.feature_label}}" wx:key="index">
+            <view class="tag-item">{{item}}</view>
+        </block>
+    </view>
+</view>
+<view class="title">
+    <view class="title-wrap">
+        <view class="title-item">专业名称</view>
+        <view class="title-item">选科要求</view>
+    </view>
+</view>
+<block  wx:for="{{schoolInfo.child}}" wx:key="index">
+    <view class="subject">
+        <view class="subject-item">{{item.major_name}}</view>
+        <view class="subject-item" wx:if="{{item.left_select}}">{{item.first_select}}/{{item.left_select}}</view>
+        <view class="subject-item" wx:else>{{item.first_select}}</view>
+    </view>
+</block>

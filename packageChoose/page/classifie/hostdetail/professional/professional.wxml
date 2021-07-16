@@ -1,0 +1,14 @@
+<block wx:for="{{detailData.career_list}}" wx:key="index">
+    <view class="rules-con" data-index="{{index}}" bindtap="isShow">
+        <view class="name">{{item.name}}</view>
+        <view class="{{isshow===index?'arrow1':'arrow'}}"></view>
+    </view>
+    <block wx:if="{{isshow===index}}">
+        <block wx:for="{{item.child}}" wx:for-item="i" wx:key="index">
+            <view class="rules-con show" bindtap="goDetail" data-cid="{{i.cid}}">
+                <view class="name">{{i.name}}</view>
+                <view class="arrow"></view>
+            </view>
+        </block>
+    </block>
+</block>

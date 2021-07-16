@@ -1,0 +1,63 @@
+<!--pages/career/applyfor/index.wxml-->
+<view>
+    <view wx:if="{{isHave}}" class='card' wx:for="{{volunteer}}" wx:key="index" data-id="{{item.id}}">
+        <view class='content-card'>
+            <!-- logo -->
+            <view class='content-card-logo'>
+                <image src='{{item.logo}}'></image>
+            </view>
+            <!-- logo end -->
+            <!-- 中间文字 -->
+            <view class='content-card-center'>
+                <view class='content-card-center-title'>{{item.school_name}}</view>
+                <view class='content-card-center-type'>
+                    <text>{{item.city}}</text>
+                    <text>排名：</text><text>{{item.ranking}}</text>
+                </view>
+                <view class='content-card-center-foot'>
+                    <view>
+                        <text>招生计划：{{item.plan_points}}</text>
+                        <text class='pl'>最低位次：{{item.low_sort}}</text>
+                    </view>
+                    <view>
+                        <text>最低分：{{item.min_score}}</text>
+                        <text class='pl'> 录取人数：{{item.enter_num}}</text>
+                    </view>
+                </view>
+            </view>
+            <!-- 概率 -->
+            <view class='pro-number'>{{item.probability}}%</view>
+            <!-- 小箭头 -->
+            <view class='right-logo'>
+                <view class='addBi'>{{index}}</view>
+                <view class='majorNum'>
+                    <view class='font_family icon-xiahua jiantou {{uhide==item.sid?"":"dis-none"}}' bindtap="clickShow" id="{{item.sid}}"></view>
+                    <view class='font_family icon-youhua jiantou {{uhide==item.sid?"dis-none":""}}' bindtap="clickShow" id="{{item.sid}}"></view>
+                    <text>专业({{item.major_count}})</text>
+                </view>
+            </view>
+        </view>
+        <!-- 隐藏部分 -->
+        <view class='hiden {{uhide==item.sid?"":"dis-none"}}'>
+            <view class='hiden-box' wx:for="{{item.career_list}}" wx:key="index" wx:for-item="major">
+                <view class='hiden-left'>
+                    <view class='hiden-box-title'>{{major.name}}</view>
+                    <view class='content-card-center-foot2'>
+                        <view>
+                            <text>招生计划：{{major.enter_num}}</text>
+                            <text class='pl'>最低位次：{{major.min_sort}}</text>
+                        </view>
+                        <view>
+                            <text>最低分：{{major.min_score}}</text>
+                            <text class='pl'>录取人数：{{major.enter_num}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='pro-number2'>{{major.probability}}%</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{!isHave}}" class="back" >
+        <view class="tips">暂无志愿</view>
+    </view>
+</view>

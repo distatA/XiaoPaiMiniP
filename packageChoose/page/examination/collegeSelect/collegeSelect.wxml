@@ -1,0 +1,21 @@
+<view class="header">
+    <view class="num">共613所院校，550匹配</view>
+    <view class="sort" bindtap="sort">院校匹配率
+        <view class="sort-btn">
+            <view style="border-bottom: 10rpx solid {{order?'#ecf0ee':'#30d55e'}};"></view>
+            <view style="border-top: 10rpx solid {{order?'#30d55e':'#ecf0ee'}};"></view>
+        </view>
+    </view>
+</view>
+<block wx:for="{{school}}" wx:key="index">
+    <view class="content" bindtap="goSchool" data-name="{{item.name}}" data-id="{{item.id}}">
+        <view class="word">
+            <view>{{item.name}}</view>
+            <view>{{item.institution_type}}/{{item.school_nature}}/{{item.subjection}}</view>
+        </view>
+        <view class="data">
+            <view style="color: #30d55e;">{{item.major_rate}}%</view>
+            <view>匹配专业</view>
+        </view>
+    </view>
+</block>

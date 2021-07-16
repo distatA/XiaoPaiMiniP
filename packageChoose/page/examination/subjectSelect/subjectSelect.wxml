@@ -1,0 +1,23 @@
+<view class="header">
+    <view class="num">共{{number}}个专业</view>
+    <view class="sort" bindtap="sort">专业匹配率
+        <view class="sort-btn">
+            <view style="border-bottom: 10rpx solid {{order?'#ecf0ee':'#30d55e'}};"></view>
+            <view style="border-top: 10rpx solid {{order?'#30d55e':'#ecf0ee'}};"></view>
+        </view>
+    </view>
+</view>
+<block wx:for="{{subject}}" wx:key="index">
+    <view class="content" bindtap="goMajor" data-name="{{item.name}}" data-code="{{item.category_code}}" data-probability="{{item.colleges_childRate}}" data-school="{{item.colleges_contains}}">
+        <view class="word">{{item.name}}</view>
+        <view class="node">
+            <view>物理{{item.physics_rate}}%</view>
+            <view>历史{{item.history_rate}}%</view>
+            <view>不限{{item.nolimit_rate}}%</view>
+        </view>
+        <view class="data">
+            <view style="color: #30d55e;">{{item.colleges_childRate}}%</view>
+            <view>共{{item.colleges_contains}}所</view>
+        </view>
+    </view>
+</block>

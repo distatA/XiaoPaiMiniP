@@ -1,0 +1,28 @@
+page {
+    background-color: #f2f2f2;
+}
+.app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.timer {
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    z-index: 1002;
+}
+.img {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}

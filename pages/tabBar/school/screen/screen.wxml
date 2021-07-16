@@ -1,0 +1,106 @@
+<!--pages/school/screen/screen.wxml-->
+<view>
+    <!-- 头部 -->
+    <view class='header'>
+        <view class='header-flex' bindtap='dqtoggle'>
+            <view class='header-title'>{{xzsf||xzcity?proname:proname1}}</view>
+            <view class='font_family {{dqArea?"icon-shang":"icon-xiahua"}} header-title-icon'></view>
+        </view>
+        <view class='header-flex' bindtap='yxtoggle'>
+            <view class='header-title'>{{yxname}}</view>
+            <view class='font_family {{yxArea?"icon-shang":"icon-xiahua"}} header-title-icon'></view>
+        </view>
+        <view class='header-flex' bindtap='pctoggle'>
+            <view class='header-title'>{{bkpc}}</view>
+            <view class='font_family {{pcArea?"icon-shang":"icon-xiahua"}} header-title-icon'></view>
+        </view>
+        <view class='header-flex'>
+            <view class='font_family icon-sousuo1 header-title-icon'></view>
+        </view>
+    </view>
+    <!-- 地区 -->
+    <view class='sArea {{dqArea?"show":""}}'>
+        <!-- 省份 -->
+        <block wx:if="{{type=='province'}}">
+            <view data-diqu='{{item.name}}' data-yxname='{{schooltype.name}}' data-aid='{{item.id}}' data-scid='{{schooltype.id}}' data-pcid='{{pici.id}}' wx:for="{{province}}" wx:key="index" class='{{item.id==xzsf?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+        </block>
+        <!-- 城市 -->
+        <block wx:if="{{type=='city'}}">
+            <view data-diqu='全部' data-scid='{{schooltype.id}}' data-pcid='{{pici.id}}' class='{{xzcity==0?"yellow":""}}' bindtap='screenCity'>全部</view>
+            <view data-diqu='{{item.name}}' data-yxname='{{schooltype.name}}' data-cityid='{{item.id}}' data-scid='{{schooltype.id}}' data-pcid='{{pici.id}}' wx:for="{{city}}" wx:key="index" class='{{item.id==xzcity?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+        </block>
+    </view>
+    <!-- 院校类型 -->
+    <view class='sArea {{yxArea?"show":""}}'>
+        <view data-yxname='院校类型' data-pcid='{{pici.id}}' data-aid='{{province.id}}' data-cityid='{{city.id}}' class='{{xztype==0?"yellow":""}}' bindtap='screenYx'>全部</view>
+        <view data-yxname='{{item.name}}' data-scid='{{item.id}}' data-pcid='{{pici.id}}' data-aid='{{province.id}}' data-cityid='{{city.id}}' wx:for="{{schooltype}}" wx:key="index" class='{{item.id==xztype?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+    </view>
+    <!-- 批次 -->
+    <view class='sArea {{pcArea?"show":""}}'>
+        <view data-bkpc='批次' data-aid='{{province.id}}' data-cityid='{{city.id}}' data-scid='{{schooltype.id}}' class='{{xzpc==0?"yellow":""}}' bindtap='screenPici'>全部</view>
+        <view data-pcid='{{item.id}}' data-yxname='{{schooltype.name}}' data-bkpc='{{item.name}}' data-cityid='{{city.id}}' data-aid='{{province.id}}' data-scid='{{schooltype.id}}' wx:for="{{pici}}" wx:key="index" class='{{item.id==xzpc?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+    </view>
+    <!-- 学校信息 -->
+    <view class='school-list'>
+        <block wx:if="{{sclist.length>0}}">
+            <view wx:for="{{sclist}}" wx:key="index" class='listArea'>
+                <view class='list-box'>
+                    <view class='font_family icon-liugedian school-list-icon' bindtap='toggleBtn' id="{{item.id}}"></view>
+                    <view class='school-list-center'>
+                        <view data-select="{{item.selecting}}" data-id="{{item.id}}" bindtap="goDetail">
+                            <view class='school-list-logo'>
+                                <image src='{{item.logo?item.logo:"/images/LIVE.png"}}'></image>
+                            </view>
+                            <view class='school-list-text'>
+                                <view class='school-name'>{{item.name}}</view>
+                                <view class='school-name-type'>
+                                    <text>{{item.city}}</text>
+                                    <text class='pl' wx:if="{{item.institution_type}}">{{item.institution_type}}</text>
+                                    <text class='pl' wx:if="{{item.disciplinary_level}}">{{item.disciplinary_level}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class='school-live'>
+                            <block wx:for="{{item.feature_label}}" wx:key="index" wx:for-item="label">
+                                <text>{{label}} </text>
+                            </block>
+                        </view>
+                        <view class='font_family icon-xiahua jiantou {{uhide==item.id?"dis-none":""}}' bindtap='toggleBtn' id="{{item.id}}"></view>
+                        <view class='font_family icon-shang jiantou {{uhide==item.id?"":"dis-none"}}' bindtap='toggleBtn' id="{{item.id}}"></view>
+                    </view>
+                </view>
+                <view class='hiden {{uhide==item.id?"":"dis-none"}}'>
+                    <!-- <view class='hiden-one' wx:if="{{item.year_wen}}">
+                        <view>
+                            <text>文科：{{item.year_wen?item.year_wen:"-"}}录取最低分：</text>
+                            <text>{{item.min_socre_wen?item.min_socre_wen:'-'}}</text>
+                        </view>
+                        <view class='pad-left'>
+                            <text>{{item.year_wen?item.year_wen:"-"}}录取最低位次：</text>
+                            <text>{{item.min_weici_wen?item.min_weici_wen:'-'}}</text>
+                        </view>
+                    </view>
+                    <view class='hiden-two' wx:if="{{item.year_li}}">
+                        <view>
+                            <text>理科：{{item.year_li?item.year_li:'-'}}录取最低分：</text>
+                            <text>{{item.min_socre_li?item.min_socre_li:"-"}}</text>
+                        </view>
+                        <view class='pad-left'>
+                            <text>{{item.year_li?item.year_li:'-'}}录取最低位次：</text>
+                            <text>{{item.min_weici_li?item.min_weici_li:"-"}}</text>
+                        </view>
+                    </view> -->
+                    <view class='hiden-three'>
+                        <view class='three_box'>
+                            <view class='font_family icon-shoucang'></view>
+                            <view class='hiden-three-text'>{{item.shoucang}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class='empty'>{{emptydata}}</view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,9 @@
+/* packageChoose/page//classifie/hostdetail/rulesDetail/rulesDetail.wxss */
+.main{
+    padding: 0 30rpx;
+}
+.title{
+    font-size: 36rpx;
+    font-weight: bold;
+    margin: 20rpx auto;
+}

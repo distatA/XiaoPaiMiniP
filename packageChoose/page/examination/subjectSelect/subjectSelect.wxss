@@ -1,0 +1,102 @@
+/* pages/examination/subjectSelect/subjectSelect.wxss */
+
+page {
+    background-color: #f7f7f7;
+}
+
+.header {
+    width: 654rpx;
+    display: flex;
+    justify-content: space-between;
+    margin: 23rpx auto 0;
+}
+
+.num {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #a1a1a1;
+}
+
+.sort {
+    box-sizing: border-box;
+    width: 159rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    background-color: #fff;
+    border-radius: 22rpx;
+    font-size: 18rpx;
+    font-weight: bold;
+    color: #a1a1a1;
+    padding-left: 32rpx;
+    display: flex;
+}
+
+.sort-btn {
+    position: relative;
+}
+
+.sort-btn view:first-child {
+    width: 0;
+    height: 0;
+    border-left: 6rpx solid transparent;
+    border-right: 6rpx solid transparent;
+    position: absolute;
+    top: 13rpx;
+    left: 12rpx;
+}
+
+.sort-btn view:last-child{
+    width: 0;
+    height: 0;
+    border-left: 6rpx solid transparent;
+    border-right: 6rpx solid transparent;
+    position: absolute;
+    top: 24rpx;
+    left: 12rpx;
+}
+
+.content {
+    width: 654rpx;
+    height: 143rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    border-radius: 10rpx;
+    margin: 31rpx auto;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 33rpx;
+    padding-right: 40rpx;
+}
+
+.word {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #1d1e2c;
+    line-height: 143rpx;
+    overflow: hidden;
+    flex: 1;
+}
+
+.node {
+    color: #a1a1a1;
+    font-size: 20rpx;
+    margin-top: 23rpx;
+    line-height: 35rpx;
+    flex: 1;
+}
+
+.data {
+    text-align: center;
+    font-weight: bold;
+    flex: 0 0 20%;
+}
+
+.data view:first-child {
+    font-size: 28rpx;
+    margin-top: 46rpx;
+}
+
+.data view:last-child {
+    font-size: 18rpx;
+    color: #808080;
+}

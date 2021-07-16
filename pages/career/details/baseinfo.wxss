@@ -1,0 +1,317 @@
+/* pages/career/details/baseinfo.wxss */
+
+page {
+    background: #f2f2f2;
+}
+
+.seach-table {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.sousuo {
+    font-size: 50rpx;
+}
+
+.nav {
+    background: #22d9d9;
+    font-size: 26rpx;
+    color: #fff;
+    line-height: 90rpx;
+    padding-bottom: 20rpx;
+}
+
+.nav-table {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10rpx;
+}
+
+.nav-table view {
+    height: 56rpx;
+    padding: 0 25rpx;
+    line-height: 56rpx;
+}
+
+.nav-table-style {
+    background: #6de7e7;
+    border-radius: 40rpx;
+}
+
+.ConArea {
+    background: #fafafa;
+    padding: 20rpx 30rpx;
+    overflow: hidden;
+}
+
+.content {
+    background: #fff;
+    box-shadow: 4rpx 5rpx 6rpx #ccc;
+    width: 700rpx;
+}
+
+.content-one {
+    padding: 20rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+
+.content-one-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.major {
+    font-size: 34rpx;
+    line-height: 2;
+}
+
+.b_right {
+    width: 180rpx;
+    height: 60rpx;
+    background: #bcbcbc;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10rpx;
+    line-height: 60rpx;
+    overflow: hidden;
+}
+
+.share {
+    color: #fff;
+    font-size: 44rpx;
+    margin-left: 12rpx;
+    margin-top: 5rpx;
+}
+
+.share2 {
+    color: #fff;
+    font-size: 45rpx;
+    line-height: 1.4;
+}
+
+.line {
+    float: left;
+    height: 70%;
+    width: 6rpx;
+    background: #fff;
+    margin-top: 5%;
+}
+
+.major-number {
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 30rpx;
+}
+
+.major-degree {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    color: #999;
+    padding-right: 80rpx;
+}
+
+.content-two {
+    padding: 20rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+
+.content-two-title {
+    font-size: 34rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-icon {
+    font-size: 40rpx;
+    color: #999;
+}
+
+.content-text {
+    font-size: 32rpx;
+    color: #666;
+    padding: 20rpx 0;
+    line-height: 1.5;
+    letter-spacing: 4rpx;
+    /* padding-left: 40rpx; */
+}
+
+.canvas {
+    width: 700rpx;
+    height: 500rpx;
+    margin-left: -20rpx;
+}
+
+.Salary-curve {
+    padding-top: 30rpx;
+}
+
+.sharebtn {
+    float: left;
+    background: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 40rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 100%;
+}
+
+.school-card {
+    padding: 30rpx 20rpx;
+    background: #fff;
+    box-shadow: 0rpx 0rpx 4rpx 0rpx #ccc;
+}
+
+.content-three {
+    padding: 20rpx;
+}
+
+.content-three-title {
+    padding: 20rpx;
+}
+
+.school-photo {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.school-photo image {
+   width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.school-card-center {
+    font-size: 28rpx;
+    width: 60%;
+}
+
+.school-type {
+    font-size: 20rpx;
+}
+
+.school-type text {
+    padding-left: 8rpx;
+}
+
+.school-type text:nth-child(1) {
+    padding-left: 0;
+}
+
+.school-leve {
+    font-size: 22rpx;
+    line-height: 75rpx;
+}
+
+.school-leve view {
+    margin: 0 5rpx;
+}
+
+.school-name {
+    line-height: 1.9;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+/**************/
+
+.header {
+    height: 80rpx;
+    background: #22d9d9;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20rpx;
+}
+
+.header-title {
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.header-flex {
+    display: flex;
+}
+
+.header-title-icon {
+    font-size: 32rpx;
+    color: #fff;
+    line-height: 2.8;
+    padding-left: 10rpx;
+}
+
+.sArea {
+    display: none;
+    position: absolute;
+    top: 159rpx;
+    height: auto;
+    line-height: 66rpx;
+    background: #22d9d9;
+    font-size: 26rpx;
+    padding: 10rpx 20rpx;
+    color: #fff;
+    width: 0%;
+    transition: width 2s;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.sArea view {
+    float: left;
+    width: 25%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.show {
+    display: block;
+    width: 100%;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.empty {
+    padding: 30rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.listArea {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-view {
+    height: 100%;
+}
+
+.school-card navigator {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.celled {
+    color: #e5b626;
+}
+
+._empty {
+    width: 100%;
+    text-align: center;
+}

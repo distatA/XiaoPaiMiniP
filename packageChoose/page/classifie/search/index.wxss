@@ -1,0 +1,84 @@
+page {
+    background: #f2f2f2;
+}
+
+.search {
+    background: #22d8d9;
+    position: relative;
+    padding: 15rpx 0;
+}
+._search-list {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background-color: #fff;
+    position: absolute;
+    left: 100rpx;
+    right: 120rpx;
+    z-index: 9;
+    border-radius: 10rpx;
+}
+
+.search-list-item {
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #000;
+    font-size: 28rpx;
+    padding-left: 20rpx;
+    font-weight: bold;
+}
+
+.search-content {
+    margin: 0 100rpx 0 30rpx;
+    height: 60rpx;
+    background: #fff;
+    border-radius: 30rpx;
+    font-size: 26rpx;
+    padding-left: 30rpx;
+}
+.button{
+  
+}
+.search-icon {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 30rpx;
+    /* border: 2rpx #fff solid;
+    border-radius: 50%; */
+}
+
+.search-recommend {
+    background: #fff;
+}
+
+.search-title {
+    font-size: 36rpx;
+    padding: 40rpx 30rpx;
+}
+
+.search-list {
+    margin: 0 30rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-item {
+    margin: 0 100rpx 40rpx 0;
+    font-size: 30rpx;
+}
+
+.item {
+    padding: 20rpx;
+    background-color: #ff7373;
+    border-radius: 40rpx;
+    margin: 0 20rpx 20rpx 0;
+    color: #fff;
+    font-size: 30rpx;
+}
+
+.mt {
+    margin-top: 20rpx;
+}

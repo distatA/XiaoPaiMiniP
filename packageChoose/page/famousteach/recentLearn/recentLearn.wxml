@@ -1,0 +1,20 @@
+<!--packageChoose/page//famousteach/recentLearn/recentLearn.wxml-->
+<!-- 最近学习 -->
+<block wx:if="{{courseList.length!=0}}">
+    <view class="contain" wx:for="{{courseList}}" wx:key="index" >
+        <view class="title">{{item.title}}</view> 
+        <view class="content">
+            <view class="pic-wrap">
+                <image class="pic" src="{{item.cover}}" mode="aspectFit"></image>
+                <view class="pro-num">已完成{{item.proportion}}%</view>
+                <progress percent="{{item.proportion}}" activeColor="#22d8d9" backgroundColor="#a7a7a7" border-radius="7rpx"></progress>
+            </view>
+            <view class="study"><view class="condition">已学习</view>{{item.cata_chapter}}期</view>
+            <view class="study"><view class="condition">未学习</view>{{item.periods-item.cata_chapter}}期</view>
+            <view class="continue" data-key="{{item.pid}}" bindtap="goChapter">继续学习</view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <image class="noHave" src="https://new.schoolpi.net/attach/small_program/index/no-data.png" mode="widthFix"></image>
+</block>

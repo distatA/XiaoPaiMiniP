@@ -1,0 +1,26 @@
+<!--pages/examination/index/index.wxml-->
+<view class="contain">
+    <view class="title">智能·新高考</view>
+    <view class="wrap" bindtap="goBack">
+        <view class="react"></view>
+        <view class="province">{{province}}{{year}}</view>
+        <view class="icon"></view>
+    </view>
+    <view class="bg"></view>
+    <view class="intro">{{province}}{{year}}年新高考政策</view>
+    <view class="info">结合《{{province}}招生普通高校专业（类）选科科目范围》大数据智能综合分析（适合高一/二学生）</view>
+    <view class="select">
+        <view class="major" bindtap="goSubject">
+            <view class="name">选考科目专业</view>
+            <view class="search">查询</view>
+        </view>
+        <view class="college" bindtap="searchCollege">
+            <view class="name">大学选考科目</view>
+            <view class="search">查询</view>
+        </view>
+        <view class="subject" bindtap="searchSubject">
+            <view class="name">专业选考科目</view>
+            <view class="search">查询</view>
+        </view>
+    </view>
+</view>

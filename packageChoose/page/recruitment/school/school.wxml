@@ -1,0 +1,98 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <!-- <block wx:for="{{bannerList}}" wx:key="{{index}}"> -->
+            <swiper-item>
+                <image src="{{schoolInfo.thumb}}" class="slide-image" />
+            </swiper-item>
+        <!-- </block> -->
+    </swiper>
+</view>
+<!-- 导航 -->
+<view class='nav'>
+    <view class="nav-item">
+        <view wx:for="{{menuList}}" wx:key="index" class="{{currentTab==index?'nav-active':''}}" bindtap='selectMenu' data-current="{{index}}">{{item}}</view>
+    </view>
+</view>
+
+<!--********************学校概况********************-->
+<view wx:if="{{currentTab ===0 }}">
+    <!-- 学校介绍 -->
+    <view class="school-info">
+        <view class="school-title">{{schoolInfo.school_name}}</view>
+        <view class="school-tags">
+            <view class="tags">学校类型:{{schoolInfo.institution_type}}</view>
+            <view class="tags">所在地:{{schoolInfo.province}}{{schoolInfo.city}}</view>
+            <view class="tags">批次:{{schoolInfo.disciplinary_level}}</view>
+        </view>
+        <!-- 转发等功能 -->
+        <view class="function">
+            <view class="function-item">
+                <text style="background:#fff" class="iconfont icon-zhuanfa button-hover"></text>
+                <text>{{schoolInfo.share}}分享</text>
+            </view>
+            <view class="function-item">
+                <text class="font_family sharebtn icon-shoucang"></text>
+                <text>{{schoolInfo.hits}}浏览</text>
+            </view>
+        </view>
+
+    </view>
+    <!--  -->
+    <view class="info">
+        <view class="line"></view>
+        <view class="title">学院介绍</view>
+        <view class="solid"></view>
+        <view class="info-detail">
+            <template is="wxParse" data="{{wxParseData:description.nodes}}" />
+        </view>
+    </view>
+</view>
+<!--********************招生简章********************-->
+<view wx:if="{{currentTab ===1 }}" class="major">
+    <view class="enrollment-name">{{enrollmentInfo.enrollment_name}}</view>
+    <view class="enrollment-content">
+        <template is="wxParse" data="{{wxParseData:description1.nodes}}" />
+    </view>
+</view>
+
+<!--********************开设专业********************-->
+<view wx:if="{{currentTab ===2 }}">
+    <view wx:for="{{majorList}}" wx:key="index">
+        <view class="apply" bindtap='showMore' data-index="{{index}}">
+            <view class="circle"></view>
+            <view class="apply-title">{{item.name}}</view>
+            <view class="icon">
+                <text wx:if="{{!item.isOpen}}" class="font_family icon-youhua jiantou "></text>
+                <text wx:if="{{item.isOpen}}" class="font_family icon-xiahua jiantou"></text>
+            </view>
+        </view>
+        <view wx:if="{{item.isOpen}}">
+            <view class="apply-detail">
+                <view>
+                    <view style="display:flex;">
+                        <view class="ico"></view>
+                        <view class="detail-title">专业特色</view>
+                    </view>
+                    <view class="info-detail">{{item.professional_introduction}}</view>
+                </view>
+                <view style="display:flex;margin-top:20rpx;">
+                    <view class="ico"></view>
+                    <view class="detail-title">就业方向</view>
+                </view>
+                <view class="info-detail">{{item.sem}}</view>
+
+                <view style="display:flex;margin-top:20rpx;">
+                    <view class="ico"></view>
+                    <view class="detail-title">课程设置</view>
+                </view>
+                <view class="info-detail">{{item.courses}}</view>
+
+            </view>
+        </view>
+    </view>
+</view>
+
+<block wx:if='{{isretrue == 1}}'>
+    <view class='returnHome' bindtap='returnHome'><image src='/images/rindex.png'></image></view>
+</block>

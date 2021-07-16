@@ -1,0 +1,44 @@
+<!-- 我的订单 -->
+<view class="order {{showModalStatus?'indexFixed':''}}" wx:for="{{orderList}}" wx:key="index" bindtap="click" data-id="{{item.id}}">
+    <image class="order-pic" src="{{item.thumb}}"></image>
+    <view class="value">
+        <view class="order-name">{{item.title}}</view>
+        <view class="order-num">订单号：{{item.order_sn}}</view>
+        <view class="express">{{item.express}} {{item.express_num}}</view>
+    </view>
+</view>
+<block wx:if="{{show}}">
+    <view class="have_order"></view>
+    <view class="text">暂无订单信息</view>
+    <view class="btn" bindtap="goBack">去逛逛</view>
+</block> 
+<!-- 物流弹窗 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+<block wx:if="{{expressShow}}">
+    <view class="title-wrap">
+        <view class="title">物流信息
+            <text>{{express}}:{{express_num}}</text>
+        </view>
+        <view bindtap="hideModal" class="close"></view>
+    </view>
+    <view class="expressList">
+        <scroll-view scroll-y="true" style="height: 650rpx;">
+            <view wx:for="{{expressList}}" wx:key="index" class="wrap {{index==0?'active':''}}">
+                <view class="time">{{item.AcceptDate}}
+                    <view>{{item.AcceptTime}}</view>
+                </view>
+                <view>
+                    <view class="interval {{index==0?'interval-active':''}}"></view>
+                    <view class="line" hidden="{{index==expressList.length-1}}"></view>
+                </view>
+                <view class="expressInfo">{{item.AcceptStation}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    </block>
+    <block wx:else>
+        <view bindtap="hideModal" class="close"></view>
+        <view class="msg">{{msg}}</view> 
+    </block>
+</view>

@@ -1,0 +1,26 @@
+<view wx:for="{{videoList}}" wx:key="index" class='videoItem'>
+    <view>
+        <video id="index{{index}}" src="{{item.video_url}}" wx:if="{{playIndex == index}}" data-id="{{index}}" bindended='end' autoplay></video>
+    </view>
+    <view id="{{index}}" class="cover" style="display:{{playIndex == index?'none':'block'}}" bindtap='videoPlay'>
+        <image class="coverImg" src="{{item.thumb}}" mode="scaleToFill">
+            <image class="playImg" src="/images/play.png"></image>
+        </image>
+    </view>
+    <view class='title'>
+        {{item.title}}
+    </view>
+    <view class='btbox'>
+        <view class='fl'>
+            <button class='font_family icon-fenxiang1 fenxiang fl' data-name="{{item.title}}" data-id="{{item.id}}" id="shareBtn" open-type="share"></button>
+            <view class='fl fx_tit'>分享</view>
+        </view>
+        <!-- <view class='fr right'>
+            <view class='font_family icon-guankanshu fl gk'></view>
+            <view class='fl mrg10'> {{item.hits}}</view>
+        </view> -->
+    </view>
+    <view id="{{index}}" style="display:{{playIndex == index?'none':'block'}}" bindtap='videoPlay'>
+        <view class="popup"></view>
+    </view>
+</view>

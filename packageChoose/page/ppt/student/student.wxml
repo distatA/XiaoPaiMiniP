@@ -1,0 +1,187 @@
+<!-- <view class='container-box' hidden="{{showDialog}}">
+    <view class="pptimg-small-wrap" hidden="{{liveStatus != 1}}">
+        <block wx:if="{{liveStatus == 1}}">
+            <image class="{{shipinIsOpen?'pptimg-small':'pptimg'}}" src="{{ppt_play_img}}"></image>
+        </block>
+        <block wx:if="{{liveStatus == 1}}">
+            <live-player id="player" src="{{playURL}}" mode="live" object-fit="fillCrop" bindstatechange="statechange" binderror="error" hidden="{{!shipinIsOpen}}">
+            </live-player>
+        </block>
+    </view>
+    <view class="topbar">
+        <view class="school">
+            <image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-name">
+                <view class="school-name1">{{roomTitle}}</view>
+                <view class="school-name2">{{roomPeoples}}人 观看</view>
+            </view>
+        </view>
+    </view>
+    <view slot="audience" style='position:absolute;bottom:0;height:110rpx;width:50%;right:0;'>
+        <view class="operate">
+            <block wx:if="{{liveStatus == 1}}">
+                <view class='img-box' bindtap="onDanmu">
+                    <image class='img-view' src='https://new.schoolpi.net/attach/small_program/live/close_danmu1.png' wx:if="{{danmuIsOpen}}"></image>
+                    <image class='img-view' src='https://new.schoolpi.net/attach/small_program/live/close_danmu2.png' wx:else></image>
+                </view>
+                <view class='img-box' bindtap="onShipin">
+                    <image class='img-view' src='/static/close_shipin1.png' wx:if="{{shipinIsOpen}}"></image>
+                    <image class='img-view' src='/static/close_shipin2.png' wx:else></image>
+                </view>
+            </block>
+            <view class="img-box">
+                <image class='img-view' src='/static/share_menu.png'></image>
+                <view class="share-wrap">
+                    <button class="share" open-type="share">
+                        <view class="share-icon"></view>
+                    </button>
+                </view>
+            </view>
+            <view class='img-box' bindtap="onBack">
+                <image class='img-view' src='/static/close_menu.png'></image>
+            </view>
+        </view>
+    </view>
+    <view class="editor-container" hidden="{{showBarrageInput}}">
+        <view class="editor">
+            <view class='editor-input' bindtap='tapInput'>
+                <view class='editor-input-text' style="color:#fff;">说点什么...</view>
+            </view>
+        </view>
+    </view>
+    <view class="comment-container" hidden="{{!danmuIsOpen}}">
+        <view class="comment-list-li" wx:for="{{comment}}" wx:for-item="item" wx:for-index="index" wx:if="{{index < 10}}">
+            <view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</view>
+            <view class="comment-list-li-msg">{{item.content}}</view>
+        </view>
+    </view>
+    <block wx:if="{{liveStatus == 0}}">
+        <view class="school-tip">
+            <image class="school-logo-center" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-tip-txt">{{roomTitle}}直播间</view>
+            <view class="school-tip-txt2">未到直播时间，请耐心等待</view>
+            <view class="school-tip-time">直播时间：{{teacherTime}}</view>
+            <block wx:if="{{videoUrl!=''}}">
+                <view bindtap="showVideo" class="video">
+                    观看精彩视频
+                    <image src="/static/pause.png"></image>
+                </view>
+            </block>
+            <image class="back-music {{isPlayingMusic?'auto':''}}" src='/static/music.png' animation="{{musicAnimate}}" bindtap="playMusic"></image>
+        </view>
+    </block>
+    <block wx:elif="{{liveStatus == 2}}">
+        <view class="school-tip">
+            <view class="school-tip-txt">{{roomTitle}}直播间</view>
+            <image class="school-logo-center" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-tip-txt2">结束时间：{{liveEndTime}}</view>
+            <view class="school-tip-btn" bindtap="bindPlayback">观看回放</view>
+        </view>
+    </block>
+    <block wx:if="{{isVideo}}">
+        <view class="show-video">
+            <video src="{{videoUrl}}"></video>
+            <view class="quit-video" bindtap="quitVideo">返回等待</view>
+        </view>
+    </block>
+</view>
+<view class="barrage-container" wx:if="{{showBarrageInput}}">
+    <view class="barrage-input">
+        <input class='input' value='{{inputInfo}}' focus='{{inputFocus}}' bindinput='bindinput' bindblur='bindblur'></input>
+    </view>
+    <view class="barrage-submit" bindtap="sendBarrage">发送</view>
+</view> -->
+
+<view class='container-box' hidden="{{showDialog}}">
+    <view class="pptimg-small-wrap" hidden="{{liveStatus != 1}}">
+        <block wx:if="{{liveStatus == 1}}">
+            <image class="{{shipinIsOpen?'pptimg-small':'pptimg'}}" src="{{ppt_play_img}}"></image>
+        </block>
+        <block wx:if="{{liveStatus == 1}}">
+            <live-player id="player" src="{{playURL}}" mode="live" object-fit="fillCrop" bindstatechange="statechange" binderror="error" hidden="{{!shipinIsOpen}}">
+            </live-player>
+        </block>
+    </view>
+    <view class="topbar">
+        <view class="school">
+            <image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-name">
+                <view class="school-name1">{{roomTitle}}</view>
+                <view class="school-name2">{{roomPeoples}}人 观看</view>
+            </view>
+        </view>
+    </view>
+    <view slot="audience" style='position:absolute;bottom:0;height:110rpx;width:50%;right:0;'>
+        <view class="operate">
+            <block wx:if="{{liveStatus == 1}}">
+                <view class='img-box' bindtap="onDanmu">
+                    <image class='img-view' src='https://new.schoolpi.net/attach/small_program/live/close_danmu1.png' wx:if="{{danmuIsOpen}}"></image>
+                    <image class='img-view' src='https://new.schoolpi.net/attach/small_program/live/close_danmu2.png' wx:else></image>
+                </view>
+                <view class='img-box' bindtap="onShipin">
+                    <image class='img-view' src='/static/close_shipin1.png' wx:if="{{shipinIsOpen}}"></image>
+                    <image class='img-view' src='/static/close_shipin2.png' wx:else></image>
+                </view>
+            </block>
+            <view class="img-box">
+                <image class='img-view' src='/static/share_menu.png'></image>
+                <view class="share-wrap">
+                    <button class="share" open-type="share">
+                        <view class="share-icon"></view>
+                    </button>
+                </view>
+            </view>
+            <view class='img-box' bindtap="onBack">
+                <image class='img-view' src='/static/close_menu.png'></image>
+            </view>
+        </view>
+    </view>
+    <view class="editor-container" hidden="{{showBarrageInput}}">
+        <view class="editor">
+            <view class='editor-input' bindtap='tapInput'>
+                <view class='editor-input-text' style="color:#fff;">说点什么...</view>
+            </view>
+        </view>
+    </view>
+    <view class="comment-container" hidden="{{!danmuIsOpen}}">
+        <view class="comment-list-li" wx:for="{{comment}}" wx:for-item="item" wx:for-index="index" wx:if="{{index < 10}}">
+            <view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</view>
+            <view class="comment-list-li-msg">{{item.content}}</view>
+        </view>
+    </view>
+    <block wx:if="{{liveStatus == 0}}">
+        <view class="school-tip">
+            <image class="school-logo-center" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-tip-txt">{{roomTitle}}直播间</view>
+            <view class="school-tip-txt2">未到直播时间，请耐心等待</view>
+            <view class="school-tip-time">直播时间：{{teacherTime}}</view>
+            <block wx:if="{{videoUrl!=''}}">
+                <view bindtap="showVideo" class="video">
+                    观看精彩视频
+                    <image src="/static/pause.png"></image>
+                </view>
+            </block>
+            <image  class="back-music {{isPlayingMusic?'auto':''}}" src='/static/music.png' animation="{{musicAnimate}}" bindtap="playMusic"></image>
+        </view>
+    </block>
+    <block wx:elif="{{liveStatus == 2}}">
+        <view class="school-tip">
+            <view class="school-tip-txt">{{roomTitle}}直播间</view>
+            <image class="school-logo-center" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-tip-txt2">结束时间：{{liveEndTime}}</view>
+            <view class="school-tip-btn" bindtap="bindPlayback">观看回放</view>
+        </view>
+    </block>
+    <block wx:if="{{isVideo}}">
+        <view class="show-video">
+            <video src="{{videoUrl}}"></video>
+            <view class="quit-video" bindtap="quitVideo">返回等待</view>
+        </view>
+    </block>
+</view>
+<view class="barrage-container" wx:if="{{showBarrageInput}}">
+    <view class="barrage-input">
+        <input class='input' value='{{inputInfo}}' focus='{{inputFocus}}' bindinput='bindinput' bindblur='bindblur'></input>
+    </view>
+    <view class="barrage-submit" bindtap="sendBarrage">发送</view>
+</view>

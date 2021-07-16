@@ -1,0 +1,51 @@
+/* components/major/major.wxss */
+.major-list {
+    display: flex;
+    justify-content: space-between;
+    padding:  20px;
+    background: #fff;
+    border-bottom: solid 2rpx #dedede;
+    align-items: center;
+}
+.major-item{
+    /* padding: 30rpx ; */
+    display: flex;
+    padding: 30rpx 0;
+    justify-content: space-between;
+    border-bottom: solid 2rpx #dedede;
+}
+.major-item-jiangsu{
+    display: flex;
+    padding: 30rpx 0;
+    justify-content: space-between;
+}
+.major-content{
+    padding: 0 40rpx;
+    margin-bottom: 20rpx;
+    background: #fff;
+}
+.major-item:last-child{
+    border: none;
+}
+.major-type{
+    font-size: 34rpx;
+}
+.major-name{
+    font-size: 28rpx;
+}
+.arrow {
+    width: 30rpx;
+    height: 30rpx;
+}
+.major-child-jiangsu{
+    background: #f2f2f2;
+}
+.major-child{
+    padding: 0 40rpx;
+    background: #f2f2f2;
+}
+.major-name-blod{
+    font-size: 32rpx;
+    font-weight: bold;
+    padding: 30rpx 0;
+}

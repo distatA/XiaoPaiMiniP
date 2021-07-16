@@ -1,0 +1,25 @@
+<!-- packageChoose/page//credits/address/address.wxml-->
+<import src="../../../../wxParse/wxParse.wxml" />
+<!-- 收货地址 -->
+<view class="title">填写收货信息</view>
+<view class="basic">
+    <view class="bg">
+        <input name="name" bindinput="nameInput" value="{{nameValue}}" placeholder="请输入您的收货姓名" placeholder-style='color:#878787;font-size: 30rpx;'></input>
+    </view>
+    <view class="bg">
+        <input name="number" bindinput="numberInput" value="{{phoneValue}}" placeholder="请输入您的收货电话" placeholder-style='color:#878787;font-size: 30rpx;'></input>
+    </view>
+</view>
+<view class="province">
+    <picker mode="region" bindchange="regionChange" value="{{region}}">
+        {{region}}
+    </picker>
+</view>
+<view class="address">
+    <textarea name="address" bindinput="addressInput" focus="true" maxlength="100" auto-height="true" value="{{addressValue}}" placeholder="详细地址" placeholder-style='color:#878787;font-size: 30rpx;'></textarea>
+</view>
+<view class="confirm" bindtap="submit" data-name="{{nameValue}}" data-phone="{{phoneValue}}" data-address="{{addressValue}}" data-region="{{region}}">确认</view>
+<view class="text">
+    <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+</view>
+

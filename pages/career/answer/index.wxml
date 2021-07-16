@@ -1,0 +1,98 @@
+<block wx:if="{{xinlidata}}">
+	<view class='header'>
+		<view class='header-tit'>性格评测</view>
+		<view class='header-foot'>
+			<view class='boxarea'>
+				<!-- 偏外向（E） -->
+				<view wx:if="{{showE}}">
+					<view class='fr'>外向（E）{{xinlizongti.E}}%</view>
+					<view class='fl'>内向（I）{{xinlizongti.I}}%</view>
+					<progress class="progress" percent="{{xinlizongti.I}}" stroke-width="6" activeColor="#e0e0e0" backgroundColor="#62d9f7" active="true" active-mode="forwards"></progress>
+				</view>
+				<!-- 偏内向（I） -->
+				<view wx:else>
+					<view class='fl'>外向（E）{{xinlizongti.E}}%</view>
+					<view class='fr'>内向（I）{{xinlizongti.I}}%</view>
+					<progress class="progress" percent="{{xinlizongti.E}}" stroke-width="6" activeColor="#e0e0e0" backgroundColor="#62d9f7" active="true" active-mode="forwards"></progress>
+				</view>
+			</view>
+
+			<view class='boxarea'>
+				<!-- 偏感觉（S） -->
+				<view wx:if="{{showS}}">
+					<view class='fr'>感觉（S）{{xinlizongti.S}}%</view>
+					<view class='fl'>直觉（N）{{xinlizongti.N}}%</view>
+					<progress class="progress" percent="{{xinlizongti.N}}" stroke-width="6" activeColor="#e0e0e0" backgroundColor="#f87064" active="true" active-mode="forwards"></progress>
+				</view>
+				<!-- 偏直觉（N） -->
+				<view wx:else>
+					<view class='fl'>感觉（S）{{xinlizongti.S}}%</view>
+					<view class='fr'>直觉（N）{{xinlizongti.N}}%</view>
+					<progress class="progress" percent="{{xinlizongti.S}}" stroke-width="6" activeColor="#e0e0e0" backgroundColor="#f87064" active="true" active-mode="forwards"></progress>
+				</view>
+			</view>
+
+			<view class='boxarea'>
+				<!-- 偏思考（T） -->
+				<view wx:if="{{showT}}">
+					<view class='fr'>思考（T）{{xinlizongti.T}}%</view>
+					<view class='fl'>情感（F）{{xinlizongti.F}}%</view>
+					<progress class="progress" percent="{{xinlizongti.F}}" stroke-width="6" activeColor="#e0e0e0" backgroundColor="#f562f8" active="true" active-mode="forwards"></progress>
+				</view>
+				<!-- 偏情感（F） -->
+				<view wx:else>
+					<view class='fl'>思考（T）{{xinlizongti.T}}%</view>
+					<view class='fr'>情感（F）{{xinlizongti.F}}%</view>
+					<progress class="progress" percent="{{xinlizongti.T}}" stroke-width="6" activeColor="#e0e0e0" backgroundColor="#f562f8" active="true" active-mode="forwards"></progress>
+				</view>
+			</view>
+
+			<view class='boxarea'>
+				<view wx:if="{{showJ}}">
+					<view class='fr'>判断（J）{{xinlizongti.J}}%</view>
+					<view class='fl'>知觉（P）{{xinlizongti.P}}%</view>
+					<progress class="progress" percent="{{xinlizongti.P}}" activeColor="#e0e0e0" backgroundColor="#f7c562" stroke-width="6" active-mode="forwards" active="true" />
+				</view>
+				<view wx:else>
+					<view class='fl'>判断（J）{{xinlizongti.J}}%</view>
+					<view class='fr'>知觉（P）{{xinlizongti.P}}%</view>
+					<progress class="progress" percent="{{xinlizongti.J}}" activeColor="#e0e0e0" backgroundColor="#f7c562" stroke-width="6" active-mode="forwards" active="true" />
+				</view>
+			</view>
+
+
+			<view class='type' style='padding:30rpx 0;overflow:hidden;'>
+				<text>您的评测结果为：</text>
+				<text class='type-color'>{{xinlidata.class}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class='job-type'>
+		<view class='job-card'>
+			<view class='job-card-left {{currentData==1?"active-current":""}}' data-current="1" bindtap="clickTab">
+				<view class='font_family icon-yuan left-icon'></view>
+				<view class='card-left-text'>{{xinlidata.model}}</view>
+			</view>
+			<view class='job-card-right {{currentData==2?"active-current":""}}' data-current="2" bindtap="clickTab">
+				<view class='card-right-text'>推荐专业</view>
+				<view class='card-right-number'>({{xinlidata.ben_zhuanye_num+xinlidata.zhuan_zhuanye_num}})</view>
+				<view class='font_family icon-xiajiantou1 right-icon'></view>
+			</view>
+		</view>
+		<block wx:if="{{currentData==1}}">
+			<view class='job-card-hide bmbd'>
+				<view>{{xinlidata.content}}</view>
+			</view>
+		</block>
+		<block wx:if="{{currentData==2}}">
+			<view class='job-card-hide bmbd'>
+				<navigator hover-class="none" url='../details/baseinfo?id={{item.id}}' wx:for="{{xinlidata.ben_zhuanye}}" wx:key="index">{{item.name}}</navigator>
+				<navigator hover-class="none" url='../details/baseinfo?id={{item.id}}' wx:for="{{xinlidata.zhuan_zhuanye}}" wx:key="index">{{item.name}}</navigator>
+			</view>
+		</block>
+	</view>
+</block>
+<block wx:else>
+	<view style="text-align:center;font-size:24rpx;background:#fff;padding:40rpx;">抱歉!!!暂无数据</view>
+</block>

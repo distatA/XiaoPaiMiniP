@@ -1,0 +1,41 @@
+
+/* packageChoose/page//classifie/hostdetail/professional/professional.wxss */
+.rules-con {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 0 30rpx;
+    background: #f7fdfb;
+    font-size: 30rpx;
+}
+.arrow {
+    position: absolute;
+    right: 20rpx;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 5rpx solid gainsboro;
+    border-right: 5rpx solid gainsboro;
+    transform: rotate(45deg);
+}
+.arrow1{
+    position: absolute;
+    right: 20rpx;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 5rpx solid gainsboro;
+    border-right: 5rpx solid gainsboro;
+    transform: rotate(135deg);
+}
+.show{
+    background: #f2f2f2;
+}

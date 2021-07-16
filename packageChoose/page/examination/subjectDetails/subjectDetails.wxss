@@ -1,0 +1,60 @@
+/* packageChoose/page//examination/subjectDetails/subjectDetails.wxss */
+page{
+    background-color: #f7f7f7;
+}
+.title{
+	font-size: 36rpx;
+	font-weight: bold;
+    margin: 20rpx 0 0 48rpx;
+}
+.intro{
+	font-size: 24rpx;
+    margin: 24rpx 0 0 48rpx;
+}
+.college {
+    width: 654rpx;
+    height: 196rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    margin: 32rpx auto 21rpx;
+    padding: 35rpx 32rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10rpx;
+}
+
+.l-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.value {
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 24rpx;
+    color: #69707f;
+}
+
+.tag {
+    width: 310rpx;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    width: 82rpx;
+    height: 28rpx;
+    border-radius: 14rpx;
+    border: solid 1rpx #787878;
+    font-size: 22rpx;
+    line-height: 28rpx;
+    color: #69707f;
+    text-align: center;
+    margin-right: 18rpx;
+}

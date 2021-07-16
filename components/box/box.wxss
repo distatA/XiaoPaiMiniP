@@ -1,0 +1,63 @@
+/* components/redBag/redBag.wxss */
+.red-bag{
+    width:300rpx;
+    height: 300rpx;
+    position: fixed;
+    bottom: 60rpx;
+    margin: auto ;
+    right: 110rpx;
+    z-index: 9999999;
+}
+.red-container{
+    width: 585rpx;
+    height: 535rpx;
+    position: fixed;
+    top: -20rpx;
+    bottom: 0;
+    margin: auto ;
+    left:0;
+    right: 0;
+    z-index: 9999999;
+}
+.red-bag-open{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.red-bag-tips{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 166rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color:#fff;
+}
+.red-bag-content{
+     position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 123rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color:#fff;
+}
+.close{
+    width: 60rpx;
+    height: 60rpx;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 400rpx;
+
+}
+.tips{
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 20rpx;
+    text-align: center;
+    bottom: 60rpx;
+    color:#818181
+}

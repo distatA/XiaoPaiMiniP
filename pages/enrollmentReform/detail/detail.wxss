@@ -1,0 +1,223 @@
+page {
+    background-color: #fafafa;
+}
+
+.nav {
+    display: flex;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #a6a6a6;
+    margin: 60rpx 0 0 32rpx;
+}
+
+.nav-item {
+    margin-right: 72rpx;
+}
+
+.nav-active {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #2bd7d7;
+    position: relative;
+}
+
+.nav-active::after {
+    display: block;
+    content: '';
+    width: 64rpx;
+    height: 6rpx;
+    background: #2bd7d7;
+    border-radius: 3rpx;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 14rpx auto 0;
+}
+
+.content {
+    margin-top: 70rpx;
+    margin-bottom: 60rpx;
+}
+
+/* 全部高校 */
+
+.school {
+    width: 686rpx;
+    height: 148rpx;
+    background: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    border-radius: 16rpx;
+    margin: 0 auto 20rpx;
+    display: flex;
+    align-items: center;
+}
+
+.school image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin: 0 32rpx 0 29rpx;
+}
+
+.school-name {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #1d1e2c;
+}
+
+.school-info {
+    position: relative;
+    width: 500rpx;
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #69707f;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22rpx;
+}
+
+.school-info .renshu {
+    position: absolute;
+    top: 0;
+    right: 37px;
+}
+
+.school-info .num {
+    position: absolute;
+    top: 1px;
+    right: -2px;
+}
+
+/* 报考流程 */
+
+.process {
+    display: flex;
+    margin: 39rpx 40rpx 0 47rpx;
+}
+
+.circle {
+    width: 20rpx;
+    height: 20rpx;
+    background: #ffad01;
+    box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(255, 173, 1, 0.5);
+    border-radius: 50%;
+}
+
+.info {
+    box-sizing: border-box;
+    width: 602rpx;
+    background: #fff;
+    box-shadow: 0rpx 0rpx 59rpx 0rpx rgba(199, 199, 199, 0.28);
+    border-radius: 16rpx 8rpx 8rpx 8rpx;
+    margin-left: 27rpx;
+    margin-top: 10rpx;
+    padding: 42rpx 0 50rpx 32rpx;
+}
+
+.process-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #060606;
+}
+
+.process-info {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #a09f9f;
+    line-height: 44rpx;
+    margin: 36rpx 38rpx 0 2rpx;
+}
+
+/* 政策解读 */
+
+.policy {
+    width: 678rpx;
+    background: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    border-radius: 16rpx;
+    margin: 0 auto 24rpx;
+    display: flex;
+    align-items: center;
+}
+
+.policy image {
+    width: 172rpx;
+    height: 166rpx;
+    border-radius: 16rpx;
+    margin-left: 30rpx;
+}
+
+.policy-content {
+    margin-left: 51rpx;
+    width: 394rpx;
+    height: 100%;
+    padding-bottom: 10rpx;
+}
+
+.tag {
+    display: inline-block;
+    height: 29rpx;
+    border-radius: 15rpx;
+    line-height: 29rpx;
+    padding: 0 27rpx;
+    font-size: 16rpx;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 10rpx;
+}
+
+.policy-title {
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #1d1e2c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 15rpx;
+}
+
+.policy-info {
+    font-size: 22rpx;
+    font-weight: 400;
+    color: #909090;
+    line-height: 27rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    margin-top: 18rpx;
+}
+
+.policy-intro {
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tool, .time {
+    display: flex;
+}
+.point{
+    width: 5rpx;
+    height: 5rpx;
+    margin: 0 16rpx;
+    background-color: #909090;
+    align-self: center;
+    border-radius: 50%;
+}
+.time {
+    font-size: 15rpx;
+    font-weight: bold;
+    color: #5F5F5F;
+    line-height: 22rpx;
+}
+
+.tool image, .time image {
+    width: 22rpx;
+    height: 22rpx;
+    margin: 0;
+    border-radius: 0;
+}
+.time image{
+    margin-right: 6rpx;
+}

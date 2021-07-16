@@ -1,0 +1,134 @@
+/* pages/abroad/abroad.wxss */
+.bg {
+  width: 750rpx;
+  background: url(https://new.schoolpi.net/attach/small_program/abroad/abroadBg.png);
+  background-size: 100%;
+}
+
+.upon {
+  box-sizing: border-box;
+  width: 750rpx;
+  padding-left: 20rpx;
+  padding-top: 59rpx;
+  border-bottom: 1rpx dashed #fff;
+  position: relative;
+}
+
+.note {
+  font-size: 22rpx;
+  color: #ffffff;
+}
+
+.title1 {
+  width: 289rpx;
+  height: 127rpx;
+  background: url(https://new.schoolpi.net/attach/small_program/abroad/abroadText1.png);
+  background-size: 100%;
+  margin-top: 159rpx;
+  /* z-index: 999; */
+}
+
+.title2 {
+  width: 316rpx;
+  height: 198rpx;
+  background: url(https://new.schoolpi.net/attach/small_program/abroad/abroadText2.png) no-repeat;
+  background-size: 100%;
+  margin-top: 70rpx;
+  /* z-index: 999; */
+}
+
+.abroad {
+  width: 501rpx;
+  height: 1013rpx;
+  background: url(https://new.schoolpi.net/attach/small_program/abroad/abroad.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 110rpx;
+  right: 0;
+  z-index: -1;
+}
+
+.content {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #ffffff;
+  margin-top: 95rpx;
+}
+
+.blank {
+  margin-top: 50rpx;
+}
+
+.remark {
+  margin-top: 88rpx;
+  margin-bottom: 47rpx;
+  font-size: 20rpx;
+  color: #ffffff;
+}
+
+.remark text {
+  font-weight: bolder;
+}
+
+.under {
+  width: 750rpx;
+  box-sizing: border-box;
+  padding-bottom: 41rpx;
+  padding-top: 60rpx;
+}
+
+.frame {
+  width: 712rpx;
+  height: 1120rpx;
+  background: url(https://new.schoolpi.net/attach/small_program/abroad/frame.png) no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 85rpx 0;
+}
+
+.dialogue {
+  width: 598rpx;
+  height: 140rpx;
+  background: url(https://new.schoolpi.net/attach/small_program/abroad/dialogue.png) no-repeat;
+  background-size: 100%;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #4e0277;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.inf {
+  margin-top: 28rpx;
+}
+
+.inf-item {
+  width: 602rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  margin: 0 auto 19rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000000;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.pick{
+  color: #aaa;
+}
+.btn {
+  width: 602rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #ff6959;
+  border-radius: 20rpx;
+  margin: 60rpx auto 0;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+}

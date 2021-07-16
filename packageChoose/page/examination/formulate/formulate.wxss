@@ -1,0 +1,80 @@
+/* packageChoose/page//examination/formulate/formulate.wxss */
+
+.contain {
+    margin: 30rpx 40rpx;
+}
+
+.title {
+    font-size: 48rpx;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 24rpx;
+    line-height: 72rpx;
+    letter-spacing: 1rpx;
+    color: #adadad;
+}
+
+/* 省份 */
+
+.province {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 26rpx;
+    margin-bottom: 57rpx;
+}
+
+.item {
+    text-align: center;
+    width: 198rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    background-color: #f8f9fd;
+    border-radius: 46rpx;
+    font-size: 30rpx;
+    color: #8c8c8d;
+    margin-bottom: 30rpx;
+    margin-right: 25rpx;
+}
+
+.formulate {
+    width: 710rpx;
+    height: 118rpx;
+    background-image: linear-gradient(45deg, #18dbb4 0%, #44e1fe 100%);
+    box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: bold;
+    line-height: 118rpx;
+    color: #fff;
+    margin: 0 auto 71rpx;
+    /* position: fixed;
+    bottom: 71rpx;
+    left: 20rpx; */
+}
+
+/* 年份选择 */
+
+.year {
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.year-item {
+    text-align: center;
+    width: 198rpx;
+    height: 92rpx;
+    line-height: 92rpx;
+    background-color: #f8f9fd;
+    border-radius: 46rpx;
+    font-size: 30rpx;
+    color: #8c8c8d;
+    margin-bottom: 30rpx;
+    margin-right: 25rpx;
+}
+/* 选择样式 */
+.active {
+    background-color: #ccf6ec;
+    color: #00d69c;
+}

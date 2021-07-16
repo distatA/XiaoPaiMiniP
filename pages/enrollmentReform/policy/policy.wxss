@@ -1,0 +1,184 @@
+/* 文章内容 */
+image{
+  width: 100%;
+}
+.contain {
+  width: 700rpx;
+  margin: 50rpx auto 150rpx;
+  padding-bottom: 50rpx;
+  color: #2e2f41;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+
+.title {
+  font-size: 48rpx;
+}
+
+.content {
+  margin-top: 76rpx;
+  font-size: 32rpx;
+}
+
+/* 评论信息 */
+
+.wrap {
+  width: 648rpx;
+  margin: 107rpx 0 140rpx 30rpx;
+}
+
+.discuss {
+  margin-bottom: 37rpx;
+  padding-bottom: 18px;
+  border-bottom: 1rpx solid #eee;
+  margin-top: 30rpx;
+}
+
+.discuss-value {
+  display: flex;
+}
+
+.head {
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+}
+
+.value {
+  width: 550rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 18rpx;
+}
+
+.value-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name,.reply-content {
+  font-size: 26rpx;
+  color: #0c0c0c;
+}
+
+.time {
+  font-size: 19rpx;
+  color: #999;
+}
+
+.discuss-content {
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #0c0c0c;
+}
+
+/* 评论 */
+
+.footer {
+  width: 749rpx;
+  height: 98rpx;
+  background-color: #fff;
+  box-shadow: 0rpx -2rpx 6rpx 0rpx rgba(0, 0, 0, 0.09);
+  position: fixed;
+  bottom: 0;
+}
+
+.comment::before {
+  content: '';
+  width: 43rpx;
+  height: 31rpx;
+  background: url("https://new.schoolpi.net/attach/small_program/class/comment.png");
+  background-size: 100%;
+  position: absolute;
+  left: 55rpx;
+  top: 20rpx;
+}
+
+.comment {
+  width: 433rpx;
+  height: 70rpx;
+  background-color: #f5f5f5;
+  border-radius: 35rpx;
+  border: solid 1rpx #d3d3d3;
+  margin: 12rpx 61rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #959595;
+  position: relative;
+}
+
+.share {
+  position: absolute;
+  top: 27rpx;
+  right: 70rpx;
+  font-size: 40rpx;
+  background-color: transparent;
+  line-height: normal;
+}
+
+/* 弹出的评论框 */
+.comment-wrap{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+.commentInputView {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  border-top: 1rpx solid #f1f1f1;
+}
+
+.btn {
+  font-size: 26rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx;
+}
+
+.cancel {
+  color: #999;
+  width: 20%;
+  text-align: left;
+  line-height: 30rpx;
+}
+
+.send {
+  color: #0c0c0c;
+  width: 20%;
+  text-align: right;
+  line-height: 30rpx;
+}
+
+.commentInput {
+  width: 694rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+  margin: 0 auto;
+}
+
+.input {
+  width: 650rpx;
+  padding: 15rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  margin-bottom: 37rpx;
+}
+
+.limit {
+  text-align: right;
+  font-size: 20rpx;
+  color: #999;
+  margin-right: 26rpx;
+  margin-top: 16rpx;
+}
+image{
+  width: 100%;
+  height: 100%;
+}

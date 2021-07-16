@@ -1,0 +1,77 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class="page" hidden="{{loading}}" style="padding-top: {{height}}">
+    <view class='boast-bg'>
+        <image src="{{room.cover}}" class="slide-image"></image>
+        <view class="mask" bindtap="openVideo" wx:if="{{room.cover_isvideo==1}}" data-video="{{room.cover_video}}" data-name="{{room.room_name}}">
+            <image src="/static/pause.png"></image>
+            <view class="mask-word">精彩直播预告</view>
+        </view>
+    </view>
+    <view class='center_content'>
+        <view class='center_bg'>
+            <view class='enrolment_information'>
+                <text class="title">{{room.room_name}}</text>
+            </view>
+            <view class='info'>
+                <view class='info-left'>
+                    <view class='publisher'>应邀嘉宾：<text>{{room.school}}</text></view>
+                    <view class='publish_time'>开始时间：<text>{{room.start_time}}</text></view>       
+                    <view class='participates'>
+                        <block wx:if="{{room.state == 0}}">
+                            <text>{{room.orders}} 人预约</text>
+                        </block>
+                        <block wx:else>
+                            <text>{{room.peoples}} 人参与</text>
+                        </block>
+                        <text>{{room.collects}} 人收藏</text>
+                    </view>     
+                </view>
+                <view class='right_focuse'>
+                    <view class='share'>
+                        <image src='/static/plan_detail_share_icon.png'></image>
+                        <button class='share' id="shareBtn" open-type="share"></button>
+                    </view>
+                    <view class='collect'>
+                        <block wx:if="{{room.is_collect}}">
+                            <image src='/static/qbank_answer_more_collect.png' bindtap='collectBtn'></image>
+                        </block>
+                        <block wx:else>
+                            <image src='/static/qbank_answer_more_not_collect.png' bindtap='collectBtn'></image>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class='center_bg'>
+            <view class='enrolment_information'>
+                <text class='title'>内容大纲</text>
+            </view>
+            <view class='content-text'>
+                <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            </view>
+        </view>
+        <block wx:if="{{row.state == 0}}">
+            <form class="catchForm" report-submit="true" bindsubmit="joinRoom">
+                <button form-type="submit" class='btner'>{{btnValue}}</button>
+            </form>    
+        </block>
+        <block wx:else>
+            <form class="catchForm" report-submit="true" bindsubmit="joinRoom">
+                <button form-type="submit" class='btner'>{{btnValue}}</button>
+            </form> 
+        </block>
+    </view>
+</view>
+<view class="login-dialog" hidden="{{!showLoginDialog}}">
+    <view class="login-dialog-bg"></view>
+    <view class="login-dialog-body">
+        <view class="login-title">您还未登陆</view>
+        <image src="/static/login-icon.jpg"></image>
+        <view class="login-msg">使用微信快捷登录，可免去信息填写</view>
+        <view class="login-btns">
+            <button class="login-btn-cansel" bindtap="loginCansel">暂不登陆</button>
+            <button class="login-btn-ok" open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即登录</button>
+        </view>
+    </view>
+</view>

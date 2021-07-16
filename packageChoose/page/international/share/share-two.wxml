@@ -1,0 +1,47 @@
+<view class="image-one">
+    <image src="https://zjnb.720pai.cn/mobile/images/share-one.png"></image>
+</view>
+<view class="image-two">
+     <image src="https://zjnb.720pai.cn/mobile/images/share-two.png"></image>
+</view>
+<view class="image-three">
+    <image src="https://zjnb.720pai.cn/mobile/images/share-three.png"></image>
+</view>
+<view class="image-four">
+    <image src="https://zjnb.720pai.cn/mobile/images/share-four.png"></image>
+</view>
+<view class="image-five">
+    <image src="https://zjnb.720pai.cn/mobile/images/share-five.png"></image>
+</view>
+<view class="image-six">
+    <image src="https://zjnb.720pai.cn/mobile/images/share-six.png"></image>
+</view>
+<view class="button">
+    <view class="ques" bindtap='show'>预约咨询</view>
+    <navigator url="../detail/detail?id=2&isretrue=1">
+        <view class="choose">选择学校</view>
+    </navigator>
+</view>
+<!-- 弹窗 -->
+<view class='popup {{popup?"":"hide"}}'>
+    <view class='mask' bindtap='close'></view>
+    <!-- <view class="close" bindtap='close'>
+        <image src='/images/close3.png'></image>
+    </view> -->
+    <view class="form">
+        <view class="form-title">报名申请</view>
+        <form bindsubmit="formSubmit">
+            <view>
+                <input type="text" name="name" value="" placeholder='姓名' placeholder-class='input'></input>
+            </view>
+            <view>
+                <input type="number" name="mobile" value="" placeholder='联系电话' placeholder-class='input'></input>
+            </view>
+
+            <view class="form-button">
+                <button class="cancel" bindtap='close'>取消</button>
+                <button class="submit" formType="submit">提交</button>
+            </view>
+        </form>
+    </view>
+</view>

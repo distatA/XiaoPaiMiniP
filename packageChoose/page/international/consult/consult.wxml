@@ -1,0 +1,18 @@
+<view>
+  <view class="item" wx:for="{{list}}" wx:key="index">
+    <view class="back-img">
+      <image src="{{item.backimg}}"></image>
+    </view>
+    <view class="title">{{item.name}}</view>
+    <view class="tips">{{item.description}}</view>
+    <view class="price">
+      <view class="feee">￥{{item.fee}}服务费</view>
+      <view class="consult">
+        <view class="_person">{{item.ask}}人咨询</view>
+        <view class="line"></view>
+          <button style="background:#22d9d9;color:#fff;" class="button" open-type="contact">咨询</button>
+      </view>
+    </view>
+
+  </view>
+</view>

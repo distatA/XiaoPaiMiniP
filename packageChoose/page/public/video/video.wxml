@@ -1,0 +1,10 @@
+<view class="video" wx:if="{{!isNull}}" wx:for="{{videoList}}" wx:key="index">
+    <view class="title">{{item.name}}</view>
+    <view class="media">
+        <video class="media-item" src="{{item.video_url}}" bindplay="play" data-id="{{item.id}}"></video>
+    </view>
+    <view class="bottom">
+        <view class="time">{{item.create_time}}</view>
+        <view class="nums">播放 {{item.hits}}</view>
+    </view> 
+</view>

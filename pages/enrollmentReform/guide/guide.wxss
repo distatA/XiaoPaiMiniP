@@ -1,0 +1,16 @@
+.contain {
+  width: 700rpx;
+  margin: 50rpx auto 150rpx;
+  padding-bottom: 50rpx;
+  color: #2e2f41;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+
+.title {
+  font-size: 48rpx;
+}
+
+.content {
+  margin-top: 76rpx;
+  font-size: 32rpx;
+}

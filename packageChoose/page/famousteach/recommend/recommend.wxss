@@ -1,0 +1,256 @@
+
+page{
+    background: #f2f2f2;
+}
+/* 视频 */
+.value {
+	width: 750rpx;
+	height: 440rpx;
+}
+/* 导航 */
+.nav {
+	width: 750rpx;
+	height: 110rpx;
+    background-color: #ffffff;
+	border-bottom: solid 1rpx #cccccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-value {
+    margin:0 auto;
+	font-size: 30rpx;
+	color: #a9a9a9;
+}
+.nav-active {
+	font-size: 34rpx;
+    font-weight: bold;
+	color: #22d8d9;
+}
+.nav-active::after{
+    content: '';
+    display: block;
+	width: 60rpx;
+	height: 6rpx;
+	background-color: #22d8d9;
+	border-radius: 3rpx;
+    margin:10rpx auto 0;
+}
+/* 课程信息 */
+.info{
+    width: 750rpx;
+    padding-bottom: 43rpx;
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+}
+/* 标题 */
+.title{
+    width: 690rpx;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+.title-text {
+    width: 500rpx;
+	font-size: 34rpx;
+    font-weight: bold;
+	line-height: 54rpx;
+    margin-top: 32rpx;
+	color: #000000;
+}
+.title-icon {
+    margin-top: 30rpx;
+    font-size: 50rpx;    
+}
+.celled{
+    color: #e5b626;
+}
+/* 讲师信息 */
+.info-content{
+	width: 690rpx;
+	height: 140rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+	background-color: #f2f2f2;
+	border-radius: 4rpx;
+    margin: 40rpx auto 0;
+    display: flex;
+}
+.info-content-pic{
+	width: 100rpx;
+	height: 100rpx;
+    border-radius: 50rpx;
+}
+.info-content-detail{
+    width: 520rpx;
+    margin-left: 31rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.detail-title {
+	font-size: 34rpx;
+    font-weight: bold;
+	line-height: 49rpx;
+	color: #000000;
+}
+.detail-intro {
+	font-size: 26rpx;
+	line-height: 49rpx;
+	color: #a9a9a9;
+    margin-top: 4rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/* 更新观看人数 */
+.case{
+    width: 690rpx;
+    margin: 22rpx auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+.case-text-update{
+    display: flex;
+}
+.update-icon {
+	width: 30rpx;
+	height: 30rpx;
+    border-radius: 15rpx;
+	background: url(https://new.schoolpi.net/attach/small_program/class/updata.png);
+    background-size: 100%;
+    margin-top: 15rpx;
+    margin-right: 20rpx;
+}
+
+.case-text {
+	font-size: 26rpx;
+	line-height: 54rpx;
+	color: #a9a9a9;
+}
+/* 课程介绍 */
+
+.intro {
+    box-sizing: border-box;
+    padding: 40rpx 30rpx;
+	width: 750rpx;
+    margin-bottom: 20rpx;
+	background-color: #ffffff;
+}
+.intro-title{
+	font-size: 36rpx;
+    font-weight: bold;
+	color: #000000;
+}
+.intro-content{
+	font-size: 30rpx;
+	line-height: 45rpx;
+	color: #a9a9a9;
+    margin-top: 40rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 3;
+}
+.hide{
+    font-size: 30rpx;
+	line-height: 45rpx;
+	color: #a9a9a9;
+    margin-top: 40rpx;
+    display: -webkit-box;
+}
+.intro-more {
+	font-size: 32rpx;
+	color: #000000;
+    margin-top: 47rpx;
+    text-align: center;
+}
+/* 推荐课程 */
+.refer {
+    box-sizing: border-box;
+	width: 750rpx;
+    padding: 40rpx 30rpx 40rpx 30rpx;
+	background-color: #ffffff;
+}
+.refer-title {
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #000000;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+}
+.refer-course{
+    display: flex;
+    margin-top: 40rpx;
+}
+.refer-value {
+	width: 238rpx;
+	height: 178rpx;
+	border-radius: 4rpx;
+}
+.refer-details{
+    width: 433rpx;
+	height: 178rpx;
+    margin-left: 18rpx;
+}
+.refer-title {
+	font-size: 34rpx;
+    font-weight: bold;
+	line-height: 51rpx;
+	color: #383838;
+}
+.refer-inf {
+	font-size: 26rpx;
+	line-height: 39rpx;
+	color: #999999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.refer-updata {
+	font-size: 28rpx;
+	color: #383838;
+}
+.refer-updata text{
+	font-size: 28rpx;
+	line-height: 39rpx;
+	color: #ff0000;
+	opacity: 0.7;
+}
+/* 课程目录 */
+.list{
+    padding: 40rpx 30rpx 10rpx;
+    display: flex;
+    background-color: #fff;
+
+}
+.list-value{
+	width: 260rpx;
+	height: 162rpx;
+	border-radius: 4rpx;
+}
+.list-inf{
+    width: 350rpx;
+    margin: 16rpx 0 22rpx 16rpx;
+}
+.list-title {
+	font-size: 32rpx;
+	line-height: 49rpx;
+	color: #000;
+}
+.list-title-active {
+	color: #22d8d9;
+
+}
+.list-time {
+	font-size: 26rpx;
+	color: #888888;
+}

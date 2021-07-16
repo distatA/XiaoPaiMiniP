@@ -1,0 +1,195 @@
+<!--pages/career/details/baseinfo.wxml-->
+<loginDialog url="../../../pages/setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<block wx:if="{{data}}">
+    <view class='nav'>
+        <view class='nav-table'>
+            <view class="{{currentTab==0?'nav-table-style':''}}" data-current="0" bindtap="swichNav">基本信息</view>
+            <view class="{{currentTab==1?'nav-table-style':''}}" data-current="1" bindtap="swichNav">就业前景</view>
+            <view class="{{currentTab==2?'nav-table-style':''}}" data-current="2" bindtap="swichNav">开设院校</view>
+        </view>
+        <view class="seach-table {{currentTab==2?'show':'hide'}}">
+            <view class='header'>
+                <view class='header-flex' bindtap='dqtoggle'>
+                    <view class='header-title'>{{diqu}}</view>
+                    <view class='font_family {{dqArea?"icon-shang":"icon-xiahua"}} header-title-icon'></view>
+                </view>
+                <view class='header-flex' bindtap='yxtoggle'>
+                    <view class='header-title'>{{yxname}}</view>
+                    <view class='font_family {{yxArea?"icon-shang":"icon-xiahua"}} header-title-icon'></view>
+                </view>
+                <view class='header-flex' bindtap='pctoggle'>
+                    <view class='header-title'>{{bkpc}}</view>
+                    <view class='font_family {{pcArea?"icon-shang":"icon-xiahua"}} header-title-icon'></view>
+                </view>
+                <view class='header-flex'>
+                    <view class='font_family icon-sousuo1 header-title-icon'></view>
+                </view>
+            </view>
+            <!-- 省份 -->
+            <view class='sArea {{dqArea?"show":""}}'>
+                <view data-aid='{{item.id}}' data-diqu='{{item.name}}' data-scid='{{xztype}}' data-pcid='{{xzpc}}' wx:for="{{reogin}}" wx:key="index" class='{{item.id==xzsf?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+            </view>
+            <!-- 院校类型 -->
+            <view class='sArea {{yxArea?"show":""}}'>
+                <view data-yxname='院校类型' data-pcid='{{pici.id}}' data-aid='{{reogin.id}}' class='{{xztype==0?"yellow":""}}' bindtap='screenYx'>全部</view>
+                <view data-scid='{{item.id}}' data-yxname='{{item.name}}' data-pcid='{{xzpc}}' data-aid='{{xzsf}}' wx:for="{{schooltype}}" wx:key="index" class='{{item.id==xztype ?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+            </view>
+            <!-- 批次 -->
+            <view class='sArea {{pcArea?"show":""}}'>
+                <view data-bkpc='批次' data-aid='{{reogin.id}}'  data-scid='{{schooltype.id}}' class='{{xzpc==0?"yellow":""}}' bindtap='screenPici'>全部</view>
+                <view data-pcid='{{item.id}}' data-bkpc='{{item.name}}' data-aid='{{xzsf}}' data-scid='{{xztype}}' wx:for="{{pici}}" wx:key="index" class='{{item.id==xzpc ?"yellow":""}}' bindtap='screen'>{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='ConArea'>
+        <view class='content'>
+            <view class='content-one'>
+                <view class='content-one-title'>
+                    <view class='major'>{{bank.name}}</view>
+                    <view class='b_right'>
+                        <button class='font_family icon-fenxiang1 sharebtn' data-name="{{bank.name}}" data-id="{{bank.id}}" id="shareBtn" open-type="share" style="font-weight: 7"></button>
+                        <view class='line'></view>
+                        <button class='font_family sharebtn {{celled?"celled icon-shoucangshixin":"icon-shoucang1 detailesicon"}}' id="shoucang" data-id='{{bank.id}}' bindtap='shoucang'style="font-weight: 7;font-size: 45rpx;"></button>
+                    </view>
+                </view>
+
+                <view class='major-number'>
+                    <text>专业代码：</text>
+                    <text>{{data.professional_code}}</text>
+                </view>
+                <view class='major-degree'>
+                    <view>
+                        <text>授予学位：</text>
+                        <text>{{data.award_degree}}</text>
+                    </view>
+                    <view>
+                        <text>修学年限：</text>
+                        <text>{{data.study_years}}</text>
+                    </view>
+                </view>
+            </view>
+
+                <block wx:if="{{currentTab==0}}">
+                    <scroll-view class="scroll-view" scroll-y="true">
+                        <view class='content-two'>
+                            <view class='content-two-title'>
+                                <view>专业介绍</view>
+                                <view class='iconfont icon-xiajiantou1 title-icon'></view>
+                            </view>
+                            <view class='content-text'>
+                                <view>
+                                    {{data.professional_introduction}}
+                                </view>
+                            </view>
+                        </view>
+
+                        <view class='content-three' wx:if="{{data.training_target}}">
+                            <view class='content-two-title'>
+                                <view>培养目标</view>
+                                <view class='iconfont icon-xiajiantou1 title-icon'></view>
+                            </view>
+                            <view class='content-text'>
+                                <view>
+                                    {{data.training_target}}
+                                </view>
+                            </view>
+                        </view>
+
+                        <view class='content-three' wx:if="{{data.training_requirements}}">
+                            <view class='content-two-title'>
+                                <view>培养要求</view>
+                                <view class='iconfont icon-xiajiantou1 title-icon'></view>
+                            </view>
+                            <view class='content-text'>
+                                <view>
+                                    {{data.training_requirements}}
+                                </view>
+                            </view>
+                        </view>
+
+                        <view class='content-three' wx:if="{{data.courses}}">
+                            <view class='content-two-title'>
+                                <view>开设课程</view>
+                                <view class='iconfont icon-xiajiantou1 title-icon'></view>
+                            </view>
+                            <view class='content-text'>
+                                <view>
+                                    {{data.courses}}
+                                </view>
+                            </view>
+                        </view>
+                    </scroll-view>
+                    </block>
+
+                <block wx:if="{{currentTab==1}}">
+                    <view class='content-three'>
+                        <view class='content-two-title'>
+                            <view>就业方向</view>
+                            <view class='iconfont icon-xiajiantou1 title-icon'></view>
+                        </view>
+                        <view class='content-text'>
+                            <view>
+                                {{data.sem}}
+                            </view>
+                        </view>
+                    </view>
+
+                    <view class='content-three'>
+                        <view class='content-two-title'>
+                            <view>薪资曲线</view>
+                            <view class='iconfont icon-xiajiantou1 title-icon'></view>
+                        </view>
+                        <view class='Salary-curve'>
+                            <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+                        </view>
+                    </view>
+                </block>
+
+                <block wx:if="{{currentTab==2}}">
+                    <scroll-view class="scroll-view" scroll-y="true">
+                        <view class='content-three'>
+                            <view class='content-two-title'>
+                                <view class='content-three-title'>开设院校</view>
+                                <!-- <view class='iconfont icon-xiajiantou1 title-icon'></view> -->
+                            </view>
+                            <view class='content-text'>
+                                <!-- {{data.sem}} -->
+                                <!-- 学校列表 -->
+                                <block wx:if="{{school_list}}">
+                                    <view class='school-card' wx:for="{{school_list}}" wx:key="index" wx:for-item="sclist">
+                                        <!-- <navigator url='../../school/details/details?id={{sclist.id}}'> -->
+                                        <view style="display:flex;" bindtap="goDetail" data-id="{{sclist.id}}" data-selecting="{{sclist.selecting}}">
+                                            <view class='school-photo'>
+                                                <image src='{{sclist.logo}}'></image>
+                                            </view>
+                                            <view class='school-card-center'>
+                                                <view class='school-name'>
+                                                    {{sclist.name}}
+                                                </view>
+                                                <view class='school-type'>
+                                                    <text>{{sclist.province}}</text>
+                                                    <text>{{sclist.institution_str}}</text>
+                                                    <text>{{sclist.disciplinary_level}}</text>
+                                                </view>
+                                            </view>
+                                            <view class='school-leve'>
+                                                <text>{{sclist.label_str}}</text>
+                                            </view>
+                                        </view>
+                                        <!-- </navigator> -->
+                                    </view>
+                                </block>
+                                <block wx:else>
+                                    <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" mode="aspectFit" class="nopost">
+                                    </image>
+                                </block>
+                            </view>
+                        </view>
+                    </scroll-view>
+                    </block>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="nopost"></image>
+</block>

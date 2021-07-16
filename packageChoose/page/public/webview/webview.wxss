@@ -1,0 +1,59 @@
+/* pages/webview/webview.wxss */
+
+/* 全景支付 */
+
+.pay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.pay-wrap {
+    box-sizing: border-box;
+    width: 550rpx;
+    text-align: center;
+    margin: 250rpx auto 0 auto;
+    background: #fff;
+    position: relative;
+    border-radius: 15rpx;
+}
+
+.pay-bg {
+    width: 550rpx;
+    height: 350rpx;
+    background: url("https://new.schoolpi.net/attach/small_program/index/pay.png") no-repeat;
+    background-size: 100%;
+}
+
+.pay-title {
+    font-size: 52rpx;
+    color: #000;
+}
+
+.pay-info {
+    font-size: 28rpx;
+    color: #999;
+    margin: 20rpx 40rpx;
+}
+
+.pay-content {
+    width: 500rpx;
+    margin: 0 auto;
+    padding-bottom: 30rpx;
+    font-size: 34rpx;
+}
+
+.sure {
+    color: #00c200;
+    border-bottom: 1rpx solid #f2f2f2;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.cancle {
+    height: 100rpx;
+    line-height: 100rpx;
+}

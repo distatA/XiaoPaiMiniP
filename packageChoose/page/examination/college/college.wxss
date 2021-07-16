@@ -1,0 +1,88 @@
+.header {
+    box-sizing: border-box;
+    width: 750rpx;
+    display: flex;
+    padding: 25rpx 0 47rpx 52rpx;
+}
+
+.logo {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+
+.college {
+    margin-left: 38rpx;
+    flex: 1;
+}
+
+.value {
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 24rpx;
+    color: #69707f;
+}
+
+.tag {
+    width: 210rpx;
+    margin-left: 46rpx;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    width: 82rpx;
+    height: 28rpx;
+    border-radius: 14rpx;
+    border: solid 1rpx #787878;
+    font-size: 22rpx;
+    line-height: 28rpx;
+    color: #69707f;
+    text-align: center;
+    margin-right: 18rpx;
+    margin-bottom: 10rpx;
+}
+
+.title {
+    box-sizing: border-box;
+    height: 81rpx;
+    line-height: 81rpx;
+    background-color: #e5e5e5;
+}
+
+.title-wrap {
+    width: 625rpx;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.title-item {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #757575;
+}
+
+.subject {
+    box-sizing: border-box;
+    width: 625rpx;
+    border-bottom: solid 1rpx #e6e6e6;
+    margin: 0 auto;
+    padding: 0 20rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    color: #7a7a7a;
+}
+
+.subject-item {
+    width: 313rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30rpx 0;
+}

@@ -1,0 +1,13 @@
+<block wx:if="{{isOpen == 1}}">
+    <cover-image src="https://new.schoolpi.net/attach/small_program/live/redBag.png" class="red-bag" animation="{{animation}}" bindtap="openRedBag"></cover-image>
+</block>
+<block wx:if="{{isOpen == 2}}">
+    <cover-view class="red-container">
+        <cover-view style="position:relative;">
+            <cover-image src="https://new.schoolpi.net/attach/small_program/live/redBag-open.png" class="red-bag-open"></cover-image>
+            <cover-view class="red-bag-tips">恭喜获得</cover-view>
+            <cover-view class="red-bag-content">{{redBagInfo}}</cover-view>
+            <cover-image src="/static/close-white.png" class="close" bindtap="_close"></cover-image>
+        </cover-view>
+    </cover-view>
+</block>

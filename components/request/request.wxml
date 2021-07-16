@@ -1,0 +1,181 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="dialog-container" hidden="{{!dialogShow}}">
+    <view class="topbar" style="padding-top: {{height}};">
+        <view class="school">
+            <image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-name">
+                <view class="school-name1">{{roomTitle}}</view>
+                <view class="school-name2">{{roomPeoples}}人 观看</view>
+            </view>
+        </view>
+    </view>
+    <view class="dialog">
+        <view class="dialog-header">
+            <!-- <view class="dialog-title">学生提问</view> -->
+            <image src="/static/dialog_close.png" bindtap="_close"></image>
+        </view>
+        <view class="dialog-body">
+            <scroll-view scroll-y="true" style="height:{{scrollHeight}}px">
+                <!-- requestType判断教师/学生端 -->
+                <block wx:if="{{requestType == 0}}">
+                    <block wx:if="{{!showQuestionList}}">
+                        <view class="ask-question">
+                            <view class="ask-title">向老师提问</view>
+                            <view class="ask-content">
+                                <textarea class="ask-input" bindinput='listenQuestion' placeholder="向老师提问，等待TA现场回答"></textarea>
+                                <view class="limit">{{question.length}}/140</view>
+                            </view>
+                            <view class="ask-bar">
+                                <view class="ask-user">
+                                    <view class="ask-integral">
+                                        我的积分:
+                                        <view class="integral">{{myIntegral}}</view>
+                                    </view>
+                                    <view class="get-more">获取更多</view>
+                                </view>
+                                <view class="ask-sign">
+                                    <block wx:for="{{propList}}" wx:key="index">
+                                        <image class="ask-icon {{propType == item.prop?'border':''}}" bindtap="selectProp" data-propType="{{item.prop}}" src="{{item.src}}"></image>
+                                    </block>
+                                </view>
+                            </view>
+                            <view class="ask-fun">
+                                <view class="ask-submit {{question.length>0?'':'can-not'}}" bindtap="submitQuestion">立即提问</view>
+                                <view class="ask-submit can-not ask-btn-list" bindtap="change">查看问题</view>
+                                <view class="ask-tips">消耗{{needIntegral}}积分,若直播结束未回答,48小时内返回积分</view>
+                            </view>
+                        </view>
+                    </block>
+                    <!-- 问题列表 -->
+                    <block wx:if="{{showQuestionList}}">
+                        <view class="drawer-top">
+                            <view class="asked-title">全部问题</view>
+                            <view class="already-asked">
+                                已有
+                                <view>{{questionList.length}}</view>
+                                <view>问题</view>
+                                <!-- ,
+                                <view>1</view>
+                                <view>人想问</view> -->
+                            </view>
+                        </view>
+                        <view class="question-list">
+                            <block wx:for="{{questionList}}" wx:key="index">
+                                <view class="question-item">
+                                    <view class="question-detail">
+                                        <view class="question-logo" wx:if="{{item.diamond_type == 0}}">问</view>
+                                        <image class="question-logo-image" src="/static/crown.png" wx:if="{{item.diamond_type == 1}}"></image>
+                                        <image class="question-logo-image" src="https://new.schoolpi.net/attach/small_program/live/gem.png" wx:if="{{item.diamond_type == 2}}"></image>
+                                        <image class="question-logo-image" src="/static/diamond.png" wx:if="{{item.diamond_type == 3}}"></image>
+                                        <view class="question-title">
+                                            {{item.question}}
+                                        </view>
+                                    </view>
+                                    <view class="question-meta">
+                                        <view class="quizzer">
+                                            <image class="avatar" src="https://att.schoolpi.net{{item.user_headimg}}"></image>
+                                            <view class="name">{{item.user_nickname}}</view>
+                                        </view>
+                                        <view class="question-bar">
+                                            <view class="asking" wx:if="{{item.status === 1}}">
+                                                <image src="/static/asking.png" class="asking-icon"></image>
+                                                回答中
+                                            </view>
+                                            <view class=" asking waiting" wx:if="{{item.status === 0}}">
+                                                待回答
+                                            </view>
+                                            <view class="asking asking-ok" wx:if="{{item.status === 2}}">
+                                                已回答
+                                            </view>
+                                            <view class="wanting" bindtap="wantQuest" data-id="{{item.id}}">
+                                                {{item.number}}人想问
+                                            </view>
+                                        </view> 
+                                        <view class="support-answer" wx:if="{{item.answer == null&&isZhuli}}" data-id="{{item.id}}" bindtap="supportAnswer">辅助回答</view>
+                                    </view>
+                                    <!-- 辅助回答 -->
+                                    <view class="question-more" wx:if="{{item.answer != null}}">
+                                        <view class="question-answer" style="{{currentViewSupport == item.id?'height:auto':''}}">老师回答:{{item.answer}}</view>
+                                        <image class="more-question-arrow {{currentViewSupport == item.id?'turn':''}}" src="/static/arrow_down.png" bindtap="viewMore" data-id="{{item.id}}"></image>
+                                    </view>
+                                </view>
+                            </block>
+                            <view class="ask-fun">
+                                <view class="ask-submit2" bindtap="change">我要提问</view>
+                                <!-- <view class="ask-tips">消耗{{needIntegral}}积分,若直播结束未回答,48小时内返回积分</view> -->
+                            </view>
+                        </view>
+                    </block>
+                </block>
+                <!-- 教师 -->
+                <block wx:if="{{requestType == 1}}">
+                    <view class="drawer-top">
+                        <view class="asked-title">全部问题</view>
+                        <view class="already-asked">
+                            已有
+                            <view>{{questionList.length}}</view>
+                            <view>问题</view>
+                            <!-- <view>1</view>
+                                <view>人想问</view> -->
+                        </view>
+                    </view>
+                    <view class="question-list">
+                        <block wx:for="{{questionList}}" wx:key="index">
+                            <view class="question-item">
+                                <view class="question-detail">
+                                    <view class="question-logo">问</view>
+                                    <view class="question-title">
+                                        {{item.question}}
+                                    </view>
+                                </view>
+                                <view class="question-meta">
+                                    <view class="quizzer">
+                                        <image class="avatar" src="https://att.schoolpi.net{{item.user_headimg}}"></image>
+                                        <view class="name">{{item.user_nickname}}</view>
+                                    </view>
+                                    <view class="question-bar">
+                                        <view class="asking asking-zhong" bindtap="answerAsk" wx:if="{{item.status === 1}}" data-id="{{item.id}}">
+                                            <image src="/static/asking.png" class="asking-icon"></image>
+                                            回答中
+                                        </view>
+                                        <view class="asking waiting" bindtap="answerAsk" data-id="{{item.id}}" wx:elif="{{item.status === 0}}">
+                                            <image src="/static/asking.png" class="asking-icon"></image>
+                                            点击回答
+                                        </view>
+                                        <view class="asking asking-ok" data-id="{{item.id}}" wx:elif="{{item.status === 2}}">
+                                            <image src="/static/asking.png" class="asking-icon"></image>
+                                            已回答
+                                        </view>
+                                        <view class="wanting" data-id="{{item.id}}">
+                                            {{item.number}}人想问
+                                        </view>
+                                    </view>
+                                    <view class="support-answer" wx:if="{{item.answer == null&&isZhuli}}" data-id="{{item.id}}" bindtap="supportAnswer">辅助回答</view>
+                                </view>
+                                <!-- 辅助回答 -->
+                                <view class="question-more" wx:if="{{item.answer != null}}">
+                                    <view class="question-answer" style="{{currentViewSupport == item.id?'height:auto':''}}">老师回答:{{item.answer}}</view>
+                                    <image class="more-question-arrow {{currentViewSupport == item.id?'turn':''}}" src="/static/arrow_down.png" bindtap="viewMore" data-id="{{item.id}}"></image>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<!-- 提交成功后弹窗 -->
+<view class="success-container" wx:if="{{showSuccessTips}}">
+    <view class="success-content">
+        <view class="success">提问成功</view>
+        <image class="success-image" src="/static/success-submit.png"></image>
+        <view class="success-tips">本次消耗{{needIntegral}}积分</view>
+        <view class="make-sure" bindtap="makeSure">知道了</view>
+    </view>
+</view>
+<!-- 辅助回答弹窗 -->
+<view class="support-answer-contant" wx:if="{{showSupportAnswer}}">
+    <input class="support-input" placeholder="输入回答" focus="{{showSupportAnswer}}" bindblur="blurSupport" bindinput="inputSupport"></input>
+    <view class="support-submit" bindtap="submitSupportAnswer">发送</view>
+</view>

@@ -1,0 +1,249 @@
+
+@import "/wxParse/wxParse.wxss";
+
+page {
+    background-color: #fff;
+}
+
+.back-btn {
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    top: 5.5vh;
+    left: 5vw;
+    z-index: 999;
+}
+
+.back-btn image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.boast-bg {
+    height: 580rpx;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.boast-bg image {
+    width: 100%;
+    height: 100%;
+}
+
+.boast {
+    width: 100%;
+    height: 100%;
+}
+
+.boast image {
+    width: 100%;
+    height: 100%;
+}
+
+.mask {
+    width: 100%;
+    height: 580rpx;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mask image{
+    width: 102rpx;
+    height: 102rpx;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 215rpx auto 0;
+}
+.mask-word{
+    position: absolute;
+    right: 0;
+    left: 0;
+    font-size:28rpx;
+    color: #fff;
+    margin: 375rpx auto 0;
+    text-align: center;
+}
+.center_content {
+    padding: 0rpx 30rpx;
+    position: relative;
+    margin-top: -50rpx;
+    background-color: #fff;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+}
+
+.center_bg {
+    background: #fff;
+    padding: 30rpx 20rpx;
+    margin-top: 30rpx;
+}
+
+.line {
+    border-top: 1rpx solid #f2f2f2;
+    height: 0;
+    margin-top: 20rpx;
+}
+
+.enrolment_information {
+    font-size: 32rpx;
+    color: #484848;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+
+.enrolment_information text {
+    font-weight: border;
+}
+
+.info {
+    display: flex;
+}
+
+.info-left {
+    flex: 1;
+}
+
+.right_focuse {
+    width: 120rpx;
+    height: 50rpx;
+    display: flex;
+    margin-right: 20rpx;
+}
+
+.right_focuse .share {
+    width: 50rpx;
+    height: 50rpx;
+    position: relative;
+}
+
+.right_focuse .share image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.right_focuse .share button {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    background: #fff;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.focuse_people {
+    margin-left: 110rpx;
+}
+
+.right_focuse .collect {
+    width: 50rpx;
+    height: 50rpx;
+    position: relative;
+    margin-left: 20rpx;
+}
+
+.right_focuse .collect image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.focuse {
+    font-size: 30rpx;
+    padding-left: 5rpx;
+    vertical-align: middle;
+}
+
+.focuse_people {
+    font-size: 32rpx;
+    color: #878787;
+    padding-bottom: 8rpx;
+    vertical-align: middle;
+}
+
+.publisher {
+    font-size: 26rpx;
+    color: #878787;
+    margin-bottom: 20rpx;
+    padding-top: 10rpx;
+}
+
+.publish_time {
+    font-size: 26rpx;
+    color: #878787;
+}
+
+.center_bg_foot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15rpx;
+}
+
+.participates {
+    font-size: 26rpx;
+    color: #878787;
+    padding-top: 20rpx;
+}
+
+.participates text {
+    margin-right: 30rpx;
+}
+
+.down-show {
+    color: #ccc;
+    font-size: 45rpx;
+    line-height: 1;
+}
+
+.auditions {
+    width: 390rpx;
+    height: 200rpx;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.auditions image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content-text {
+    min-height: 100rpx;
+    font-size: 26rpx;
+    line-height: 52rpx;
+    color: #878787;
+    padding-bottom: 130rpx;
+}
+
+.title {
+    font-size: 32rpx;
+    font-weight: bolder;
+}
+
+.btner {
+    display: block;
+    margin: 0 100rpx 0 100rpx;
+    height: 92rpx;
+    border-radius: 46rpx;
+    background-color: #22d8d9;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 92rpx;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 30rpx;
+}
+
+button::after {
+    border: none;
+}

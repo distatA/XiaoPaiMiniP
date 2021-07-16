@@ -1,0 +1,27 @@
+<dialog id="dialog" roomID="{{roomID}}" roomTitle="{{roomTitle}}" roomLiveType="{{liveType}}" areaId="{{areaId}}" schoolLogo="{{schoolLogo==''? '/static/logo.png':schoolLogo}}" roomPeoples="{{roomPeoples}}" bind:close="dialogHide">
+</dialog>
+
+<request id="request" roomID="{{roomID}}" roomTitle="{{roomTitle}}" questionList="{{questionList}}" roomLiveType="{{liveType}}" schoolLogo="{{schoolLogo==''? '/static/logo.png':schoolLogo}}" myIntegral="{{myIntegral}}" roomPeoples="{{roomPeoples}}" bind:close="requestHide">
+
+</request>
+<redBag id="redBag" />
+
+<box id="box" />
+
+<view class="page">
+    <view class='container-box' hidden="{{showDialog}}">
+        <block wx:if="{{liveStatus == 1}}">
+            <include src="liveok/liveok.wxml" />
+        </block>
+        <block wx:else>
+            <include src="liveno/liveno.wxml" />
+        </block>
+    </view>
+</view>
+
+<block wx:if="{{isVideo}}">
+    <view class="show-video">
+        <video src="{{videoUrl}}"></video>
+        <view class="quit-video" bindtap="quitVideo">返回等待</view>
+    </view>
+</block>

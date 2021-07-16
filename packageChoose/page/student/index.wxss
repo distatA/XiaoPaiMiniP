@@ -1,0 +1,146 @@
+.container-box {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#player {
+  width: 750rpx;
+  /* height: 100vh; */
+  position: relative;
+}
+
+.liveno {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(35, 35, 35);
+    overflow: hidden;
+    position: relative;
+}
+
+.share-wrap {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.share {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.share-icon {
+    height: 90rpx;
+    width: 90rpx;
+    border-radius: 50%;
+}
+
+.html-content {
+    padding: 30rpx 30rpx;
+}
+
+.danmu-send {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    left: 0;
+    height: 50px;
+}
+
+.danmu-input {
+    background: red;
+}
+
+.back-music {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    left: 20rpx;
+    bottom: 20rpx;
+    border-radius: 30rpx;
+    background: #fff;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+.auto {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 3s linear infinite;
+    -moz-animation: rotation 3s linear infinite;
+    -webkit-animation: rotation 3s linear infinite;
+    -o-animation: rotation 3s linear infinite;
+}
+/* 弹幕输入弹窗 */
+.barrage-container{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    color: #000!important;
+    z-index: 9999;
+    padding: 0rpx 20rpx;
+}
+.barrage-input{
+    flex:1;
+    padding-right: 20rpx;
+}
+.barrage-input .input {
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 30rpx; 
+    background-color: #f2f2f2;
+    border-radius: 40rpx;
+    padding: 0 40rpx;
+    margin: 15rpx 0;
+}
+.barrage-submit{
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    padding: 5rpx 0;
+    background: #6ae1c4;
+    color: #fff;
+    border-radius: 30rpx
+}
+.show-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.show-video video {
+    width: 100vw;
+    height: 100vh;
+}
+.quit-video {
+    width: 150rpx;
+    height: 65rpx;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 33rpx 0rpx 0rpx 33rpx;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    font-size: 20rpx;
+    font-weight: bold;
+    line-height: 65rpx;
+    color: #fff;
+    text-align: center;
+}

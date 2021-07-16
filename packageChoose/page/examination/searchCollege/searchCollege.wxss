@@ -1,0 +1,102 @@
+.wrap {
+    position: fixed;
+    top: 0;
+    width: 750rpx;
+    background-color: #fff;
+}
+
+.search {
+    height: 96rpx;
+    margin-top: 36rpx;
+    display: flex;
+}
+
+.input {
+    width: 526rpx;
+    height: 96rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 4rpx 60rpx 0rpx rgba(0, 0, 0, 0.08);
+    margin-left: 48rpx;
+    display: flex;
+}
+
+.input input {
+    width: 350rpx;
+    height: 96rpx;
+    margin-left: 20rpx;
+}
+
+.icon {
+    width: 30rpx;
+    height: 30rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/entrance/examination-search.png');
+    background-size: 100%;
+    margin-left: 36rpx;
+    margin-top: 38rpx;
+}
+
+.close {
+    width: 80rpx;
+    height: 96rpx;
+    position: relative;
+}
+
+.close::before, .close::after {
+    content: "";
+    position: absolute;
+    height: 30rpx;
+    width: 3rpx;
+    top: 35rpx;
+    right: 25rpx;
+    background: #000;
+}
+
+.close::before {
+    transform: rotate(45deg);
+    /*进行旋转*/
+}
+
+.close::after {
+    transform: rotate(-45deg);
+}
+
+.word {
+    width: 20%;
+    text-align: center;
+    line-height: 96rpx;
+    font-size: 28rpx;
+}
+
+.content {
+    margin: 300rpx 48rpx 0;
+    padding-bottom: 200rpx;
+}
+
+.title {
+    margin: 71rpx 48rpx 28rpx;
+    font-size: 40rpx;
+}
+
+.value {
+    font-size: 28rpx;
+    margin-top: 50rpx;
+}
+
+.active {
+    color: #06d6a0;
+}
+
+.btn {
+    width: 654rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+    background-color: #06d6a0;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 100rpx;
+    position: fixed;
+    bottom: 77rpx;
+    left: 48rpx;
+}

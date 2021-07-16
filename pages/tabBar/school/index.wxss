@@ -1,0 +1,363 @@
+/* pages/school/index.wxss */
+
+page {
+    background: #fafafa;
+    font-family: PingFangSC-Regular, "Droid Sans", Arial, sans-serif;
+    color: #5a5a5a;
+}
+
+.header {
+    height: 100rpx;
+    background: #22d9d9;
+    position: relative;
+    padding: 10rpx 15rpx 0 15rpx;
+    display: flex;
+}
+
+.area {
+    /* width: 120rpx; */
+    display: flex;
+    padding-right: 10rpx;
+    padding-top: 15rpx;
+}
+
+.area-title {
+    margin-right: 10rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.area-title-icon {
+    color: #fff;
+    font-size: 24rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.search {
+    position: relative;
+    /* width: 83%; */
+    height: 66rpx;
+    border: #fff 1px solid;
+    /* position: absolute;
+  top: 10%; */
+    flex: 1;
+    border-radius: 55rpx;
+    line-height: 66rpx;
+}
+
+.s_text {
+    float: left;
+    text-align: left;
+    color:rgb(255, 255, 255);
+    padding: 0 30rpx;
+    width: 80%;
+    height: 100%;
+    border: none;
+    font-size: 30rpx;
+}
+
+.s_btn {
+    position: absolute;
+    top: 0rpx;
+    right: 0rpx;
+    /* right:-150rpx; */
+    width: 13%;
+    height: 100%;
+    border: none;
+    font-size: 52rpx;
+    line-height: 1.2;
+    color: #fff;
+    text-align: center;
+    background: none;
+    padding: 0;
+    font-weight: 400;
+}
+
+.r_btn {
+    width: 60rpx;
+    /* width: 15%; */
+    height: 100rpx;
+    text-align: center;
+    float: right;
+    padding-right: 10rpx;
+}
+
+.select_area_pop {
+    background: #22d9d9;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10rpx;
+    padding-left: 30rpx;
+    padding-bottom: 20rpx;
+    position: absolute;
+    z-index: 9999;
+}
+
+.select_area_pop view {
+    width: 100rpx;
+    margin-right: 10rpx;
+    margin-left: 10rpx;
+    margin-bottom: 10rpx;
+    font-size: 28rpx;
+    color: #fff;
+    float: left;
+}
+
+.popbg {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.choose {
+    display: none !important;
+    width: 70%;
+    position: absolute;
+    top: 100rpx;
+    right: 0;
+    background: -webkit-linear-gradient(right, #2bd6d0, #00ddad);
+    padding: 30rpx 10rpx;
+    padding-left: 30rpx;
+    z-index: 99;
+}
+
+.choose-title {
+    color: #fff;
+    font-size: 34rpx;
+    margin-top: 30rpx;
+}
+
+.choose-type {
+    width: 100%;
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-type-check {
+    width: 100rpx;
+    font-size: 24rpx;
+    color: #fff;
+    border: 2rpx solid #fff;
+    text-align: center;
+    border-radius: 15rpx;
+    margin: 10rpx;
+    padding: 5rpx 0;
+}
+
+.selected {
+    background: #fff;
+    color: #2bd6d0;
+}
+
+.btn {
+    display: flex;
+    margin-top: 30rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.left-btn, .right-btn {
+    width: 150rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    padding: 0;
+    background: none;
+    color: #fff;
+}
+
+.rs_logo {
+    font-size: 36rpx;
+    color: #fff;
+    text-align: center;
+    /* margin-top: 10rpx; */
+}
+
+.r_text {
+    font-size: 25rpx;
+    color: #fff;
+}
+
+.boast-bg {
+    height: 260rpx;
+    background: #22d9d9;
+    position: relative;
+}
+
+.boast {
+    width: 94%;
+    height: 350rpx;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    display: block;
+    left: 0;
+    right: 0;
+    background-color: #f2f2f2;
+    box-shadow: 0rpx 2rpx 2rpx #ccc;
+    border-radius: 6rpx;
+}
+
+.boast image {
+    width: 100%;
+    height: 350rpx;
+    text-align: center;
+    border-radius: 6rpx;
+}
+
+.school-scroll {
+    margin-top: 120rpx;
+}
+
+.school-copy {
+    margin: 50rpx 0;
+}
+
+.school-ardess {
+    font-size: 26rpx;
+    padding: 0 30rpx;
+    line-height: 2.3;
+    overflow: hidden;
+}
+
+.school-many {
+    color: #666;
+    padding-left: 10rpx;
+}
+
+.school-city {
+    color: #333;
+    margin-right: 10rpx;
+}
+
+.scroll-view_H {
+    white-space: nowrap;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.scroll-view-item_H {
+    display: inline-block;
+    width: 28%;
+    height: 280rpx;
+    text-align: center;
+    position: relative;
+    border-radius: 6rpx;
+    box-shadow: 0rpx 2rpx 2rpx #ccc;
+    margin: 10rpx;
+}
+
+.scroll-view-item_H  image {
+    width: 100%;
+    height: 280rpx;
+    border-radius: 6rpx;
+}
+
+.scroll-foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-logo {
+    width: 35rpx;
+    height: 35rpx;
+    border-radius: 35rpx;
+    margin-top: 12rpx;
+    overflow: hidden;
+}
+
+.school-logo image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+}
+
+.school-name {
+    font-size: 24rpx;
+    padding-left: 5rpx;
+    padding-top: 13rpx;
+}
+
+.scroll-view-nav {
+    width: 100%;
+    height: 280rpx;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+/* 二维码弹框 */
+
+.codeBox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.codeImg {
+    width: 66%;
+    background: #fff;
+    position: absolute;
+    z-index: 9999;
+    bottom: 20%;
+    left: 17%;
+    padding-bottom: 40rpx;
+    height: 44%;
+    border-radius: 20rpx;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.codeImg image {
+    width: 90%;
+    height: 90%;
+}
+
+.codeIs {
+    display: block;
+}
+
+.codeis {
+    display: none;
+}
+
+/* =================左滑滚轮去掉================== */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

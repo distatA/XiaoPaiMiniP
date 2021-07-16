@@ -1,0 +1,28 @@
+<view class="main_container">
+	<image class="circle" src="https://new.schoolpi.net/attach/small_program/classify/index_circle.png" mode="widthFix">
+	</image>
+	<view class="banner_info">
+		<image class="banner_top" src="{{back_image}}"
+			mode="widthFix"></image>
+		<image class="banner_top" src="https://new.schoolpi.net/attach/small_program/classify/banner_bottom.png"
+			mode="widthFix"></image>
+	</view>
+
+	<view class="exam_container">
+		<view class="exam_title">模拟考试</view>
+		<view class="exam_list">
+			<block wx:for="{{list}}" wx:key="index">
+				<view class="exam_item" hover-class="shadow" bindtap="selectQuestion" data-id="{{item.id}}" data-time="{{item.exam_time}}" data-questionNum="{{item.all_num}}">
+					<image class="exam_free" src="https://new.schoolpi.net/attach/small_program/classify/exam_free.png"
+						mode="widthFix"></image>
+					<image class="exam_img" src="{{item.back_image}}" mode="widthFix"></image>
+					<view class="exam_info_title">点击开始考试</view>
+					<view class="exam_info_attr">
+						<view>试卷共{{item.all_num}}道题</view>
+						<view>测试时长{{item.exam_time}}分钟</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

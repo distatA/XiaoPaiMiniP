@@ -1,0 +1,117 @@
+page{
+    background: #fff;
+}
+.cont1{
+    /* width:100%; */
+    /* border:1rpx solid #f00; */
+    margin: 20rpx;
+    font-size:32rpx;
+    color:#333;
+    /* margin-top:20rpx;
+    margin-bottom:20rpx; */
+}
+.kuang{
+    width:100%;
+    height:20rpx;
+    background: #F2F2F2;
+}
+.zytop{
+  width:100%;
+  height:90rpx;
+  border-bottom:1rpx solid #E5E5E5;
+  padding-left:30rpx;
+  font-size:30rpx;
+  font-weight:bold;
+  background:#fff;
+  line-height:90rpx;
+  margin-top:20rpx
+}
+.yuan_list1{
+  width:100%;
+  height:160rpx;
+  background: #fff;
+  border-bottom:1rpx solid #E5E5E5;
+}
+.yuan_list1 view{
+  float:left;
+}
+.yuan_list1_l{
+  width:2%;
+  height:160rpx;
+  background:#25BAFD;
+}
+.yuan_list1_m{
+  width:83%;
+  height:160rpx;
+  /* border:1rpx solid #f00; */
+  padding-left:30rpx;
+}
+.yuan_list1_r{
+  width:10%;
+  height:160rpx;
+  /* border:1rpx solid #f00; */
+}
+.yuan_list1_m_t{
+  width:100%;
+  height:90rpx;
+  /* border:1rpx solid #f00; */
+  font-size:30rpx;
+  line-height:100rpx;
+  font-weight:bold;
+  color:#000;
+}
+.yuan_list1_m_b{
+  width:80%;
+  height:70rpx;
+  /* border:1rpx solid #f00; */
+  display: flex;
+  justify-content: space-between;
+}
+.yuan_list1_L{
+  width:88%;
+  height:160rpx;
+}
+.biaoq_box{
+  width:80%;
+  height:70rpx;
+  padding-left:20rpx;
+}
+.biaoq_box view{
+  float:left;
+  margin-left:10rpx
+}
+.hot{
+  width:95%;
+  height:70rpx;
+  padding-left:30rpx;
+  margin-top:25rpx;
+}
+.hot_r{
+  width:80%;
+  height:70rpx;
+  font-size:28rpx;
+  line-height:70rpx;
+}
+.biaoqian{
+  height:34rpx;
+  font-size:20rpx;
+  color:#B7B7B7;
+  line-height:34rpx;
+  border:1rpx solid #EAEAEA;
+  background:#fff;
+  border-radius:51rpx;
+  text-align:center;
+  padding:0 16rpx;
+
+}
+/* height:34rpx;
+font-size:24rpx;
+color:#FFAE28;
+line-height:34rpx;
+border:1rpx solid #FFAE28;
+background:#fff;
+border-radius:51rpx;
+text-align:center;
+margin-left:14rpx;
+padding:0 5rpx;
+ */

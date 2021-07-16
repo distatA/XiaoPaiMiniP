@@ -1,0 +1,193 @@
+page {
+    background: #fff;
+}
+
+.header {
+    display: flex;
+    margin: 40rpx 50rpx;
+}
+
+.default-pic, .user-avatarUrl {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 30rpx;
+}
+
+.login-text {
+    font-size: 34rpx;
+    line-height: 100rpx;
+    color: #000;
+    font-weight: bold;
+    margin-left: 50rpx;
+}
+
+.user-info {
+    flex: 1;
+    margin-left: 30rpx;
+    position: relative;
+}
+
+.user-name {
+    font-size: 40rpx;
+    font-weight: bold;
+}
+.tips{
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #ccc;
+}
+.integral {
+    position: absolute;
+    bottom: 8rpx;
+    right: 0;
+}
+
+/* 积分商城 */
+
+.integral-store {
+    width: 670rpx;
+    height: 100rpx;
+    margin: 0 auto;
+    background: url("https://new.schoolpi.net/attach/small_program/center/btn-img.png") no-repeat center;
+    background-size: 100%;
+    /* box-shadow: 0rpx 4rpx 60rpx 0rpx rgba(0, 0, 0, 0.08); */
+}
+
+.session {
+    margin: 30rpx 50rpx;
+    display: flex;
+    justify-content: space-between;
+    line-height: 100rpx;
+}
+
+.session-info {
+    position: relative;
+    color: #10141c;
+    font-size:32rpx;
+
+}
+
+.point {
+    position: absolute;
+    right: -15rpx;
+    top: 25rpx;
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 50%;
+    background: #1ce68e;
+}
+
+.all-session {
+    font-size: 28rpx;
+    color: #06d6a0;
+    line-height: 100rpx;
+}
+
+/*功能*/
+
+.list {
+    display: flex;
+    margin: 30rpx 55rpx;
+    position: relative;
+}
+
+.icon {
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: 10rpx;
+}
+
+.list-name {
+    font-size: 32rpx;
+    line-height: 70rpx;
+    letter-spacing: -1rpx;
+    color: #5b5b5b;
+    margin-left: 50rpx;
+}
+
+.arrow-position {
+    position: absolute;
+    right: 0;
+    top: 14rpx;
+    line-height: 70rpx;
+}
+
+.arrow {
+    position: absolute;
+    right: 0;
+    line-height: 70rpx;
+    font-size: 38rpx;
+    color: #9b9b9b;
+}
+
+/*登陆*/
+
+.login-back {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.login {
+    width: 600rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 250rpx auto 0 auto;
+    background: #fff;
+    position: relative;
+    padding-bottom: 40rpx;
+    border-radius: 20rpx;
+    line-height: 60rpx;
+}
+
+.login-img {
+    border-radius: 6rpx;
+    padding-top: 60rpx;
+    font-size: 40rpx;
+    font-weight: 500;
+}
+
+.caozuo {
+    color: #575757;
+}
+
+.tupian {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    margin-top: 20rpx;
+    margin-bottom: 30rpx;
+}
+
+.zandenglu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.zandenglu button {
+    width: 250rpx !important;
+    margin: 20rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+}
+
+.zandenglu .liji {
+    background: red;
+    color: #fff;
+}
+
+.btnNo {
+    background-color: #f8f8f8 !important;
+    color: #000 !important;
+}
+
+.btnGo {
+    background-color: #22d9d9 !important;
+    color: #fff !important;
+}

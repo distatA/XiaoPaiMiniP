@@ -1,0 +1,12 @@
+
+    <block wx:for="{{detailData.question_list}}" wx:key="index">
+    <view class="bank-con" bindtap="goDetail" data-item="{{item}}">
+        <view class="subject" style="color:{{item.tags_color}}">{{item.tags}}</view>
+        <view class="sub-con">
+            {{item.title}}
+        </view>
+    </view>    
+    </block>
+    <view wx:if="{{detailData.question_list.length==0}}">
+        <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>

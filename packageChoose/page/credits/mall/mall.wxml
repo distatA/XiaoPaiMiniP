@@ -1,0 +1,50 @@
+<!--packageChoose/page//credits/mall/mall.wxml-->
+<!-- 积分商城 -->
+<!-- 图 -->
+<swiper class="banner" circular="true" autoplay="{{autoplay}}" easing-function="linear">
+    <block wx:for="{{adUrl}}" wx:key="index">
+        <swiper-item>
+            <image class="banner" src="{{item.ad_code}}" mode="widthFix" bindtap="openAdlink" data-link="{{item.ad_link}}" data-type="{{item.media_nw}}"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<!-- 积分显示 -->
+<view class="credits">
+    <view class="credits-show">积分
+        <text class="credits-num">{{userList.integral}}</text>
+    </view>
+    <navigator url="../mission/mission" hover-class="none">
+        <view class="gain">获取积分</view>
+    </navigator>
+</view>
+<!-- 订单 地址 -->
+<view class="contain">
+    <view class="order wrap" bindtap="goOrder">
+        <view class="order-icon"></view>
+        <view class="value">
+            <view class="title">我的订单</view>
+            <view class="info">共有
+                <text class="order-num">{{userList.order_num}}</text>笔订单</view>
+        </view>
+    </view>
+    <view class="address wrap" bindtap="goAddress">
+        <view class="address-icon"></view>
+        <view class="value">
+            <view class="title">地址信息</view>
+            <view class="info processed">请填写地址</view>
+        </view>
+    </view>
+</view>
+<!-- 商品兑换 -->
+<view class="exchange">
+    <view class="commodity" wx:for="{{goodsList}}" wx:key="index" data-id="{{item.id}}" bindtap="goDetails">
+        <image class="com-pic" src="{{item.cover}}" mode="scaleToFill"></image>
+        <view class="com-title">{{item.title}}</view>
+        <view class="com-info">
+            <view class="change">
+                <text class="change-num">{{item.price}}</text>积分</view>
+            <view class="remain">还剩
+                <text class="remain-num">{{item.stock}}</text>个</view>
+        </view>
+    </view>
+</view>

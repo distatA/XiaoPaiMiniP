@@ -1,0 +1,230 @@
+/* packageChoose/page//famousteach/course/course.wxss */
+/* banner */
+.banner{
+    width: 750rpx;
+    height: 360rpx;
+    background: url("https://new.schoolpi.net/attach/small_program/class/courseBanner.png") no-repeat center;
+    background-size: 100%;
+}
+.content{
+    margin-bottom: 20rpx;
+}
+/*  */
+.personal{
+	width: 690rpx;
+	height: 140rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+    box-shadow: 0 6rpx 10rpx 3rpx #ccc;
+    margin-left: 30rpx;
+    margin-top: -70rpx;
+    display: flex;
+    justify-content: start;
+}
+.per-pic{
+	width: 80rpx;
+	height: 80rpx;
+    border-radius: 40rpx;
+	background-color: #22d8d9;
+    margin:30rpx 22rpx 30rpx 30rpx;
+}
+.per-word{
+    margin-top: 30rpx;
+}
+.per-word-up {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #000000;
+}
+.per-word-down {
+	font-size: 30rpx;
+	color: #383838;
+    margin-top: 10rpx;
+}
+/* 学习记录 */
+.record{
+	width: 690rpx;
+	height: 370rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+    box-shadow: 0 10rpx 16rpx 3rpx #ccc;
+    margin-top: 47rpx;
+    margin-left: 30rpx;
+}
+.record-title{
+    height: 92rpx;
+	font-size: 36rpx;
+    font-weight: bold;
+    padding-left: 21rpx;
+	line-height: 92rpx;
+	color: #000000;
+    border-bottom: solid 1rpx #f4f3f3;
+    
+}
+.record-content{
+    display: flex;
+    
+}
+
+.content-left{
+    width: 370rpx;
+    height: 180rpx;
+    margin: 30rpx auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content-right{
+	width: 240rpx;
+	height: 180rpx;
+	border-radius: 4rpx;
+    margin: 30rpx 19rpx 0 40rpx;
+}
+.left-title {
+	font-size: 36rpx;
+    font-weight: bold;
+	line-height: 50rpx;
+	color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 进度条 */
+progress{
+	width: 300rpx;
+	height: 14rpx;
+	font-size: 26rpx;
+	color: #a9a9a9;
+    margin-top: 20rpx;
+}
+.wx-progress-inner-bar {
+    border-radius: 14px;
+}
+.unfinished {
+	font-size: 28rpx;
+	line-height: 45rpx;
+	color: #383838;
+    margin-top: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* button图 */
+.button-pic{
+    width: 690rpx;
+    display: flex;
+    margin: 60rpx auto 0;
+    justify-content: space-between;
+}
+.button-pic-teach {
+	width: 330rpx;
+	height: 210rpx;
+    background: url("https://new.schoolpi.net/attach/small_program/class/2.png") no-repeat center;
+    background-size: 100%;
+	border-radius: 10rpx;
+}
+.button-pic-learn {
+	width: 330rpx;
+	height: 210rpx;
+	background: url("https://new.schoolpi.net/attach/small_program/class/3.png") no-repeat center;
+    background-size: 100%;
+	border-radius: 10rpx;
+}
+.button-title {
+	font-size: 36rpx;
+	color: #ffffff;
+    margin-top: 51rpx;
+    margin-left: 30rpx;
+}
+.button-inf {
+	font-size: 26rpx;
+	color: #ffffff;
+    margin-top: 38rpx;
+    margin-left: 31rpx;
+}
+
+/*课程导航  */
+.nav{
+    width: 690rpx;
+    height: 69rpx;
+    margin: 60rpx auto 0;
+}
+.nav-item{
+	font-size: 30rpx;
+	line-height: 36rpx;
+	color: #888888;
+}
+.nav-active{
+	font-size: 36rpx;
+	color: #22d8d9;
+}
+.nav-active::after {
+    content: '';
+	width: 0;
+	height: 0;
+    border-left: 16rpx solid transparent;
+    border-right: 16rpx solid transparent;
+    border-top: 15rpx solid #22d8d9;
+    display: block;
+    margin: 11rpx auto 0;
+}
+.scroll-view_H {
+  white-space: nowrap;
+  
+}
+.scroll-view-item_H {
+  display: inline-block;
+  width: 18%;
+  height: 80rpx;
+  text-align: center;
+  position: relative;
+  margin: 0 10rpx;
+  overflow: hidden;
+}
+/* 课程内容 */
+.course{
+    width: 690rpx;
+    margin: 17rpx auto 0;
+    display: flex;
+}
+.course-value {
+	width: 238rpx;
+	height: 178rpx;
+	border-radius: 4rpx;
+}
+.course-details{
+    width: 433rpx;
+	height: 178rpx;
+    margin-left: 18rpx;
+}
+.course-title {
+	font-size: 34rpx;
+    font-weight: bold;
+	line-height: 51rpx;
+	color: #383838;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+}
+.course-inf {
+	font-size: 26rpx;
+	line-height: 39rpx;
+	color: #999999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.course-updata {
+	font-size: 28rpx;
+	color: #383838;
+}
+.course-updata text{
+	font-size: 28rpx;
+	line-height: 39rpx;
+	color: #ff0000;
+	opacity: 0.7;
+}

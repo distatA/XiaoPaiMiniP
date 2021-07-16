@@ -1,0 +1,13 @@
+
+<view class="pagContent">
+  <view class="boxInfo">
+      <block wx:for="{{initList}}" wx:key="index">
+        <view class="itemlist" bindtap="addItem" data-textname="{{item.type}}" data-typee="{{item.name}}" data-totaldate="{{item}}" data-urllink="{{item.link_url}}">
+          <image src="{{item.url}}"></image>
+          <view class="totalPeople_{{item.id}}">
+            <text>参与人数：{{item.num}}人</text>
+          </view>
+        </view>
+     </block>
+  </view>
+</view>

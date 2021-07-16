@@ -1,0 +1,3 @@
+<!--components/dialogs/fenshu/fenshu.wxml.wxml-->
+<text>components/dialogs/fenshu/fenshu.wxml.wxml</text>
+<view>{{dialogType}}</view>

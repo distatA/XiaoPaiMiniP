@@ -1,0 +1,171 @@
+/* pages/career/applyfor/index.wxss */
+page{
+    background: #f6f9fa;
+}
+.card {
+  background: #fff;
+  box-shadow: 0rpx 0rpx 4rpx #ddd;
+  width: 95%;
+  margin: 20rpx auto;
+}
+
+.content-card {
+  display: flex;
+  background: #fff;
+  padding: 30rpx;
+  padding-right: 0;
+}
+
+.content-card-logo {
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 30rpx;
+}
+
+.content-card-logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.content-card-center {
+  padding-left: 10rpx;
+  width: 50%;
+}
+
+.content-card-center-title {
+  font-family: PingFang-SC-Regular;
+  font-size: 33rpx;
+  color: #4d4d4d;
+}
+
+.content-card-center-type {
+  font-family: PingFang-SC-Regular;
+  font-size: 27rpx;
+  color: #878787;
+}
+
+.content-card-center-type text:first-child {
+  padding: 0;
+}
+
+.content-card-center-type text {
+  padding-left: 10rpx;
+}
+
+.content-card-center-foot {
+  font-family: PingFang-SC-Regular;
+  font-size: 23rpx;
+  color: #878787;
+  padding-top: 10rpx;
+  padding-right: 10rpx;
+}
+
+.content-card-center-foot text {
+  padding-left: 5rpx;
+}
+
+.content-card-center-foot text:first-child {
+  padding: 0;
+}
+
+.pro-number {
+  font-size: 33rpx;
+  color: #22d9d9;
+  line-height: 4;
+  margin-right: 20rpx;
+}
+
+.right-logo {
+  font-size: 22rpx;
+  text-align: center;
+  color: #878787;
+  position: relative;
+}
+
+.addBi{
+  width: 60rpx;
+  height: 65rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 65rpx;
+  background: #24d5ab;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  position:absolute;
+  top:-30rpx;
+  left: 10rpx;
+}
+
+.majorNum{
+  /* line-height: 58rpx; */
+  font-size: 24rpx;
+}
+
+.jiantou {
+  font-size: 30rpx;
+  color: #e0e0e0;
+  padding-top:60rpx;
+  padding-bottom: 20rpx;
+}
+
+.pl {
+  padding-left: 15rpx !important;
+}
+
+.p2 {
+  color: #333;
+}
+.p3{
+  padding-left: 10rpx;
+}
+.hiden-box {
+  width: 90%;
+  margin: 0 auto;
+  border-top: 2rpx solid #e4e9ed;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hiden-left{
+  width: 69%;
+}
+.content-card-center-foot2 {
+  font-size: 23rpx;
+  color: #878787;
+  padding-top: 10rpx;
+}
+.hiden-box-title{
+   font-size: 32rpx;
+   color: #4d4d4d;
+}
+
+.pro-number2 {
+  font-size: 34rpx;
+  color: #22d9d9;
+  line-height: 4;
+  margin: 0 10rpx;
+}
+
+.dis-none {
+  display: none;
+}
+
+.hide{
+ display: none !important;
+}
+.show{ 
+ display: block !important;
+}
+.back{
+    position: relative;
+    width:100vw;
+    height:90vh;
+}
+.tips{
+    position: absolute;
+    top:100rpx;
+    left: 298rpx;
+    color: #828d9c
+
+}

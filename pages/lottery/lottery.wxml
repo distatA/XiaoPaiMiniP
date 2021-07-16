@@ -1,0 +1,147 @@
+<!-- 登录窗口 -->
+<loginDialog url="../setuserinfo/index" showLoginForm="{{showLogin}}" bind:loginSuccess="loadChance"></loginDialog>
+<view class="lottery-bg">
+    <!-- 顶部背景图 -->
+    <view class="lottery-top"></view>
+    <!-- 抽奖区域 -->
+    <view class="lottery-wrap">
+        <view class='lottery-row'>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[0]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item1" src='{{images[0]}}'></image>
+                </view>
+            </view>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[1]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item1" src='{{images[1]}}'></image>
+                </view>
+            </view>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[2]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item2" src='{{images[2]}}'></image>
+                </view>
+            </view>
+        </view>
+        <view class='lottery-row'>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[7]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item3" src='{{images[5]}}'></image>
+                </view>
+            </view>
+            <view class="empty-shadow">
+                <view class="empty-item" style="{{checked[8]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="empty" src='{{images[4]}}'></image>
+                </view>
+            </view>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[3]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item3" src='{{images[3]}}'></image>
+                </view>
+            </view>
+        </view>
+        <view class='lottery-row'>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[6]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item1" src='{{images[6]}}'></image>
+                </view>
+            </view>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[5]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item3" src='{{images[7]}}'></image>
+                </view>
+            </view>
+            <view class="lottery-item-shadow">
+                <view class="lottery-item" style="{{checked[4]?'background:#fffbb8;border: 8rpx solid #ffe400;':''}}">
+                    <image class="item1" src='{{images[8]}}'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lottery-btn" bindtap="{{lottery}}"></view>
+    <view class="last">还有
+        <text> {{num}} </text>次机会</view>
+    <view class="prize" bindtap="showPrize">查看奖品</view>
+    <view class="times">活动时间:{{times[0]}}-{{times[1]}}</view>
+    <view class="anchor">
+        <!-- 下脚背景图 -->
+    <view class="lottery-bottom"></view>
+    <!-- 空白 -->
+    <view class="lottery-background"></view>
+    </view>
+</view>
+<!-- 中奖弹框 -->
+<view class="masks" wx:if="{{showMasks}}">
+    <view class="masks-contain">
+        <block wx:if="{{chance==0}}">
+            <image src="https://new.schoolpi.net/attach/small_program/index/noChance.png"></image>
+            <view class="mask-btn" style="width:240rpx;left:160rpx;">
+                <image src="https://new.schoolpi.net/attach/small_program/index/share-get.png"></image>
+                <button open-type="share">分享</button>
+            </view>
+        </block>
+        <block wx:if="{{chance==-2}}">
+            <image src="https://new.schoolpi.net/attach/small_program/index/noChance.png"></image>
+            <view class="mask-btn" style="width:217rpx;">
+                <image src="https://new.schoolpi.net/attach/small_program/index/noChance-btn.png"></image>
+            </view>
+        </block>
+        <!--  type=1 口罩 type=2 会员 type=3 积分 type4 谢谢参与 -->
+        <block wx:if="{{type==1}}">
+            <!-- 抽到口罩 -->
+            <image src="https://new.schoolpi.net/attach/small_program/index/masks.png"></image>
+            <view class="mask-btn" style="width:217rpx;left: 170rpx;" bindtap="receiveMasks">
+                <image src="https://new.schoolpi.net/attach/small_program/index/receive-inf.png"></image>
+            </view>
+        </block>
+        <block wx:if="{{type==2}}">
+            <!-- id=4:爱奇艺会员 6优酷 8腾讯 -->
+            <image wx:if="{{id==4}}" src="https://new.schoolpi.net/attach/small_program/index/aiqiyi.png"></image>
+            <image wx:if="{{id==6}}" src="https://new.schoolpi.net/attach/small_program/index/youku.png"></image>
+            <image wx:if="{{id==8}}" src="https://new.schoolpi.net/attach/small_program/index/tengxun.png"></image>
+            <view class="mask-btn" bindtap="receiveVirtual">
+                <image src="https://new.schoolpi.net/attach/small_program/index/receive.png"></image>
+            </view>
+        </block>
+        <block wx:if="{{type==3}}">
+            <!-- 抽到积分 -->
+            <image wx:if="{{id==1}}" src="https://new.schoolpi.net/attach/small_program/index/500.png"></image>
+            <image wx:if="{{id==3}}" src="https://new.schoolpi.net/attach/small_program/index/50.png"></image>
+            <image wx:if="{{id==5}}" src="https://new.schoolpi.net/attach/small_program/index/100.png"></image>
+            <image wx:if="{{id==7}}" src="https://new.schoolpi.net/attach/small_program/index/300.png"></image>
+            <view class="mask-btn" bindtap="receive">
+                <image src="https://new.schoolpi.net/attach/small_program/index/receive.png"></image>
+            </view>
+        </block>
+        <block wx:if="{{type==4}}">
+            <!-- 没中奖有抽奖机会 -->
+            <image src="https://new.schoolpi.net/attach/small_program/index/missed.png"></image>
+            <view class="mask-btn">
+                <image src="https://new.schoolpi.net/attach/small_program/index/again.png" bindtap="again"></image>
+            </view>
+        </block>
+        <view class="close-masks" bindtap="close"></view>
+    </view>
+</view>
+<!-- 查看奖品 -->
+<view class="masks" wx:if="{{showPrize}}">
+    <view class="masks-contain">
+        <view class="prize-contain">
+            <view class="prize-title">我的奖品<view class="line"></view></view>
+            <view class="prize-value">
+                <view class="row">
+                    <view>奖品</view>
+                    <view>状态</view>
+                </view>
+                <view class="prize-content" hidden="{{showStatus}}">
+                    <view class="name">{{prize}}</view>
+                    <view class="status unreceive" wx:if="{{status==0}}" bindtap="goReceive">未领取</view>
+                    <view class="status" wx:if="{{status==1}}">已领取</view>
+                </view>
+            </view>
+            <view class="prize-intro">温馨提示: </view>
+            <view class="prize-node">所有奖品，在活动结束后7个工作日内发出， 活动结束，未填写收货地址的奖品将作废。 关注“校派Pai”公众号，高招信息及时获取！</view>
+        </view>
+        <view class="close-masks" bindtap="closePrize"></view>
+    </view>
+</view>
+    

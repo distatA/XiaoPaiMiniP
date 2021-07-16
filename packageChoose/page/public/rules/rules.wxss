@@ -1,0 +1,205 @@
+/* pages/news/details.wxss */
+
+body {
+    font-family: PingFangSC-Regular, "Droid Sans", Arial, sans-serif;
+}
+
+/* 使图片居中 */
+
+.wxParse-span .wxParse-inline {
+    text-align: none !important;
+    text-indent: 0 !important;
+}
+
+.wrap {
+    width: 92%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.title {
+    line-height: 80rpx;
+    font-size: 45rpx;
+    color: #444;
+    padding: 40rpx 0;
+}
+
+.content {
+    color: #878787;
+    font-size: 32rpx;
+    line-height: 46rpx;
+    padding: 20rpx 10rpx;
+}
+
+/* .content .wxParse-p {
+    line-height: 60rpx;
+} */
+
+/* .content image {
+   
+    height: auto;
+} */
+
+.commentArea {
+    background: #fafafa;
+    border-top: #e5e5e5 1px solid;
+    box-shadow: 5px -5px 1px 1px #000;
+    height: 300px;
+    overflow: hidden;
+}
+
+.wrap2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ucmtbox {
+    margin-top: 80rpx;
+    overflow: hidden;
+}
+
+.ucmtbox .thumb {
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.ucmtbox .thumb image {
+    width: 90rpx;
+    height: 90rpx;
+}
+
+/* 评论 */
+
+/* .comment {
+    width: 100%;
+    text-align: left;
+}
+
+.comment-title {
+    font-family: 'PingFang-SC-Regular';
+    font-size: 30rpx;
+    line-height: 42px;
+    color: #282828;
+    overflow: hidden;
+}
+
+.close-btn {
+    font-size: 30rpx;
+    color: #808080;
+    position: absolute;
+    right: 30rpx;
+    top: 0;
+} */
+
+/*
+.comment-cookice {
+  height: 700rpx;
+  overflow-y: scroll;
+}*/
+
+/* .comment-box {
+    display: flex;
+    padding: 20rpx 0;
+    padding-left: 30rpx;
+    position: relative;
+    margin: 40rpx 0;
+}
+
+.listener-logo {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.listener-logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.listener-content-comment {
+    font-family: 'PingFang-SC-Medium';
+    font-size: 26rpx;
+    color: #333;
+    line-height: 2;
+}
+
+.listener-say {
+    font-family: 'AdobeHeitiStd-Regular';
+    font-size: 24rpx;
+    color: #878787;
+}
+
+.comment-box-foot {
+    font-family: 'MyriadPro-Regular';
+    font-size: 20rpx;
+    color: #878787;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.listener-content {
+    padding-left: 20rpx;
+}
+
+.focuce {
+    font-size: 40rpx;
+    padding-left: 80rpx;
+    position: absolute;
+    right: 25rpx;
+}
+
+.comment-cookice .comment-box:first-child {
+    margin-top: 0;
+}
+
+.foot-comment {
+    background: #fafafa;
+    padding: 20rpx 0;
+    padding-left: 30rpx;
+    text-align: left;
+    overflow: hidden;
+}
+
+.foot-comment-inp {
+    float: left;
+    width: 74%;
+    display: block;
+    height: 60rpx;
+    background-color: #fff;
+    border: solid 1px #dbdbdb;
+    padding-left: 10rpx;
+    font-size: 24rpx;
+}
+
+.foot-comment-btn {
+    width: 18%;
+    float: right;
+    height: 65rpx;
+    font-size: 26rpx;
+    line-height: 65rpx;
+    background: #18dbb4;
+    color: #fff;
+    border-radius: 16rpx;
+    margin-right: 2%;
+}
+
+.placeholder {
+    font-family: 'PingFang-SC-Regular';
+    font-size: 26rpx;
+    color: #a9a9a9;
+}
+
+.show {
+    display: block;
+}
+
+.hiden {
+    display: none;
+}
+
+.comment-title {
+    padding-left: 30rpx;
+    padding-top: 20rpx;
+    font-size: 34rpx;
+} */

@@ -1,0 +1,53 @@
+<view class="nav">
+    <block wx:for="{{nav}}" wx:key="index">
+        <view class="nav-item {{currentIndex==item.id?'nav-active':''}}" data-current="{{item.id}}" bindtap="clickTab">{{item.title}}</view>
+    </block>
+</view>
+<!-- 全部高校 -->
+<view class="content" wx:if="{{currentIndex==1}}">
+    <block wx:for="{{schoolList}}" wx:key="index">
+        <view class="school" bindtap="goSchool" data-id="{{item.sid}}">
+            <image src="{{item.logo}}"></image>
+            <view>
+                <view class="school-name">{{item.name}}</view>
+                <view class="school-info">
+                    <view>地区：{{item.province}}·{{item.city}}</view>
+                    <view class="renshu">招生人数：</view>
+                    <view class="num">{{item.zsrs}}人</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<!-- 报考流程 -->
+<view class="content" wx:if="{{currentIndex==2}}" style="border-top:2rpx solid #F0F0F0;">
+    <view class="process" wx:for="{{process}}" wx:key="index">
+        <view class="circle"></view>
+        <view class="info">
+            <view class="process-title">{{item.title}}</view>
+            <view class="process-info">{{item.info}}</view>
+        </view>
+    </view>
+</view>
+<!-- 政策解读 -->
+<view class="content" wx:if="{{currentIndex==3}}">
+    <view class="policy" wx:for="{{policyList}}" wx:key="index" bindtap="goDetail" data-id="{{item.id}}">
+        <image src="{{item.thumb}}"></image>
+        <view class="policy-content">
+            <view class="tag" wx:for="{{item.tag}}" wx:key="index" wx:for-item="tagItem" style="background-color:{{item.tag_color}}">{{tagItem}}</view>
+            <view class="policy-title">{{item.title}}</view>
+            <view class="policy-info">{{item.description}}</view>
+            <view class="policy-intro">
+                <view class="tool">
+                    <image src="https://new.schoolpi.net/attach/small_program/qiangji/ic-comment.png"></image>
+                    <view class="point"></view>
+                    <image src="https://new.schoolpi.net/attach/small_program/qiangji/ic-share.png"></image>
+                </view>
+                <view class="time">
+                    <image src="https://new.schoolpi.net/attach/small_program/qiangji/ic-time.png"></image>
+                    <view>{{item.addtime}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

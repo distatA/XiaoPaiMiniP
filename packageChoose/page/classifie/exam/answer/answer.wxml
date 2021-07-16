@@ -1,0 +1,57 @@
+<view class="main_container">
+	<image class="circle" src="https://new.schoolpi.net/attach/small_program/classify/circle.png" mode="widthFix">
+	</image>
+	<image class="top_right" src="https://new.schoolpi.net/attach/small_program/classify/right_top.png" mode="widthFix">
+	</image>
+	<image class="top_left" src="https://new.schoolpi.net/attach/small_program/classify/left_top.png" mode="widthFix">
+	</image>
+	<image class="bottom_left" src="https://new.schoolpi.net/attach/small_program/classify/left_bottom.png"
+		mode="widthFix"></image>
+	<image class="bottom_right" src="https://new.schoolpi.net/attach/small_program/classify/right_bottom.png"
+		mode="widthFix"></image>
+	<view class="main">
+		<view class="count_down">
+			距离考试结束还有:{{min}}分{{sec}}秒
+		</view>
+		<view class="answer_content">
+			<view class="title">模拟考试</view>
+			<block wx:for="{{questionList}}" wx:key="index" wx:if="{{current==index+1}}">
+				<view class="answer_container">
+					<image class="question" src="{{item.question}}" mode="widthFix"></image>
+				</view>
+				<view class="answer_btn" wx:if="{{province==14234}}">
+					<view class="tips" hidden="{{showTips}}">请选择一个选项!</view>
+					<view style="display: flex;justify-content: space-around;">
+						<view class="btn-item">
+							<image class="icon" bindtap="selectAnswer" data-answer="A" data-index="{{index}}"
+								src="{{item.value=='A'?selected:select}}"></image>A
+						</view>
+						<view class="btn-item">
+							<image class="icon" bindtap="selectAnswer" data-answer="B" data-index="{{index}}"
+								src="{{item.value=='B'?selected:select}}"></image>B
+						</view>
+						<view class="btn-item">
+							<image class="icon" bindtap="selectAnswer" data-answer="C" data-index="{{index}}"
+								src="{{item.value=='C'?selected:select}}"></image>C
+						</view>
+						<view class="btn-item">
+							<image class="icon" bindtap="selectAnswer" data-answer="D" data-index="{{index}}"
+								src="{{item.value=='D'?selected:select}}"></image>D
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="select_question">
+		<block wx:if="{{current!=1}}">
+			<view class="previous" bindtap="previous">上一题</view>
+		</block>
+		<block wx:if="{{current!=questionList.length}}">
+			<view class="next" bindtap="next">下一题</view>
+		</block>
+		<block wx:if="{{current==questionList.length}}">
+			<view class="next" bindtap="submit">提交</view>
+		</block>
+	</view>
+</view>

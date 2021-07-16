@@ -1,0 +1,93 @@
+<!-- <view class='container-box'>
+    <cover-view slot="caster" class="topbar" style="padding-top: {{height}};">
+        <cover-view class="school">
+            <cover-image class="school-logo" src="{{room.schoolLogo==''? '/static/logo.png':room.schoolLogo}}"></cover-image>
+            <cover-view class="school-name">
+                <cover-view class="school-name1">{{room.roomTitle}}</cover-view>
+                <cover-view class="school-name2">{{roomPeoples}}人 观看</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view slot="caster" class="comment-container" hidden="{{!danmuIsOpen || valueShow}}">
+        <cover-view class="comment-list-li" wx:for="{{comment}}" wx:for-item="item">
+            <cover-view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</cover-view>
+            <cover-view class="comment-list-li-msg">{{item.content}}</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view slot="caster" class="game-over" hidden="{{valueShow}}" bindtap="gameOver">结束直播</cover-view>
+    <cover-view slot="caster" hidden="{{valueShow}}" class="change-danmu">
+        <cover-image src='https://new.schoolpi.net/attach/small_program/live/close_danmu1.png' wx:if="{{danmuIsOpen}}" bindtap="onDanmu"></cover-image>
+        <cover-image src='https://new.schoolpi.net/attach/small_program/live/close_danmu2.png' wx:else bindtap="onDanmu"></cover-image>
+    </cover-view>
+    <cover-view slot="caster" hidden="{{valueShow}}" class="change-shipin">
+        <cover-image src='/static/close_shipin1.png' wx:if="{{shipinIsOpen}}" bindtap="onShipin"></cover-image>
+        <cover-image src='/static/close_shipin2.png' wx:else bindtap="onShipin"></cover-image>
+    </cover-view>
+    <cover-view slot="caster" hidden="{{valueShow}}" class="change-camera">
+        <cover-image src='/static/camera{{frontCamera?"":"-gray"}}.png' bindtap="changeCamera"></cover-image>
+    </cover-view>
+    <view class="file-wrap">
+        <view class="file-btn" bindtap="showFile" style="{{valueShow?'animation:tomove .3s forwards;':'animation:backmove .3s forwards;'}}"></view>
+        <block wx:if="{{valueShow}}">
+            <view class="file-value">
+                <scroll-view class="scroll-view_x" scroll-x="true">
+                    <block wx:for="{{pptImgs}}" wx:key="index">
+                        <image src="https://att.schoolpi.net{{item.thumb}}" class="value-item" style=" {{currentImg==item.id?'':'opacity:0.5;'}}" data-current="{{item.id}}" bindtap="selectCurrent"></image>
+                    </block>
+                </scroll-view>
+            </view>
+        </block>
+    </view>
+    <view class="pptimg-small-wrap">
+        <image class="{{shipinIsOpen?'pptimg-small':'pptimg'}}" src="https://att.schoolpi.net{{pptimgurl}}"></image>
+        <live-pusher id="pusher" url="{{pushURL}}" mode="{{pushMode}}" bindstatechange="statechange" beauty="{{magic ? '6' : 1}}" whiteness="{{magic ? '6' : 1}}" hidden="{{!shipinIsOpen}}">
+        </live-pusher>
+    </view>
+</view> -->
+<view class='container-box'>
+    <cover-view slot="caster" class="topbar" style="padding-top: {{height}};">
+        <cover-view class="school">
+            <cover-image class="school-logo" src="{{room.schoolLogo==''? '/static/logo.png':room.schoolLogo}}"></cover-image>
+            <cover-view class="school-name">
+                <cover-view class="school-name1">{{room.roomTitle}}</cover-view>
+                <cover-view class="school-name2">{{roomPeoples}}人 观看</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    
+    <cover-view slot="caster" class="comment-container" hidden="{{!danmuIsOpen || valueShow}}">
+        <cover-view class="comment-list-li" wx:for="{{comment}}" wx:for-item="item">
+            <cover-view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</cover-view>
+            <cover-view class="comment-list-li-msg">{{item.content}}</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view slot="caster" class="game-over" hidden="{{valueShow}}" bindtap="gameOver">结束直播</cover-view>
+    <cover-view slot="caster" hidden="{{valueShow}}" class="change-danmu">
+        <cover-image src='https://new.schoolpi.net/attach/small_program/live/close_danmu1.png' wx:if="{{danmuIsOpen}}" bindtap="onDanmu"></cover-image>
+        <cover-image src='https://new.schoolpi.net/attach/small_program/live/close_danmu2.png' wx:else bindtap="onDanmu"></cover-image>
+    </cover-view>
+    <cover-view slot="caster" hidden="{{valueShow}}" class="change-shipin">
+        <cover-image src='/static/close_shipin1.png' wx:if="{{shipinIsOpen}}" bindtap="onShipin"></cover-image>
+        <cover-image src='/static/close_shipin2.png' wx:else bindtap="onShipin"></cover-image>
+    </cover-view>
+    <cover-view slot="caster" hidden="{{valueShow}}" class="change-camera">
+        <cover-image src='/static/camera{{frontCamera?"":"-gray"}}.png' bindtap="changeCamera"></cover-image>
+    </cover-view>
+    <view class="file-wrap">
+        <view class="file-btn" bindtap="showFile" style="{{valueShow?'animation:tomove .3s forwards;':'animation:backmove .3s forwards;'}}"></view>
+        <block wx:if="{{valueShow}}">
+            <view class="file-value">
+                <scroll-view class="scroll-view_x" scroll-x="true">
+                    <block wx:for="{{pptImgs}}" wx:key="index">
+                        <image src="{{imglistUrl}}{{item.thumb}}" class="value-item" style=" {{currentImg==item.id?'':'opacity:0.5;'}}" data-current="{{item.id}}" bindtap="selectCurrent"></image>
+                    </block>
+                </scroll-view>
+            </view>
+        </block>
+    </view>
+    <view class="pptimg-small-wrap">
+        <image class="{{shipinIsOpen?'pptimg-small':'pptimg'}}" src="{{pptimgurl}}"></image>
+        <live-pusher id="pusher" url="{{pushURL}}" mode="{{pushMode}}" bindstatechange="statechange" beauty="{{magic ? '6' : 1}}" whiteness="{{magic ? '6' : 1}}" hidden="{{!shipinIsOpen}}">
+        </live-pusher>
+    </view>
+</view>

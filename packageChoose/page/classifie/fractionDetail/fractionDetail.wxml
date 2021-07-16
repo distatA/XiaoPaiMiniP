@@ -1,0 +1,133 @@
+<!-- 年份 -->
+<view class="year-title">
+    <view class="year-wrap">
+        <block wx:for="{{ details}}" wx:key="index"> 
+        <view  bindtap="choose" data-index="{{index}}" data-item="{{item}}" class="{{year==item.year?'active':'year'}}" >{{item.year}}</view>
+           </block>
+        </view>
+        <!-- 安徽录取 -->
+         <!-- <block wx:for="{{ details}}" wx:key="index"> -->
+<view class="condition" wx:if="{{id===14234}}">
+    <view class="admission">
+        <view class="score">
+            <view class="score-word">文化课录取最低分</view>
+            <view class="divide score-divide"></view>
+            <view class="num">{{item1.min_score}}</view>
+        </view>
+         <view class="plan">
+            <view class="plan-word">计划人数</view>
+            <view class="divide plan-divide"></view>
+            <view class="plan-num">{{item1.plan_num}}</view>
+        </view>
+         <view class="admit">
+            <view class="admit-word">录取人数</view>
+            <view class="divide admit-divide"></view>
+            <view class="admit-num">{{item1.need_num}}</view>
+        </view>
+    </view>
+    <!-- 报考 -->
+    <view class="apply">
+        <!-- 普高报录 -->
+
+        <view class="apply-wrap" wx:if="{{item2.type!=undefined}}">
+            <view class="word">{{item2.type}}</view>
+            <view class="people">报名人数</view>
+            <view class="number">{{item2.enroll_num}}</view>
+            <view class="people">录取人数</view>
+            <view class="number">{{item2.need_num}}</view>
+  
+        </view>
+        
+        <!-- 中职报录 -->
+        <view class="apply-wrap" wx:if="{{item3.type!=undefined}}">
+            <view class="word">{{item3.type}}</view>
+            <view class="people">报名人数</view>
+            <view class="number">{{item3.enroll_num}}</view>
+            <view class="people">录取人数</view>
+            <view class="number">{{item3.need_num}}</view>
+   
+        </view>
+        <!-- 军人报录 -->
+        <view class="apply-wrap" wx:if="{{item4.type!=undefined}}">
+            <view class="soldier word">{{item4.type}}</view>
+            <view class="people">报名人数</view>
+            <view class="number">{{item4.enroll_num}}</view>
+            <view class="people">录取人数</view>
+            <view class=" number">{{item4.need_num}}</view>
+        </view>
+       
+    </view>
+</view>
+
+<!-- 江苏录取 -->
+<view class="_condition" wx:if="{{id===10808  }}">
+<view class="jiangsu">
+    <view class="early-enrollment">提前招生</view>
+    <view class="_plan">
+    <!-- <block wx:for="{{details}}" wx:key="index"> -->
+        <view class="literacy-class _public">
+            <view class="font">文化课</view>
+            <view class="font">录取最低分</view>
+            <view class="big-yuan culture">
+                   <view class="yuan-con">{{item1.min_score}}</view> 
+                <view class="small-yuan small-shdow1"></view>
+            </view>
+            <view class="one square"></view>
+        </view>
+        <view class="_plan-num _public">
+            <view class="font all">计划人数</view>
+            <view class="big-yuan num-plan">
+                   <view class="yuan-con">{{item1.plan_num}}</view> 
+                <view class="small-yuan small-shdow2"></view>
+            </view>
+             <view class="two square"></view>
+        </view>
+        <view class="order-num _public">
+            <view class="font all">录取人数</view>
+            <view class="big-yuan person">
+                   <view class="yuan-con">{{item1.need_num}}</view> 
+                <view class="small-yuan small-shdow"></view>
+            </view>
+             <view class="three square"></view>
+        </view>
+        <!-- </block> -->
+    </view>
+    <view class="_center">
+        <view class="_circular-f circular"></view>
+         <view class="_circular-r circular"></view>
+    </view>
+     <view class="early-enrollment">对口招生</view>
+    <view class="_plan">
+     <!-- <block wx:for="{{details}}" wx:key="index"> -->
+        <view class="literacy-class _public">
+            <view class="font">文化课</view>
+            <view class="font">录取最低分</view>
+            <view class="big-yuan culture">
+                   <view class="yuan-con" >{{item2.min_score}}</view> 
+                <view class="small-yuan small-shdow1"></view>
+            </view>
+             <view class="one square"></view>
+        </view>
+        <view class="_plan-num _public">
+            <view class="font all">计划人数</view>
+            <view class="big-yuan num-plan">
+                   <view class="yuan-con">{{item2.plan_num}}</view> 
+                <view class="small-yuan small-shdow2"></view>
+            </view>
+             <view class="two square"></view>
+        </view>
+        <view class="order-num _public">
+            <view class="font all">录取人数</view>
+             <view class="big-yuan person">
+                   <view class="yuan-con">{{item2.need_num}}</view> 
+                <view class="small-yuan small-shdow3"></view>
+            </view>
+            <view class="three square"></view>
+        </view>
+        <!-- </block> -->
+    </view>
+    <view class="_bottom"></view>
+</view>
+</view>
+  
+</view>

@@ -1,0 +1,11 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<page>
+<view class="main">
+    <block>
+        <view class="title">{{lists.name}}</view>
+        <view class="content">
+             <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+         </view>
+    </block>
+</view>
+</page>

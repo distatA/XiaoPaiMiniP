@@ -1,0 +1,713 @@
+/* pages/career/index.wxss */
+
+.work-header {
+  height: 250rpx;
+  background: #22d9d9;
+}
+
+.boast-bg {
+  width: 95%;
+  height: 400rpx;
+  margin: 0 auto;
+  box-shadow: 2rpx 2rpx 10rpx #999;
+  background: #fafafa;
+}
+
+.boast {
+  width: 100%;
+  height: 100%;
+}
+
+.boast image {
+  width: 100%;
+  height: 100%;
+}
+
+.model-list {
+  width: 95%;
+  background: #fff;
+  /* box-shadow: 2rpx 2rpx 10rpx #999; */
+  margin: 0 auto;
+  padding: 15rpx 10rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 170rpx;
+}
+
+.model-list-box {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+
+.model-logo {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+}
+
+.model-logo image {
+  width: 100%;
+  height: 100%;
+}
+
+.model-list-text {
+  font-size: 22rpx;
+  padding: 10rpx 0 5rpx 0;
+}
+
+.model-title {
+  font-size: 38rpx;
+  text-align: center;
+  color: #37dfdc;
+  padding: 30rpx 0;
+  background: #fafafa;
+}
+
+.boast-bg-second {
+  width: 70%;
+  height: 800rpx;
+  margin: 0 auto;
+  box-shadow: 2rpx 2rpx 10rpx #999;
+}
+
+.work-boast-second {
+  width: 100%;
+  padding: 20rpx 0;
+  height:1000rpx;
+  background: #fafafa;
+}
+
+.boast-second {
+  height: 100%;
+  position: relative;
+}
+
+.icoxx {
+  position: absolute;
+  top: 8rpx;
+  right: 22%;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.icoxx image {
+  width: 100%;
+  height: 100%;
+}
+
+.boast-second .slide-image {
+  position: absolute;
+  top: 50rpx;
+  left: 27%;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.btner {
+  display: block;
+  width: 90%;
+  position: absolute;
+  bottom: 18%;
+  left: 5%;
+  color: #fff;
+}
+
+.btn1 {
+  background: -webkit-linear-gradient(left, #33dec1, #27cde6);
+}
+
+.btn2 {
+  background: -webkit-linear-gradient(left, #ffad05, #ff983d);
+}
+
+.btn3 {
+  background: -webkit-linear-gradient(left, #c6a4ff, #938eff);
+}
+
+.btn4 {
+  background: -webkit-linear-gradient(left, #6cc2ff, #3158ff);
+}
+
+.jieguo {
+  display: block;
+  width: 35%;
+  height: 60rpx;
+  position: absolute;
+  top: 0;
+  right: -25rpx;
+  color: #333;
+  font-size: 24rpx;
+  background: none;
+}
+
+.boast-bg-second .tit {
+  display: block;
+  width: 90%;
+  position: absolute;
+  top: 46%;
+  left: 5%;
+  text-align: center;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.foot {
+  text-align: center;
+  padding: 30rpx 0;
+  color: #2c303e;
+  font-size: 34rpx;
+}
+
+.font_family {
+  margin-left: -20rpx;
+}
+
+.daxuezhanbo {
+  font-size: 100rpx;
+  color: #f7c604;
+  margin-left: -10rpx;
+}
+
+.zyystb {
+  font-size: 120rpx;
+  color: #1ad0f6;
+}
+
+.lqgl {
+  font-size: 120rpx;
+  color: #0c75f7;
+}
+
+.zhuanyk {
+  font-size: 120rpx;
+  color: #f67061;
+}
+
+.zhiyk {
+  font-size: 120rpx;
+  color: #f561f8;
+}
+
+.screeBox {
+  background: #fff;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.screeBox .text {
+  position: absolute;
+  bottom: 250rpx;
+  display: block;
+  font-size: 24rpx;
+  text-align: left;
+  width: 70%;
+  line-height: 40rpx;
+  left: 15%;
+  text-indent: 2em;  
+}
+
+.bttxt {
+  width: 100%;
+  height: 50rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 73rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+/*********/
+
+.header {
+  padding: 20rpx 0;
+}
+
+.type-color {
+  font-size: 30rpx;
+  color: #4fe3e9;
+}
+
+.gread {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.gread text {
+  padding-left: 10rpx;
+}
+
+.header-foot {
+  padding-top: 60rpx;
+  line-height: 2;
+}
+
+.job-card {
+  background: #fff;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-card-left {
+  display: flex;
+}
+
+.left-icon {
+  font-size: 40rpx;
+  color: orangered;
+  line-height: 2.2;
+}
+
+.card-left-text {
+  font-size: 30rpx;
+  line-height: 2.7;
+  padding-left: 10rpx;
+}
+
+.job-card-right {
+  display: flex;
+}
+
+.card-right-text, .card-right-number {
+  font-size: 30rpx;
+  line-height: 2.7;
+  color: #999;
+  padding-left: 20rpx;
+}
+
+.card-right-number {
+  padding-right: 30rpx;
+}
+
+.right-icon {
+  font-size: 40rpx;
+  color: #999;
+  line-height: 2;
+}
+
+.job-card-hide {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  color: #666;
+  padding: 10rpx 30rpx;
+}
+
+.hiden {
+  display: none;
+}
+
+.progress {
+  width: 95%;
+  margin: 20rpx;
+}
+
+.section {
+  width: 93%;
+  margin: 20rpx;
+  background-color: #ccc;
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+
+.btn {
+  width: 95%;
+  margin-top: 10rpx;
+}
+
+.text {
+  width: 100%;
+  font-size: 30rpx;
+}
+
+.boxarea {
+  font-size: 24rpx;
+  overflow: hidden;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.content {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  padding: 30rpx;
+  text-indent: 2em;
+  border-bottom: #ccc 2rpx solid;
+}
+
+/*******/
+
+.type {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.type-color {
+  font-size: 30rpx;
+  color: #4fe3e9;
+}
+
+.gread {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.gread text {
+  padding-left: 10rpx;
+}
+
+.header-foot {
+  padding-top: 60rpx;
+  line-height: 2;
+}
+
+.job-card {
+  background: #fff;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-card-left {
+  display: flex;
+}
+
+.left-icon {
+  font-size: 40rpx;
+  color: orangered;
+  line-height: 2;
+}
+
+.card-left-text {
+  font-size: 30rpx;
+  line-height: 2.7;
+  padding-left: 20rpx;
+}
+
+.job-card-right {
+  display: flex;
+}
+
+.card-right-text, .card-right-number {
+  font-size: 30rpx;
+  line-height: 2.7;
+  color: #999;
+  padding-left: 20rpx;
+}
+
+.card-right-number {
+  padding-right: 30rpx;
+}
+
+.right-icon {
+  font-size: 40rpx;
+  color: #999;
+  line-height: 2;
+}
+
+.job-card-hide {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  color: #666;
+  padding: 10rpx 30rpx;
+}
+
+.hiden {
+  display: none;
+}
+
+/**************/
+
+.jobheader-cell {
+  width: 80%;
+  height: 360rpx;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  padding-top: 60rpx;
+}
+
+.jobheader-cell view {
+  overflow: hidden;
+}
+
+.jobheader-cell image {
+  width: 360rpx;
+  height: 310rpx;
+  margin: 0 auto;
+  z-index: 9999;
+  position: absolute;
+  left: 110rpx;
+  top: 63rpx;
+}
+
+.type-color {
+  font-size: 30rpx;
+  color: #4fe3e9;
+}
+
+.gread {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.gread text {
+  padding-left: 10rpx;
+}
+
+.header-foot {
+  padding: 60rpx 30rpx 0;
+  line-height: 2;
+}
+
+.job-card {
+  background: #fff;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 2rpx solid #ccc; */
+}
+
+.job-card-left {
+  display: flex;
+}
+
+.left-icon {
+  font-size: 40rpx;
+  color: orangered;
+  line-height: 2.2;
+}
+
+.card-left-text {
+  font-size: 30rpx;
+  line-height: 2.7;
+  padding-left: 10rpx;
+}
+
+.job-card-right {
+  display: flex;
+}
+
+.card-right-text, .card-right-number {
+  font-size: 30rpx;
+  line-height: 2.7;
+  color: #999;
+  padding-left: 20rpx;
+}
+
+.card-right-number {
+  padding-right: 30rpx;
+}
+
+.right-icon {
+  font-size: 40rpx;
+  color: #999;
+  line-height: 2;
+}
+
+.job-card-hide {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  color: #666;
+  padding: 10rpx 30rpx;
+}
+
+.hiden {
+  display: none;
+}
+
+.sub0 {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  text-align: left;
+  position: absolute;
+  top: 64rpx;
+  width: 310rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  left: -75rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+}
+
+.sub1 {
+  padding-right: 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  position: absolute;
+  top: 64rpx;
+  width: 301rpx;
+  height: 80rpx;
+  line-height: 100rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  right: -73rpx;
+}
+
+.sub2 {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  text-align: left;
+  position: absolute;
+  top: 148rpx;
+  width: 256rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  left: -75rpx;
+}
+
+.sub3 {
+  padding-right: 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  position: absolute;
+  top: 148rpx;
+  width: 256rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  right: -73rpx;
+}
+
+.sub4 {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  text-align: left;
+  position: absolute;
+  top: 219rpx;
+  width: 209rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  left: -73rpx;
+}
+
+.sub5 {
+  padding-right: 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  position: absolute;
+  top: 210rpx;
+  width: 235rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  right: -73rpx;
+}
+
+.sub6 {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  text-align: left;
+  position: absolute;
+  top: 300rpx;
+  width: 194rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  left: -76rpx;
+}
+
+.sub7 {
+  padding-right: 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  position: absolute;
+  top: 303rpx;
+  width: 194rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  border-bottom: #18dbb4 2rpx solid;
+  color: #4d4d4d;
+  right: -73rpx;
+}
+
+.canvas2 {
+  width: 650rpx;
+  height: 600rpx;
+  margin: 0 auto;
+}
+
+.cxpc {
+  padding-top: 50rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 0 auto;
+  width: 178rpx;
+}
+
+.cxpc image {
+  float: left;
+  width: 45rpx;
+  height: 44rpx;
+}
+
+.tab {
+  height: 90rpx;
+  background: #f6f6f6;
+  padding: 6rpx 10rpx 4rpx 10rpx;
+}
+
+#columnCanvas {
+  height: 600rpx;
+  margin: 0 auto;
+}
+
+.nav-bottom {
+  background: #fff;
+  box-shadow: 0 10rpx 5rpx #eee;
+}
+
+.tab view {
+  float: left;
+  width: 49.5%;
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.tab-content {
+  padding: 20rpx;
+  line-height: 46rpx;
+  font-size: 26rpx;
+}
+
+.tab-content navigator {
+  padding: 15rpx 10rpx;
+  float:left;
+}
+
+.header-tit {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 40rpx;
+  background: #fafafa;
+  font-size: 28rpx;
+}
+.h50 {
+  height: 50rpx;
+}
+
+

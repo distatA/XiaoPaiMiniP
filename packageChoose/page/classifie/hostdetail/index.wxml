@@ -1,0 +1,161 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<loginDialog url="../../../../pages/setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<!--  -->
+<view class="hostDetail" wx:if="{{detailData.sid!=undefined}}">
+    <!-- vr全景 -->
+    <view bindtap="jumpvr" data-link="{{detailData.linkurl}}" class="vr">
+        <image src="{{detailData.xiangqing}}" class="header"></image>
+        <view class="panorama">点击查看全景</view>
+    </view>
+    <!-- 导航栏 -->
+    <view class="nav" wx:if="{{is_show}}">
+        <view class="nav-box" bindtap="gogeneralRules" data-sid="{{detailData.sid}}">
+            <image class="image" src="https://new.schoolpi.net/attach/small_program/class/siginup.png"></image>
+            <view class="nav-text">招生简章</view>
+        </view>
+        <view class="nav-box" bindtap="gocalendarDetail" data-sid="{{detailData.sid}}">
+            <image class="image" src="https://new.schoolpi.net/attach/small_program/class/Colleges.png"></image>
+            <view class="nav-text">历年数据</view>
+        </view>
+        <view class="nav-box" bindtap="goprofessional" data-sid="{{detailData.sid}}">
+            <image class="image" src="https://new.schoolpi.net/attach/small_program/class/book.png"></image>
+            <view class="nav-text">专业介绍</view>
+        </view>
+        <view class="nav-box" bindtap="goItemBank" data-sid="{{detailData.sid}}">
+            <image class="image" src="https://new.schoolpi.net/attach/small_program/class/Itembank.png"></image>
+            <view class="nav-text">校考题库</view>
+        </view>
+    </view>
+    <view class="color"></view>
+    <!-- 院校介绍 -->
+    <view class="content">
+        <!-- 学校名称 -->
+        <view class="con-header">
+            <image src="{{detailData.logo}}" class="logo"></image>
+            <view class="school" style="background:none">
+                <view class="school-name">{{detailData.name}}</view>
+                <view class="school-introduce">
+                    <view>{{detailData.province}}</view>
+                    <view>{{detailData.school_nature}}</view>
+                    <view>{{detailData.institution_type}}</view>
+                </view>
+            </view>
+            <view class="popularity"> 人气{{detailData.mood}}</view>
+        </view>
+
+        <view class="student-num" wx:if="{{detailData.socre_list.length>0}}">
+            <block wx:for="{{detailData.socre_list}}" wx:key="index">
+                <view class="num-con">
+                    <view class="public-type num-public{{index+1}}">{{item.type}}</view>
+                    <view class="shuzi">
+                        <view class="num-title">{{item.enroll_num}}</view>
+                        <view class="_num">招生人数</view>
+                    </view>
+                </view>
+            </block>
+
+        </view>
+        <view class="big-content">
+            <view class="_content">
+                <view>
+                    <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+                </view>
+            </view>
+            <view class="all-con" bindtap="goAllDetail" data-item="{{detailData}}" wx:if="description!=null">
+                全部
+            </view>
+        </view>
+        <scroll-view scroll-x="true" style="height:300rpx;">
+            <view scroll-x="true" class="scroll-view">
+             <view class="swiper-item" wx:for="{{detailData.img_url}}" wx:key="index" >
+                <image src="{{item}}" bindtap="goScienceDetail" data-item="{{detailData}}"> </image>
+             </view>
+            </view>
+        </scroll-view>
+        <view class="color"></view>
+
+        <!-- 招生简章 -->
+        <view class="rules">
+            <view class="rules-header">
+                <view class="rules-title">招生简章</view>
+                <view class="rules-all" bindtap="gogeneralRules" data-sid="{{detailData.sid}}">全部</view>
+            </view>
+            <block wx:for="{{detailData.enroll}}" wx:key="index">
+                <view class="rules-con" bindtap="goruleDetail" data-id="{{item.id}}">
+                    <view class="name">{{item.title}}</view>
+                    <view class="arrow"></view>
+                </view>
+            </block>
+        </view>
+        <view class="color"></view>
+        <!-- 专业介绍 -->
+        <view class="introduction" wx:if="{{detailData.career_list.length>0}}">
+            <view class="rules-header">
+                <view class="rules-title">专业介绍</view>
+            </view>
+            <block wx:for="{{detailData.career_list}}" wx:key="index">
+                <view class="rules-con" data-index="{{index}}" bindtap="isShow">
+                    <view class="name">{{item.name}}</view>
+                    <view class="{{isshow===index?'arrow1':'arrow'}}"></view>
+                </view>
+                <block wx:if="{{isshow===index}}">
+                    <block wx:for="{{item.child}}" wx:for-item="i" wx:key="index">
+                        <view class="rules-con show" bindtap="gozsDetail" data-cid="{{i.cid}}">
+                            <view class="name">{{i.name}}</view>
+                            <view class="arrow"></view>
+                        </view>
+                    </block>
+                </block>
+            </block>
+        </view>
+        <view class="color"></view>
+        <!-- 历年数据 -->
+        <view class="history-data">
+            <view class="rules-header">
+                <view class="rules-title">历年数据</view>
+            </view>
+            <block wx:for="{{detailData.year_list}}" wx:key="index">
+                <view class="rules-con" bindtap="gohistoryDetail" data-item="{{item}}" data-detail="{{detailData}}">
+                    <view class="name">{{item.year_str}}</view>
+                    <view class="arrow"></view>
+                </view>
+            </block>
+        </view>
+        <view class="color"></view>
+        <!-- 校考题库 -->
+        <view class="item-bank">
+            <view class="rules-header">
+                <view class="rules-title">校考题库</view>
+                <view class="rules-all" bindtap="goItemBank" data-sid="{{detailData.sid}}">全部</view>
+            </view>
+            <block wx:for="{{detailData.question_list}}" wx:key="index">
+                <view class="bank-con" bindtap="goDetail" data-item="{{item}}">
+                    <view class="subject" style="color:{{item.tags_color}}">{{item.tags}}</view>
+                    <view class="sub-con">
+                        {{item.title}}
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="color"></view>
+        <!-- 分享关注 -->
+        <view class="bottom">
+          
+            <button class='share' data-item="{{detailData}}" id="shareBtn" open-type="share">
+                <image src="https://new.schoolpi.net/attach/small_program/class/share.png" class="share-img"></image>
+                分享
+            </button>
+             <button class='share' id="shoucang" data-item='{{detailData}}' bindtap='follow'>
+                  <view class="cell font_family {{celled?'icon-shoucangshixin celled':'icon-shoucang1 detailesicon'}}" style="font-size:56rpx"></view>
+                关注
+                </button>
+        </view>
+    </view>
+    <!-- 聊天 -->
+    <block wx:if="{{chatShow}}">
+        <view class="service" bindtap="chat"></view>
+    </block>
+</view>
+<view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+</view>

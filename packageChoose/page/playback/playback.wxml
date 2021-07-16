@@ -1,0 +1,52 @@
+<dialog id="dialog" roomID="{{room_id}}" roomTitle="{{schoolInfo.room_title}}" roomLiveType="{{schoolInfo.live_type}}" areaId="{{schoolInfo.area_id}}" schoolLogo="{{schoolInfo.school_logo==''? '/static/logo.png':schoolInfo.school_logo}}" roomPeoples="{{schoolInfo.peoples}}" bind:close="dialogHide">
+</dialog>
+<view class="page">
+    <video id="myVideo" src="{{playUrl}}" danmu-list="{{danmuList}}" enable-danmu="false" danmu-btn="false" controls="false" object-fit="fill">
+        <cover-view class="topbar" style="padding-top: {{height}};">
+            <cover-view class="school">
+                <cover-image class="school-logo" src="{{schoolInfo.school_logo==''? '/static/logo.png':schoolInfo.school_logo}}"></cover-image>
+                <cover-view class="school-name">
+                    <cover-view class="school-name1">{{schoolInfo.room_title}}</cover-view>
+                    <cover-view class="school-name2">{{schoolInfo.peoples}}人 观看</cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view style='position:absolute;bottom:0;height:110rpx;width:60%;right:0;'>
+            <cover-view class="operate">
+                <cover-view class="img-box" bindtap="openSider">
+                    <cover-image class='img-view' src='/static/more_menu.png'></cover-image>
+                </cover-view>
+                <cover-view class='img-box' bindtap="onBack">
+                    <cover-image class='img-view' src='/static/close_menu.png'></cover-image>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class="right-sider {{showSider? '':'right-sider-hide'}}" hidden="{{schoolInfo.live_type==2}}">
+            <cover-view class="sider-btn" bindtap="openSider">
+                <cover-image class="image" src="{{showSider? '/static/youjiantou.png':'/static/zuojiantou.png'}}"></cover-image>
+            </cover-view>
+            <cover-view class="right-sider-list" wx:if="{{showSider}}">
+                <cover-view class="right-sider-item" bindtap="openAbout">
+                    <cover-image class="icon" src="{{schoolInfo.school_logo==''? '/static/logo.png':schoolInfo.school_logo}}"></cover-image>
+                    <cover-view class="txt">学校介绍</cover-view>
+                </cover-view>
+                <cover-view class="right-sider-item" bindtap="openFenshu">
+                    <cover-image class="icon" src='/static/ljfs_icon.png'></cover-image>
+                    <cover-view class="txt">历届分数</cover-view>
+                </cover-view>
+                <cover-view class="right-sider-item" hidden="{{schoolInfo.live_type==1}}" bindtap="openLuqu">
+                    <cover-image class="icon" src='/static/lqgl_icon.png'></cover-image>
+                    <cover-view class="txt">录取概率</cover-view>
+                </cover-view>
+                <cover-view class="right-sider-item" bindtap="openZhuanye">
+                    <cover-image class="icon" src='https://new.schoolpi.net/attach/small_program/live/yxzy_icon.png'></cover-image>
+                    <cover-view class="txt">院系专业</cover-view>
+                </cover-view>
+                <cover-view class="right-sider-item" bindtap="openVr">
+                    <cover-image class="icon" src='https://new.schoolpi.net/attach/small_program/live/vr_icon.png'></cover-image>
+                    <cover-view class="txt">校园全景</cover-view>
+                </cover-view>
+            </cover-view>
+        </cover-view>
+    </video>
+</view>

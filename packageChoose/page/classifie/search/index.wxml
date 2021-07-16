@@ -1,0 +1,30 @@
+<view>
+    <view class="search">
+        <input class="search-content" placeholder="请输入院校名称/城市"  bindinput="searchSchool" bindblur="blur"                                  bindconfirm="formSubmit" focus="{true}"></input>
+        <view class="button" bindtap="formSubmit">
+               <image class="search-icon" src="https://new.schoolpi.net/attach/small_program/class/search.png"></image>
+        </view>
+        <!--  -->
+        <view class='_search-list' wx:if='{{searchList.length>0}}'>
+            <block wx:for="{{searchList}}" wx:key="index">
+                <view class='search-list-item' data-item="{{item}}" bindtap='searchSchoolName'>{{item.name}}</view>
+            </block>
+    </view>
+    </view>
+    <view class="search-recommend">
+        <view class="search-title">为你推荐</view> 
+        <view class="search-list">
+            <block wx:for="{{recommend}}" wx:key="index">
+                <view class="list-item" style="color:{{item.color}}" bindtap="goDetail" data-item="{{item}}">{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="mt search-recommend">
+        <view class="search-title">大家都在搜</view> 
+        <view class="search-list">
+            <block wx:for="{{hostList}}" wx:key="index">
+                <view class="item" style="background:{{item.color}}" bindtap="goDetail" data-item="{{item}}">{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+</view>

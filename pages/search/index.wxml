@@ -1,0 +1,23 @@
+<!--pages/search/index.wxml-->
+<view class="header">
+    <view class="search-text">搜索</view>
+    <view class="search">
+        <input placeholder="请输入关键字" class="search-input" bindinput="searchSchool" bindblur="blur" bindconfirm="formSubmit" focus="{true}">
+        </input>
+        <image src="https://new.schoolpi.net/attach/small_program/search/search_icon.jpg" class="search-logo" wx:if="{{!inputShow}}"></image>
+        <view class='search-list' wx:if='{{searchList.length>0}}'>
+            <block wx:for="{{searchList}}" wx:key="index">
+                <view class='search-list-item' data-name="{{item.name}}" bindtap='searchSchoolName'>{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+
+</view>
+<view class="main">
+    <view class="_host-search">
+        热门搜索
+    </view>
+    <view class="search-school">
+        <view class="host-school" wx:for="{{hostList}}" wx:key="index" bindtap="goDetail" data-name="{{item.name}}">{{item.name}}</view>
+    </view>
+</view>

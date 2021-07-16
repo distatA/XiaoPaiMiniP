@@ -1,0 +1,11 @@
+<!--pages/user/user_share/user_share.wxml-->
+<view class="content">
+    <image src='{{photoUrl}}' mode="scaleToFill" style="width:680rpx;height:1000rpx;"></image>
+</view>
+
+<button wx:if="{{!isAuthSavePhoto}}" bindtap="onSaveToPhone" class="btn1">
+    保存图片并邀请好友注册
+</button>
+<button wx:else bind:tap="showModal" class="btn1">
+    保存图片并邀请好友注册
+</button>

@@ -1,0 +1,72 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<!-- 课程视频 -->
+<view class="value">
+    <video class="value" object-fit="contain" src="{{currentCourse.video_path}}" autoplay="{{autoplay}}" controls poster="{{currentCourse.video_cover}}" bindended="endVedio" data-cid="{{currentCourse.cid}}"></video>
+</view>
+<!-- 导航 -->
+<view class="nav">
+    <view class="nav-value {{currentData == 0 ? 'nav-active' : ''}}" data-current="0" bindtap="tabClick">课程介绍</view>
+    <view class="nav-value {{currentData == 1 ? 'nav-active' : ''}}" data-current="1" bindtap="tabClick" data-courseid="{{courseid}}">课程目录</view>
+</view>
+<!-- 课程信息 -->
+<!-- 标题 -->
+<block wx:if="{{currentData != 1}}">
+    <view class="info">
+        <view class="title">
+            <view class="title-text">{{currentCourse.title}}</view>
+            <view class="title-icon font_family {{collected?'icon-shoucangshixin celled':'icon-shoucang1 detailesicon'}}" bindtap="collect" data-key="{{currentCourse.id}}"></view>
+        </view>
+        <!-- 讲师 -->
+        <view class="info-content">
+            <image class="info-content-pic" src="{{currentCourse.lecturer_head}}" mode="aspectFit"></image>
+            <view class="info-content-detail">
+                <view class="detail-title">{{currentCourse.lecturer}}</view>
+                <view class="detail-intro">{{currentCourse.lecturer_desc}}</view>
+            </view>
+        </view>
+        <!-- 更新观看信息 -->
+        <view class="case">
+            <view class="case-text-update">
+                <view class="update-icon"></view>
+                <view class="case-text ">已更新{{currentCourse.periods}}期</view>
+            </view>
+            <view class="case-text">观看人数：
+                <text>{{currentCourse.hits}}人</text>
+            </view>
+        </view>
+    </view>
+    <!-- 课程介绍 -->
+    <view class="intro">
+        <view class="intro-title">课程介绍</view>
+        <view class="{{isFold?'intro-content':'hide'}}">
+            <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+        </view>
+        <view class="intro-more" bindtap="seeMore">{{isFold?'查看更多':'收起'}}</view>
+    </view>
+    <!-- 推荐课程 -->
+    <view class="refer">
+        <block wx:if="{{!courseList}}">
+            <view class="refer-title">推荐课程</view>
+        </block>
+        <view class="refer-course" wx:for="{{courseList}}" wx:key="index" data-key="{{item.id}}" bindtap="goCourse">
+            <image class="refer-value" src="{{item.cover}}" mode="aspectFit"></image>
+            <view class="refer-details">
+                <view class="refer-title">{{item.title}}</view>
+                <view class="refer-inf">{{item.lecturer}} {{item.lecturer_desc}}</view>
+                <view class="refer-updata">已更新
+                    <text>{{item.periods}}期</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<!-- 课程目录 -->
+<block wx:if="{{currentData != 0}}">
+    <view class="list" wx:for="{{courseCatalog}}" wx:key="index" data-cid="{{item.cid}}" bindtap="chapter">
+        <image class="list-value" src="{{item.video_cover}}" mode="aspectFit"></image>
+        <view class="list-inf">
+            <view class="list-title {{currentCourse.cid==item.cid?'list-title-active':''}}">{{item.title}}</view>
+            <view class="list-time">{{item.video_duration}}</view>
+        </view>
+    </view>
+</block>

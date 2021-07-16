@@ -1,0 +1,22 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<view class="cont1">
+    <template is="wxParse" data="{{wxParseData:college.nodes}}" />
+</view>
+<view wx:if="{{isOver}}">
+    <view class="kuang"></view>
+    <view class="zytop">系部介绍</view>
+</view>
+
+<view class="yuan_list1" wx:for="{{departList}}" wx:key="index">
+    <view class="yuan_list1_L" bindtap='goYuanXiInfo' data-did="{{item.did}}">
+        <view class="hot">
+            <view class="hot_r">{{item.title}}</view>
+        </view>
+        <view class="biaoq_box" wx:for="{{item.tags}}" wx:key="index">
+            <view class="biaoqian">{{item}}</view>
+        </view>
+    </view>
+    <view class="yuan_list1_r">
+        <image src="../../../../images/icons/zk.png" style='width:24rpx;height:24rpx;margin-top:90%;margin-left:50%'></image>
+    </view>
+</view>

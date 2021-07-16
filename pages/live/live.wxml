@@ -1,0 +1,51 @@
+<view class="container">
+    <image class="zb_bg" src="https://new.schoolpi.net/attach/small_program/qiangji/bg2.png"></image>
+	<view class="box">
+		<view class="top_item">
+            <image class="top_title" src="https://new.schoolpi.net/attach/small_program/qiangji/jihua.png"></image>
+            <image class="top_titletxt" src="https://new.schoolpi.net/attach/small_program/qiangji/qiang.png"></image>
+            <view class="top_txt">
+基础学科招生改革试点，也称强基计划，主要是为了选拔培养有志于服务国家重大战略需求且综合素质优秀或基础学科拔尖的学生。校派邀请强基计划高校招生办老师，向学生及学生家长介绍强基计划招生简章和招生政策。            </view>
+            <view class="top_txt_red">强基计划交流群，进群请加小编微信号：schoolofpi01</view>
+            <view class="line">
+                <image class="line_left" src="https://new.schoolpi.net/attach/small_program/qiangji/line.png"></image>
+                <image class="line_right" src="https://new.schoolpi.net/attach/small_program/qiangji/line.png"></image>
+            </view>
+        </view>
+
+		<view class="school">
+        <!-- item == 学校列表 -->
+            <view class="item" wx:for="{{school}}" wx:key="index">
+                <image class="school_logo" src="{{item.logo}}"></image>
+                <view class="school_txt">
+                    <view class="txt_tit">{{item.name}}</view>
+                    <view class="txt_time">{{item.time}}</view>
+                </view>
+                <image class="school_zb" src="https://new.schoolpi.net/attach/small_program/qiangji/zhibo.png" bindtap="looking" data-sid="{{item.id}}"></image>
+                <view class="line">
+                    <image class="line_left" src="https://new.schoolpi.net/attach/small_program/qiangji/line.png"></image>
+                    <image class="line_right" src="https://new.schoolpi.net/attach/small_program/qiangji/line.png"></image>
+                </view>
+            </view>
+
+            
+
+            <view class="item_bot">
+                <image src="https://new.schoolpi.net/attach/small_program/qiangji/schooltxt.png"></image>
+            </view>
+
+        </view> <!-- school -->
+<!-- 
+        <view class="contact">
+            <view class="con_title">直播合作关系</view>
+            <view class="con_tel">
+                <view>商务：张雅东</view>
+                <view>电话：0551-66102699</view>
+            </view>
+            <view class="con_wx">微信号：DonggeerZ</view>
+        </view> -->
+
+	</view><!-- box -->
+
+
+</view>

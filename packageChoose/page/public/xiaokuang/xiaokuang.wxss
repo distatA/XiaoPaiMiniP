@@ -1,0 +1,41 @@
+@import "/wxParse/wxParse.wxss";
+page,
+.page,
+.page__bd{
+    height: 100%;
+    background:#fff;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-navbar{
+    width:100%;
+    height:100rpx;
+    border-bottom:0.5px solid #ccc;
+    line-height:100rpx;
+    position: fixed;
+    background: #fff;
+}
+.weui-navbar view{
+  float:left;
+  font-size:36rpx;
+}
+.weui-navbar__item{
+  /* border-bottom:1rpx solid #f00; */
+  height:100rpx;
+  margin-left:11%;
+}
+.weui-tab__panel{
+   width:100%;
+  
+}
+.weui-tab__content{
+    font-size:32rpx;
+    padding-top:100rpx;
+    width:95%;
+    margin:0 auto;
+}
+.text{
+    display: block
+}
+.weui-bar__item_on{color:#25BAFD}

@@ -1,0 +1,173 @@
+/* pages/answer/answer.wxss */
+page {
+    background: #2e5fff;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.main_container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -200rpx;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: scale(1.3);
+}
+
+.top_right,
+.top_left {
+    width: 150rpx;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.top_left {
+    left: 0;
+}
+.bottom_right{
+    width: 150rpx;
+    height: auto;
+    position: absolute;
+    right: -60rpx;
+    bottom: 150rpx;
+    transform: scale(2);
+    z-index: -1;
+}
+
+.bottom_left {
+    width: 268rpx;
+    height: auto;
+    position: absolute;
+    left: -100rpx;
+    bottom: -50rpx;
+    transform: scale(2);
+    z-index: -1;
+}
+
+.banner_top {
+    width: 567rpx;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.start {
+    width: 580rpx;
+    height: 130rpx;
+    line-height: 130rpx;
+    text-align: center;
+    font-size: 60rpx;
+    font-weight: 550;
+    color: #fff;
+    background: #6d8df2;
+    margin: 100rpx auto 40rpx auto;
+    box-shadow: 0rpx 18rpx 40rpx 0rpx rgba(33, 36, 75, 0.16);
+    border-radius: 65rpx;
+}
+
+.tips {
+    text-align: center;
+    color: #fff;
+    font-size: 36rpx;
+}
+/* 答题 */
+.main{
+    padding: 75rpx 0;
+}
+.count_down{
+    width: 360rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+    background: #6e86f1;
+    padding: 10rpx 0;
+    border-radius: 20rpx;
+}
+.answer_content{
+    width: 680rpx;
+    margin: 132rpx auto 0 auto;
+    background: #fff;
+    border-radius: 10rpx;
+    position: relative;
+    padding-top: 50rpx;
+    padding-bottom: 40rpx;
+}
+.title{
+    width: 220rpx;
+    height: 69rpx;
+    padding: 10rpx;
+    border-radius: 10rpx;
+    line-height: 69rpx;
+    font-size: 48rpx;
+    background: #fa9611;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -45rpx;
+}
+.answer_container{
+    width: 620rpx;
+    max-height: 430rpx;
+    overflow-y: scroll;
+    margin: 50rpx auto 40rpx auto;
+    border: 6rpx #fec80e solid;
+    border-radius: 10rpx;
+}
+.tips{
+    text-align: center;
+    padding: 15rpx 0;
+    font-size: 24rpx;
+	color: #ff0000;
+}
+.answer_btn{
+    padding-top: 10rpx;
+    border-top: 3rpx #fec80e dashed;
+}
+.btn-item{
+    display: flex;
+    align-items: center;
+}
+.icon{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 10rpx;
+}
+.select_question{
+    width: 680rpx;
+    margin: 30rpx auto;
+    display: flex;
+    justify-content: space-around;
+}
+.previous,.next{
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 30rpx;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    background: #e8c07c;
+    box-shadow: 0rpx 18rpx 40rpx 0rpx rgba(33, 36, 75, 0.16);
+}
+.previous{
+    background: #7bcb8e;
+}
+.question{
+    width: 100%;
+}

@@ -1,0 +1,22 @@
+<!--packageChoose/page//famousteach//teach/teach.wxml-->
+<!-- banner图 -->
+<view class="banner"></view>
+<!-- 课程 -->
+<view class="course">
+    <block wx:for="{{teachList}}" wx:key="index">
+        <view data-key="{{item.id}}" bindtap="goCourse" class="wrap">
+            <view class="icon icon1" wx:if='{{index == 0}}'>{{index+1}}</view>
+            <view class="icon icon2" wx:if='{{index == 1}}'>{{index+1}}</view>
+            <view class="icon icon3" wx:if='{{index == 2}}'>{{index+1}}</view>
+            <view class="icon icon4" wx:if='{{index >=3}}'>{{index+1}}</view>
+            <image class="course-pic" src="{{item.cover}}" mode="aspectFit"></image>
+            <view class="course-value">
+                <view class="course-title">{{item.title}}</view>
+                <view class="course-inf">{{item.lecturer}} {{item.lecturer_desc}}</view>
+                <view class="course-updata">已更新
+                    <text>{{item.periods}}期</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,182 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="dialog-container" hidden="{{!dialogShow}}">
+    <view class="topbar" style="padding-top: {{height}};">
+        <view class="school">
+            <image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-name">
+                <view class="school-name1">{{roomTitle}}</view>
+                <view class="school-name2">{{roomPeoples}}人 观看</view>
+            </view>
+        </view>
+    </view>
+    <view class="dialog">
+        <view class="dialog-header">
+            <block wx:if="{{showMajorDetail}}">
+                <view class="dialog-major-title">
+                    <image class="title-btn title-btn-back" src="/static/back.png" bindtap="_goBack"></image>
+                    <view class="dialog-title-name">{{majorInfo.name}}</view>
+                    <image class="title-btn" src="/static/dialog_close.png" bindtap="_close"></image>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="dialog-title">{{dialogTitle}}</view>
+                <image src="/static/dialog_close.png" bindtap="_close"></image>
+            </block>
+        </view>
+        <view class="dialog-body">
+            <block wx:if="{{showMajorDetail}}">
+                <scroll-view scroll-y="true" style="height:{{scrollHeight}}px">
+                <view class="major-detail-content">
+                    <view class="major-goal">
+                        <view>学历:{{majorInfo.type}}</view>
+                        <view>学制:{{majorInfo.study_years}}</view>
+                    </view>
+                    <view class="major-deatil-title">培养目标</view>
+                    <template is="wxParse" data="{{wxParseData:professional_introduction.nodes}}" />
+                    <view class="major-deatil-title">培养要求</view>
+                    <template is="wxParse" data="{{wxParseData:training_target.nodes}}" />
+                    <view class="major-deatil-title">开设课程</view>
+                    <template is="wxParse" data="{{wxParseData:courses.nodes}}" />
+                </view>
+                </scroll-view>
+            </block>
+            <block wx:else>
+                <scroll-view scroll-y="true" style="height:{{scrollHeight}}px">
+                    <!-- 学校介绍 -->
+                    <block wx:if="{{dialogType == 0}}">
+                        <view class="aboutinfo">
+                            <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+                        </view>
+                    </block>
+                    <!-- 历年分数 -->
+                    <block wx:elif="{{dialogType == 1}}">
+                        <view class="score-content">
+                            <view class="score-flex">
+                                <view class="plan_num">
+                                    <view class="nums">{{currentScoreInfo.plan_num}}</view>
+                                    <view class="nums-text">计划人数</view>
+                                </view>
+                                <view class="min_score">
+                                    <view class="nums">{{currentScoreInfo.min_score}}</view>
+                                    <view class="nums-text">文化课录取最低分</view>
+                                </view>
+                                <view class="need_num">
+                                    <view class="nums">{{currentScoreInfo.need_num}}</view>
+                                    <view class="nums-text">录取人数</view>
+                                </view>
+                            </view>
+                            <view class="score-flex">
+                                <view class="score-title">计划人数</view>
+                                <view class="score-title">录取人数</view>
+                            </view>
+                            <!-- 可能循环 -->
+                            <view class="score-column" wx:for="{{currentScoreInfo.child}}" wx:key="index">
+                                <view class="score-flex">
+                                    <view class="score-item-left">{{item.enroll_num}}</view>
+                                    <view class="score-item-name">{{item.type}}</view>
+                                    <view class="score-item-right">{{item.need_num}}</view>
+                                </view>
+                            </view>
+                            <view class="year-list">
+                                <block wx:for="{{yearList}}" wx:key="index">
+                                    <view class="year-item {{currentYear == item?'on':''}}" bindtap="selectMajorYear" data-item="{{item}}">
+                                        {{item}}
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </block>
+                    <!-- 专业分数 -->
+                    <block wx:elif="{{dialogType == 2}}">
+                        <!-- <include src="zhuanye/zhuanye.wxml" /> -->
+                        <!-- 江苏(areaId判断) -->
+                        <!-- roomLiveType为1是分类招生直播 -->
+                        <block wx:if="{{roomLiveType === 1}}">
+                            <block wx:if="{{areaId === 1}}">
+                                <view class="major-child-jiangsu">
+                                    <block wx:for="{{majorList}}" wx:key="index">
+                                        <view class="major-content">
+                                            <view class="major-name-blod">{{item.name}}</view>
+                                            <block wx:for="{{item.child}}" wx:key="index" wx:for-item="i">
+                                                <view class="major-item" bindtap="selectMajor" data-item="{{i}}">
+                                                    <view class="major-name">{{i.name}}</view>
+                                                    <cover-image class="arrow" src="../../static/arrow.png"></cover-image>
+                                                </view>
+                                            </block>
+                                        </view>
+                                    </block>
+                                </view>
+                            </block>
+                            <!-- 非江苏 -->
+                            <block wx:if="{{areaId === 0}}">
+                                <block wx:for="{{majorList}}" wx:key="index">
+                              
+                                    <view class="major-list" bindtap="openChild" data-index="{{index}}">
+                                        <view class="major-type">{{item.name}}</view>
+                                        <image style="{{currentOpen === index?'transform:rotate(90deg);':''}}" class="arrow" src="../../static/arrow.png"></image>
+                                    </view>
+                                    <block wx:if="{{currentOpen === index}}">
+                                        <view style="background:#f2f2f2;">
+                                            <view class="major-child">
+                                                <block wx:for="{{item.child}}" wx:key="index" wx:for-item="i">
+                                                    <view class="major-item" bindtap="selectMajor" data-item="{{i}}">
+                                                        <view class="major-name">{{i.name}}</view>
+                                                        <image class="arrow" src="../../static/arrow.png"></image>
+                                                    </view>
+                                                </block>
+                                            </view>
+
+                                        </view>
+                                    </block>
+                                </block>
+                            </block>
+                        </block>
+                        <block wx:else>
+                            <block wx:if="{{areaId === 1}}">
+                                <view class="major-child-jiangsu">
+                                    <block wx:for="{{majorList}}" wx:key="index">
+                                        <view class="major-content">
+                                            <view class="major-name-blod">{{item.name}}</view>
+                                            <block wx:for="{{item.child}}" wx:key="index" wx:for-item="i">
+                                                <view class="major-item" bindtap="selectMajor" data-item="{{i}}">
+                                                    <view class="major-name">{{i.name}}</view>
+                                                    <cover-image class="arrow" src="../../static/arrow.png"></cover-image>
+                                                </view>
+                                            </block>
+                                        </view>
+                                    </block>
+                                </view>
+                            </block>
+                            <!-- 非江苏 -->
+                            <block wx:if="{{areaId === 0}}">
+                                <block wx:for="{{majorList}}" wx:key="index">
+                              
+                                    <view class="major-list" bindtap="openChild" data-index="{{index}}">
+                                        <view class="major-type">{{item.name}}</view>
+                                        <image style="{{currentOpen === index?'transform:rotate(90deg);':''}}" class="arrow" src="../../static/arrow.png"></image>
+                                    </view>
+                                    <block wx:if="{{currentOpen === index}}">
+                                        <view style="background:#f2f2f2;">
+                                            <view class="major-child">
+                                                <block wx:for="{{item.child}}" wx:key="index" wx:for-item="i">
+                                                    <view class="major-item" bindtap="selectMajor" data-item="{{i}}">
+                                                        <view class="major-name">{{i.name}}</view>
+                                                        <image class="arrow" src="../../static/arrow.png"></image>
+                                                    </view>
+                                                </block>
+                                            </view>
+
+                                        </view>
+                                    </block>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                    <block wx:else>
+                        <include src="luqu/luqu.wxml" />
+                    </block>
+                </scroll-view>
+            </block>
+        </view>
+    </view>
+</view>

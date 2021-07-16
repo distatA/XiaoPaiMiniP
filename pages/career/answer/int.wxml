@@ -1,0 +1,42 @@
+<block wx:if="{{data}}">
+	<view class='header'>
+		<view class='header-cell'>
+			<canvas canvas-id="radarCanvas" disable-scroll="true" class="canvas"></canvas>
+		</view>
+		<view class='header-foot'>
+			<view class='type'>
+				<text>您的评测结果为：{{data.model}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class='job-type'>
+		<view class='job-card'>
+			<view class='job-card-left {{currentData==1?"active-current":""}}' data-current="1" bindtap="clickTab">
+				<view class='font_family icon-yuan left-icon'></view>
+				<view class='card-left-text'>{{data.model}}</view>
+			</view>
+			<view class='job-card-right {{currentData==2?"active-current":""}}' data-current="2" bindtap="clickTab">
+				<view class='card-right-text'>推荐专业</view>
+				<view class='card-right-number'>({{data.zhuan_zhuanye_num +data.ben_zhuanye_num}} )</view>
+				<view class='iconfont icon-xiajiantou1 right-icon'></view>
+			</view>
+		</view>
+		<block wx:if="{{currentData==1}}">
+			<view class='job-card-hide bmbd'>
+				{{data.content}}
+			</view>
+		</block>
+		<block wx:if="{{currentData==2}}">
+			<view class='job-card-hide'>
+				<view>
+					<navigator hover-class="none" url='../details/baseinfo?id={{vo.id}}' wx:for="{{data.ben_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					<navigator hover-class="none" url='../details/baseinfo?id={{vo.id}}' wx:for="{{data.zhuan_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+				</view>
+			</view>
+		</block>
+	</view>
+</block>
+<block wx:else>
+	<view style="text-align:center;font-size:24rpx;background:#fff;padding:40rpx;">抱歉!!!暂无数据</view>
+</block>

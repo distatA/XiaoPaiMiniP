@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "request": "/components/request/request"
+  }
+}

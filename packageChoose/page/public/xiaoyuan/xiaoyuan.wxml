@@ -1,0 +1,26 @@
+<view class="content">
+    <view class="left">
+        <view class="item" wx:for="{{picList}}" wx:key="index" wx:if="{{index%2==0}}">
+            <navigator url="../newsdetail/newsdetail?id={{item.id}}">
+                <view class="item-img">
+                    <image style="width:100%" src="{{item.thumb}}" mode="widthFix"></image>
+                </view>
+                <view class="item-title-box">
+                    <view>{{item.title}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="right">
+        <view class="item" wx:for="{{picList}}" wx:key="index" wx:if="{{index%2==1}}">
+             <navigator url="../newsdetail/newsdetail?id={{item.id}}">
+                <view class="item-img">
+                    <image style="width:100%" src="{{item.thumb}}" mode="widthFix"></image>
+                </view>
+                <view class="item-title-box">
+                    <view>{{item.title}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

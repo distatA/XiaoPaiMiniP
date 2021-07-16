@@ -1,0 +1,5 @@
+<!--pages/agreement/agreement.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="wrap">
+<template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+</view>

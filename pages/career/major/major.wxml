@@ -1,0 +1,90 @@
+<!--pages/career/detalist-ten/detalist-ten.wxml-->
+<!-- 搜索 -->
+<view class='header'>
+    <view class='seacher'>
+        <form bindsubmit="formSubmit">
+            <view class='left-text'>专业搜索</view>
+            <view class='line'></view>
+            <input class='right-input' id='name' name='name' placeholder="输入专业名称"
+                placeholder-class="placeholder"></input>
+            <button class='font_family icon-sousuo s_btn' formType="submit"></button>
+        </form>
+    </view>
+</view>
+
+<view class='content'>
+    <view class='nav'>
+        <view class="nav-title {{currentTab==0?'nav-bottom':''}}" data-current="0" bindtap="clickTab">本科专业</view>
+        <view class="nav-title {{currentTab==1?'nav-bottom':''}}" data-current="1" bindtap="clickTab">专科专业</view>
+    </view>
+
+    <swiper current="{{currentTab}}" duration="{{wheight}}" style="height:{{wheight}}rpx;" bindchange="swiperTab">
+        <swiper-item>
+            <scroll-view class='scroll-content' scroll-y="true">
+                <view class='nav-content'>
+                    <!---->
+                    <view class="nav-list {{item.id == currType ? 'currbox' : ''}}" wx:for="{{bkinfo}}" wx:key="index"
+                        wx:for-index="index">
+                        <view class='nav-left-list'>
+                            <view class='left-list-box2'>
+                                <view class="{{item.id == currType ? 'nav-active' : ''}} nav-hot"
+                                    data-type-id="{{item.id}}" bindtap="tapType">{{item.name}} </view>
+                            </view>
+                        </view>
+                        <view class="nav-right-list hiden">
+                            <view class="left-list-box {{two+1 == currxl ? 'currbox2' : ''}}" wx:for="{{item.child}}"
+                                wx:key="index" wx:for-item="item2" data-type-id="{{two+1}}" wx:for-index="two">
+                                <text class='catename2' data-type-id="{{two+1}}"
+                                    bindtap="tapType2">{{item2.name}}</text>
+                                <text class='font_family icon-down-trangle left-list-box-icon'></text>
+                                <!-- 三级 -->
+                                <view class='nav-three hidden'>
+                                    <view class="left-list-three" wx:for="{{item2.child}}" wx:key="index"
+                                        wx:for-item="item3" wx:for-index="three">
+                                        <navigator url="../details/baseinfo?id={{item3.id}}" hover-class="none">
+                                            {{item3.name}}
+                                        </navigator>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!-- 专科分类 -->
+        <swiper-item>
+            <scroll-view class='scroll-content' scroll-y="true">
+                <view class='nav-content'>
+                    <!---->
+                    <view class="nav-list {{item.id == currType ? 'currbox' : ''}}" wx:for="{{zkinfo}}" wx:key="index"
+                        wx:for-index="index">
+                        <view class='nav-left-list'>
+                            <view class='left-list-box2'>
+                                <view class="{{item.id == currType ? 'nav-active' : ''}} nav-hot"
+                                    data-type-id="{{item.id}}" bindtap="tapType">{{item.name}} </view>
+                            </view>
+                        </view>
+                        <view class="nav-right-list hiden">
+                            <view class="left-list-box {{two+1 == currxl ? 'currbox2' : ''}}" wx:for="{{item.child}}"
+                                wx:key="index" wx:for-item="item2" data-type-id="{{two+1}}" wx:for-index="two">
+                                <text class='catename2' data-type-id="{{two+1}}"
+                                    bindtap="tapType2">{{item2.name}}</text>
+                                <text class='font_family icon-down-trangle left-list-box-icon'></text>
+                                <!-- 三级 -->
+                                <view class='nav-three hidden'>
+                                    <view class="left-list-three" wx:for="{{item2.child}}" wx:key="index"
+                                        wx:for-item="item3" wx:for-index="three">
+                                        <navigator url="../details/baseinfo?id={{item3.id}}" hover-class="none">
+                                            {{item3.name}}</navigator>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <!---->
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

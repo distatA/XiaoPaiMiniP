@@ -1,0 +1,320 @@
+/* pages/benkeyouxuan/index.wxss */
+
+swiper {
+    display: block;
+    height: 380rpx;
+}
+
+.slide-image {
+    width: 100%;
+}
+
+/*导航菜单模块*/
+
+.nav {
+    position: relative;
+    font-family: PingFang-SC-Regular;
+    font-size: 27rpx;
+    color: #808080;
+    width: 90vw;
+    margin: 0 5vw;
+    margin-top: 40rpx;
+    height: 7vw;
+    border-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 0px 0px 1px 3px #f4f4f4;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    text-align: center;
+    width: 90vw;
+}
+
+.nav-active {
+    color: rgb(120, 120, 120);
+    padding-bottom: 2rpx;
+    border-bottom: 4px solid #24d5ab;
+}
+
+/*全国百强模块*/
+
+.top-item {
+    font-family: PingFang-SC-Regular;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12rpx;
+    background: rgb(255, 255, 255);
+    display: flex;
+    position: relative;
+    margin-bottom: 30rpx;
+}
+
+.top-logo {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 20rpx;
+    position: absolute;
+    /* top: 13%; */
+    bottom: 30rpx;
+    left: 0;
+    right: 0;
+}
+
+.top-info {
+    margin-left: 160rpx;
+}
+
+.top-logo image {
+    width: 100%;
+    height: 100%;
+}
+
+.top-name {
+    padding: 37rpx 0 25rpx 0;
+    font-size: 34rpx;
+    height: 28rpx;
+    /* width: 84%; */
+    overflow: hidden;
+}
+
+.top-attr {
+    display: flex;
+    font-size: 20rpx;
+    color: rgb(135, 135, 135);
+}
+
+.top-attr:nth-child(2) {
+    padding-bottom: 13rpx;
+}
+
+.top-attr:nth-child(3) {
+    padding-bottom: 39rpx;
+}
+
+.top-department, .top-score {
+    width: 175rpx;
+}
+
+.top-address, .top-plan {
+    margin-left: 20rpx;
+}
+
+.celled {
+    float: left;
+    font-size: 54rpx;
+    color: #e5b626;
+}
+
+.favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30rpx;
+}
+
+.favorite>view {
+    font-size: 24px;
+}
+
+/* 口碑院校 */
+
+.school {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-bottom: 40rpx;
+}
+.school-item {
+    width: 30vw;
+    margin-left: 1.5vw;
+    margin-top: 40rpx;
+}
+
+.school-img {
+    width: 28vw;
+    margin: 0 auto;
+    height: 230rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.school image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.school-info {
+    margin-top: 20rpx;
+    display: flex;
+    align-items: center;
+}
+
+.school-logo {
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 36rpx;
+    overflow: hidden;
+}
+
+.school-name {
+  display: flex;
+    font-size: 22rpx;
+    padding-left: 4rpx;
+}
+
+/*热门专业模块*/
+
+.major {
+    width: 90vw;
+    margin: 45rpx 5vw;
+}
+
+.major-item {
+    font-family: PingFang-SC-Regular;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12rpx;
+    background: #fff;
+    margin-bottom: 40rpx;
+}
+
+.major-title {
+    text-align: center;
+    padding: 26rpx 0 24rpx 0;
+}
+
+.major-detail {
+    font-size: 24rpx;
+    font-family: PingFang-SC-Regular;
+    color: #5b5b5b;
+    line-height: 1.5;
+    padding: 0 5rpx 0 15rpx;
+    padding-bottom: 39rpx;
+}
+
+.major-info {
+    display: flex;
+}
+
+.major-years, .major-salary, .major-top {
+    width: 30vw;
+    margin: 30rpx 0;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Regular;
+}
+
+.data {
+    padding-bottom: 26rpx;
+}
+
+.cross-line {
+    width: 100%;
+    margin: 0 auto;
+    height: 2rpx;
+    background: #e2eaed;
+}
+
+.line {
+    width: 2rpx;
+    height: 40rpx;
+    background: #e2eaed;
+    margin-top: 50rpx;
+}
+
+
+.news-content {
+    background: #e6e6e6;
+}
+
+.news-item {
+    width: 100vw;
+    background: #fff;
+    margin-top: 20rpx;
+    padding: 20rpx 0;
+}
+
+.news-title {
+    font-family: PingFang-SC-Regular;
+    font-size: 32rpx;
+    margin: 0 32rpx;
+    font-weight: 600;
+    padding-bottom: 20rpx;
+}
+
+.color-title {
+    color: #06b2b6;
+}
+
+.new-content {
+    display: flex;
+    margin: 0 30rpx;
+    padding: 12rpx;
+    background: #f5f5f5;
+}
+
+.news-img {
+    width: 600rpx;
+    height: 140rpx;
+}
+
+.news-img image {
+    width: 100%;
+    height: 100%;
+}
+
+.news-info {
+    margin-left: 10rpx;
+    position: relative;
+}
+
+.blod-size {
+    font-size: 32rpx;
+    color: #333;
+    padding: 0 10rpx;
+}
+
+.news-detail {
+    font-size: 24rpx;
+    color: #9f9f9f;
+    padding: 10rpx;
+    height: 26rpx;
+    overflow: hidden;
+}
+
+/* .news-tag {
+    font-size: 20rpx;
+    position: absolute;
+    bottom: 0;
+}
+
+.news-time {
+    font-size: 20rpx;
+    position: absolute;
+    bottom: 0;
+    right: 20rpx;
+    color: #9f9f9f;
+} */
+
+.news-function {
+    display: flex;
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #9f9f9f;
+}
+
+.share, .comment, .thumb {
+    width: 33.3vw;
+    text-align: center;
+}
+
+.share>button, .comment>button, .thumb>button {
+    border: none;
+    color: #9f9f9f;
+    height: 38rpx;
+    line-height: 38rpx;
+}

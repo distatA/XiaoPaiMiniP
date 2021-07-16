@@ -1,0 +1,98 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<view>
+    <view class="menu">
+        <block wx:for="{{lists}}" wx:key="index">
+            <view class="{{firstNavId === item.id?'menu-item-on':'menu-item-off'}}" bindtap="selectMenu" data-index="{{index}}" data-item="{{item}}">
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+        <image class="title-img" src="https://new.schoolpi.net/attach/small_program/class/search.png" bindtap="goSearch"></image>
+    </view>
+    <view class="choose" wx:if="{{bottomNav.length>0}}">
+        <block wx:for="{{bottomNav}}" wx:key="index">
+            <view class="nav-con">
+                <view bindtap="choose" data-index="{{index}}" data-item="{{item}}" class="{{secondNavId === item.id?'header':'nav-con'}}">{{item.name}}</view>
+            </view>
+        </block>
+    </view>
+
+    <view wx:if="{{policyList.length>0}}">
+        <view class="main">
+            <!-- 考试大纲 -->
+            <block wx:if="{{ index===0}}">
+                <block wx:for="{{policyList}}" wx:key="index">
+                    <view class="content" bindtap="goSchoolSubject" data-item="{{item}}">
+                        <view class="course" style="backguound:{{item.tags_color}}">
+                            {{item.tags}}
+                        </view>
+                        <view class="title">
+                            {{item.title}}
+                        </view>
+                        <view class="time">
+                            {{item.addtime}}
+                        </view>
+                    </view>
+                </block>
+            </block>
+
+            <!-- 校考题库 -->
+            <block wx:if="{{ index===1}}">
+                <view class="_container" wx:if="{{schoolLists.length>0&&provinceId==14234}}">
+                    <block wx:for="{{schoolLists}}" wx:key="index">
+                        <view class="school-item" bindtap="goSchoolSubjectLIst" data-item="{{item}}">
+                            <image class="school-logo" src="{{item.logo}}"></image>
+                            <view class="school-info">
+                                <view class="school-name">{{item.name}}</view>
+                                <view class="flex">
+                                    <view class="info-item">{{item.arr.one}}</view>
+                                    <view class="info-item">{{item.arr.two}}</view>
+                                </view>
+                                <view class="flex">
+                                    <view class="info-item">{{item.arr.threee}}</view>
+                                    <view class="info-item">{{item.arr.four}}</view>
+                                </view>
+                            </view>
+                            <view class="school-hot">人气:{{item.mood==null?'0':item.mood}}</view>
+                        </view>
+                    </block>
+                </view>
+                 <view class="_container" wx:if="{{schoolLists.length>0&&provinceId==10808}}">
+                    <block wx:for="{{schoolLists}}" wx:key="index">
+                        <view class="school-item" bindtap="goSchoolSubjectLIst" data-item="{{item}}">
+                            <image class="school-logo" src="{{item.logo}}"></image>
+                            <view class="school-info">
+                                <view class="school-name">{{item.name}}</view>
+                                <view class="flex">
+                                    <view class="befor">提前</view>
+                                    <view class="info-item2">{{item.arr.duikou_one}}</view>
+                                    <view class="counterpart">对口</view>
+                                    <view class="info-item2">{{item.arr.tiqian_one}}</view>
+                                </view>
+                            </view>
+                            <view class="school-hot">人气:{{item.mood==null?'0':item.mood}}</view>
+                        </view>
+                    </block>
+                </view>
+            </block>
+            <!-- 文化测试题 -->
+            <block wx:if="{{ index===2}}">
+                <block wx:for="{{policyList}}" wx:key="index">
+                    <view class="content" bindtap="goSchoolSubject" data-item="{{item}}">
+                        <view class="course" style="backguound:{{item.tags_color}}">
+                            {{item.tags}}
+                        </view>
+                        <view class="title">
+                            {{item.title}}
+                        </view>
+                        <view class="time">
+                            {{item.addtime}}
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </view>
+    </view>
+   <view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>
+</view>

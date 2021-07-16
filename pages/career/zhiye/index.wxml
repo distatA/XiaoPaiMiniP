@@ -1,0 +1,35 @@
+<!--pages/career/zhiye/index.wxml-->
+<!-- 搜索 -->
+<view class='header'>
+  <view class='seacher'>
+    <form  bindsubmit="formSubmit">
+      <view class='left-text'>职业搜索</view>
+      <view class='line'></view>
+      <input class='right-input' id='name' name='name' placeholder="输入职业名称" placeholder-class="placeholder"></input>
+      <button class='font_family icon-sousuo s_btn' formType="submit"></button>      
+    </form>    
+  </view>
+</view>
+
+  <view class='nav-content'>
+    <!---->
+    <view class="nav-list {{item.id == currType ? 'currbox' : ''}}" wx:for="{{info}}" wx:key="index" wx:for-index="index">
+      <view class='nav-left-list'>
+        <view class='left-list-box2'>
+          <view class="{{item.id == currType ? 'nav-bottom' : ''}} nav-hot" data-type-id="{{item.id}}" bindtap="tapType">{{item.name}} </view>
+        </view>
+      </view>
+      <view class="nav-right-list hiden">
+        <view class="left-list-box {{two+1 == currxl ? 'currbox2' : ''}}" wx:for="{{item.child}}" wx:key="index" wx:for-item="item2" data-type-id="{{two+1}}" wx:for-index="two">
+          <text class='catename2' data-type-id="{{two+1}}" bindtap="tapType2" >{{item2.name}}</text>
+          <!-- 三级 -->
+          <view class='nav-three hidden'>
+            <view class="left-list-three"  wx:for="{{item2.child}}" wx:key="index" wx:for-item="item3"  wx:for-index="three">
+               <navigator url="details?id={{item3.id}}" hover-class="none"> {{item3.name}}</navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+

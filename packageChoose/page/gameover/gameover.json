@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "dialog": "/components/dialogs/dialog",
+    "redBag": "/components/redBag/redBag"
+  }
+}

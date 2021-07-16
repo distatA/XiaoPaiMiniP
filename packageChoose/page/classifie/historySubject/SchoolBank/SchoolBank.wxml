@@ -1,0 +1,20 @@
+ <page>
+ <view wx:if="{{subjectList.length>0}}">
+ <block wx:for="{{subjectList}}" wx:key="index">
+           <view class="content" bindtap="gosubjectDetail" data-id="{{item.id}}">
+                <view class="course" style="backguound:{{item.tags_color}}">
+                   {{item.tags}}
+                </view>
+                <view class="title">
+                  {{item.title}}
+                </view>
+                <view class="time">
+                   {{item.addtime}}
+                </view>
+            </view>
+        </block>
+   </view> 
+   <view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>    
+</page>

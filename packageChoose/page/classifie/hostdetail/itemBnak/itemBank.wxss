@@ -1,0 +1,29 @@
+.bank-con {
+    border-bottom: 1px solid #ccc;
+    padding: 24rpx 30rpx;
+    box-sizing: border-box;
+}
+
+.subject {
+    width: 70rpx;
+    height: 32rpx;
+    border-radius: 2rpx 10rpx 2rpx 10rpx;
+    border: 1px solid #fe7666;
+    background: #fed2cd;
+    display: inline;
+    font-size: 30rpx;
+}
+
+.sub-con {
+    display: inline;
+    font-size: 32rpx;
+}
+
+.no-data {
+    width: 200rpx;
+    height: 230rpx;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-left: -100rpx;
+}

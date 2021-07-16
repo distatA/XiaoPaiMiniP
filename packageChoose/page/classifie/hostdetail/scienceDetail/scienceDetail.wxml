@@ -1,0 +1,10 @@
+<page>
+<view class="main" wx:if="{{scienceData.length>0}}">
+<block wx:for="{{ scienceData}}" wx:key="index">
+    <image class="img" src="{{item}}"></image>
+    </block>
+</view>
+<view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>
+</page>

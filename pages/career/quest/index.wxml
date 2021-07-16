@@ -1,0 +1,17 @@
+<!--pages/career/quest/index.wxml-->
+
+ <swiper class='boast' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" current="{{current}}">
+    <swiper-item wx:for="{{qalist}}" wx:key="index" catchtouchmove='catchTouchMove'>
+      <view class='header'>
+        <view class='header-center-text'>{{item.name}}</view>
+      </view>
+      <view class='btn-box'>
+          <button class='btner' hover-class="btnhover" bindtap='addBtn' data-index="{{index+1}}" data-qa='A'>A:{{item.answer_a}}</button>
+          <button class='btner' hover-class="btnhover" bindtap='addBtn' data-index="{{index+1}}" data-qa='B'>B:{{item.answer_b}}</button>
+      </view>
+      <view class='foot-page'>
+        <text>{{index+1}}</text>/
+        <text>{{count}}</text>
+      </view>      
+    </swiper-item>  
+  </swiper>

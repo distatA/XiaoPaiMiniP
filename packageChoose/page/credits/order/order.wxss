@@ -1,0 +1,204 @@
+/* packageChoose/page//credits/order/order.wxss */
+
+/* 我的订单 */
+
+page {
+    padding-top: 20rpx;
+    background-color: #fafafa;
+}
+
+.indexFixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.order {
+    box-sizing: border-box;
+    padding: 20rpx;
+    width: 710rpx;
+    height: 251rpx;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin: 20rpx auto;
+    display: flex;
+}
+
+.order-pic {
+    width: 251rpx;
+    height: 209rpx;
+}
+
+.value {
+    margin-left: 42rpx;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.order-name {
+    font-size: 33rpx;
+    color: #666;
+}
+
+.order-num {
+    font-size: 25rpx;
+    color: #878787;
+}
+
+.express {
+    font-size: 25rpx;
+    color: #878787;
+}
+
+/* 无订单 */
+
+.have_order {
+    width: 400rpx;
+    height: 500rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/index/order.png') no-repeat;
+    background-size: 100%;
+    margin: 50rpx auto 0;
+}
+
+.text {
+    font-size: 36rpx;
+    color: #ccc;
+    text-align: center;
+}
+
+.btn {
+    width: 300rpx;
+    height: 80rpx;
+    font-size: 43rpx;
+    color: #22d8d9;
+    border: 1rpx solid #22d8d9;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin: 120rpx auto;
+}
+
+/* 物流弹窗 */
+
+.commodity_screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.commodity_attr_box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    z-index: 2000;
+    background: #fff;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    border-radius: 25rpx 25rpx 0 0;
+}
+
+.expressList {
+    margin: 30rpx 60rpx 60rpx 60rpx;
+    border-top: 1rpx solid #ccc;
+}
+
+.title-wrap {
+    display: flex;
+}
+
+.title {
+    margin-left: 60rpx;
+    font-size: 40rpx;
+    letter-spacing: 2rpx;
+    color: #878787;
+}
+
+.title text {
+    font-size: 30rpx;
+    line-height: 50rpx;
+    display: block;
+}
+
+.wrap {
+    display: flex;
+    font-size: 25rpx;
+    line-height: 35rpx;
+    color: #bbb;
+}
+
+.active {
+    color: #000;
+}
+
+.time {
+    width: 13%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rpx;
+}
+
+.interval {
+    width: 12rpx;
+    height: 12rpx;
+    margin-top: 40rpx;
+    border-radius: 50%;
+    background-color: #bbb;
+}
+
+.interval-active {
+    background-color: #000;
+}
+
+.line {
+    flex: 1;
+    width: 2rpx;
+    height: 100%;
+    margin: 0 auto;
+    background: #bbb;
+}
+
+.expressInfo {
+    width: 80%;
+    margin: 30rpx 0 0 25rpx;
+}
+
+.close {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: 25rpx;
+    border: 2rpx solid #878787;
+    border-radius: 50%;
+}
+
+.close::before, .close::after {
+    content: "";
+    position: absolute; /*方便进行定位*/
+    height: 30rpx;
+    width: 3rpx;
+    top: 6rpx;
+    left: 0;
+    margin: 0 auto;
+    right: 0; /*设置top和right使图像在20*20框中居中*/
+    background: #878787;
+}
+
+.close::before {
+    transform: rotate(45deg); /*进行旋转*/
+}
+
+.close::after {
+    transform: rotate(-45deg);
+}
+
+.msg {
+    height: 650rpx;
+    margin-top: 50rpx;
+    text-align: center;
+}

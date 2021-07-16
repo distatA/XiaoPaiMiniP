@@ -1,0 +1,51 @@
+<block wx:if="{{school_list.length>0}}">
+    <view style="position: relative;">
+        <view class="school-list">
+            <view wx:for="{{all_school}}" wx:key="index">
+                <view class="school-list-item">
+                    <view class="top">
+                        <view class="school-logo">
+                            <image src="{{item.logo}}"></image>
+                        </view>
+                        <view class="gailv">{{item.gailv}}%</view>
+                        <view class="name">{{item.name}}</view>
+                        <view class='deleteBtn' bindtap='goDelete' data-sid="{{item.id}}">
+                            <image src='/images/close3.png'></image>
+                        </view>
+                    </view>
+                    <view class='bottom'>
+                        <view class='theader'>
+                            <view class='hitem-content'>{{item.min_score}}</view>
+                            <view class='hitem-content'>{{item.low_sort}}</view>
+                            <view class='hitem-content'>{{item.enter_num}}</view>
+                            <view class='hitem-content'>{{item.gailv}}%</view>
+                            <view class='hitem-content'>{{item.ranking}}</view>
+                            <view class='hitem-content'>{{item.disciplinary_level}}</view>
+                            <view class='hitem-content'>{{item.province}}</view>
+                            <view class='hitem-content'>{{item.institution_type}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="menu">
+            <view class='scbox spec'>
+                <view class='content-card-logo'>
+                    <image src='https://new.schoolpi.net/attach/small_program/index/add.jpg' bindtap='goadd'></image>
+                </view>
+            </view>
+            <view class='menu-theader'>
+                <view class='hitem'>{{all_school[0].year}}年录取最低分</view>
+                <view class='hitem'>{{all_school[0].year}}年录取最低位次</view>
+                <view class='hitem'>{{all_school[0].year}}年录取人数</view>
+                <view class='hitem'>录取概率</view>
+                <view class='hitem'>综合排名</view>
+                <view class='hitem'>批次</view>
+                <view class='hitem'>地区</view>
+                <view class='hitem'>类型</view>
+            </view>
+        </view>
+    </view>
+    <view class='bgLine'></view>
+    <view class='bgLineT'></view>
+</block>

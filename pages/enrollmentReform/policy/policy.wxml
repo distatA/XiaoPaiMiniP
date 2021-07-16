@@ -1,0 +1,48 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<loginDialog url="../../../pages/setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<view class="contain">
+	<view class="title">{{info.title}}</view>
+	<view class="content">
+		<template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+	</view>
+</view>
+<!-- 评论区 -->
+	<view class="wrap">
+		<view class="discuss" wx:for="{{commentList}}" wx:key="index">
+			<view class="discuss-value">
+				<image class="head" src="{{item.head_pic}}"></image>
+				<view class="value">
+					<view class="value-wrap">
+						<view>
+							<view class="name">{{item.nickname}}</view>
+							<view class="time">{{item.addtime}}</view>
+						</view>
+					</view>
+					<view class="discuss-content" bindtap="reply" data-id="{{item.id}}" data-touserid="{{item.uid}}" data-name="{{item.nickname}}">
+						<block wx:if="{{item.touser_id!=0}}">
+							<text>回复{{item.tonickname}}：</text>
+						</block>
+						{{item.content}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<!-- 评论，点击弹出评论框 -->
+		<view class="comment" bindtap='focusButn'>写下你的看法吧！</view>
+		<button open-type="share" class="share font_family icon-fenxiang1"></button>
+	</view>
+	<!-- 评论框 -->
+	<view class="comment-wrap" hidden='{{!isInput}}'>
+		<view class='commentInputView'>
+			<view class="btn">
+				<view class="cancel">取消</view>
+				<view class="send" bindtap="comment">发布</view>
+			</view>
+			<view class='commentInput'>
+				<textarea fixed='true' contenteditable="true" contenteditable="true" auto-height="true" class='input' maxlength='{{maxTextLen}}' value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="inputBlur" bindinput='length' placeholder="{{isReply?'回复 '+replyName+':':''}}"></textarea>
+			</view>
+			<view class="limit">{{length}}/{{maxTextLen}}</view>
+		</view>
+	</view>

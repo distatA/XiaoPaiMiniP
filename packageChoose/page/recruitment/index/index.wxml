@@ -1,0 +1,229 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<view class="background">
+    <view class='search'>
+        <form bindsubmit="formSubmit">
+            <input class='s_text' id='name' name='name' placeholder="输入高校名称" placeholder-class="placeholder"></input>
+            <button class='font_family icon-sousuo s_btn' formType="submit"></button>
+        </form>
+    </view>
+</view>
+<view>
+    <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.ad_code}}" class="slide-image" data-id="{{item.id}}" data-link="{{item.ad_link}}" data-type="{{item.media_nw}}" bindtap='openAdLink' />
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!-- 头条部分 -->
+<view class="notice">
+    <image class="notice-logo" src="https://new.schoolpi.net/attach/small_program/index/cate_one.jpg"></image>
+    <swiper class="noticeBanner" circular="true" autoplay="true" vertical="true">
+        <block wx:for="{{topnewslist}}" wx:key="index">
+            <swiper-item>
+                <view class="notice-item" bindtap="goNews" data-id="{{item.id}}">{{item.title}}</view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!-- 导航 -->
+<view class='nav'>
+    <view class="nav-item">
+        <view wx:for="{{menuList}}" wx:key="index" class="{{currentTab==index?'nav-active':''}}" bindtap='selectMenu' data-current="{{index}}">{{item}}</view>
+    </view>
+</view>
+<!--********************学校列表********************-->
+<view wx:if="{{currentTab ===0 }}">
+    <view class="school">
+        <view class="school-item" wx:for="{{schoolList}}" wx:key="index">
+            <navigator url="../school/school?id={{item.id}}">
+                <view class="school-img">
+                    <image src='{{item.thumb}}'></image>
+                </view>
+                <view class="school-name">{{item.name}}</view>
+
+            </navigator>
+        </view>
+    </view>
+</view>
+<!--********************政策课堂********************-->
+<view wx:if="{{currentTab ===1 }}">
+    <view class="classroom" bindtap='showClass' data-index="1">
+        <view class="sign"></view>
+        <view class="class-title">报名对象</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo1}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo1}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <view class="class-detail" wx:if="{{showInfo1}}">
+        <!-- {{policyinfo.enrolment_object}} -->
+        <template is="wxParse" data="{{wxParseData:enrolment_object.nodes}}" />
+    </view>
+    <view class="classroom" bindtap='showClass' data-index="9">
+        <view class="sign"></view>
+        <view class="class-title">报名条件</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo9}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo9}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo9}}">
+        <!-- {{policyinfo.entry_requirements}} -->
+        <template is="wxParse" data="{{wxParseData:entry_requirements.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="2">
+        <view class="sign"></view>
+        <view class="class-title">报名时间</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo2}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo2}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo2}}">
+
+        <template is="wxParse" data="{{wxParseData:registration_time.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="3">
+        <view class="sign"></view>
+        <view class="class-title">报名流程</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo3}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo3}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo3}}">
+
+        <template is="wxParse" data="{{wxParseData:registration_process.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="4">
+        <view class="sign"></view>
+        <view class="class-title">考试内容</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo4}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo4}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo4}}">
+
+        <template is="wxParse" data="{{wxParseData:enrollment_institutions.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="5">
+        <view class="sign"></view>
+        <view class="class-title">学费标准</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo5}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo5}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo5}}">
+        <template is="wxParse" data="{{wxParseData:tuition_standard.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="6">
+        <view class="sign"></view>
+        <view class="class-title">授课模式</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo6}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo6}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo6}}">
+        <template is="wxParse" data="{{wxParseData:teaching_mode.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="7">
+        <view class="sign"></view>
+        <view class="class-title">毕业证书</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo7}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo7}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo7}}">
+        <template is="wxParse" data="{{wxParseData:graduation_certificate.nodes}}" />
+    </view>
+    <!--  -->
+    <view class="classroom" bindtap='showClass' data-index="8">
+        <view class="sign"></view>
+        <view class="class-title">政策减免</view>
+        <view class="icon-class">
+            <text wx:if="{{!showInfo8}}" class="font_family icon-youhua jiantou "></text>
+            <text wx:if="{{showInfo8}}" class="font_family icon-xiahua jiantou"></text>
+        </view>
+    </view>
+    <!-- <text class="font_family icon-xiahua jiantou" ></text> -->
+    <view class="class-detail" wx:if="{{showInfo8}}">
+        <template is="wxParse" data="{{wxParseData:policy_reduction.nodes}}" />
+    </view>
+
+</view>
+
+
+
+<!--********************热门专业********************-->
+<view wx:if="{{currentTab ===2 }}" class="major">
+    <view class="major-item" wx:for="{{majorList}}" wx:key="index">
+        <view class="major-title">
+            <view class="ico"></view>
+            <view class="apply-title"> {{item.career_name}}</view>
+        </view>
+        <view class="major-detail"> {{item.professional_introduction}} </view>
+        <view class="cross-line"></view>
+        <view class="major-info">
+            <view class="major-years">
+                <view class="data">{{item.study_years}}</view>
+                <view>修学年限</view>
+            </view>
+            <view class="line"></view>
+            <view class="major-salary">
+                <view class="data">{{item.ranking}}</view>
+                <view>热门排名</view>
+            </view>
+            <view class="line"></view>
+            <view class="major-top">
+                <view class="data">
+                    <text class='font_family icon-shoucangshixin xingxinged' wx:for="{{item.star}}" wx:key="index"></text>
+                </view>
+                <view>推荐指数</view>
+            </view>
+        </view>
+        <view class="favorite"></view>
+    </view>
+</view>
+<!--********************报名信息********************-->
+<view wx:if="{{currentTab ===3 }}">
+    <view wx:for="{{applyList}}" wx:key="index">
+        <view class="apply" bindtap='showMore' data-index="{{index}}" data-isOpen="{{item.isOpen}}">
+            <view class="circle"></view>
+            <view class="apply-title">{{item.city_name}}地区报名点</view>
+            <view class="icon">
+                <text wx:if="{{!item.isOpen}}" class="font_family icon-youhua jiantou "></text>
+                <text wx:if="{{item.isOpen}}" class="font_family icon-xiahua jiantou"></text>
+            </view>
+        </view>
+        <view wx:if="{{item.isOpen}}">
+            <view class="apply-detail" wx:for="{{item.child}}" wx:index="{{index}}" wx:key="index">
+                <view>县(区):{{item.district}}</view>
+                <view>报名点:{{item.entry_point}}</view>
+                <view>报名点地址:{{item.address}}</view>
+                <view>报名电话:{{item.telephone}}
+                    <text wx:if="{{item.telephone}}" class="calling" bindtap='call' data-phone="{{item.telephone}}">一键拨号</text>
+                </view>
+
+            </view>
+        </view>
+    </view>
+</view>

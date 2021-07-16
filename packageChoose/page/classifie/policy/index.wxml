@@ -1,0 +1,66 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<view>
+    <view class="menu">
+        <block wx:for="{{lists}}" wx:key="index">
+            <view class="{{firstNavId === item.id?'menu-item-on':'menu-item-off'}}" bindtap="selectMenu" data-index="{{index}}" data-item="{{item}}">
+                <text>{{item.name}}</text>
+            </view>
+        </block>
+    </view>
+    <view class="choose" wx:if="{{bottomNav.length>0}}">
+        <block wx:for="{{bottomNav}}" wx:key="index">
+            <view class="nav-con">
+                <view bindtap="choose"  data-index="{{index}}" data-item="{{item}}" class="{{secondNavId === item.id?'header':'nav-con'}}">{{item.name}}</view>
+            </view>
+        </block>
+    </view>
+
+    <view wx:if="{{policyList.length>0}}">
+    <!-- 报考政策 -->
+    <block wx:if="{{ index===0}}">
+        <block wx:for="{{policyList}}" wx:key="index">
+            <view class="list" bindtap="goPolicyDetail" data-id="{{item.id}}">
+                <view class="list-name">{{item.name}}</view>
+                <view class="arrow"></view>
+            </view>
+        </block>
+    </block>
+  
+    <!-- 报考流程 -->
+    <block wx:if="{{ index===1}}">
+        <view class="container">
+            <view class="step-title">一站式分类招生流程</view>
+            <block wx:for="{{policyList}}" wx:key="index">
+                <view class="step-container">
+                    <view class="step">
+                        <view class="step-circle">
+                            <view class="step-inner-circle">{{index+1}}</view>
+                        </view>
+                        <view class="step-line {{index===policyList.length-1?'none':''}}"></view>
+                    </view>
+                    <view class="content">
+                        <view class="step-content">
+                            <view class="step-item-title">{{item.name}}</view>
+                            <view class="step-item-content">
+                                <template is="wxParse" data="{{wxParseData:content[index].nodes}}" />
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <!-- 报考咨询 -->
+    <block wx:if="{{ index===2}}">
+        <block wx:for="{{policyList}}" wx:key="index">
+            <view class="list" bindtap="goPolicyDetail" data-id="{{item.id}}">
+                <view class="list-name">{{item.name}}</view>
+                <view class="arrow"></view>
+            </view>
+        </block>
+    </block>
+    </view>
+    <view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>
+</view>

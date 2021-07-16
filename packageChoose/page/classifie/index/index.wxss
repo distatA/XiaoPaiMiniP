@@ -1,0 +1,179 @@
+page {
+    background: #f2f2f2;
+    color: #000;
+}
+
+.header {
+    position: relative;
+}
+
+.last {
+    width: 110px;
+}
+
+.banner {
+    height: 500rpx;
+    /* background: red; */
+    width: 100%;
+}
+
+.search {
+    position: absolute;
+    width: 690rpx;
+    height: 70rpx;
+    margin: 0 auto;
+    top: 30rpx;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 34px;
+    opacity: 0.5;
+    display: flex;
+}
+
+.search-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin: auto 30rpx;
+    /* border: 1px blue solid; */
+}
+
+.search-input {
+    color: #a9a9a9;
+    margin: auto 0;
+}
+
+.verb {
+    position: absolute;
+    bottom: -55rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 600rpx;
+    height: 110rpx;
+    background-color: #fff;
+    border-radius: 55px;
+    font-size: 32rpx;
+    color: #000;
+    box-shadow: 10rpx 3rpx 10rpx 3rpx #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon {
+    width: 177rpx;
+    height: 180rpx;
+    margin-left: -15rpx;
+    margin-top: -40rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/classify/test_img.png') no-repeat;
+    background-size: 100%;
+}
+
+.verb_title {
+    width: 301rpx;
+	height: 80rpx;
+    margin-left: 17rpx;
+}
+
+.enter {
+    width: 90rpx;
+    height: 90rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/classify/test_btn.png') no-repeat;
+    background-size: 100%; 
+    margin-left: 30rpx;
+}
+
+
+/* 菜单 */
+
+.menu {
+    padding: 120rpx 0 50rpx 0;
+    background: #fff;
+}
+
+.menu-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    font-size: 22rpx;
+}
+
+.menu-logo {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 0 auto;
+}
+
+/* 热门院校 */
+
+.hot-school {
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.title {
+    font-size: 36rpx;
+    padding: 30rpx 20rpx;
+}
+
+.school-list {
+    width: 700rpx;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.school-item {
+    width: 220rpx;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+    border: 1px solid #ccc;
+    padding: 10rpx;
+    box-shadow: 0 6px 10px 6px #eaeaea;
+}
+
+.school-last {
+    border: 0;
+}
+
+.school-logo {
+    height: 220rpx;
+    width: 200rpx;
+    border-radius: 10rpx;
+}
+
+.school-name, .school-type, .school-area {
+    padding-left: 6rpx;
+    color: #a9a9a9;
+}
+
+.school-name {
+    font-size: 28rpx;
+    padding: 8rpx 6rpx;
+    color: #000;
+}
+
+/* 测试题入口 */
+
+.exam-bg {
+    background: url('https://new.schoolpi.net/attach/small_program/classify/test_bg.png') no-repeat;
+    background-size: 100%;
+    width: 600rpx;
+    height: 108rpx;
+    position: absolute;
+    bottom: -55rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 55px;
+    box-shadow: 10rpx 3rpx 10rpx 3rpx #eee;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+.content {
+    margin: 20rpx auto 40rpx;
+    width: 680rpx;
+}
+
+.btn1 {
+    width: 450rpx;
+    background-image: linear-gradient(87deg, #4cb8c4 0%, #43b7b2 58%, #39b59f 100%),
+                      linear-gradient(#6372fe, #6372fe);
+    border-radius: 14rpx;
+    color: #fff;
+    border: none !important;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin: 0 auto;
+}

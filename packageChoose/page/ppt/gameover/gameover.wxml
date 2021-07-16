@@ -1,0 +1,47 @@
+<view class='container-box'>
+    <view class="gameover">
+        <view class="topbar">
+            <view class="school">
+                <image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+                <view class="school-name">
+                    <view class="school-name1">{{roomTitle}}</view>
+                    <view class="school-name2">{{roomPeoples}}人 观看</view>
+                </view>
+            </view>
+        </view>
+        <view class="school-tip">
+            <view class="school-tip-txt">{{roomTitle}}直播间</view>
+            <image class="school-logo-center" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></image>
+            <view class="school-tip-txt2">结束时间：{{liveEndTime}}</view>
+            <view class="school-tip-btn" bindtap="bindPlayback">观看回放</view>
+        </view>
+        
+        <view slot="audience" style='position:absolute;bottom:0;height:110rpx;width:50%;right:0;'>
+            <view class="operate">
+                <view class='img-box' bindtap="onBack">
+                    <image class='img-view' src='/static/close_menu.png'></image>
+                </view>
+            </view>
+        </view>
+        <view class="editor-container" hidden="{{showBarrageInput}}">
+            <view class="editor">
+                <view class='editor-input' bindtap='tapInput'>
+                    <view class='editor-input-text' style="color:#fff">说点什么...</view>
+                </view>
+            </view>
+        </view>
+        <view class="comment-container">
+            <view class="comment-list-li" wx:for="{{comment}}" wx:key="index" wx:for-item="item" wx:for-index="index" wx:if="{{index < 10}}">
+                <view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</view>
+                <view class="comment-list-li-msg">{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 弹幕输入框 -->
+<view class="barrage-container" wx:if="{{showBarrageInput}}">
+    <view class="barrage-input">
+        <input class='input' value='{{inputInfo}}' focus='{{inputFocus}}' bindinput='bindinput' bindblur='bindblur'></input>
+    </view>
+    <view class="barrage-submit" bindtap="sendBarrage">发送</view>
+</view>

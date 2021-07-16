@@ -1,0 +1,28 @@
+<!--pages/examination/subject/subject.wxml-->
+<view class="contain">
+    <view class="title">科目选择</view>
+    <view class="info">科目选择是按照不同省份，依据当地新高考政策</view>
+    <block wx:if="{{subjectList[0].choose.length>2}}">
+        <view class="subject">
+            <block wx:for="{{subjectList[0].choose}}" wx:key="index">
+                <view class="{{item.select==true?'active item':'item'}}" bindtap='selectThree' data-index="{{index}}">{{item.name}}</view>
+            </block>
+        </view>
+    </block>
+    <!-- 2选1 4选2 格式 -->
+    <block wx:if="{{subjectList[0].choose.length<=2}}">
+        <view class="subject-title">{{subjectList[0].wenzi}}<text>{{subjectList[0].choose_str}}</text></view>
+        <view class="subject">
+            <block wx:for="{{subjectList[0].choose}}" wx:key="index">
+                <view class="item {{subjectName==item.name?'active':''}}" bindtap='itemSelected'  data-name="{{item.name}}" data-id="{{item.id}}">{{item.name}}</view>
+            </block>
+        </view>
+        <view class="subject-title">{{subjectList[1].wenzi}}<text>{{subjectList[1].choose_str}}</text></view>
+        <view class="subject"> 
+            <block wx:for="{{subjectList[1].choose}}" wx:key="index">
+                <view class="{{item.select==true?'active item':'item'}}" bindtap='selectTwo' data-index="{{index}}">{{item.name}}</view>
+            </block>
+        </view>
+    </block>
+</view>
+<view class="formulate" bindtap="goMajor">查看报考专业</view>

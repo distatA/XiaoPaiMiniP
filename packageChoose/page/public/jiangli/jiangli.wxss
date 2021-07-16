@@ -1,0 +1,17 @@
+@import "/wxParse/wxParse.wxss";
+page{
+  background: #fff;
+}
+.title{
+  color:#000;
+  font-size:30rpx;
+  font-weight: bold;
+}
+.cont1{
+  border-bottom:1rpx solid #ECECEC;
+  font-size:30rpx;
+  color:#383838;
+  margin:0 auto;
+  padding:20rpx 15rpx;
+  
+} 

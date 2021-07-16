@@ -1,0 +1,17 @@
+.main{
+    padding: 0 30rpx;
+    line-height: 40rpx;
+}
+._noPost{
+    text-align: center;
+   position: relative;
+}
+.no-data{
+    width: 200rpx;
+    height: 200rpx;
+    position: absolute;
+    top: 350rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

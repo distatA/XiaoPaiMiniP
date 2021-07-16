@@ -1,0 +1,101 @@
+/* packageChoose/page//examination/index/index.wxss */
+.contain {
+    box-sizing: border-box;
+    width: 750rpx;
+    padding: 36rpx 40rpx 0 40rpx;
+}
+
+.title {
+    font-size: 50rpx;
+}
+
+.wrap {
+    display: flex;
+    margin-top: 56rpx;
+}
+
+.react {
+    width: 28rpx;
+    height: 38rpx;
+    background-color: #06d6a0;
+    transform: skewX(-30deg);
+    margin-top: 7rpx;
+    margin-left: 10rpx;
+}
+
+.province {
+    font-size: 39rpx;
+    margin-left: 20rpx;
+}
+
+.icon {
+    margin: auto 0 auto 32rpx;
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 5rpx solid #808080;
+    border-right: 5rpx solid #808080;
+    transform: rotate(45deg);
+}
+
+.bg {
+    width: 670rpx;
+    height: 484rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/entrance/examination-bg.png');
+    background-size: 100%;
+    border-radius: 8rpx;
+    margin-top: 24rpx;
+}
+
+.intro {
+    font-size: 28rpx;
+    margin-top: 36rpx;
+    font-weight: bold;
+}
+
+.info {
+    margin-top: 19rpx;
+    font-size: 22rpx;
+    line-height: 36rpx;
+    color: #999;
+}
+
+.select {
+    display: flex;
+    margin-top: 75rpx;
+    justify-content: space-between;
+}
+
+.college, .subject, .major {
+    width: 214rpx;
+    height: 118rpx;
+    border-radius: 15rpx;
+    color: #fff;
+}
+
+.college {
+    background: url('https://new.schoolpi.net/attach/small_program/entrance/examination-college.png');
+    background-size: 100%;
+}
+
+.subject {
+    background: url('https://new.schoolpi.net/attach/small_program/entrance/examination-subject.png');
+    background-size: 100%;
+}
+
+.major {
+    background: url('https://new.schoolpi.net/attach/small_program/entrance/examination-major.png');
+    background-size: 100%;
+}
+
+.name {
+    font-size: 21rpx;
+    line-height: 26rpx;
+    margin-top: 30rpx;
+    margin-left: 8rpx;
+}
+
+.search {
+    font-size: 15rpx;
+    line-height: 26rpx;
+    margin-left: 55rpx;
+}

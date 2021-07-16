@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "专业详情",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "loginDialog": "/components/loginDialog/index"
+    }
+}

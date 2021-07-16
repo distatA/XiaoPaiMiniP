@@ -1,0 +1,47 @@
+<!--packageChoose/page//credits/details/details.wxml-->
+<import src="../../../../wxParse/wxParse.wxml" />
+<view class="header">{{goodsInfo.title}}/{{goodsInfo.price}}积分</view>
+<view class="content">
+    <block wx:for="{{goodsPic}}" wx:key="index" wx:if="{{currentData==index}}">
+        <image class="goodsPic" src="{{goodsPic[index]}}"  mode="scaleToFill"></image>
+    </block>    
+    <view class="picList">
+        <scroll-view class="scroll-view_H" scroll-x="true">
+            <block  wx:for="{{goodsPic}}" wx:key="index">
+                <image class="list scroll-view-item_H {{currentData == index? 'active' : ''}}" data-current="{{index}}" src="{{goodsPic[index]}}" bindtap="changePic" mode="scaleToFill"></image>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="name">{{goodsInfo.title}}</view>
+    <view class="remain">剩余库存：<text>{{goodsInfo.stock}}</text></view>
+    <view class="integral">{{goodsInfo.price}}积分</view>
+        <view class="stepper">  
+        <!-- 减号 -->  
+        <text class="sign {{num <= 1?'disabled':'sub'}}" bindtap="delCount" data-index="{{index}}">-</text>  
+        <!-- 数值 -->  
+        <input class="number" type="number" bindchange="bindManual" value="{{num}}"  disabled="disabled"/>  
+        <!-- 加号 -->  
+        <text class="sign {{num >= 10?'disabled':'plus'}}" bindtap="addCount" data-index="{{index}}">+</text>  
+    </view> 
+    <view class="details">
+        <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+    </view>
+</view>
+<view class="fix">
+    <view class="exchange" bindtap="exchangeShow">兑换</view>
+</view>
+<!-- 兑换弹窗 -->
+<view class="exchangeShow" wx:if="{{exchangeShow}}">
+    <view class="show">
+        <view class="show-title">兑换商品</view>
+        <view class="show-info">支付{{goodsInfo.price*num}}积分兑换{{goodsInfo.title}}</view>
+        <view class="intro">
+            <textarea  fixed='true' contenteditable="true" auto-height="true" class='input' value="{{value}}" placeholder="请填写备注信息" placeholder-style="color: #d2d3d5;font-size: 25rpx; " bindinput="note"></textarea>
+        </view>
+        <view class="exchanged">  
+            <view class="cancle" bindtap="reject">取消</view>
+            <view class="sure" bindtap="affirm" data-id="{{goodsInfo.id}}" data-num="{{num}}">兑换</view>
+        </view>
+    </view>
+</view>
+

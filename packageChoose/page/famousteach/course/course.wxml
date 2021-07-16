@@ -1,0 +1,61 @@
+<!--packageChoose/page//famousteach/course/course.wxml-->
+<!--课程点播1-1  -->
+<view class="banner"></view>
+<view class="content">
+    <!-- 个人 -->
+    <view class="personal">
+        <image class="per-pic" src="{{user.head_pic}}"></image>
+        <view class="per-word">
+            <view class="per-word-up">{{user.nickname}}</view>
+            <view class="per-word-down">校派陪你每天进步一点点</view>
+        </view>
+    </view>
+    <!-- 学习记录 -->
+    <view class="record">
+        <view class="record-title">学习记录</view>
+        <block wx:if="{{courseRecord.pid != undefined}}">
+            <view class="record-content" data-key="{{courseRecord.pid}}" bindtap="goChapter">
+                <view class="content-left">
+                    <view class="left-title">{{courseRecord.title}}</view>
+                    <progress percent="{{courseRecord.proportion}}" activeColor="#22d8d9" backgroundColor="#f2f2f2" border-radius="7rpx">已进行{{courseRecord.proportion}}%</progress>
+                    <view class="unfinished">正在学：{{courseRecord.catalogue}}</view>
+                </view>
+                <image class="content-right" src="{{courseRecord.cover}}" mode="aspectFit"></image>
+            </view>
+        </block>
+    </view>
+
+    <!-- 跳转图 -->
+    <view class="button-pic">
+        <view class="button-pic-teach">
+            <navigator url="../teach/teach">
+                <view class="button-title">名师课堂</view>
+                <view class="button-inf">知名教师</view>
+            </navigator>
+        </view>
+        <view class="button-pic-learn">
+            <navigator url="../recentLearn/recentLearn">
+                <view class="button-title">最近学习</view>
+                <view class="button-inf">学海无涯</view>
+            </navigator>
+        </view>
+
+    </view>
+    <!-- 课程导航 -->
+    <view class="nav">
+        <scroll-view class="scroll-view_H" scroll-x="true">
+            <view class="nav-item scroll-view-item_H {{currentData == item.key ? 'nav-active' : ''}}" data-current="{{item.key}}" wx:for="{{navList}}" wx:key="index" bindtap="tabClick">{{item.name}}</view>
+        </scroll-view>
+    </view>
+    <!-- 课程内容 -->
+    <view class="course" wx:for="{{courseContent}}" wx:key="index" data-key="{{item.id}}" bindtap="goCourse">
+        <image class="course-value" src="{{item.cover}}" mode="aspectFit"></image>
+        <view class="course-details">
+            <view class="course-title">{{item.title}}</view>
+            <view class="course-inf">{{item.lecturer}} {{item.lecturer_desc}}</view>
+            <view class="course-updata">已更新
+                <text>{{item.periods}}期</text>
+            </view>
+        </view>
+    </view>
+</view>

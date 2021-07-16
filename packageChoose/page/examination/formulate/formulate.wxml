@@ -1,0 +1,15 @@
+<!--packageChoose/page//examination/formulate/formulate.wxml-->
+<view class="contain">
+    <view class="title">新高考</view>
+    <view class="info">我们将根据你的省份和学年，为你分析选科的方向</view>
+    <view class="province">
+        <view class="item {{currentProvince==item.province?'active':''}}" data-item="{{item}}" wx:for="{{list}}" wx:key="index" bindtap="selectCity">{{item.province}}</view>
+    </view>
+    <view class="title">我的学年</view>
+    <view class="info">根据你的高考年，匹配最新的新高考政策</view>
+    <!-- 年份选择 -->
+    <view class="year">
+        <view class="year-item {{currentYear==year?'active':''}}" bindtap="selectYear" data-year="{{year}}">{{year}}</view>
+    </view>
+</view>
+<view class="formulate" bindtap="goNext" data-year="{{currentYear}}" data-province="{{currentProvince}}" data-configId="{{year.id}}">去制定我的新高考</view>

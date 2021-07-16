@@ -1,0 +1,372 @@
+/* 年份 */
+
+page {
+    background: #22d8d9;
+}
+
+.year-title {
+    width: 750rpx;
+    background-color: #22d8d9;
+}
+.sub{
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+}
+.year-wrap {
+    width: 689rpx;
+    margin: 30rpx auto 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.year {
+    font-size: 30rpx;
+    letter-spacing: 0rpx;
+    color: #fff;
+    height: 50rpx;
+}
+
+/* 当前选择年份 */
+
+.active {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 录取情况 */
+
+.condition {
+    width: 750rpx;
+    background-color: #22d8d9;
+}
+
+.admission {
+    width: 690rpx;
+    height: 750rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    margin: 20rpx auto 0;
+    position: relative;
+}
+
+/* 录取最低分 */
+
+.score {
+    width: 360rpx;
+    height: 360rpx;
+    background-image: linear-gradient(45deg, #9ad7d7 62%, #fff 100%);
+    opacity: 0.9;
+    border-radius: 180rpx;
+    position: absolute;
+    top: 64rpx;
+    left: 165rpx;
+    z-index: 99;
+}
+
+.score-word {
+    width: 148rpx;
+    height: 71rpx;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 97rpx;
+    left: 104rpx;
+}
+
+.divide {
+    width: 160rpx;
+    height: 3rpx;
+    background-color: #fff;
+    border-radius: 2rpx;
+}
+
+.score-divide {
+    position: absolute;
+    top: 187rpx;
+    left: 98rpx;
+}
+
+.num {
+    font-size: 60rpx;
+    letter-spacing: 0rpx;
+    color: #fff;
+    position: absolute;
+    top: 209rpx;
+    left: 80rpx;
+    width: 200rpx;
+    text-align: center;
+
+}
+
+/*计划人数 */
+
+.plan {
+    width: 360rpx;
+    height: 360rpx;
+    background-image: linear-gradient(225deg, #baeefc 73%, #fff 100%);
+    opacity: 0.9;
+    border-radius: 180rpx;
+    position: absolute;
+    top: 314rpx;
+    left: 30rpx;
+}
+
+.plan-word {
+    font-size: 30rpx;
+    color: #fff;
+    position: absolute;
+    top: 132rpx;
+    left: 110rpx;
+}
+
+.plan-divide {
+    position: absolute;
+    top: 180rpx;
+    left: 89rpx;
+}
+
+.plan-num {
+    font-size: 60rpx;
+    color: #fff;
+    margin-top: 202rpx;
+    margin-left: 64rpx;
+    width: 200rpx;
+    text-align: center;
+}
+
+/* 录取人数 */
+
+.admit {
+    width: 360rpx;
+    height: 360rpx;
+    background-image: linear-gradient(135deg, #f2ccfe 65%, #fff 100%);
+    opacity: 0.9;
+    border-radius: 180rpx;
+    position: absolute;
+    top: 314rpx;
+    right: 30rpx;
+}
+
+.admit-word {
+    font-size: 30rpx;
+    line-height: 42rpx;
+    color: #fff;
+    position: absolute;
+    top: 133rpx;
+    left: 121rpx;
+}
+
+.admit-divide {
+    position: absolute;
+    top: 182rpx;
+    left: 101rpx;
+}
+
+.admit-num {
+    font-size: 60rpx;
+    color: #fff;
+    position: absolute;
+    top: 204rpx;
+    left: 70rpx;
+    width: 200rpx;
+    text-align: center;
+}
+
+/* 报名录取情况 */
+
+.apply {
+    width: 690rpx;
+    display: flex;
+    justify-content: space-between;
+    margin: 20rpx auto 0;
+    text-align: center;
+}
+
+.apply-wrap {
+    width: 220rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding-bottom: 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.word {
+    font-size: 34rpx;
+    color: #000;
+    margin-top: 41rpx;
+    margin-bottom: 40rpx;
+}
+
+.soldier {
+    line-height: 45rpx;
+}
+
+.people {
+    font-size: 30rpx;
+    color: #a9a9a9;
+}
+
+.number {
+    font-size: 36rpx;
+    color: #000;
+}
+
+/* 江苏 */
+
+._condition {
+    width: 100%;
+    background: #22d8d9;
+    padding: 22rpx;
+    box-sizing: border-box;
+}
+
+.jiangsu {
+    text-align: center;
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 0 20rpx;
+}
+
+.literacy-class {
+    background: #ffeeee;
+}
+
+._plan ._plan-num {
+    background: #e4fafa;
+}
+
+._plan .order-num {
+    background: #fef6ef;
+}
+.all{
+    line-height: 100rpx;
+}
+.early-enrollment {
+    height: 120rpx;
+    line-height: 144rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+._plan {
+    display: flex;
+    justify-content: space-between;
+}
+
+._public {
+    width: 200rpx;
+    height: 360rpx;
+    border-radius: 20rpx;
+    text-align: center;
+    padding-top: 40rpx;
+    line-height: 50rpx;
+    /* font-size: 35rpx; */
+    font-weight: bold;
+    box-sizing: border-box;
+    position: relative;
+}
+.font{
+    font-size: 30rpx;
+}
+.big-yuan{
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+    transform:rotate(30deg);
+     text-align: center;
+    line-height: 160rpx;
+     position: relative;
+      margin-left: 10rpx;
+}
+.small-yuan{
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 10rpx;
+    bottom: 4rpx;
+    
+}
+.small-shdow1{
+ border: 1px solid #ffb8b8;
+ box-shadow: #ffb8b8 0px 0px 30px 5px;    
+}
+.small-shdow2{
+ border: 1px solid #22d8d9;
+ box-shadow: #22d8d9 0px 0px 30px 5px;    
+}
+.small-shdow3{
+ border: 1px solid #fadcc2;
+ box-shadow: #fadcc2 0px 0px 30px 5px;    
+}
+.culture{
+      border: 10rpx solid #ffb8b8;
+      border-left: 10rpx solid #fff;
+}
+.num-plan{
+     border: 10rpx solid #96eced;
+      border-left: 10rpx solid #fff;
+}
+.person{
+     border: 10rpx solid #fadcc2;
+      border-left: 10rpx solid #fff;
+}
+.yuan-con{
+     transform:rotate(-30deg);
+}
+.square {
+    width: 0;
+    height: 0;
+    border-width: 30rpx;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius:0 20rpx 0 0; 
+    
+}
+.one{
+    border-color: #ffb8b8 #ffb8b8 transparent transparent;
+}
+.two{
+  border-color: #96eced #96eced transparent transparent;
+}
+.three{
+  border-color: #fadcc2 #fadcc2 transparent transparent;
+}
+
+
+._center {
+    height: 80rpx;
+    border-bottom: 1px dashed #ccc;
+    position: relative;
+}
+
+.circular {
+    width: 40rpx;
+    height: 40rpx;
+    background: #22d8d9;
+    border-radius: 20px;
+    position: absolute;
+}
+
+._circular-f {
+    left: -40rpx;
+    bottom: -18rpx;
+}
+
+._circular-r {
+    right: -40rpx;
+    bottom: -18rpx;
+}
+
+._bottom {
+    height: 80rpx;
+}
+
+

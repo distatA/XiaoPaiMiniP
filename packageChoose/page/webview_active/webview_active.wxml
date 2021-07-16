@@ -1,0 +1,3 @@
+<block wx:if="{{url_active}}">
+    <web-view  src="{{url_active}}&userId={{userId}}" bindmessage="bindmessage"  ></web-view>
+</block> 

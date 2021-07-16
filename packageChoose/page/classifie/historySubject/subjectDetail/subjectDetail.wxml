@@ -1,0 +1,16 @@
+<import src="../../../../../wxParse/wxParse.wxml" />
+
+<page>
+    <view class="main" wx:if="{{detailtList.title!=undefined}}">
+        <view class="title">
+            {{ detailtList.title}}
+        </view>
+        <view class="content">
+             <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+         </view>
+           <view class="download" wx:if="{{url.length>0}}" bindtap="download">点击复制链接，前往浏览器进行下载</view>
+     </view>
+     <view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>
+</page>

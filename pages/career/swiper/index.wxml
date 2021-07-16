@@ -1,0 +1,8 @@
+<!--pages/career/swiper/index.wxml-->
+<view class='boast-bg'>
+  <swiper class='boast' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+    <swiper-item>
+          <image src="{{banlist.image_url}}" class="slide-image" bindtap='jumpquest' />
+    </swiper-item>    
+  </swiper>
+</view>

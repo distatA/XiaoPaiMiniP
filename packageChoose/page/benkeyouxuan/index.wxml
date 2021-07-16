@@ -1,0 +1,153 @@
+<!--pages/benkeyouxuan/index.wxml-->
+<loginDialog url="../../../pages/setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<view>
+    <!-- banner图 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item bindtap="goOther" data-id="{{item.id}}" circular="true" data-id="{{item.id}}" data-link="{{item.ad_link}}" data-type="{{item.media_nw}}">
+                <image src="{{item.ad_code}}"  mode="widthFix" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- table切换 -->
+    <view class='nav'>
+        <view class="nav-item">
+            <view wx:for="{{menuList}}" wx:key="index" class="{{currentTab==index?'nav-active':''}}" bindtap='selectMenu' data-current="{{index}}">{{item}}</view>
+        </view>
+    </view>
+    <!--********************全国百强********************-->
+    <view wx:if="{{currentTab ===0 }}" class="major">
+        <view class="top-item" wx:for="{{schoolList}}" wx:key="index">
+            <!-- <navigator url="../public/index/index?id={{item.id}}"> -->
+            <view bindtap='goDetail' data-id="{{item.id}}" data-praise="{{item.praise}}">
+                <view class="top-logo">
+                    <image src="{{item.logo}}"></image>
+                </view>
+                <view class="top-info">
+                    <view class="top-name">{{item.name}}</view>
+                    <view class="top-attr">
+                        <view class="top-department">{{item.subjection}}</view>
+                        <view class="top-address">所在城市：{{item.province}}{{item.city}}</view>
+                    </view>
+                    <view class="top-attr">
+                        <view class="top-score">理科录取分：{{item.scoreline}}</view>
+                        <view class="top-plan">文科录取分：{{item.enrollment}}</view>
+                    </view>
+                </view>
+            <!-- </navigator> -->
+            </view>
+            <view class="favorite" bindtap='favorite' data-schoolId="{{item.id}}" data-index="{{index}}">
+                <view class='font_family  {{item.cell ==1?"icon-shoucangshixin celled":"icon-shoucang1 detailesicon"}}'></view>
+            </view>
+        </view>
+    </view>
+    <!--********************口碑院校********************-->
+    <view wx:if="{{currentTab ===1 }}">
+        <view class="school" style="background-color: #fff;">
+            <view class="school-item" wx:for="{{praiseList}}" wx:key="index">
+                <!-- <navigator url="../public/index/index?id={{item.id}}"> -->
+                <view bindtap='goDetail' data-id="{{item.id}}" data-praise="{{item.praise}}">
+                    <view class="school-img">
+                        <image src='{{item.thumb}}'></image>
+                    </view>
+                    <view class="school-info">
+                        <view class="school-logo">
+                            <image src='{{item.logo}}'></image>
+                        </view>
+                        <view class="school-name">{{item.name}}</view>
+                    </view>
+                </view>
+                <!-- </navigator> -->
+            </view>
+        </view>
+    </view>
+    <!--********************中外合作********************-->
+    <view wx:if="{{currentTab ===2 }}" class="major">
+        <view class="top-item" wx:for="{{zhwaiList}}" wx:key="index">
+            <!-- <navigator url="../public/index/index?id={{item.id}}"> -->
+            <view bindtap='goDetail' data-id="{{item.id}}" data-praise="{{item.praise}}">
+                <view class="top-logo">
+                    <image src="{{item.logo}}"></image>
+                </view>
+                <view class="top-info">
+                    <view class="top-name">{{item.name}}</view>
+                    <view class="top-attr">
+                        <view class="top-department">{{item.subjection}}</view>
+                        <view class="top-address">所在城市：{{item.province}}{{item.city}}</view>
+                    </view>
+                    <view class="top-attr">
+                        <view class="top-score">录取分：{{item.scoreline}}</view>
+                        <view class="top-plan">计划招生：{{item.enrollment}}</view>
+                    </view>
+                </view>
+            <!-- </navigator> -->
+            </view>
+            <view class="favorite" bindtap='favorite' data-schoolId="{{item.id}}" data-index="{{index}}" data-status="1">
+                <view class='font_family  {{item.cell ==1?"icon-shoucangshixin celled":"icon-shoucang1 detailesicon"}}'></view>
+            </view>
+
+        </view>
+    </view>
+    <!--********************热门专业********************-->
+    <view wx:if="{{currentTab ===3 }}" class="major">
+        <view class="major-item" wx:for="{{majorList}}" wx:key="index">
+            <view class="major-title">{{item.name}}</view>
+            <view class="major-detail"> {{item.introduce}} </view>
+            <view class="cross-line"></view>
+            <view class="major-info">
+                <view class="major-years">
+                    <view class="data">{{item.years}}</view>
+                    <view>修学年限</view>
+                </view>
+                <view class="line"></view>
+                <view class="major-salary">
+                    <view class="data">{{item.wages}}</view>
+                    <view>平均薪资</view>
+                </view>
+                <view class="line"></view>
+                <view class="major-top">
+                    <view class="data">{{item.hits}}</view>
+                    <view>热门排名</view>
+                </view>
+            </view>
+            <view class="favorite"></view>
+        </view>
+    </view>
+    <!--********************本科资讯********************-->
+    <view class="news-content">
+        <view wx:if="{{currentTab ===4 }}" class="news">
+            <view class="news-item" wx:for="{{newsList}}" wx:key="index">
+                <navigator url="../public/newsdetail/newsdetail?id={{item.id}}">
+                    <view class="news-title">
+                        <span class="left-hao">【</span>
+                        <span class="color-title">{{item.main}}</span>
+                        <span class="left-hao">】</span>
+                        <span class="black-title">{{item.subtitle}}</span>
+                    </view>
+                    <view class="new-content">
+                        <view class="news-img">
+                            <image src='{{item.thumb}}'></image>
+                        </view>
+                        <view class="news-info">
+                            <view class="blod-size">{{item.title}}</view>
+                            <view class="news-detail">{{item.description}}</view>
+                            <!-- <view class="news-tag">#2019高考#</view>
+                        <view class="news-time">2019-04-12 14:12:00</view> -->
+                        </view>
+                    </view>
+                </navigator>
+                <view class="news-function">
+                    <view class="share">
+                        <button class="iconfont icon-zhuanfa" plain="true" open-type='share' style="  min-height: 40rpx;    width: 124rpx; "> 转发</button>
+                    </view>
+                    <view class="comment">
+                        <view class="iconfont icon-pinglun2"> {{item.comment_num}}</view>
+                    </view>
+                    <view class="thumb" bindtap='thumb' data-newsid="{{item.id}}" data-index="{{index}}">
+                        <view class='{{item.isThumb?"iconfont icon-thumbed":"iconfont icon-thumb"}}' id="thumb"> {{item.zan}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

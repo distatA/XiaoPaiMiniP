@@ -1,0 +1,11 @@
+<import src="../../../../wxParse/wxParse.wxml"/>
+<view class="top" wx:if="{{isShow}}">
+    <view class="top_t">{{row.title}}</view> 
+    <view class="top_b">
+        <text>{{row.create_time}}</text>
+        <text class="read">{{row.hits}} 阅读</text>
+    </view>
+</view>
+<view class="content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

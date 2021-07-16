@@ -1,0 +1,92 @@
+<view class="header">
+    <view class='area' bindtap='chooseAreas'>
+        <view class='area-title'>{{select_area_name}}</view>
+        <view class='font_family {{select_area_hidden?"icon-xiahua":"icon-shang"}} area-title-icon'></view>
+    </view>
+    <view class='search'>
+        <form bindsubmit="formSubmit">
+            <input class='s_text' id='name' name='name' placeholder="输入高校名称" placeholder-class="placeholder"></input>
+            <button class='font_family icon-sousuo s_btn' style="width:40rpx;margin-right:36rpx" form-type="submit"></button>
+        </form>
+    </view>
+    <!-- 右侧按钮 -->
+    <view class="r_btn" bindtap="onChangeShowState">
+        <view class='font_family icon-shaixuan rs_logo'></view>
+        <view class='r_text'>筛选</view>
+    </view>
+</view>
+<view class='select_area_pop' hidden='{{select_area_hidden}}'>
+    <block wx:if="{{province.length>0}}">
+        <view data-name='{{item.name}}' data-aid='{{item.id}}' wx:for="{{province}}" wx:key="index" class='{{item.id==xzsf?"yellow":""}}' bindtap='chooseAreaVal'>{{item.name}}</view>
+    </block>
+</view>
+<view class="popbg {{showView?'show':''}}" bindtap="onChangeShowState"></view>
+<!-- 筛选内容 -->
+<view class="choose {{showView?'show':''}}">
+    <form bindsubmit="formtype" bindreset="formReset">
+        <view class='choose-title'>高校</view>
+        <view class='choose-type'>
+            <view class='choose-type-check {{gaoxiao==item.id?"selected":""}}' data-gxid='{{item.id}}' wx:for="{{institution}}" wx:key="index" bindtap='screengx'>{{item.name}}</view>
+        </view>
+        <view class='choose-title'>类型</view>
+        <view class='choose-type'>
+            <view class='choose-type-check {{lexing==item.id?"selected":""}}' data-lxid='{{item.id}}' wx:for="{{labe}}" wx:key="index" bindtap='screenlx'>{{item.name}}</view>
+        </view>
+        <input type='text' name="gxid" class='hide' value='{{gaoxiao}}'></input>
+        <input type='text' name="lxid" class='hide' value='{{lexing}}'></input>
+        <view class='btn'>
+            <button class='left-btn' form-type="reset">重置</button>
+            <button class='right-btn' form-type="submit">确定</button>
+        </view>
+    </form> 
+</view>
+<!-- 轮播 -->
+<view class='boast-bg'>
+    <swiper class='boast' indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+        <block wx:for="{{banlist}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.ad_code}}" data-id="{{item.id}}" data-link="{{item.ad_link}}" data-type="{{item.media_nw}}" class="slide-image" bindtap="openAdlink" />
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!-- 学校展示 -->
+<view class='school-scroll'>
+    <view class='school-show' wx:for="{{scdqlist}}" wx:for-item="diqu" wx:key="index">
+        <!-- <block wx:if="{{diqu.level==2}}"> -->
+            <navigator class='school-ardess-nav' url='./screen/screen?city={{diqu.id}}' hover-class="none">
+                <view class='school-ardess'>
+                    <view class='school-city fl'>{{diqu.name}}</view>
+                    <view class='fl'>{{diqu.num}}所</view>
+                    <view class='school-many fr'>
+                        更多>
+                    </view>
+                </view>
+            </navigator>
+        <!-- 学校图片 -->
+        <view class="section section_gap">
+            <scroll-view class="scroll-view_H" scroll-x="true" scroll-y="false">
+                <view class="scroll-view-item_H" wx:for="{{diqu.child}}" wx:for-item="sc" wx:key="index">
+                    <view data-select="{{sc.selecting}}" data-id="{{sc.id}}" bindtap="goDetail">
+                        <image src='{{sc.thumb?sc.thumb:"/images/default.jpg"}}'></image>
+                        <!-- 学校名字及logo -->
+                        <view class='scroll-foot'>
+                            <view class='school-logo'>
+                                <image src='{{sc.logo?sc.logo:"/images/default.jpg"}}'></image>
+                            </view>
+                            <view class='school-name'>{{sc.name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+
+<!-- 跳转二维码弹框 -->
+<view class="{{isKan?'codeIs':'codeis'}} codeBox">
+    <view class='mask' bindtap='xiaoshi'></view>
+    <view class='codeImg'>
+      <image src="{{imgurl}}"></image>
+    </view>
+</view>

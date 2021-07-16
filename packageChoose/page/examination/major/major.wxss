@@ -1,0 +1,238 @@
+page {
+    background-color: #f7f7f7;
+}
+
+.nav {
+    box-sizing: border-box;
+    padding: 17rpx 156rpx 0 156rpx;
+    height: 90rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 36rpx;
+    color: #929292;
+    background-color: #fff;
+}
+
+.active {
+    font-size: 36rpx;
+    font-weight: bold;
+    border-bottom: 9rpx solid #1febbd;
+    color: #000;
+}
+
+.contain {
+    height: 100%;
+    background-color: #f7f7f7;
+    padding-top: 20rpx;
+}
+
+/* 专业详情 */
+
+.subject {
+    width: 671rpx;
+    height: 128rpx;
+    box-sizing: border-box;
+    padding: 0 77rpx 0 35rpx;
+    line-height: 128rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 5rpx 10rpx 0rpx rgba(0, 0, 0, 0.05);
+    border-radius: 10rpx;
+    margin: 20rpx auto 18rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 32rpx;
+}
+
+.r-wrap {
+    display: flex;
+}
+
+.year {
+    font-size: 24rpx;
+    color: #bfbfbf;
+}
+
+.icon {
+    margin: auto 0 auto 52rpx;
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 5rpx solid #7a7a7a;
+    border-right: 5rpx solid #7a7a7a;
+    transform: rotate(45deg);
+}
+
+/* 开设院校 */
+
+.college {
+    width: 654rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    margin: 32rpx auto 21rpx;
+    padding: 35rpx 32rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10rpx;
+    line-height: 40rpx;
+}
+
+.l-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.value {
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.info {
+    font-size: 24rpx;
+    color: #69707f;
+}
+
+.tag {
+    width: 310rpx;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    width: 82rpx;
+    height: 28rpx;
+    border-radius: 14rpx;
+    border: solid 1rpx #787878;
+    font-size: 22rpx;
+    line-height: 28rpx;
+    color: #69707f;
+    text-align: center;
+    margin-right: 18rpx;
+}
+
+/* 搜索 */
+
+.search {
+    height: 96rpx;
+    margin-top: 36rpx;
+    display: flex;
+}
+
+.input {
+    width: 526rpx;
+    height: 96rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 4rpx 60rpx 0rpx rgba(0, 0, 0, 0.08);
+    margin-left: 48rpx;
+    display: flex;
+}
+
+.input input {
+    width: 350rpx;
+    height: 96rpx;
+    margin-left: 20rpx;
+}
+
+.search-icon {
+    width: 30rpx;
+    height: 30rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/entrance/examination-search.png');
+    background-size: 100%;
+    margin-left: 36rpx;
+    margin-top: 38rpx;
+}
+
+.close {
+    width: 80rpx;
+    height: 96rpx;
+    position: relative;
+}
+
+.close::before, .close::after {
+    content: "";
+    position: absolute;
+    height: 30rpx;
+    width: 3rpx;
+    top: 35rpx;
+    right: 25rpx;
+    background: #000;
+}
+
+.close::before {
+    transform: rotate(45deg);
+    /*进行旋转*/
+}
+
+.close::after {
+    transform: rotate(-45deg);
+}
+
+/* 选择匹配列表 */
+
+.select {
+    align-self: center;
+    margin-left: 20rpx;
+    position: relative;
+}
+
+.select-item {
+    width: 120rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    background-color: #fff;
+    border-radius: 22rpx;
+    display: flex;
+}
+
+.select-name {
+    width: 90rpx;
+    font-size: 20rpx;
+    font-weight: bold;
+    color: #a1a1a1;
+    text-align: center;
+}
+
+.select-arrow {
+    width: 0;
+    height: 0;
+    border-left: 8rpx solid transparent;
+    border-right: 8rpx solid transparent;
+    border-top: 10rpx solid #aab2b7;
+    align-self: center;
+}
+
+.select-list {
+    width: 120rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 10rpx 10rpx 0rpx rgba(141, 142, 152, 0.2);
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    position: absolute;
+    top: 50rpx;
+    z-index: 999;
+}
+.list-item {
+    padding:13rpx 0;
+    text-align: center;
+    border-bottom: 1rpx solid #f7f7f7;
+}
+.probability{
+    width: 654rpx;
+    margin: 70rpx auto 0;
+    font-size: 40rpx;
+    color: #1d1e2c;
+    display: flex;
+    justify-content: space-between;
+}
+.probability view:nth-child(1) span{
+	color: #06d6a0;
+}
+.probability view:nth-child(2){
+	font-size: 24rpx;
+	color: #808080;
+    align-self: flex-end;
+}

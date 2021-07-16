@@ -1,0 +1,44 @@
+.bg {
+    width: 100vw;
+    height: 100vh;
+    background: url('https://new.schoolpi.net/attach/small_program/index/result.png') no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+.prompt {
+    width: 154rpx;
+    height: 37rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/index/result-title.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: 218rpx;
+    left: 298rpx;
+}
+
+.btn {
+    width: 368rpx;
+	height:80rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/index/result-btn.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: 115rpx;
+    left: 191rpx;
+}
+.btn button{
+    width: 368rpx;
+	height:80rpx;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.integral {
+    width: 162rpx;
+	height: 18rpx;
+    background: url('https://new.schoolpi.net/attach/small_program/index/result-integral.png') no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: 82rpx;
+    left: 294rpx;
+}

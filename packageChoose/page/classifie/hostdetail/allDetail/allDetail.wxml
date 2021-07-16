@@ -1,0 +1,11 @@
+
+<import src="../../../../../wxParse/wxParse.wxml" />
+<view class="main" wx:if="{{allData!=null}}">
+          <view class="con">
+             <template is="wxParse" data="{{wxParseData:txtNew.nodes}}" />
+          </view>
+</view>
+<view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>
+

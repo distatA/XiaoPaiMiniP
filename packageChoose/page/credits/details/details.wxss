@@ -1,0 +1,218 @@
+/* packageChoose/page//credits/details/details.wxss */
+
+.header {
+    box-sizing: border-box;
+    height: 106rpx;
+    font-size: 23rpx;
+    font-weight: bold;
+    line-height: 106rpx;
+    color: #666;
+    background: #eee;
+    padding-left: 40rpx;
+}
+
+.content {
+    box-sizing: border-box;
+    padding: 70rpx 35rpx;
+}
+
+/* 商品图片 */
+
+.goodsPic {
+    width: 680rpx;
+    height: 435rpx;
+}
+
+/* 选择图片 */
+
+.picList {
+    width: 650rpx;
+    height: 118rpx;
+    margin: 22rpx auto;
+}
+
+.list {
+    width: 193rpx;
+    height: 128rpx;
+}
+
+.active {
+    box-shadow: 0rpx 4rpx 12rpx 2rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 滑动查看 */
+
+.scroll-view_H {
+    white-space: nowrap;
+}
+
+.scroll-view-item_H {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    margin: 0 10rpx;
+    overflow: hidden;
+}
+
+.name {
+    margin-top: 68rpx;
+    font-size: 35rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.remain {
+    font-size: 23rpx;
+    font-weight: bold;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.remain text {
+    color: #29e7bc;
+}
+
+.integral {
+    font-size: 35rpx;
+    font-weight: bold;
+    color: #23e5b5;
+    margin-top: 40rpx;
+}
+
+/* 加减号 */
+
+.stepper {
+    width: 270rpx;
+    height: 77rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 3rpx;
+    margin-top: 44rpx;
+    display: flex;
+}
+
+/*加号和减号*/
+
+.sign {
+    width: 90rpx;
+    line-height: 77rpx;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 普通样式 */
+
+.sub {
+    color: #333;
+}
+
+.plus {
+    color: #29e7bc;
+}
+
+/*禁用样式*/
+
+.disabled {
+    color: #ccc;
+}
+
+/*数值*/
+
+.number {
+    width: 90rpx;
+    height: 77rpx;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #333;
+    border-left: 1rpx solid #ddd;
+    border-right: 1rpx solid #ddd;
+}
+
+/* 商品详情 */
+
+.details {
+    margin-top: 28rpx;
+    margin-bottom: 120rpx;
+}
+
+/* 兑换 */
+
+.fix {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+
+.exchange {
+    width: 655rpx;
+    height: 108rpx;
+    background-image: linear-gradient(45deg, #18dbb4 0%, #44e1fe 100%);
+    box-shadow: 0rpx 5rpx 9rpx 0rpx rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 108rpx;
+    color: #fff;
+    margin: 15rpx auto;
+}
+
+/* 兑换弹窗 */
+
+.exchangeShow {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.show {
+    box-sizing: border-box;
+    width: 600rpx;
+    text-align: center;
+    margin: 250rpx auto 0 auto;
+    padding-top: 70rpx;
+    background: #fff;
+    position: relative;
+    border-radius: 6rpx;
+}
+
+.show-title {
+    font-size: 52rpx;
+    color: #000;
+}
+
+.show-info {
+    font-size: 28rpx;
+    color: #999;
+    margin: 40rpx auto;
+}
+
+.exchanged {
+    display: flex;
+    font-size: 40rpx;
+    line-height: 120rpx;
+    justify-content: space-between;
+    border-top: solid 1px #d2d3d5;
+}
+
+.intro {
+    width: 500rpx;
+    margin: 0 auto 20rpx;
+}
+.input{
+    width: 500rpx;
+}
+.sure {
+    width: 324rpx;
+    border-left: solid 1rpx #d2d3d5;
+    color: #00c200;
+}
+
+.cancle {
+    width: 325rpx;
+}

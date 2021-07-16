@@ -1,0 +1,36 @@
+pages{
+    background: #f2f2f2;
+}
+.video{
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+.title{
+    padding:20rpx 20rpx;
+    font-size:34rpx;
+    font-weight:600;
+}
+.media{
+    width:94vw;
+    margin:0 3vw;
+    height:400rpx;
+    background: red;
+}
+.media-item{
+    width:100%;
+    height:100%;
+}
+.bottom{
+    position: relative;
+    font-size:30rpx;
+    color: #A4A4A4;
+}
+.time{
+    padding:20rpx;
+    
+}
+.nums{
+    position: absolute;
+    top: 20rpx;
+    right:20rpx;
+}

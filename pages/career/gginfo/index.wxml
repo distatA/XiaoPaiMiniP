@@ -1,0 +1,177 @@
+<!--pages/career/gginfo/index.wxml-->
+<!-- 登录窗口 -->
+<view>
+	<view class="page">
+		<view class="top"></view>
+		<view class="bottom"></view>
+		<view class="layer-one"></view>
+		<view class="layer-two"></view>
+		<view class="circle-one"></view>
+		<view class="circle-two"></view>
+		<view class="content">
+			<view class='contente-header' bindtap='editinfo'>
+				<view>修改信息</view>
+				<view class='font_family icon-xiugai header-icon'></view>
+			</view>
+
+			<view class='contente-center'>
+				<view>
+					<text data-province='{{proid}}'>{{user_points.province_name}}</text>
+					<text>{{user_points.course_name}}</text>
+				</view>
+			</view>
+
+			<view class="center-slide {{popup?'hiden':''}}">
+				<view class="section">
+					<view class='progress_box'>
+						<canvas class="progress_bg" canvas-id="canvasProgressbg"> </canvas>
+						<canvas class="progress_canvas" canvas-id="canvasProgress"> </canvas>
+						<view class="progress_text">
+							<view class='progress_han'>分数</view>
+							<view class='progress_info'>{{points}}</view>
+						</view>
+					</view>
+					<view>文化课</view>
+				</view>
+				<view class="section" wx:if="{{sort>0}}">
+					<view class='progress_box'>
+						<canvas class="progress_bg" canvas-id="canvasProgressbgR"> </canvas>
+						<canvas class="progress_canvas" canvas-id="canvasProgressR"> </canvas>
+						<view class="progress_text">
+							<view class='progress_han'>名次</view>
+							<view class='progress_info'>{{sort}}</view>
+						</view>
+					</view>
+					<view>全省名次</view>
+				</view>
+			</view>
+			<view class="center-slideT {{popup?'':'hiden'}}"></view>
+
+			<view class='center-school'>
+				<view class='center-school-box' bindtap='goGailv' data-id="2">
+					<view class='school-type'>冲刺院校</view>
+					<view class='many-school'>
+						{{user_gailv.chongci}}所
+						<text class="font_family icon-youhua jiantou1"></text>
+					</view>
+				</view>
+				<view class='center-school-box center-school-box2' bindtap='goGailv' data-id="3">
+					<view class='school-type'>稳妥院校</view>
+					<view class='many-school'>
+						{{user_gailv.wentuo}}所
+						<text class="font_family icon-youhua jiantou2"></text>
+					</view>
+				</view>
+				<view class='center-school-box' bindtap='goGailv' data-id="4">
+					<view class='school-type'>保底院校</view>
+					<view class='many-school'>
+						{{user_gailv.baodi}}所
+						<text class="font_family icon-youhua jiantou3"></text>
+					</view>
+				</view>
+			</view>
+			<view>
+				<view wx:if="{{has_volunteer==1}}">
+					<navigator url='../applyfor/index' hover-class="none">
+						<view class='foot-menu'>查看志愿表</view>
+					</navigator>
+				</view>
+				<view class='noZhiyuan' wx:else>
+					<view>还未添加任何志愿，赶紧去添加志愿吧~</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 弹窗 -->
+<view class='popup {{popup?"":"hide"}}'>
+	<view class='mask' bindtap='editinfo'></view>
+	<form bindsubmit="formSubmit">
+		<view class='form-bg'>
+			<view class='class-arddess'>
+				<view class='class-type'>
+					<text class='{{wenli==1?"selection":""}}' data-type='1' bindtap='szwenli'>文科</text>
+					<text class='{{wenli==0?"selection":""}}' data-type='0' bindtap='szwenli'>理科</text>
+				</view>
+				<view class='arddess-choose'>
+					<text bindtap='selectToggle'>{{nowText}}</text>
+					<i class="font_family icon-xiahua open-icon" bindtap='selectToggle'></i>
+					<view class='com-sList {{selectShow?"show":"hide"}}'>
+						<view wx:for="{{propArray}}" data-index="{{index}}" wx:key='index' data-pid='{{item.id}}' data-pname='{{item.name}}' class='com-sItem' bindtap='setText'>{{item.name}}</view>
+					</view>
+				</view>
+			</view>
+			<input class='achievement-int' type='number' value="{{points}}" name="points" placeholder-class="place-holder" placeholder='请输入高考成绩'></input>
+			<view wx:if="{{sort>0}}">
+				<input class='achievement-int' name="sort" value="{{sort}}" placeholder-class="place-holder" placeholder='本省排名（增加准确率）'></input>
+			</view>
+			<view wx:else>
+				<input class='achievement-int' name="sort" placeholder-class="place-holder" placeholder='本省排名（增加准确率）'></input>
+			</view>
+			<!-- *************江苏************* -->
+			<view class="jiangsu {{isJiangsu?'':'hide'}}">
+				<view class='js_l'>
+					<!-- 左边 -->
+					<text class='bixuan'>{{guName}}</text>
+					<view class='xuanAB' bindtap='selectAB' id="1">
+						<text>{{first_choose_grade}}</text>
+						<i class="font_family icon-xiahua open-icon"></i>
+						<view class='abc_list {{isShow==1?"show":"hide"}}'>
+							<view data-level="A+" bindtap='setContentA'>A+</view>
+							<view data-level="A" bindtap='setContentA'>A</view>
+							<view data-level="B+" bindtap='setContentA'>B+</view>
+							<view data-level="B" bindtap='setContentA'>B</view>
+							<view data-level="C" bindtap='setContentA'>C</view>
+							<view data-level="D" bindtap='setContentA'>D</view>
+						</view>
+					</view>
+				</view>
+				<view class='iamLine'></view>
+				<view class='js_r'>
+					<!-- 右边 -->
+					<view class='xuanKe' bindtap='selectAB' id="2">
+						<text>{{kename}}</text>
+						<i class="font_family icon-xiahua open-icon"></i>
+						<view class='ke_list {{isShow==2?"show":"hide"}}'>
+							<view data-kename="政治" bindtap='setContent'>政治</view>
+							<view data-kename="地理" bindtap='setContent'>地理</view>
+							<view data-kename="化学" bindtap='setContent'>化学</view>
+							<view data-kename="生物" bindtap='setContent'>生物</view>
+						</view>
+					</view>
+					<view class='xuanAB' bindtap='selectAB' id="3">
+						<text>{{second_choose_grade}}</text>
+						<i class="font_family icon-xiahua open-icon"></i>
+						<view class='abc_list {{isShow==3?"show":"hide"}}'>
+							<view data-level="A+" bindtap='setContentB'>A+</view>
+							<view data-level="A" bindtap='setContentB'>A</view>
+							<view data-level="B+" bindtap='setContentB'>B+</view>
+							<view data-level="B" bindtap='setContentB'>B</view>
+							<view data-level="C" bindtap='setContentB'>C</view>
+							<view data-level="D" bindtap='setContentB'>D</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!-- *************江苏************* -->
+			<view class='pici'>
+				<text class='{{pici==1?"selection":""}}' data-type='1' bindtap='szpc'>本一批</text>
+				<text class='{{pici==2?"selection":""}}' data-type='2' bindtap='szpc'>本二批</text>
+				<text class='{{pici==3?"selection":""}}' data-type='3' bindtap='szpc'>专科批</text>
+			</view>
+			<block wx:if="{{calculate}}">
+				<view class="calculate">
+					<view class="line-round">计算中
+						<text></text>
+						<text></text>
+						<text></text>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<button class='btner' formType="submit" wx:if="{{!isClick}}">确定</button>
+				<button class='btner' wx:else>确定</button>
+			</block>
+		</view>
+	</form>
+</view>

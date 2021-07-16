@@ -1,0 +1,179 @@
+<!-- 登录窗口 -->
+<loginDialog url="../../setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+
+<!-- 首页轮播 -->
+<view class="banner">
+    <swiper class="indexBanner" indicator-color="gray" indicator-active-color="white" circular="true" indicator-dots="true" autoplay="{{autoplay}}" bindchange="transition" circular="true" easing-function="linear" current="{{index}}">
+        <block wx:for="{{banner}}" wx:key="index">
+            <swiper-item>
+                <image class="banner-image" src="{{item.ad_code}}" mode="widthFix" bindtap="goAd" data-id="{{item.id}}" data-media="{{item.media_nw}}" data-link="{{item.ad_link}}" data-appid="{{item.applet_appid}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <!-- 首页搜索 -->
+    <view class="search">
+        <view class="province">
+            <navigator url="../../area/ardess" class='s_dq' hover-class="none">{{province}}</navigator>
+        </view>
+        <!-- 点击跳转到搜索页面 -->
+        <navigator url="/pages/search/index" hover-class="none">
+            <input class="search-content" placeholder="输入高校名称" disabled="disabled"></input>
+            <view class="search-btn font_family icon-sousuo"></view>
+        </navigator>
+        <block wx:if="{{searchSchoolList.length>0}}">
+            <view class="search-contanier">
+                <view class="search-list">
+                    <block wx:for="{{searchSchoolList}}" wx:key="index">
+                        <view class="search-item">{{item.name}}</view>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view></view>
+</view>
+<view class="notice">
+    <image class="notice-logo" src="https://new.schoolpi.net/attach/small_program/index/cate_one.jpg"></image>
+    <swiper class="noticeBanner" circular="true" autoplay="true" vertical="true">
+        <block wx:for="{{noticeList}}" wx:key="index">
+            <swiper-item>
+                <view class="notice-item" bindtap="goNews" data-id="{{item.id}}">{{item.title}}</view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<!-- 九宫格 -->
+<view class="menu">
+    <block wx:for="{{menuList}}" wx:key="index">
+        <view class="menu-item" style="width:{{menuWidth}}" bindtap="isLogin" data-name="{{item.name}}" data-type="{{item.type}}" data-login="{{item.login}}" data-url="{{item.wx_url}}">
+            <image class="menu-logo" src="{{item.logo}}"></image>
+            <!-- <image wx:if="{{item.name=='分类招生'||item.name=='高职春招'}}" class="popular" src="https://new.schoolpi.net/attach/small_program/index/popular.png"></image> -->
+            <view class="menu-name">{{item.name}}</view>
+        </view>
+    </block>
+    <block wx:for="{{row-menuList.length%row}}" wx:if="{{menuList.length%row>0}}" wx:key="index">
+        <view class="disappear"></view>
+    </block>
+</view>
+<view class="divide"></view>
+<view class="scroll-menu">
+    <block wx:for="{{scrollMenu}}" wx:key="index">
+        <view class="scroll-item" bindtap="isLogin" data-url="{{item.url}}" data-login="{{item.login}}">
+            <image class="scroll-logo" src="{{item.logo}}" mode="widthFix"></image>
+            <view class="scroll-ename">{{item.ename}}</view>
+            <view class="scroll-name">{{item.name}}</view>
+        </view>
+    </block>
+</view>
+<!-- 
+        新闻列表 
+        is_information = 0  新闻
+        is_information = 1  信息流  单大图type=2 视频type=4
+        earlybus = 1早班车 
+        earlybus = 0普通新闻 
+        通过判断里面thunmb封面图的数量显示单图还是多图
+-->
+<view class="news-list">
+
+   <swiper class="banneInfo" circular="true" autoplay="true" indicator-dots	='true' indicator-active-color="white" easing-function="linear" >
+        <block wx:for="{{noticeListbanner}}" wx:key="index">
+            <swiper-item  style="height:240rpx; border-radius: 10rpx;">
+                <image class="image_AddBanner"  src="{{item.url}}" data-totaldate="{{item}}"  data-itemname="{{item.type}}" bindtap="goTo" >
+                </image>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <block wx:for="{{newsList}}" wx:key="index">
+        <!--新闻-->
+        <block wx:if="{{item.is_information === 0}}">
+            <!-- 早班车 -->
+            <!-- <block wx:if="{{item.earlybus === 1}}">
+                <view class="earlybus-info" data-id="{{item.id}}" bindtap="goEarly"></view> 
+            </block>
+            <block wx:else> -->
+
+            <block wx:if="{{item.earlybus === 0}}"> 
+                <!-- 普通新闻 -->
+                <block wx:if="{{item.type===1}}">
+                    <!-- 单图 -->
+                    <block wx:if="{{item.thumb.length === 1}}">
+                        <view class="earlybus-item" bindtap="goNews" data-id="{{item.id}}">
+                            <view class="single-info">
+                                <view class="earlybus-title">{{item.title}}</view>
+                                <view class="earlybus-desc">{{item.desc}}</view>
+                            </view>
+                            <image class="single-img" src="{{item.thumb[0]}}" mode="scaleToFill"></image>
+                        </view>
+                    </block>
+                    <!-- 三图 -->
+                    <block wx:if="{{item.thumb.length === 3}}">
+                        <view class="triple-item" bindtap="goNews" data-id="{{item.id}}">
+                            <view class="triple-title">{{item.title}}</view>
+                            <view class="triple-content">
+                                <block wx:for="{{item.thumb}}" wx:key="index" wx:for-item="img">
+                                    <image class="triple-img" src="{{img}}"></image>
+                                </block>
+                            </view>
+                        </view>
+                    </block>
+                    <!-- 无图 -->
+                    <block wx:if="{{item.thumb.length === 0}}">
+                        <view class="nopic-item" bindtap="goNews" data-id="{{item.id}}">
+                            <view class="nopic-title">{{item.title}}</view>
+                            <view class="nopic-content">{{item.desc}}</view>
+                        </view>
+                    </block>
+                </block>
+                <!-- 视频 -->
+                <block wx:if="{{item.type===2}}">
+                    <view class="vedio-item" bindtap="goVedio" data-link="{{item.video_url}}" data-id="{{item.id}}">
+                        <view class="vedio-title">{{item.title}}</view>
+                        <image class="vedio-img" src="{{item.thumb[0]}}" mode="scaleToFill"></image>
+                    </view>
+                </block>
+            </block>
+        </block>
+        <!-- 信息流 -->
+        <block wx:else>
+            <view class="information" >
+                <swiper class="information-item" circular="true" indicator-dots="true" indicator-color="#fff" indicator-active-color="coral" autoplay="{{autoplay}}" easing-function="easeInOutCubic" style="height:460rpx;" wx:if="{{item.child.length>0}}">
+                        <swiper-item style="height:500rpx" wx:for="{{item.child}}" wx:key="index" wx:for-item="i">
+                            <view bindtap="goInformation" data-link="{{i.linkurl}}" data-id="{{i.id}}" data-type="{{i.type}}" data-schoolId="{{i.school_id}}" data-vurl="{{i.video_url}}">
+                                <view class="information-title">{{i.title}}</view>
+                                <image class="information-img" src="{{i.thumb[0]}}" mode="scaleToFill"></image>
+                            </view>
+                        </swiper-item>
+                </swiper>
+                <view>
+                    <text class="advan">广告</text>
+                </view>
+            </view>
+        </block>
+    </block>
+</view>
+<!-- 红包弹窗 -->
+<view class="money" wx:if="{{showMoney}}">
+    <view class="money-contain">
+        <view class="money-btn" bindtap="goLive">
+            <view class="money-title">恭喜！收到一份</view>
+            <view class="money-inf">校派专属红包</view>
+            <view class="money-intro">备注：点开红包自动发送至微信钱包，注意查收哦</view>
+        </view>
+        <view class="close" bindtap="closeLive"></view>
+    </view>
+</view>
+<!-- 口罩活动 -->
+<view class="masks" wx:if="{{showMasks}}">
+    <view class="masks-contain">
+        <view class="mask-btn" bindtap="goLottery"></view>
+        <view class="close-masks" bindtap="closeLottery"></view>
+    </view>
+</view>
+
+
+<view class="masks_active" wx:if="{{showMasks_active}}">
+     <view class="masks-contain_active" bindtap="toActive">
+         <view class="close-masks_active" catchtap="close_acvite"></view>
+    </view>
+</view>

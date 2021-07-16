@@ -1,0 +1,87 @@
+<live-player
+    id="player"
+    src="{{playURL}}"
+    mode="live"
+    object-fit="fillCrop"
+    bindstatechange="statechange"
+    binderror="error"
+    style="height: {{liveHeight}}px"
+>
+    <cover-view class="topbar" style="padding-top: {{height}};">
+        <cover-view class="school">
+            <cover-image class="school-logo" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></cover-image>
+            <cover-view class="school-name">
+                <cover-view class="school-name1">{{roomTitle}}</cover-view>
+                <cover-view class="school-name2">{{roomPeoples}}人 观看</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="right-sider {{showSider? '':'right-sider-hide'}}">
+        <cover-view class="sider-btn" bindtap="openSider">
+            <cover-image class="image" src="{{showSider? '/static/youjiantou.png':'/static/zuojiantou.png'}}"></cover-image>
+        </cover-view>
+        <cover-view class="right-sider-list" wx:if="{{showSider}}">
+            <cover-view class="right-sider-item" bindtap="openAbout">
+                <cover-image class="icon" src="{{schoolLogo==''? '/static/logo.png':schoolLogo}}"></cover-image>
+                <cover-view class="txt">学校介绍</cover-view>
+            </cover-view>
+            <cover-view class="right-sider-item" bindtap="openFenshu">
+                <cover-image class="icon" src='/static/ljfs_icon.png'></cover-image>
+                <cover-view class="txt">历届分数</cover-view>
+            </cover-view>
+            <!-- <cover-view class="right-sider-item" hidden="{{liveType==1}}" bindtap="openLuqu">
+                <cover-image class="icon" src='/static/lqgl_icon.png'></cover-image>
+                <cover-view class="txt">录取概率</cover-view>
+            </cover-view> -->
+            <cover-view class="right-sider-item" bindtap="openZhuanye">
+                <cover-image class="icon" src='https://new.schoolpi.net/attach/small_program/live/yxzy_icon.png'></cover-image>
+                <cover-view class="txt">院系专业</cover-view>
+            </cover-view>
+            <cover-view class="right-sider-item" bindtap="openVr">
+                <cover-image class="icon" src='https://new.schoolpi.net/attach/small_program/live/vr_icon.png'></cover-image>
+                <cover-view class="txt">校园全景</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view style='position:absolute;bottom:0;height:110rpx;width:60%;right:0;'>
+        <cover-view class="operate">
+            <cover-view class="img-box" bindtap="openSider">
+                <cover-image class='img-view' src='/static/more_menu.png'></cover-image>
+            </cover-view>
+            <cover-view class="img-box" bindtap="openRequest" data-type="0">
+                <cover-image class='img-view' src='/static/request.png'></cover-image>
+            </cover-view>
+            <cover-view class="img-box">
+                <cover-image class='img-view' src='/static/share_menu.png'></cover-image>
+                <cover-view class="share-wrap">
+                    <button class="share" open-type="share">
+                        <cover-view class="share-icon"></cover-view>
+                    </button>
+                </cover-view>
+            </cover-view>
+            <cover-view class='img-box' bindtap="onBack">
+                <cover-image class='img-view' src='/static/close_menu.png'></cover-image>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="editor-container" hidden="{{showBarrageInput}}">
+        <cover-view class="editor">
+            <cover-view class='editor-input' bindtap='tapInput'>
+                <cover-view class='editor-input-text'>说点什么...</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="comment-container">
+        <cover-view class="comment-list-li" wx:for="{{comment}}" wx:for-item="item" wx:for-index="index" wx:if="{{index < 10}}">
+            <cover-view class="comment-list-li-nickname" hidden="{{item.name == '' || item.name == null}}">{{item.name}}：</cover-view>
+            <cover-view class="comment-list-li-msg">{{item.content}}</cover-view>
+        </cover-view>
+    </cover-view>
+</live-player>
+<!-- 弹幕输入框 -->
+<view class="barrage-container" wx:if="{{showBarrageInput}}">
+    <view class="barrage-input">
+        <input class='input' value='{{inputInfo}}' focus='{{inputFocus}}' bindinput='bindinput' bindblur='bindblur'></input>
+    </view>
+    <view class="barrage-submit" bindtap="sendBarrage">发送</view>
+</view>

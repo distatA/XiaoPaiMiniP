@@ -1,0 +1,35 @@
+<!-- <header back="true" isshow="true" title="高招面对面"></header> -->
+<view class="content" style="height:{{height}}px">
+    <view class="video-wrap">
+        <video class="video" src="{{videoUrl}}" bindplay="videoPlay"></video>
+        <!-- <view class="room" bindtap="">进入直播间</view> -->
+        <view class="info" wx:if="{{showInfo}}">
+            <view class="title">{{name}}</view>
+            <view wx:for="{{info}}" wx:key="index">{{item.title}}</view>
+        </view>
+    </view>
+    <view class="btn">
+        <button class="share" open-type="share">
+            <image src="../../static/share_menu.png"></image>分享</button>
+        <view class="line"></view>
+        <button class="collect" bindtap="collect">
+            <block wx:if="{{is_collect}}">
+                <image src='../../static/qbank_answer_more_collect.png'></image>
+            </block>
+            <block wx:else>
+                <image src='../../static/uncollect.png'></image>
+            </block>收藏</button>
+    </view>
+</view>
+<view class="login-dialog" hidden="{{!showLoginDialog}}">
+    <view class="login-dialog-bg"></view>
+    <view class="login-dialog-body">
+        <view class="login-title">您还未登陆</view>
+        <image src="../../static/login-icon.jpg"></image>
+        <view class="login-msg">使用微信快捷登录，可免去信息填写</view>
+        <view class="login-btns">
+            <button class="login-btn-cansel" bindtap="loginCansel">暂不登陆</button>
+            <button class="login-btn-ok" open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即登录</button>
+        </view>
+    </view>
+</view>

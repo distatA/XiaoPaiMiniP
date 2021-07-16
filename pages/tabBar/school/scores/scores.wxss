@@ -1,0 +1,131 @@
+/* pages/tabBar/school/scores/scores.wxss */
+
+/* 固定 */
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 30rpx;
+    color: #777;
+}
+
+.active {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #74dbd3;
+}
+
+.select {
+    display: flex;
+    height: 100rpx;
+    background-color: #eee;
+    font-size: 28rpx;
+    padding-left: 20rpx;
+}
+
+/*  */
+
+.select-wrap {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-radius: 35rpx;
+    background-color: #fff;
+    /* text-align: center; */
+    margin: 20rpx 10rpx;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+    padding-right: 45rpx;
+}
+
+/*文理科选择下拉*/
+
+.course {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 2rpx 2rpx 2rpx #ccc;
+    padding: 5rpx;
+    border-radius: 4rpx;
+}
+
+/* 表 */
+
+/* .hidden{
+    display: none;
+} */
+
+.condition {
+    box-sizing: border-box;
+    padding: 0 40rpx 0 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 25rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    color: #777;
+}
+
+.bg {
+    background: #f2f2f2;
+}
+
+.s-tr {
+    box-sizing: border-box;
+    padding: 30rpx;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25rpx;
+}
+
+.th {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.th {
+    /* text-align: center; */
+    display: block
+}
+.td{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+/* 下拉 */
+.top {
+    width: 100vw;
+    height: 80rpx;
+    padding: 0 20rpx;
+    line-height: 80rpx;
+    font-size: 34rpx;
+    border-bottom: 1px solid #000;
+}
+
+.top-text {
+    float: left;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-width: 10rpx;
+    border-style: solid;
+    border-color: #ccc transparent transparent transparent;
+    position: absolute;
+    right: 20rpx;
+    top: 10rpx;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.noData{
+    margin-top: 30rpx;
+    margin-left: 100rpx;
+}

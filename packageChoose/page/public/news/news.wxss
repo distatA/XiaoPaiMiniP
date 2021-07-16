@@ -1,0 +1,154 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+    background:#F2F2F2;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-navbar{
+    width:100%;
+    height:100rpx;
+    border-bottom:0.5px solid #ccc;
+    line-height:100rpx;
+    background:#fff;
+    position: fixed;
+}
+.weui-navbar view{
+  float:left;
+  font-size:36rpx;
+}
+.weui-navbar__item{
+  /* border-bottom:1rpx solid #f00; */
+  height:100rpx;
+  margin-left:11%;
+}
+.weui-tab__panel{
+   width:100%;
+}
+.weui-tab__content{
+    font-size:32rpx;
+    width:100%;
+    padding-top: 100rpx;
+}
+/* .weui-navbar__title{
+  color:#25BAFD
+} */
+.weui-bar__item_on{color:#1aad19}
+.text{
+    display: block
+}
+/* ---- */
+.tongji{
+  width:100%;
+  height:266rpx;
+  background:#fff;
+  border-bottom:1rpx solid #ccc; 
+}
+.tongji view{
+  float:left;
+}
+.tongji_l{
+  width:59%;
+}
+.tongji_r{
+  width:40%;
+  height:270rpx;
+}
+.tongji_l_t{
+  width:93%;
+  height:170rpx;
+  font-size:30rpx;
+  line-height:46rpx;
+  padding-left:30rpx;
+  margin-top:10rpx
+}
+.tongji_l_b{
+  width:93%;
+  height:80rpx;
+  font-size:24rpx;
+  padding-left:30rpx;
+  line-height:80rpx;
+  color:#999;
+}
+.zhaojia{
+  width:100%;
+  background:#fff;
+  border-bottom:1rpx solid #ccc;
+  padding: 30rpx 0;
+}
+.zhaojia_t{
+  width:92vw;
+  font-size:30rpx;
+  line-height:46rpx;
+  padding-top:10rpx;
+  margin:0 auto;
+
+}
+.zhaojia_b{
+  height:50rpx;
+  font-size:24rpx;
+  padding-left:30rpx;
+  line-height:50rpx;
+  color:#999;
+}
+/* .v_img_box{
+  width:100%;
+  height:1200rpx;
+  overflow: hidden
+} */
+.v_img{
+  width:100%;
+  /* height:335rpx; */
+  background:#fff;
+  border-bottom:1rpx solid #ccc;
+}
+.v_img_t{
+  width:92vw;
+  /* height:100rpx; */
+  background:#fff;
+  line-height:46rpx;
+  font-size:30rpx;
+  margin:0 auto;
+  padding-top:10rpx
+}
+.v_img_b{
+  width:100%;
+  /* height:146rpx; */
+  background:#fff;
+  margin-top:5rpx
+}
+.v_img_b_list{
+  width:92%;
+  height:146rpx;
+  display: flex;
+  justify-content: space-between;
+  margin:0 auto;
+}
+.v_img_m{
+  height:80rpx;
+  font-size:24rpx;
+  padding-left:30rpx;
+  line-height:80rpx;
+  color:#999;
+}
+.end{
+  width:100%;
+  height:120rpx;
+  background: #fff;
+  line-height:120rpx;
+  text-align:center;
+}
+.tu2{
+  width:100%;
+  height:336rpx;
+  background:#fff;
+  border-bottom:1rpx solid #ccc;
+}
+.tu2_list{
+  width:92%;
+  display: flex;
+  justify-content: space-between;
+  margin:0 auto;
+}

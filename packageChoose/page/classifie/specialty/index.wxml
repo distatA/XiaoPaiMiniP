@@ -1,0 +1,45 @@
+<block wx:if="{{majorList.length>0}}">
+    <view class="major-list">
+        <block wx:for="{{majorList}}" wx:key="index">
+            <view class="major-item">
+                <view class="major-name">{{item.name}}
+                    <view class="arrow"></view>
+                </view>
+                <view class="school" bindtap="goopenSchool" data-cid="{{item.cid}}" data-name="{{item.name}}">开设院校</view>
+                <view class="major-info">
+                    <view class="info-item">
+                       <image class="icon" src="https://new.schoolpi.net/attach/small_program/class/host.png"></image>
+                        <view class="info-detail">
+                            <view class="info-value">{{item.sort}}</view>
+                            <view class="info-title">热门排行</view>
+                        </view>
+                    </view>
+                    <view class="info-item">
+                        <image class="icon" src="https://new.schoolpi.net/attach/small_program/class/clock.png"></image>
+                        <view class="info-detail">
+                            <view class="info-value">{{item.study_years}}</view>
+                            <view class="info-title">修学年限</view>
+                        </view>
+                    </view>
+                    <view class="info-item">
+                       <image class="icon" src="https://new.schoolpi.net/attach/small_program/class/money.png"></image>
+                        <view class="info-detail">
+                            <view class="info-value">{{item.wages}}</view>
+                            <view class="info-title">平均起薪</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- isShow==index -->
+                <view class="pay-hint-content {{ isShow==index?'unellipsis':'ellipsis'}}">
+                    {{item.professional_introduction}}
+                      <view class="position"  bindtap='ellipsis' data-index="{{index}}" data-item="{{item}}" 
+                      wx:if="{{item.show}}">...展开全部</view>
+                </view>
+               
+            </view>
+        </block>
+    </view>
+</block>
+<view wx:else class="_noPost">
+       <image src="https://new.schoolpi.net/attach/small_program/index/no-data.png" class="no-data"></image>
+    </view>

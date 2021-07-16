@@ -1,0 +1,27 @@
+<view class='tc clr_txt f16' wx:if="{{!mobile}}">为了保证你的账号安全，请绑定手机</view>
+<view class='tc clr_txt f16' wx:if="{{mobile}}">检测到您已经绑定了手机号{{mobile}}</view>
+<view class="content-input-phone">
+    <view>+86</view>
+    <input type="number" data-type="phone" bindinput="input" maxlength="11"></input>
+</view>
+<view class="content-input-code">
+    <view wx:for="{{code}}" wx:key="index">{{item}}</view>
+    <view wx:for="{{6-code.length}}" wx:key="index"></view>
+    <input type="number" maxlength="6" data-type="code" bindinput="input"></input>
+</view>
+<view class="content-input-code-tip" wx:if="{{showCode===1&&countDown>0}}">
+    {{countDown}}秒后重新发送
+</view>
+<view class="content-input-code-tip" style='text-decoration-line: underline;' bindtap="getCode" wx:if="{{showCode===1&&countDown==0}}">
+    重新发送
+</view>
+<block wx:if="{{showCode==0}}">
+    <view class="content-input-phone-submit" bindtap="getCode">
+        {{btn_txt}}
+    </view>
+</block>
+<block wx:else>
+    <view class="content-input-phone-submit" bindtap="sendCode">
+        {{btn_txt}}
+    </view>
+</block>

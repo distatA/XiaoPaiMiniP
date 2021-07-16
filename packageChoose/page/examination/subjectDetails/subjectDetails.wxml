@@ -1,0 +1,18 @@
+<!--packageChoose/page//examination/subjectDetails/subjectDetails.wxml-->
+<view class="title">{{name}}</view>
+<block wx:if="{{schoolList.length!=0}}">
+    <view class="intro">相关学校{{number}}个</view>
+</block>
+<view class="college" wx:for="{{schoolList}}" wx:key="index" bindtap="schoolDetail" data-item="{{item}}">
+    <view class="l-wrap">
+        <view class="value">{{item.name}}</view>
+        <view class="info">
+            <block wx:for="{{item.institution_type}}" wx:key="index">{{item}}/</block>{{item.school_nature}}/{{item.subjection}}</view>
+        <view class="info">{{item.claim}}</view>
+    </view>
+    <view class="tag">
+        <block wx:for="{{item.feature_label}}" wx:key="index">
+            <view class="tag-item">{{item}}</view>
+        </block>
+    </view>
+</view>

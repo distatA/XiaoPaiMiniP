@@ -1,0 +1,241 @@
+<!--pages/tabBar/career/index.wxml-->
+<!-- 登录窗口 -->
+<loginDialog url="../../setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='work-header'>
+	<!-- 轮播 -->
+	<view class='boast-bg'>
+		<swiper class='boast' indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+			<block wx:for="{{banlist}}" wx:key="index">
+				<swiper-item>
+					<image src="{{item.ad_code}}" data-id="{{item.id}}" alt="{{item.ad_name}}" class="slide-image" data-link="{{item.ad_link}}" data-type="{{item.media_nw}}" bindtap="openAdlink" />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+</view>
+<!-- 功能列表 -->
+<view class='model-list'>
+</view>
+<block wx:if="{{istestres==0}}">
+	<!-- 轮播 -->
+	<view class='work-boast-second'>
+		<swiper class='boast-second' indicator-dots="true" autoplay="{{autoplay}}" interval="5000" duration="1000" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}">
+			<swiper-item wx:for="{{ceshiList}}" wx:key="index">
+				<view class='model-title'>{{item.name}}</view>
+				<view class='boast-bg-second'>
+					<view class='screeBox'>
+						<view class="jieguo-wrap"  bindtap='goJieguo' data-type="{{item.type}}">
+							<view class='icoxx'>
+								<image src='/images/ico3.png'></image>
+							</view>
+							<view class="jieguo">测试结果</view>
+						</view>
+						<image src="{{item.image_url}}" class="slide-image" />
+						<view class='text'>
+							<view class="content1" hidden="{{item.type != 1}}">
+								<template is="wxParse" data="{{wxParseData:xq.nodes}}" />
+							</view>
+							<view class="content1" hidden="{{item.type != 2}}">
+								<template is="wxParse" data="{{wxParseData:xg.nodes}}" />
+							</view>
+							<view class="content1" hidden="{{item.type != 3}}">
+								<template is="wxParse" data="{{wxParseData:zy.nodes}}" />
+							</view>
+							<view class="content1" hidden="{{item.type != 4}}">
+								<template is="wxParse" data="{{wxParseData:xk.nodes}}" />
+							</view>
+						</view>
+						<view bindtap='goTest' data-type="{{item.type}}">
+							<button class='btner btn1' size="default">开始测试</button>
+						</view>
+						<text class='bttxt'>{{item.remark}}</text>
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+		<view class="foot {{istestres2==1?'show':'hide'}}" bindtap='cxpc'>综合结果</view>
+		<view class='h50'></view>
+	</view>
+</block>
+<block wx:else>
+	<view class='cxpc' bindtap='cxpc'>
+		<image src='/images/ico3.png'></image>重新评测
+	</view>
+	<!-----xinli---->
+	<view class='header'>
+		<view class='header-tit'>性格评测</view>
+		<view class='header-foot'>
+			<view class='boxarea'>
+				<view class='fl'>外向（E）{{xinlizongti.E}}%</view>
+				<view class='fr'>内向（I）{{xinlizongti.I}}%</view>
+			</view>
+			<progress class="progress" percent="{{xinlizongti.E}}" stroke-width="6" activeColor="{{actcolor1}}" backgroundColor="{{bgcolor1}}" active="true" active-mode="forwards">
+			</progress>
+			<view class='boxarea'>
+				<view class='fl'>感觉（S）{{xinlizongti.S}}%</view>
+				<view class='fr'>直觉（N）{{xinlizongti.N}}%</view>
+			</view>
+			<progress class="progress" percent="{{xinlizongti.S}}" stroke-width="6" activeColor="{{actcolor2}}" backgroundColor="{{bgcolor2}}" active="true" active-mode="forwards">
+			</progress>
+
+			<view class='boxarea'>
+				<view class='fl'>思考（T）{{xinlizongti.T}}%</view>
+				<view class='fr'>情感（F）{{xinlizongti.F}}%</view>
+			</view>
+			<progress class="progress" percent="{{xinlizongti.T}}" stroke-width="6" activeColor="{{actcolor3}}" backgroundColor="{{bgcolor3}}" active="true" active-mode="forwards">
+			</progress>
+
+			<view class='boxarea'>
+				<view class='fl'>判断（J）{{xinlizongti.J}}%</view>
+				<view class='fr'>知觉（P）{{xinlizongti.P}}%</view>
+			</view>
+			<progress class="progress" percent="{{xinlizongti.J}}" activeColor="{{actcolor4}}" backgroundColor="{{bgcolor4}}" stroke-width="6" active-mode="forwards" active="true" />
+			<view class='type' style='padding:30rpx 0;overflow:hidden;'>
+				<text>您的评测结果为：</text>
+				<text class='type-color'>{{xinlidata.model}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class='job-type'>
+		<view class='job-card'>
+			<view class='job-card-left'>
+				<view class='font_family icon-yuan left-icon'></view>
+				<view class='card-left-text'>{{xinlidata.model}}</view>
+			</view>
+		</view>
+		<view class='job-card-hide'>
+			<view>{{xinlidata.content}}</view>
+		</view>
+	</view>
+	<!---INT----->
+	<view class='header'>
+		<view class='header-tit'>兴趣评测</view>
+		<view class='header-cell'>
+			<canvas canvas-id="radarCanvas2" disable-scroll="true" class="canvas2"></canvas>
+		</view>
+		<view class='header-foot'>
+			<view class='type'>
+				<text>您的评测结果为：{{intdata[0].model}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class='job-type' wx:for="{{intdata}}" wx:key="index">
+		<block wx:if="{{index==0}}">
+			<view class='job-card'>
+				<view class='job-card-left'>
+					<view class='font_family icon-yuan left-icon'></view>
+					<view class='card-left-text'>{{item.model}}</view>
+				</view>
+			</view>
+			<view class='job-card-hide'>
+				<view>{{item.content}}</view>
+			</view>
+		</block>
+	</view>
+
+
+	<view class='header'>
+		<view class='header-tit'>职业倾向测试</view>
+		<view class='jobheader-cell'>
+			<image src='/images/sjx.png'></image>
+			<view wx:for="{{jobmodel}}" wx:key="index" class='sub{{index}}'>{{item}}</view>
+		</view>
+		<view class='tc'>职业倾向</view>
+	</view>
+	<view class='job-type' wx:for="{{jobdata}}" wx:key="index">
+		<block wx:if="{{index==0}}">
+			<view class='job-card'>
+				<view class='job-card-left'>
+					<view class='font_family icon-yuan left-icon'></view>
+					<view class='card-left-text'>{{item.model}}</view>
+				</view>
+			</view>
+			<view class='job-card-hide' style='border-bottom:#ccc 1px solid;'>
+				<view>{{item.content}}</view>
+			</view>
+		</block>
+	</view>
+	<!--sub--->
+	<view class='header'>
+		<view class='header-tit'>学科强弱测试</view>
+		<view class='header-cell'>
+			<canvas canvas-id="columnCanvas" id='columnCanvas' disable-scroll="true" class="canvas"></canvas>
+		</view>
+	</view>
+	<view class='job-type' wx:for="{{subdata}}" wx:key="index">
+		<block wx:if="{{index==0}}">
+			<view class='job-card'>
+				<view class='job-card-left'>
+					<view class='iconfont icon-bangzhu1 left-icon'></view>
+					<view class='card-left-text'>{{item.zhuanye}}</view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class='job-card-hide'>
+		<view style='text-indent:2em;'>{{neirong}}</view>
+	</view>
+
+	<view class='tab'>
+		<view class="benke {{currentTab==0?'nav-bottom':''}}" data-current="0" bindtap="clickTab">
+			本科专业
+
+		</view>
+		<view class="zhuanke {{currentTab==1?'nav-bottom':''}}" data-current="1" bindtap="clickTab">专科专业</view>
+	</view>
+	<swiper current="{{currentTab}}" duration="300" style="height:300rpx;" bindchange="swiperTab">
+		<swiper-item>
+			<view class='tab-content'>
+				<block wx:for="{{subdata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+				<block wx:for="{{intdata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+				<block wx:for="{{jobdata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+				<block wx:for="{{xinlidata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.ben_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<view class='tab-content'>
+
+				<block wx:for="{{subdata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+				<block wx:for="{{intdata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+				<block wx:for="{{jobdata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+				<block wx:for="{{xinlidata}}" wx:key="index">
+					<block wx:if="{{index==0}}">
+						<navigator url='../details/baseinfo?id={{vo.id}}' wx:for="{{item.zhuan_zhuanye}}" wx:key="index" wx:for-item="vo">{{vo.name}}</navigator>
+					</block>
+				</block>
+
+			</view>
+		</swiper-item>
+	</swiper>
+</block>

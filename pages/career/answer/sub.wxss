@@ -1,0 +1,131 @@
+/* pages/career/quest/answer.wxss */
+
+page {
+  height: 100%;
+  background: #f2f2f2;
+}
+
+.header {
+  /* height: 750rpx; */
+  margin: 20rpx 0;
+  background: #fff;
+  box-shadow: 2rpx 2rpx 2rpx #ccc;
+  padding: 10rpx;
+}
+
+.header-cell {
+  width: 100%;
+  height: 70%;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-cell image {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  /* width: 100%; */
+  height: 600rpx;
+  margin: 0 auto;
+}
+
+.type {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.type-color {
+  font-size: 30rpx;
+  color: #4fe3e9;
+}
+
+.gread {
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.gread text {
+  padding-left: 10rpx;
+}
+
+.header-foot {
+  padding-top: 60rpx;
+  line-height: 2;
+}
+
+.job-type {
+  background: #fff;
+  box-shadow: 2rpx 2rpx 2rpx #ccc;
+  margin: 20rpx 0;
+}
+
+.active-current {
+  color: #000;
+}
+
+.job-card {
+  background: #fff;
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #ccc;
+  color: #999;
+}
+
+.job-card-left {
+  display: flex;
+}
+
+.left-icon {
+  font-size: 40rpx;
+  color: orangered;
+  line-height: 2;
+}
+
+.card-left-text {
+  font-size: 30rpx;
+  line-height: 2.7;
+  padding-left: 20rpx;
+}
+
+.job-card-right {
+  display: flex;
+}
+
+.card-right-text,
+.card-right-number {
+  font-size: 30rpx;
+  line-height: 2.7;
+  padding-left: 20rpx;
+}
+
+.card-right-number {
+  padding-right: 30rpx;
+}
+
+.right-icon {
+  font-size: 40rpx;
+  color: #999;
+  line-height: 2;
+}
+
+.job-card-hide {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 28rpx;
+  color: #666;
+  padding: 10rpx 30rpx;
+}
+
+.job-card-hide navigator {
+  float: left;
+  padding: 15rpx 10rpx;
+}
+
+.hiden {
+  display: none;
+}

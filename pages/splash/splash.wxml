@@ -1,0 +1,4 @@
+<view class="app">
+    <view class="timer">{{time}}</view>
+    <image class="img" src="{{imgsrc}}" bindtap="bindOpen"></image>
+</view>

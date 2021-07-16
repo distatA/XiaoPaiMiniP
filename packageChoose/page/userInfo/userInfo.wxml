@@ -1,0 +1,116 @@
+<view class="info-form">
+    <view class="title">完善资料</view>
+    <view class="tips">Hi,完善您的资料，获得更多精准推荐</view>
+    <view class="sub-title">高考信息</view>
+    <view class="info-item">
+        <view class="info-name">高考省份</view>
+        <view class="info-content">
+            <picker bindchange="bindCollegeProvince" value="{{index}}" range="{{province}}" range-key="name">
+                <view class="picker">
+                    <block wx:if="{{college_province.id == 0}}">请选择</block>
+                    <block wx:else>{{college_province.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <view class="info-item">
+        <view class="info-name">招生类别</view>
+        <view class="info-content">
+            <picker bindchange="bindCategory" range="{{category}}" range-key="name">
+                <view class="picker">
+                    <block wx:if="{{enrollment_category.id == 0}}">请选择</block>
+                    <block wx:else>{{enrollment_category.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <view class="info-item">
+        <view class="info-name">高考角色</view>
+        <view class="info-content">
+            <picker bindchange="bindRole" range="{{role}}" range-key="name">
+                <view class="picker">
+                    <block wx:if="{{college_role.id == 0}}">请选择</block>
+                    <block wx:else>{{college_role.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <!-- 第二部分 -->
+    <view class="sub-title">高中信息</view>
+    <view class="info-item">
+        <view class="info-name">所在地区</view>
+        <view class="info-content">
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                <view class="picker">
+                    <block wx:if="{{high_province.name == null}}">请选择</block>
+                    <block wx:else> {{high_province.name}}，{{high_city.name}}，{{high_district.name}}</block>
+
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <view class="info-item">
+        <view class="info-name">学校名称</view>
+        <view class="info-content">
+            <picker bindchange="bindSchool" range="{{school}}" range-key="school">
+                <view class="picker">
+                    <block wx:if="{{high_school.name == null}}">请选择</block>
+                    <block wx:else>{{high_school.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <view class="info-item">
+        <view class="info-name">所在年级</view>
+        <view class="info-content">
+            <picker bindchange="bindGrade" range="{{grade}}" range-key="name">
+                <view class="picker">
+                    <block wx:if="{{high_class.name == null}}">请选择</block>
+                    <block wx:else>{{high_class.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <!-- 第三部分 -->
+    <view class="sub-title">其他信息</view>
+    <view class="info-item">
+        <view class="info-name">留学意向</view>
+        <view class="info-content">
+            <picker bindchange="bindAbroad" range="{{option_abroad}}" range-key="name">
+                <view class="picker">
+                    <block wx:if="{{is_abroad.name == null}}">请选择</block>
+                    <block wx:else>{{is_abroad.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <view class="info-item">
+        <view class="info-name">专家服务</view>
+        <view class="info-content">
+            <picker bindchange="bindExpert" range="{{option_expert}}" range-key="name">
+                <view class="picker">
+                    <block wx:if="{{is_expert.name == null}}">请选择</block>
+                    <block wx:else>{{is_expert.name}}</block>
+                </view>
+            </picker>
+        </view>
+        <view class="arrow font_family icon-youhua user-list-right-icon"></view>
+    </view>
+    <view class="info-item">
+        <view class="info-name">联系邮箱</view>
+        <view class="info-content">
+            <input class="email" bindinput="bindEmail" value="{{email}}" placeholder="请输入邮箱地址"></input>
+        </view>
+        <!-- <view class="arrow font_family icon-youhua user-list-right-icon"></view> -->
+    </view>
+</view>
+<view class="submit-btn">
+    <view class="btn" bindtap="submit">完成</view>
+</view>

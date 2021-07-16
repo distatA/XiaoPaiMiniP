@@ -1,0 +1,107 @@
+<!--pages/career/details/baseinfo.wxml-->
+<loginDialog url="../../setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<block wx:if="{{detail}}">
+	<view class='nav'>
+		<view class='nav-table'>
+			<view class="{{currentTab==0?'nav-table-style':''}}" data-current="0" bindtap="swichNav">基本信息</view>
+			<view class="{{currentTab==1?'nav-table-style':''}}" data-current="1" bindtap="swichNav">从业资格</view>
+			<view class="{{currentTab==2?'nav-table-style':''}}" data-current="2" bindtap="swichNav">现状及前景</view>
+		</view>
+	</view>
+	<view class='ConArea'>
+		<view class='content'>
+			<view class='content-one'>
+				<view class='content-one-title'>
+					<view class='major'>{{bank.name}}</view>
+					<view class='b_right'>
+						<button class='font_family icon-fenxiang1 sharebtn' data-id="{{bank.id}}" data-title="{{bank.name}}" id="shareBtn" open-type="share" style="font-weight: 7"></button>
+						<view class='line'></view>
+						<button class='font_family sharebtn {{celled?"celled icon-shoucangshixin":"icon-shoucang1 detailesicon"}}' id="shoucang" data-id='{{bank.id}}' bindtap='shoucang' style="font-weight: 7;font-size: 45rpx;"></button>
+					</view>
+				</view>
+			</view>
+			<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+				<swiper-item>
+					<scroll-view class='scroll-content' scroll-y="true">
+						<view class='content-two'>
+							<view class='content-two-title'>
+								<view>职业简介</view>
+								<view class='iconfont icon-xiajiantou1 title-icon'></view>
+							</view>
+							<view class='content-text'>
+								<view>
+									{{detail.abstract}}
+								</view>
+							</view>
+						</view>
+
+						<view class='content-three'>
+							<view class='content-two-title'>
+								<view>工作内容</view>
+								<view class='iconfont icon-xiajiantou1 title-icon'></view>
+							</view>
+							<view class='content-text'>
+								<view>
+									{{detail.job_content}}
+								</view>
+							</view>
+						</view>
+
+						<view class='content-three'>
+							<view class='content-two-title'>
+								<view>职业技能</view>
+								<view class='iconfont icon-xiajiantou1 title-icon'></view>
+							</view>
+							<view class='content-text'>
+								<view>
+									{{detail.job_skill}}
+								</view>
+							</view>
+						</view>
+
+					</scroll-view>
+				</swiper-item>
+				<swiper-item>
+					<scroll-view class='scroll-content' scroll-y="true">
+						<view class='content-three'>
+							<view class='content-two-title'>
+								<view>知识背景</view>
+								<view class='iconfont icon-xiajiantou1 title-icon'></view>
+							</view>
+							<view class='content-text'>
+								<block wx:if="{{detail.knowledge}}">
+									<view>
+										{{detail.knowledge}}
+									</view>
+								</block>
+								<block wx:else>
+									<image class="noData" src="https://new.schoolpi.net/attach/small_program/index/no-data.png" mode="aspectFit">
+									</image>
+								</block>
+
+							</view>
+						</view>
+					</scroll-view>
+				</swiper-item>
+				<swiper-item>
+					<scroll-view class='scroll-content' scroll-y="true">
+						<view class='content-three'>
+							<view class='content-two-title'>
+								<view>行业发展前景</view>
+								<view class='iconfont icon-xiajiantou1 title-icon'></view>
+							</view>
+							<view class='content-text'>
+								<view>
+									{{detail.prospects_development}}
+								</view>
+							</view>
+						</view>
+					</scroll-view>
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+</block>
+<block wx:else>
+	<view style="text-align:center;font-size:24rpx;background:#fff;padding:40rpx;">抱歉!!!暂无数据</view>
+</block>

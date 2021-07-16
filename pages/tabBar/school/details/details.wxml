@@ -1,0 +1,192 @@
+<import src="/wxParse/wxParse.wxml" />
+<loginDialog url="../../../../pages/setuserinfo/index" showLoginForm="{{showLogin}}"></loginDialog>
+<view class="page">
+	<!-- 学校图片 -->
+	<view class='school-photo' bindtap='jumpvr'>
+		<block wx:if="{{info.xiangqing}}">
+			<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+				<block wx:for="{{info.xiangqing}}" wx:key="index">
+					<swiper-item>
+						<image src="{{item}}" class="slide-image" width="100%" height="200"></image>
+					</swiper-item>
+				</block>
+			</swiper>
+		</block>
+		<block wx:else>
+			<image src="{{info.thumb?info.thumb:'/images/default.jpg'}}" mode='Widthfix'></image>
+		</block>
+		<block wx:if="{{vr_url}}">
+			<view class='vr-text-tip'>点击查看全景</view>
+		</block>
+	</view>
+	<!-- 滚动选项 -->
+	<view class='scroll-choose'>
+		<scroll-view class="scroll-view_H" scroll-x="true" catchtouchmove='catchTouchMove'>
+			<view class="scroll-view-item_H">
+				<block wx:for="{{menu}}" wx:key="index">
+					<view class="{{currentTab==index?'choose1':'choose'}}" data-current="{{index}}" bindtap="clickTab">{{item.name}}</view>
+				</block>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 学校信息 -->
+	<view class='school-news'>
+		<scroll-view class='scroll-content' scroll-y="true" wx:if="{{currentTab === 0}}">
+			<!-- 招生数量 -->
+			<view class='nall-plan'>
+				<!-- 第一块 -->
+				<view class='school-name' wx:if="{{currentTab === 0}}">
+					<view class='b_left'>
+						<view class='s_name'>{{info.name}}</view>
+						<view class='s_type'>
+							<!-- 特色标签 -->
+							<text>{{info.feature_label}}</text>
+						</view>
+					</view>
+					<view class='b_right'>
+						<button class='font_family icon-fenxiang1 sharebtn' data-name="{{info.name}}" data-id="{{info.id}}" id="shareBtn" open-type="share" style="font-weight: 7"></button>
+						<view class='line'></view>
+						<button class="font_family sharebtn {{collected?'icon-shoucangshixin celled':'icon-shoucang1 detailesicon'}}" id="shoucang" data-id='{{info.id}}' bindtap='shoucang' style="font-weight: 7;font-size: 45rpx;"></button>
+					</view>
+				</view>
+			</view>
+			<!-- 第二块 -->
+			<view class='s_ardess'>
+				<view class='school-type'>
+					<view class='school-type1'>
+						<!-- <block wx:if="{{info.institution_str}}"> -->
+						<text> 学校类型 :</text>
+						<!-- 数组 -->
+						<text>{{info.institution_type}}</text>
+						<!-- </block> -->
+					</view>
+					<view class='school-type2'>
+						<block wx:if="{{info.disciplinary_level}}">
+							<text>批次 :</text>
+							<text>{{info.disciplinary_level}}</text>
+						</block>
+					</view>
+				</view>
+
+				<view class='school-city'>
+					<view class='school-type1'>
+						<text> 所在地 :</text>
+						<text>{{info.province}} . {{info.city}}</text>
+					</view>
+
+					<view class='school-type2'>
+						<text> 其他 :</text>
+						<text>{{info.school_nature}}</text>
+					</view>
+				</view>
+			</view>
+
+			<!-- 学校简介 -->
+			<view class='s_summery'>
+				<view class='s_summery_title'>
+					<view>院校简介</view>
+					<view class='font_family icon-xiajiantou1 jiantou'></view>
+				</view>
+				<view class='s_summery_content'>
+					<view class="wxParse">
+						<view>
+							<template is="wxParse" data="{{wxParseData:description.nodes}}" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+
+		<scroll-view class='scroll-content' scroll-y="true" wx:if="{{currentTab === 1}}">
+			<!--招生简章--->
+			<view class='s_summery'>
+				<view class='s_summery_title'>
+					<view>招生简章</view>
+					<view class='font_family icon-xiajiantou1 jiantou'></view>
+				</view>
+				<view class='s_summery_content'>
+					<!--------------------->
+					<view class="rule_list" wx:if="{{jianzhang.length>0}}" wx:for="{{jianzhang}}" wx:key="index" bindtap='toggleBtn' id="{{item.id}}">
+						<view class='clr_title f14' data-id='{{item.id}}'>
+							<view class='font_family {{uhide==item.id?"icon-shang":"icon-xiahua"}} xiala fl'></view>
+							{{item.title}}
+						</view>
+						<view class='clr_content f14 {{uhide==item.id?"":"dis-none"}}'>
+							<template is="wxParse" data="{{wxParseData:enrollment[index].nodes}}" />
+						</view>
+					</view>
+
+				</view>
+			</view>
+		</scroll-view>
+
+
+		<scroll-view class='scroll-content' scroll-y="true" wx:if="{{currentTab === 2}}">
+			<!--开设专业--->
+			<view class='s_summery'>
+				<view class='s_summery_title'>
+					<view>开设专业</view>
+					<view class='font_family icon-xiajiantou1 jiantou'></view>
+				</view>
+				<view class='s_summery_content'>
+					<!--------------------->
+					<view class="rule_list" wx:if="{{school_special.length>0}}" wx:for="{{school_special}}" wx:key="index" bindtap='toggleBtn' id="{{item.id}}">
+						<view class='clr_title f14 bold' data-id='{{item.id}}'>
+							<view class='font_family {{uhide==item.id?"icon-shang":"icon-xiahua"}} xiala fl'></view>
+							{{item.extra_name}}
+						</view>
+						<view class='clr_content f14 {{uhide==item.id?"":"dis-none"}}'>
+							<view class='special_tit'>专业概述</view>
+							<view class='special_box'>
+								<rich-text>{{item.professional_introduction}}</rich-text>
+							</view>
+							<view class='special_tit'>开设课程</view>
+							<view class='special_box'>
+								<rich-text>{{item.courses}}</rich-text>
+							</view>
+
+							<view class='special_tit'>培养目标</view>
+							<view class='special_box'>
+								<rich-text>{{item.training_target}}</rich-text>
+							</view>
+
+							<view class='special_tit'>就业方向</view>
+							<view class='special_box'>
+								<rich-text>{{item.professional_introduction}}</rich-text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+
+		<!-- 奖助学金 -->
+		<scroll-view class='scroll-content' scroll-y="true" wx:if="{{currentTab === 3}}">
+			<view class="wxParse">
+				<template is="wxParse" data="{{wxParseData:scholarships.nodes}}" />
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 历年分数线 -->
+	<view class="nav-footer">
+		<view class="past-scores">
+			<view class="enroll-student" data-id='2' bindtap="plan">招生计划</view>
+			<view class="enroll-scores" bindtap="score">历年分数线</view>
+		</view>
+	</view>
+	<!-- 客服聊天 -->
+	<!-- <block wx:if="{{chatShow}}">
+		<view class="service" bindtap="chat"></view>
+	</block> -->
+</view>
+
+<view class='showSuccess' wx:if="{{showModal}}">
+	<view class='big_bg'></view>
+	<view class='showSuccess-main'>
+		<view class='content'>
+			<i class="font_family icon-weixin logo"></i>
+			<view class="wect-power">校派将获得您的公开信息(昵称、头像等)</view>
+			<button class="btner" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+		</view>
+	</view>
+</view>

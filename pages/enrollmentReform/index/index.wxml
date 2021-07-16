@@ -1,0 +1,33 @@
+<view class="banner">
+    <swiper style="height:370rpx;" indicator-dots="true" autoplay circular>
+        <block wx:for="{{bannerList}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.ad_code}}" bindtap="goAd" data-id="{{item.id}}" data-media="{{item.media_nw}}" data-link="{{item.ad_link}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="nav">
+    <block wx:for="{{navList}}" wx:key="index">
+        <view class="nav-item" data-id="{{item.id}}" bindtap="next">
+            <image src="{{item.imgUrl}}"></image>
+            <view class="nav-title">{{item.title}}</view>
+        </view>
+    </block>
+</view>
+<view class="title">
+    <view class="hot">热门高校</view> 
+    <view class="more" bindtap="next" data-id="1">显示更多</view>
+</view>
+<view class="school_box">
+    <block wx:for="{{schoolList}}" wx:key="index">
+        <navigator url="../school/school?id={{item.sid}}" hover-class="none">
+            <view class="school-item">
+                <image src="{{item.img_url}}"></image>
+                <view class="school-name">{{item.name}}</view>
+                <view class="school-inf">{{item.description}}</view>
+                <view class="btn" data-id="{{item.sid}}">去查看</view>
+            </view>
+        </navigator>
+    </block>
+</view>

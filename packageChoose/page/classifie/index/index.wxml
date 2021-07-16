@@ -1,0 +1,80 @@
+<view>
+    <view class="header">
+        <swiper style="height:500rpx;" circular="true" autoplay="true" easing-function="linear">
+            <block wx:for="{{banlist}}" wx:key="index">
+                <swiper-item>
+                    <image class="banner" src="{{item.ad_code}}" mode="widthFix" bindtap="goAd" data-id="{{item.id}}" data-media="{{item.media_nw}}" data-school_id="{{item.school_id}}" data-link="{{item.ad_link}}">
+                    </image>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="search" bindtap="goSearch" data-item="{{hostList}}">
+            <image class="search-icon" src="https://new.schoolpi.net/attach/small_program/search/search_icon.jpg">
+            </image>
+            <input class="search-input" placeholder="请输入院校名称" style="font-size:28rpx;" disabled="disabled"></input>
+        </view>
+        <block wx:if='{{showExam==1}}'>
+            <view bindtap="goExam" class="exam-bg">
+                <view class="icon"></view>
+                <block wx:if="{{province==14234}}">
+                    <image class="verb_title" src="https://new.schoolpi.net/attach/small_program/classify/test_word.png"></image>
+                </block>
+                <block wx:if="{{province==10808}}">
+                    <image class="verb_title" src="https://new.schoolpi.net/attach/small_program/classify/test_word_js.png"></image>
+                </block>
+                <view class="enter"></view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="verb">{{days}}</view>
+        </block>
+    </view>
+    <view class="menu">
+        <view class="menu-item">
+            <navigator url="../policy/index">
+                <view>
+                    <image src="https://new.schoolpi.net/attach/small_program/class/book.png" class="menu-logo"></image>
+                    <view class="menu-name">报考政策</view>
+                </view>
+            </navigator>
+            <navigator url="../allschool/index">
+                <view>
+                    <image src="https://new.schoolpi.net/attach/small_program/class/Careerplanning.png" class="menu-logo"></image>
+                    <view class="menu-name">全部院校</view>
+                </view>
+            </navigator>
+            <navigator url="../specialty/index">
+                <view>
+                    <image src="https://new.schoolpi.net/attach/small_program/class/Colleges.png" class="menu-logo">
+                    </image>
+                    <view class="menu-name">热门专业</view>
+                </view>
+            </navigator>
+
+            <view bindtap="gohistorySubject">
+                <image src="https://new.schoolpi.net/attach/small_program/class/Itembank.png" class="menu-logo"></image>
+                <view class="menu-name">历年真题</view>
+            </view>
+
+            <navigator url="../historyFraction/historyFraction">
+                <view>
+                    <image src="https://new.schoolpi.net/attach/small_program/class/siginup.png" class="menu-logo">
+                    </image>
+                    <view class="menu-name">历年数据</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="hot-school">
+        <view class="title">热门院校</view>
+        <view class="school-list">
+            <view class="school-item" wx:for="{{hostList}}" wx:key="index" bindtap="goHostSchool" data-id="{{item.id}}">
+                <image src="{{item.thumb}}" class="school-logo"></image>
+                <view class="school-name">{{item.name}}</view>
+                <view class="school-type">学校类型:{{item.institution_type}}</view>
+                <view class="school-area">{{item.province}}{{item.city}}</view>
+            </view>
+            <view class="last"></view>
+        </view>
+    </view>
+</view>

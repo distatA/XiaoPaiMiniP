@@ -1,0 +1,266 @@
+.probablity {
+    width: 643rpx;
+    height: 372rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 30rpx 50rpx 0rpx rgba(0, 0, 0, 0.1);
+    border-radius: 30rpx;
+    margin: 28rpx auto 63rpx;
+}
+
+.bigCircle {
+    width: 190rpx;
+    height: 190rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    background-color: #eee;
+}
+
+.littleCircle {
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    background-color: #fff;
+}
+
+.circle {
+    width: 210rpx;
+    height: 210rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto auto;
+    z-index: 99;
+}
+
+.canvas {
+    width: 350rpx;
+    height: 250rpx;
+    /* transform: scale(0.5); */
+    position: relative;
+    margin-top: 50rpx;
+}
+
+.txt {
+    position: absolute;
+    top: 90rpx;
+    left: 135rpx;
+    text-align: center;
+}
+
+.percent {
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 57rpx;
+    letter-spacing: 1rpx;
+    color: #1d3756;
+}
+
+.word {
+    font-size: 16rpx;
+    color: #1d3756;
+    opacity: 0.52;
+}
+
+/* 右侧科目选择 */
+
+.wrap {
+    display: flex;
+    height: 310rpx;
+}
+
+.line {
+    width: 455rpx;
+    height: 1rpx;
+    background-color: #dedede;
+    margin: 0 auto;
+}
+
+.icon-wrap {
+    margin: auto 0;
+}
+
+.select-icon {
+    width: 23rpx;
+    height: 22rpx;
+    border-radius: 50%;
+    margin-top: 52rpx;
+}
+
+.select {
+    width: 250rpx;
+    margin: auto 0;
+}
+
+.select-item {
+    margin-top: 52rpx;
+    position: relative;
+}
+
+.select-value {
+    display: flex;
+}
+
+.select-icon1 {
+    background: #87e7ff;
+    box-shadow: 0rpx 10rpx 10rpx 0rpx rgba(135, 231, 255, 0.5);
+}
+
+.select-icon2 {
+    background: #87cbff;
+    box-shadow: 0rpx 10rpx 10rpx 0rpx rgba(135, 203, 255, 0.5);
+}
+
+.select-icon3 {
+    background: #879dff;
+    box-shadow: 0rpx 10rpx 10rpx 0rpx rgba(135, 157, 255, 0.5);
+}
+
+.select-name {
+    font-size: 22rpx;
+    line-height: 24rpx;
+    color: #aab2b7;
+    margin-left: 21rpx;
+}
+
+.select-arrow {
+    border-bottom: 3rpx solid #aab2b7;
+    border-right: 3rpx solid #aab2b7;
+    width: 8rpx;
+    height: 8rpx;
+    transform: rotate(45deg);
+    margin-left: 10rpx;
+    margin-top: 7rpx;
+}
+
+@keyframes tomove {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(225deg);
+    }
+}
+
+@keyframes backmove {
+    from {
+        transform: rotate(225deg);
+    }
+
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+/* 下拉列表 */
+
+.select-list {
+    width: 57rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 10rpx 10rpx 0rpx rgba(141, 142, 152, 0.2);
+    border-radius: 10rpx;
+    font-size: 22rpx;
+    position: absolute;
+    left: 14rpx;
+    z-index: 999;
+    padding-top: 23rpx;
+}
+
+.list-item {
+    padding-bottom: 23rpx;
+    text-align: center;
+}
+
+.node {
+    font-size: 16rpx;
+    line-height: 24rpx;
+    color: #aab2b7;
+    text-align: center;
+    margin-top: 16rpx;
+}
+
+.subject {
+    width: 644rpx;
+    height: 150rpx;
+    background-color: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    margin: 49rpx auto 0;
+    border-radius: 15rpx;
+    display: flex;
+}
+
+.icon {
+    width: 94rpx;
+    height: 94rpx;
+    border-radius: 50%;
+    margin: auto 28rpx;
+    background-image: linear-gradient(135deg, #87cbff 0%, #879dff 100%);
+}
+
+.icon1 {
+    background-image: linear-gradient(135deg, #879dff 0%, #db88ff 100%);
+}
+
+.content {
+    width: 260rpx;
+    margin: auto 0;
+}
+
+.title {
+    font-size: 30rpx;
+    color: #171f24;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 22rpx;
+    color: #aab2b7;
+}
+
+.num {
+    line-height: 150rpx;
+    font-size: 43rpx;
+    color: #171f24;
+    margin-left: 55rpx;
+    position: relative;
+}
+
+.num::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 64rpx;
+    left: 120rpx;
+    border-top: 3rpx solid #aab2b7;
+    border-right: 3rpx solid #aab2b7;
+    width: 20rpx;
+    height: 20rpx;
+    transform: rotate(45deg);
+}
+
+.save {
+    width: 654rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background-color: #06d6a0;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50rpx;
+    margin: 111rpx auto 176rpx;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
+}

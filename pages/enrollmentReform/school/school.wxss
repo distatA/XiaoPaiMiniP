@@ -1,0 +1,397 @@
+.vrbox {
+    width: 750rpx;
+    overflow: hidden;
+}
+.bg {
+    width: 750rpx;
+    height: 450rpx;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+
+.tb {
+    position: absolute;
+    top: 85px;
+    left: 163px;
+    width: 96rpx;
+    height: 96rpx;
+}
+
+.tb image {
+    width: 100%;
+    height: 100%;
+}
+
+.prompt {
+    position: absolute;
+    width: 170rpx;
+    height: 49rpx;
+    font-size: 26rpx;
+    line-height: 49rpx;
+    background-color: rgba(0, 0, 0, .5);
+    top: 330rpx;
+    right: 0;
+    padding-left: 30rpx;
+    border-bottom-left-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+    color: #fff;
+}
+
+.info {
+    width: 686rpx;
+    background: #fff;
+    box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.05);
+    border-radius: 16rpx;
+    margin: 380rpx auto 0;
+    padding: 27rpx 0 47rpx 0;
+    box-sizing: border-box;
+}
+
+.school {
+    display: flex;
+    align-items: center;
+}
+
+.school image {
+    width: 112rpx;
+    height: 112rpx;
+    border-radius: 50%;
+    margin-left: 46rpx;
+}
+
+.school-name {
+    margin-left: 51rpx;
+    flex: 1;
+}
+
+.chinese {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #1d1e2c;
+}
+
+.english {
+    font-size: 26rpx;
+    font-weight: 400;
+    color: #69707f;
+    margin-top: 20rpx;
+}
+
+.school-info {
+    display: flex;
+    margin: 56rpx 60rpx 0;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.info-item view:first-child {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #383838;
+}
+
+.info-item view:last-child {
+    font-size: 22rpx;
+    color: #adadad;
+    margin-top: 19rpx;
+}
+
+/* 导航 */
+
+.nav {
+    display: flex;
+    margin: 51rpx 36rpx 0;
+    font-size: 28rpx;
+    line-height: 60rpx;
+    font-weight: bold;
+    color: #999;
+    justify-content: space-around;
+}
+
+.nav-active {
+    width: 163rpx;
+    height: 60rpx;
+    background: #2bd7d7;
+    box-shadow: 0rpx 2rpx 18rpx 0rpx rgba(26, 151, 151, 0.15);
+    border-radius: 30rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.nav-active::after {
+    display: block;
+    content: '';
+    width: 12rpx;
+    height: 3rpx;
+    background: #fff;
+    border-radius: 2rpx;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: -7rpx auto 0;
+}
+
+/* 学校介绍 */
+
+.content {
+    width: 693rpx;
+    background: #f7f7f7;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    padding: 26rpx 23rpx 40rpx 23rpx;
+    margin: 40rpx auto 41rpx;
+}
+
+.content image {
+    width: 648rpx;
+    height: 62rpx;
+}
+
+.information {
+    width: 598rpx;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    font-weight: 400;
+    color: #5f5f5f;
+    margin: 31rpx auto 0;
+}
+
+/* 招生简章 */
+
+.guide {
+    width: 693rpx;
+    background: #f7f7f7;
+    border-radius: 8rpx;
+    margin: 40rpx auto 41rpx;
+}
+
+.guide-item {
+    width: 635rpx;
+    height: 87rpx;
+    margin: 0 auto;
+    font-size: 26rpx;
+    color: #3f3f3f;
+    line-height: 87rpx;
+    display: flex;
+}
+
+.guide-item:not(:last-child) {
+    border-bottom: 2rpx solid #ededed;
+}
+
+.guide-item image {
+    width: 24rpx;
+    height: 26rpx;
+    margin-right: 23rpx;
+    display: block;
+    align-self: center;
+}
+
+/* 招生专业 */
+
+.subject-title {
+    width: 693rpx;
+    height: 58rpx;
+    background: rgba(239, 239, 239, 1);
+    border-radius: 8rpx 8rpx 0rpx 0rpx;
+    margin: 44rpx auto 0;
+    display: flex;
+    line-height: 58rpx;
+    justify-content: space-between;
+    padding: 0 71rpx 0 21rpx;
+    box-sizing: border-box;
+}
+
+.th {
+    font-size: 25rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.subject {
+    margin-bottom: 50rpx;
+}
+
+.subject .subject-content:nth-child(odd) {
+    background: #f8f8f8;
+}
+
+.subject .subject-content:nth-child(even) {
+    background: #fbfbfb;
+}
+
+.subject-content {
+    display: flex;
+    width: 693rpx;
+    height: 58rpx;
+    line-height: 58rpx;
+    margin: 0 auto;
+    font-size: 25rpx;
+    color: #333;
+    padding: 0 0 0 21rpx;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.subject-content view:first-child {
+    width: 515rpx;
+}
+
+.subject-content view:last-child {
+    flex: 1;
+}
+
+.subject-content .td {
+    /* background-color: pink; */
+    text-align: right;
+    margin-right: 88rpx;
+}
+
+/* 考试报名 */
+
+.exam-wrap {
+    display: flex;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.step-circle {
+    position: relative;
+    margin: 0 auto;
+    width: 14rpx;
+    height: 14rpx;
+    border: 1rpx solid #999;
+    border-radius: 50%;
+}
+
+.step-line {
+    flex: 1;
+    width: 2rpx;
+    margin: 0 auto;
+    background: #e6e6e6;
+}
+
+.exam-item {
+    margin: -5rpx 0 40rpx 34rpx;
+}
+
+.exam-item-title {
+    font-size: 24rpx;
+    font-weight: 500;
+    color: #999;
+}
+
+.exam-item-content {
+    width: 586rpx;
+    height: 140rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    display: flex;
+    margin-top: 20rpx;
+    align-items: center;
+}
+
+.exam-item-content image {
+    width: 66rpx;
+    height: 66rpx;
+    border-radius: 50%;
+    margin: 0 20rpx 0 29rpx;
+}
+
+.exam-item-content view {
+    font-size: 24rpx;
+    color: #1a1a1a;
+    margin-right: 10px;
+    flex: 1;
+}
+
+.last::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -14rpx;
+    left: 0rpx;
+    width: 14rpx;
+    height: 14rpx;
+    border: 1rpx solid #999;
+    border-radius: 50%;
+}
+
+/*登陆*/
+
+.login-back {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.login {
+    width: 600rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 250rpx auto 0 auto;
+    background: #fff;
+    position: relative;
+    padding-bottom: 40rpx;
+    border-radius: 20rpx;
+    line-height: 60rpx;
+}
+
+.login-img {
+    border-radius: 6rpx;
+    padding-top: 60rpx;
+    font-size: 40rpx;
+    font-weight: 500;
+}
+
+.caozuo {
+    color: #575757;
+}
+
+.tupian {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    margin-top: 20rpx;
+    margin-bottom: 30rpx;
+}
+
+.zandenglu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.zandenglu button {
+    width: 250rpx !important;
+    margin: 20rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+}
+
+.zandenglu .liji {
+    background: red;
+    color: #fff;
+}
+
+.btnNo {
+    background-color: #f8f8f8 !important;
+    color: #000 !important;
+}
+
+.btnGo {
+    background-color: #22d9d9 !important;
+    color: #fff !important;
+}

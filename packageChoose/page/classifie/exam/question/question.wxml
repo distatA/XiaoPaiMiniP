@@ -1,0 +1,19 @@
+<view class="main_container">
+	<image class="circle" src="https://new.schoolpi.net/attach/small_program/classify/circle.png" mode="widthFix"></image>
+	<image class="top_right" src="https://new.schoolpi.net/attach/small_program/classify/right_top.png" mode="widthFix"></image>
+	<image class="top_left" src="https://new.schoolpi.net/attach/small_program/classify/left_top.png" mode="widthFix"></image>
+	<image class="bottom_left" src="https://new.schoolpi.net/attach/small_program/classify/left_bottom.png" mode="widthFix"></image>
+	
+	<view class="banner_info">
+		<image class="banner_top" wx:if="{{province==14234}}" src="https://new.schoolpi.net/attach/small_program/classify/exam-title.png" mode="widthFix"></image>
+        <image class="banner_top" wx:if="{{province==10808}}" src="https://new.schoolpi.net/attach/small_program/classify/exam-title-js.png" mode="widthFix"></image>
+		<image class="banner_top" src="https://new.schoolpi.net/attach/small_program/classify/banner_bottom.png" mode="widthFix"></image>
+	</view>
+	<view class="start" hover-class="shadow" bindtap="startAnswer">
+		开始答题
+	</view>
+	<view class="tips">
+		<view>本试卷共有{{questionNum}}道题</view>
+		<view>总时长{{time}}分钟</view>
+	</view>
+</view>

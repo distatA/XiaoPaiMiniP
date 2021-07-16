@@ -1,0 +1,18 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="logo">
+    <image src="{{info.thumb}}"></image>
+</view>
+<view class="title">教育新闻</view>
+<view class="zbc_title">{{info.zbc_title}}</view>
+<view class="content">
+    <template is="wxParse" data="{{wxParseData:zbc_content.nodes}}" />
+</view>
+<view class="title">热点资讯</view>
+<view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>
+
+<view class="message">
+    <view>每日一语:</view>
+    <view>{{info.zbc_mryy}}</view>
+</view>
